@@ -1,6 +1,60 @@
 body {
-  font-family: Arial;
-  background: #f5f5f5;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f6f2ff;
+  color: #2d2d2d;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+  padding: 40px;
+}
+
+header {
   text-align: center;
-  padding-top: 100px;
+  padding-bottom: 30px;
+}
+
+h1 {
+  color: #7a5cff;
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #a08bff;
+  margin-top: 0;
+}
+
+.contact {
+  font-size: 14px;
+  color: #666;
+}
+
+h2 {
+  color: #7a5cff;
+  margin-top: 40px;
+}
+
+section {
+  margin-bottom: 25px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(122, 92, 255, 0.1);
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #a08bff;
 }
