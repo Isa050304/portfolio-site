@@ -1,18 +1,30 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Mensaje bonito al cargar la página
-  console.log("Welcome Isa 💜 your portfolio is live!");
+// SIMPLE FADE IN
 
-  // Animación simple: fade-in al cargar
-  const sections = document.querySelectorAll("section");
+document.addEventListener("DOMContentLoaded", () => {
 
-  sections.forEach((section, index) => {
-    section.style.opacity = 0;
-    section.style.transform = "translateY(20px)";
+  const hero = document.querySelector(".hero-text");
+  const cards = document.querySelectorAll(".coming-soon-card");
+
+  hero.style.opacity = "0";
+  hero.style.transform = "translateY(30px)";
+
+  setTimeout(() => {
+    hero.style.transition = "all 0.8s ease";
+    hero.style.opacity = "1";
+    hero.style.transform = "translateY(0)";
+  }, 200);
+
+  cards.forEach((card, index) => {
+
+    card.style.opacity = "0";
+    card.style.transform = "translateY(20px)";
 
     setTimeout(() => {
-      section.style.transition = "all 0.6s ease";
-      section.style.opacity = 1;
-      section.style.transform = "translateY(0)";
-    }, 200 * index);
+      card.style.transition = "all 0.8s ease";
+      card.style.opacity = "1";
+      card.style.transform = "translateY(0)";
+    }, 400 + (index * 200));
+
   });
+
 });
