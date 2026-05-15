@@ -78,3 +78,69 @@ footer {
   height: auto;
   display: block;
 }
+
+/* SMOOTH SCROLL */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR HOVER */
+
+.nav-links a {
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.6;
+}
+
+/* BUTTON ANIMATIONS */
+
+.primary-btn,
+.secondary-btn {
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* CARD HOVER */
+
+.card,
+.coming-soon-card {
+  transition: all 0.3s ease;
+}
+
+.card:hover,
+.coming-soon-card:hover {
+  transform: translateY(-5px);
+}
+
+/* NAVBAR GLASS EFFECT */
+
+.navbar {
+  backdrop-filter: blur(10px);
+}
+
+/* HERO ANIMATION */
+
+.hero {
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
