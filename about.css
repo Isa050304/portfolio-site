@@ -1,17 +1,145 @@
+/* ABOUT PAGE */
+
 .about-container {
-  max-width: 900px;
-  margin: auto;
-  padding: 80px 40px;
+  min-height: 80vh;
+  padding: 140px 8% 100px;
+  background:
+    radial-gradient(circle at top left, #f3e8ff 0%, transparent 35%);
 }
 
+/* TITLE */
+
 .about-container h1 {
-  color: #5e4bb6;
-  margin-bottom: 30px;
+  font-size: 4rem;
+  margin-bottom: 50px;
+  color: #111;
 }
+
+/* ABOUT CARD */
 
 .about-card {
   background: white;
-  padding: 40px;
+  border: 1px solid #eee;
+  border-radius: 30px;
+  padding: 50px;
+  max-width: 900px;
+  box-shadow: 0 20px 40px rgba(124, 58, 237, 0.08);
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  border-color: #d8b4fe;
+}
+
+/* TEXT */
+
+.about-card p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+/* HIGHLIGHT */
+
+.highlight {
+  color: #7c3aed;
+  font-weight: 600;
+}
+
+/* ABOUT GRID */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* SMALL CARDS */
+
+.info-card {
+  background: #faf5ff;
   border-radius: 24px;
-  box-shadow: 0 10px 20px rgba(122, 92, 255, 0.08);
+  padding: 30px;
+  border: 1px solid #f3e8ff;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  background: white;
+  border-color: #d8b4fe;
+}
+
+.info-card h3 {
+  margin-bottom: 15px;
+  color: #6b21a8;
+  font-size: 1.2rem;
+}
+
+.info-card p {
+  margin: 0;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* BUTTON */
+
+.about-btn {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: #7c3aed;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2);
+}
+
+.about-btn:hover {
+  transform: translateY(-3px);
+  background: #6d28d9;
+}
+
+/* ANIMATION */
+
+.about-card,
+.info-card {
+  animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  .about-container h1 {
+    font-size: 2.8rem;
+  }
+
+  .about-card {
+    padding: 35px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
 }
