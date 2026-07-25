@@ -2,20 +2,14 @@
    HERO ANIMATIONS
 ========================= */
 
-@keyframes artwork-float {
+@keyframes artwork-float-simple {
   0%,
   100% {
-    transform:
-      translate(-50%, -50%)
-      rotate(2deg)
-      translateY(0);
+    transform: rotate(1deg) translateY(0);
   }
 
   50% {
-    transform:
-      translate(-50%, -50%)
-      rotate(1deg)
-      translateY(-10px);
+    transform: rotate(0deg) translateY(-10px);
   }
 }
 
