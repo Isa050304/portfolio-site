@@ -36,9 +36,16 @@
   }
 }
 
+.hero-scroll-arrow {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1;
+  animation: scroll-arrow 1.8s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-artwork,
-  .hero-scroll img,
+  .hero-scroll-arrow,
   .hero-yarn-path {
     animation: none;
   }

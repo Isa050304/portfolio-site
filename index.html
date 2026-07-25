@@ -61,11 +61,13 @@
 
   <main>
 
-    <section class="hero">
+  <section class="hero" id="home">
   <div class="hero-inner">
 
     <div class="hero-copy">
-      <p class="hero-label">Isabel Contreras · Creative Portfolio</p>
+      <p class="hero-label">
+        Isabel Contreras · Creative Portfolio
+      </p>
 
       <h1>
         My ideas don’t begin
@@ -83,23 +85,45 @@
           Explore my work
         </a>
 
-        <a href="/about" class="secondary-btn">
+        <a href="/about/" class="secondary-btn">
           More about me
         </a>
       </div>
     </div>
 
     <div class="hero-art" aria-hidden="true">
+      <div class="hero-art-background"></div>
+
       <img
-     src="assets/artwork/identity-artwork.png"
+        src="assets/artwork/identity-artwork.png"
         alt=""
+        class="hero-artwork"
       >
     </div>
 
   </div>
 
-  <div class="hero-thread" aria-hidden="true">
-    <span></span>
+  <a
+    href="#work"
+    class="hero-scroll"
+    aria-label="Scroll to explore my work"
+  >
+    <span>Scroll to explore</span>
+
+    <span class="hero-scroll-arrow" aria-hidden="true">↓</span>
+  </a>
+
+  <div class="hero-yarn" aria-hidden="true">
+    <svg
+      viewBox="0 0 1440 120"
+      preserveAspectRatio="none"
+      role="presentation"
+    >
+      <path
+        class="hero-yarn-path"
+        d="M-20,55 C190,5 285,115 485,62 C700,5 825,110 1030,54 C1195,10 1300,80 1460,40"
+      />
+    </svg>
   </div>
 </section>
 
