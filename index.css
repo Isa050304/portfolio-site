@@ -802,3 +802,79 @@
 }
 
 }
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section{
+
+    width:min(900px,90%);
+    margin:220px auto 140px;
+
+    text-align:center;
+
+}
+
+.contact-section .section-label{
+
+    margin-bottom:18px;
+
+}
+
+.contact-section h2{
+
+    margin-bottom:32px;
+
+    font-size:clamp(3.5rem,8vw,6.8rem);
+    line-height:.92;
+    letter-spacing:-0.05em;
+
+    max-width:900px;
+    margin-inline:auto;
+
+}
+
+.contact-text{
+
+    max-width:650px;
+
+    margin:0 auto 50px;
+
+    font-size:1.15rem;
+    line-height:1.9;
+
+    color:#666;
+
+}
+
+.contact-section .primary-btn{
+
+    padding:18px 42px;
+
+    font-size:1rem;
+
+}
+
+@media (max-width:768px){
+
+.contact-section{
+
+    margin:140px auto 90px;
+
+}
+
+.contact-section h2{
+
+    margin-bottom:24px;
+
+}
+
+.contact-text{
+
+    font-size:1rem;
+    line-height:1.8;
+
+}
+
+}
