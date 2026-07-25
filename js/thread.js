@@ -1,18 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const backToTop = document.querySelector(".back-to-top");
 
-  const cards = document.querySelectorAll(".card, .coming-soon-card, .about-card");
+  const updateBackToTop = () => {
+    if (!backToTop) return;
+    backToTop.classList.toggle("is-visible", window.scrollY > 700);
+  };
 
-  cards.forEach((card, index) => {
+  updateBackToTop();
+  window.addEventListener("scroll", updateBackToTop, { passive: true });
 
-    card.style.opacity = "0";
-    card.style.transform = "translateY(20px)";
-
-    setTimeout(() => {
-      card.style.transition = "all 0.7s ease";
-      card.style.opacity = "1";
-      card.style.transform = "translateY(0)";
-    }, 200 + (index * 150));
-
+  backToTop?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
-
 });

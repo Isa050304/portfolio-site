@@ -1,110 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>About Me | Isabel Contreras</title>
- <link rel="icon" type="image/png" href="Images/favicon.png">
-  <link rel="stylesheet" href="../global.css">
-  <link rel="stylesheet" href="../about.css">
+  <title>Contact | Isabel Contreras</title>
+  <meta name="description" content="Contact Isabel Contreras for creative collaborations, design work and digital projects.">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/contact.css">
+  <link rel="stylesheet" href="../css/animations.css">
 </head>
+<body class="is-loading">
 
-<body>
+  <div class="site-loader" aria-hidden="true">
+    <div class="loader-inner">
+      <img class="loader-ball" src="../assets/yarn/yarn-ball.svg" alt="">
+      <svg class="loader-line" viewBox="0 0 180 28" role="presentation">
+        <path d="M2 14 C35 2, 58 26, 91 14 S146 2, 178 14"></path>
+      </svg>
+      <p class="loader-text">Finding the thread</p>
+    </div>
+  </div>
 
-  <!-- NAVBAR -->
 
-  <header class="navbar">
-
-    <a href="/" class="logo">
-      <img src="../Images/logo.png" alt="Isabel Contreras Logo">
+  <header class="navbar" id="site-header">
+    <a href="../index.html" class="logo" aria-label="Isabel Contreras home">
+      <img src="../assets/logos/logo-wordmark.svg" alt="Isabel Contreras">
     </a>
 
-    <nav>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation">
+      <span></span><span></span>
+    </button>
+
+    <nav id="main-navigation" class="main-navigation" aria-label="Main navigation">
       <ul class="nav-links">
-        <li><a href="/">Portfolio</a></li>
-        <li><a href="/resume">Resume</a></li>
-        <li><a href="/about">About Me</a></li>
+        <li><a href="../work/index.html">Work</a></li>
+        <li><a href="../about/index.html">About + Resume</a></li>
+        <li><a href="../contact/index.html" aria-current="page">Contact</a></li>
       </ul>
     </nav>
-
   </header>
 
-  <!-- ABOUT -->
+  <main>
+    <section class="contact-hero">
+      <div class="contact-inner reveal">
+        <p class="section-label">Contact</p>
+        <h1 class="display-title">Let’s start with a conversation.</h1>
+        <p class="body-large">Have a project, an opportunity or a question? Send me a message and tell me what you are working on.</p>
+        <a class="primary-btn" href="mailto:gaby050304@gmail.com">Email me</a>
 
-  <main class="about-container">
-
-    <h1>About Me</h1>
-
-    <div class="about-card">
-
-      <p>
-        Hi! I’m <span class="highlight">Isabel</span>, a Vancouver-based digital marketing and graphic design student passionate about creating meaningful digital experiences through branding, web design, content creation, and strategy.
-      </p>
-
-      <p>
-        I enjoy combining creativity with organization to build projects that feel both visually engaging and functional. My interests include UX/UI design, social media, branding systems, website development, and digital storytelling.
-      </p>
-
-      <p>
-        Over the past few years, I’ve worked on projects involving marketing campaigns, website optimization, content creation, and visual design for businesses and creative projects.
-      </p>
-
-      <!-- GRID -->
-
-      <div class="about-grid">
-
-        <div class="info-card">
-          <h3>Currently Learning</h3>
-
-          <p>
-            UX/UI design, front-end development, SEO optimization, and advanced branding systems.
-          </p>
+        <div class="contact-links">
+          <a href="mailto:gaby050304@gmail.com"><span>Email</span><span>gaby050304@gmail.com</span></a>
+          <a href="#"><span>LinkedIn</span><span>View profile ↗</span></a>
+          <a href="#"><span>Instagram</span><span>View profile ↗</span></a>
         </div>
-
-        <div class="info-card">
-          <h3>Favorite Tools</h3>
-
-          <p>
-            Adobe Illustrator, Photoshop, Canva, HTML, CSS, Figma, and creative AI workflows.
-          </p>
-        </div>
-
-        <div class="info-card">
-          <h3>Creative Interests</h3>
-
-          <p>
-            Branding, modern web experiences, content strategy, digital aesthetics, and visual storytelling.
-          </p>
-        </div>
-
-        <div class="info-card">
-          <h3>Based In</h3>
-
-          <p>
-            Vancouver / New Westminster, British Columbia 🇨🇦
-          </p>
-        </div>
-
       </div>
-
-      <a href="/resume" class="about-btn">
-        View Resume
-      </a>
-
-    </div>
-
+    </section>
   </main>
 
-  <!-- FOOTER -->
-
-  <footer>
-    <p>© 2026 Isabel Contreras • Vancouver, BC</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="section-label">One more thread?</p>
+      <h2 class="footer-title">Let’s make something meaningful.</h2>
+      <div class="footer-grid">
+        <div class="footer-links">
+          <a href="mailto:gaby050304@gmail.com">Email</a>
+          <a href="#" aria-label="LinkedIn profile">LinkedIn</a>
+          <a href="#" aria-label="Instagram profile">Instagram</a>
+        </div>
+        <p class="footer-meta">© 2026 Isabel Contreras · Vancouver, BC</p>
+      </div>
+    </div>
   </footer>
 
-  <script src="../script.js"></script>
+  <button class="back-to-top" type="button" aria-label="Back to top">
+    <img src="../assets/yarn/yarn-ball.svg" alt="">
+  </button>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/loader.js"></script>
+  <script src="../js/thread.js"></script>
+  <script src="../js/animations.js"></script>
 
 </body>
-
 </html>

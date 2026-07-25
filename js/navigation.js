@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const updateHeader = () => {
     if (!header) return;
-
     header.classList.toggle("is-scrolled", window.scrollY > 24);
   };
 
@@ -24,31 +23,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   toggle.addEventListener("click", () => {
     const isOpen = navigation.classList.toggle("is-open");
-
     toggle.classList.toggle("is-active", isOpen);
     toggle.setAttribute("aria-expanded", String(isOpen));
-    toggle.setAttribute(
-      "aria-label",
-      isOpen ? "Close navigation" : "Open navigation"
-    );
+    toggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
   });
 
-  links.forEach((link) => {
-    link.addEventListener("click", closeNavigation);
-  });
+  links.forEach((link) => link.addEventListener("click", closeNavigation));
 
   document.addEventListener("click", (event) => {
-    if (
-      navigation.classList.contains("is-open") &&
-      !header.contains(event.target)
-    ) {
+    if (navigation.classList.contains("is-open") && !header.contains(event.target)) {
       closeNavigation();
     }
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 760) {
-      closeNavigation();
-    }
+    if (window.innerWidth > 760) closeNavigation();
   });
 });

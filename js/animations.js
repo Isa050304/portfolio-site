@@ -1,18 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".reveal");
 
-  const cards = document.querySelectorAll(".card, .coming-soon-card, .about-card");
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach((element) => element.classList.add("is-visible"));
+    return;
+  }
 
-  cards.forEach((card, index) => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.14 });
 
-    card.style.opacity = "0";
-    card.style.transform = "translateY(20px)";
-
-    setTimeout(() => {
-      card.style.transition = "all 0.7s ease";
-      card.style.opacity = "1";
-      card.style.transform = "translateY(0)";
-    }, 200 + (index * 150));
-
-  });
-
+  elements.forEach((element) => observer.observe(element));
 });

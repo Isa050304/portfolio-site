@@ -1,110 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>About Me | Isabel Contreras</title>
- <link rel="icon" type="image/png" href="Images/favicon.png">
-  <link rel="stylesheet" href="../global.css">
-  <link rel="stylesheet" href="../about.css">
+  <title>About | Isabel Contreras</title>
+  <meta name="description" content="Learn about Isabel Contreras, her creative process, experience and skills.">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="../css/animations.css">
 </head>
+<body class="is-loading">
 
-<body>
+  <div class="site-loader" aria-hidden="true">
+    <div class="loader-inner">
+      <img class="loader-ball" src="../assets/yarn/yarn-ball.svg" alt="">
+      <svg class="loader-line" viewBox="0 0 180 28" role="presentation">
+        <path d="M2 14 C35 2, 58 26, 91 14 S146 2, 178 14"></path>
+      </svg>
+      <p class="loader-text">Finding the thread</p>
+    </div>
+  </div>
 
-  <!-- NAVBAR -->
 
-  <header class="navbar">
-
-    <a href="/" class="logo">
-      <img src="../Images/logo.png" alt="Isabel Contreras Logo">
+  <header class="navbar" id="site-header">
+    <a href="../index.html" class="logo" aria-label="Isabel Contreras home">
+      <img src="../assets/logos/logo-wordmark.svg" alt="Isabel Contreras">
     </a>
 
-    <nav>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation">
+      <span></span><span></span>
+    </button>
+
+    <nav id="main-navigation" class="main-navigation" aria-label="Main navigation">
       <ul class="nav-links">
-        <li><a href="/">Portfolio</a></li>
-        <li><a href="/resume">Resume</a></li>
-        <li><a href="/about">About Me</a></li>
+        <li><a href="../work/index.html">Work</a></li>
+        <li><a href="../about/index.html" aria-current="page">About + Resume</a></li>
+        <li><a href="../contact/index.html">Contact</a></li>
       </ul>
     </nav>
-
   </header>
 
-  <!-- ABOUT -->
-
-  <main class="about-container">
-
-    <h1>About Me</h1>
-
-    <div class="about-card">
-
-      <p>
-        Hi! I’m <span class="highlight">Isabel</span>, a Vancouver-based digital marketing and graphic design student passionate about creating meaningful digital experiences through branding, web design, content creation, and strategy.
-      </p>
-
-      <p>
-        I enjoy combining creativity with organization to build projects that feel both visually engaging and functional. My interests include UX/UI design, social media, branding systems, website development, and digital storytelling.
-      </p>
-
-      <p>
-        Over the past few years, I’ve worked on projects involving marketing campaigns, website optimization, content creation, and visual design for businesses and creative projects.
-      </p>
-
-      <!-- GRID -->
-
-      <div class="about-grid">
-
-        <div class="info-card">
-          <h3>Currently Learning</h3>
-
-          <p>
-            UX/UI design, front-end development, SEO optimization, and advanced branding systems.
-          </p>
+  <main>
+    <section class="about-hero">
+      <div class="page-shell about-grid">
+        <div class="about-portrait reveal">
+          <img src="../assets/artwork/about-portrait.jpg" alt="Portrait of Isabel Contreras">
         </div>
-
-        <div class="info-card">
-          <h3>Favorite Tools</h3>
-
-          <p>
-            Adobe Illustrator, Photoshop, Canva, HTML, CSS, Figma, and creative AI workflows.
-          </p>
+        <div class="about-copy reveal">
+          <p class="section-label">About Me</p>
+          <h1 class="section-title">I follow ideas until they become clear.</h1>
+          <p>I am a multidisciplinary creative based in Vancouver, working across graphic design, digital marketing and web design.</p>
+          <p>My process usually begins with research, questions and rough ideas. I enjoy the moment when separate pieces begin to connect and a project finally finds its personality.</p>
+          <p>I care about work that feels thoughtful, useful and human. Whether I am building a brand, designing a poster or improving a website, I look for the detail that makes the whole idea feel complete.</p>
         </div>
-
-        <div class="info-card">
-          <h3>Creative Interests</h3>
-
-          <p>
-            Branding, modern web experiences, content strategy, digital aesthetics, and visual storytelling.
-          </p>
-        </div>
-
-        <div class="info-card">
-          <h3>Based In</h3>
-
-          <p>
-            Vancouver / New Westminster, British Columbia 🇨🇦
-          </p>
-        </div>
-
       </div>
+    </section>
 
-      <a href="/resume" class="about-btn">
-        View Resume
-      </a>
+    <section class="section resume-section">
+      <div class="page-shell resume-grid">
+        <div class="resume-column reveal">
+          <p class="section-label">Resume</p>
+          <h2 class="section-title">Experience, education and skills.</h2>
+          <div class="skills-list">
+            <span>Graphic Design</span><span>Brand Identity</span><span>HTML/CSS</span><span>SEO</span><span>Google Ads</span><span>Content Strategy</span>
+          </div>
+        </div>
 
-    </div>
-
+        <div class="resume-column timeline reveal">
+          <article class="timeline-item"><h4>Digital Marketing & Communications</h4><p>Numode Delivery · Vancouver, BC</p></article>
+          <article class="timeline-item"><h4>Graphic Design Studies</h4><p>Add your school, program and graduation details here.</p></article>
+          <article class="timeline-item"><h4>Creative Projects</h4><p>Poster design, editorial design, identity systems and responsive web experiences.</p></article>
+          <a class="primary-btn" href="../assets/resume/isabel-contreras-resume.pdf">Download Resume</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- FOOTER -->
-
-  <footer>
-    <p>© 2026 Isabel Contreras • Vancouver, BC</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="section-label">One more thread?</p>
+      <h2 class="footer-title">Let’s make something meaningful.</h2>
+      <div class="footer-grid">
+        <div class="footer-links">
+          <a href="mailto:gaby050304@gmail.com">Email</a>
+          <a href="#" aria-label="LinkedIn profile">LinkedIn</a>
+          <a href="#" aria-label="Instagram profile">Instagram</a>
+        </div>
+        <p class="footer-meta">© 2026 Isabel Contreras · Vancouver, BC</p>
+      </div>
+    </div>
   </footer>
 
-  <script src="../script.js"></script>
+  <button class="back-to-top" type="button" aria-label="Back to top">
+    <img src="../assets/yarn/yarn-ball.svg" alt="">
+  </button>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/loader.js"></script>
+  <script src="../js/thread.js"></script>
+  <script src="../js/animations.js"></script>
 
 </body>
-
 </html>

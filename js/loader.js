@@ -1,18 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.querySelector(".site-loader");
+  if (!loader) return;
 
-  const cards = document.querySelectorAll(".card, .coming-soon-card, .about-card");
+  const hideLoader = () => {
+    loader.classList.add("is-hidden");
+    document.body.classList.remove("is-loading");
+    window.setTimeout(() => loader.remove(), 550);
+  };
 
-  cards.forEach((card, index) => {
-
-    card.style.opacity = "0";
-    card.style.transform = "translateY(20px)";
-
-    setTimeout(() => {
-      card.style.transition = "all 0.7s ease";
-      card.style.opacity = "1";
-      card.style.transform = "translateY(0)";
-    }, 200 + (index * 150));
-
-  });
-
+  if (document.readyState === "complete") {
+    window.setTimeout(hideLoader, 700);
+  } else {
+    window.addEventListener("load", () => window.setTimeout(hideLoader, 700), { once: true });
+  }
 });
