@@ -325,8 +325,15 @@
 }
 
 .work-heading {
-  max-width: 850px;
-  margin-bottom: clamp(75px, 10vw, 130px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  align-items: end;
+  gap: clamp(50px, 8vw, 120px);
+
+  margin-bottom: clamp(85px, 11vw, 145px);
+}
+.work-heading-copy {
+  max-width: 790px;
 }
 
 .section-label {
@@ -338,18 +345,17 @@
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
-
 .work-heading h2 {
   margin-bottom: 28px;
 
   color: var(--black);
   font-size: clamp(3rem, 6vw, 6.5rem);
-  line-height: 0.98;
+  line-height: 0.96;
   letter-spacing: -0.055em;
 }
 
-.work-heading > p:last-child {
-  max-width: 700px;
+.work-heading-copy > p:last-child {
+  max-width: 680px;
 
   color: var(--grey);
   font-size: clamp(1.05rem, 1.5vw, 1.22rem);
@@ -844,4 +850,98 @@
 
 }
 
+}
+/* =========================
+   WORK CATEGORIES
+========================= */
+
+.work-categories {
+  display: grid;
+  border-top: 1px solid var(--border);
+}
+
+.work-categories a {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 35px 1fr;
+  align-items: center;
+  gap: 12px;
+
+  padding: 17px 4px;
+
+  color: var(--black);
+  border-bottom: 1px solid var(--border);
+
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    color 220ms ease,
+    padding-left 220ms ease;
+}
+
+.work-categories a span {
+  color: var(--red);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.work-categories a::after {
+  content: "↗";
+
+  position: absolute;
+  right: 4px;
+
+  color: var(--red);
+  font-size: 1rem;
+
+  opacity: 0;
+  transform: translate(-8px, 8px);
+
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.work-categories a:hover,
+.work-categories a:focus-visible {
+  padding-left: 10px;
+  color: var(--red);
+}
+
+.work-categories a:hover::after,
+.work-categories a:focus-visible::after {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+/* =========================
+   WORK HEADING RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .work-heading {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 45px;
+  }
+
+  .work-categories {
+    width: 100%;
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 560px) {
+  .work-heading {
+    gap: 35px;
+    margin-bottom: 70px;
+  }
+
+  .work-categories a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
 }
