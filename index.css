@@ -466,6 +466,9 @@
   object-fit: cover;
   object-position: center center;
 }
+.project-two .project-image--landscape img {
+    object-position: center 75%;
+}
 .project-one .project-image,
 .project-three .project-image {
   max-width: 720px;
