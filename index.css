@@ -393,19 +393,29 @@
    PROJECT ROWS
 ========================= */
 
+/* =========================
+   PROJECTS
+========================= */
+
 .projects-list {
   display: flex;
   flex-direction: column;
-  gap: clamp(110px, 15vw, 190px);
+  gap: clamp(90px, 12vw, 170px);
 }
 
 .featured-project {
   position: relative;
-
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
   align-items: center;
-  gap: clamp(45px, 7vw, 110px);
+  gap: clamp(40px, 7vw, 100px);
+
+  padding-bottom: clamp(65px, 8vw, 110px);
+  border-bottom: 1px solid var(--border);
+}
+
+.featured-project:nth-child(even) {
+  grid-template-columns: minmax(300px, 0.85fr) minmax(0, 1.15fr);
 }
 
 .featured-project:nth-child(even) .project-visual {
@@ -416,22 +426,6 @@
   order: 1;
 }
 
-/* Thread connector */
-
-.featured-project:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: clamp(-110px, -8vw, -75px);
-
-  width: 3px;
-  height: clamp(70px, 9vw, 115px);
-
-  background: var(--red);
-  border-radius: 999px;
-  transform: translateX(-50%) rotate(4deg);
-}
-
 /* =========================
    PROJECT VISUAL
 ========================= */
@@ -440,67 +434,54 @@
   position: relative;
 }
 
-.project-placeholder {
+.project-image {
   position: relative;
-  min-height: clamp(390px, 52vw, 680px);
   overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: var(--pink);
-  border: 1px solid var(--border);
-  border-radius: clamp(22px, 3vw, 42px);
+  border-radius: clamp(20px, 2.8vw, 38px);
+  background: var(--pink-light);
 }
 
-.project-placeholder::before,
-.project-placeholder::after {
-  content: "";
-  position: absolute;
+.project-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 
-  border: 2px solid rgba(196, 52, 82, 0.55);
-  border-radius: 50%;
+  transition:
+    transform 400ms ease,
+    filter 400ms ease;
 }
 
-.project-placeholder::before {
-  width: 65%;
-  aspect-ratio: 1;
-  transform: rotate(12deg);
+.project-image:hover img {
+  transform: scale(1.02);
 }
 
-.project-placeholder::after {
-  width: 45%;
-  aspect-ratio: 1;
-  transform: translate(25%, -10%) rotate(-18deg);
+.project-image--landscape {
+  aspect-ratio: 4 / 3;
 }
 
-.project-placeholder span {
-  position: relative;
-  z-index: 2;
+.project-image--landscape img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-  padding: 12px 18px;
-
-  background: var(--paper);
-  border-radius: 999px;
-  color: var(--red);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.project-one .project-image,
+.project-three .project-image {
+  max-width: 720px;
+  margin-inline: auto;
 }
 
 /* =========================
-   PROJECT INFORMATION
+   PROJECT INFO
 ========================= */
 
 .project-info {
-  position: relative;
+  max-width: 560px;
 }
 
 .project-number {
-  margin-bottom: 18px;
-
+  margin-bottom: 16px;
   color: var(--red);
   font-size: 0.78rem;
   font-weight: 700;
@@ -509,55 +490,47 @@
 }
 
 .project-category {
-  margin-bottom: 16px;
-
+  margin-bottom: 14px;
   color: var(--grey);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .project-info h3 {
-  margin-bottom: 25px;
-
+  margin-bottom: 24px;
   color: var(--black);
-  font-size: clamp(2.5rem, 4.3vw, 5rem);
-  line-height: 1;
-  letter-spacing: -0.05em;
+  font-size: clamp(2.6rem, 4.6vw, 5.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
 }
 
 .project-description {
-  margin-bottom: 22px;
-
+  margin-bottom: 20px;
   color: var(--grey);
-  font-size: clamp(1.02rem, 1.35vw, 1.18rem);
+  font-size: clamp(1rem, 1.3vw, 1.16rem);
   line-height: 1.75;
 }
 
 .project-note {
-  margin-bottom: 30px;
+  margin-bottom: 28px;
   padding-left: 18px;
-
   border-left: 3px solid var(--red);
+
   color: var(--black);
   font-size: 0.95rem;
   line-height: 1.65;
 }
 
 .project-link {
-  position: relative;
-
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-
-  padding-bottom: 5px;
+  gap: 10px;
 
   color: var(--red);
   font-weight: 700;
   text-decoration: none;
-  border-bottom: 1px solid currentColor;
 }
 
 .project-link::after {
@@ -568,16 +541,18 @@
 .project-link:hover::after {
   transform: translateX(5px);
 }
-
+/* =========================
+   WORK RESPONSIVE
+========================= */
 /* =========================
    WORK RESPONSIVE
 ========================= */
 
-@media (max-width: 860px) {
+@media (max-width: 900px) {
   .featured-project,
   .featured-project:nth-child(even) {
     grid-template-columns: 1fr;
-    gap: 42px;
+    gap: 38px;
   }
 
   .featured-project:nth-child(even) .project-visual,
@@ -585,32 +560,46 @@
     order: initial;
   }
 
-  .featured-project:not(:last-child)::after {
-    left: 24px;
+  .project-info {
+    max-width: 700px;
   }
 
-  .project-placeholder {
-    min-height: 480px;
+  .project-one .project-image,
+  .project-three .project-image {
+    max-width: 620px;
   }
 }
 
 @media (max-width: 560px) {
+  .work-section {
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+
   .work-heading {
-    margin-bottom: 70px;
+    margin-bottom: 65px;
   }
 
   .projects-list {
-    gap: 115px;
+    gap: 80px;
   }
 
-  .project-placeholder {
-    min-height: 390px;
-    border-radius: 24px;
+  .featured-project {
+    gap: 28px;
+    padding-bottom: 70px;
   }
 
-  .featured-project:not(:last-child)::after {
-    bottom: -92px;
-    height: 65px;
+  .project-image {
+    border-radius: 20px;
+  }
+
+  .project-info h3 {
+    font-size: clamp(2.4rem, 12vw, 3.8rem);
+  }
+
+  .project-description,
+  .project-note {
+    font-size: 0.98rem;
   }
 }
 /* =========================
