@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Final_part" data-name="Final part" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 443.03 82.12">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #c43452;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 3.91px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M73.07,49.32c12.58-1.8,70.76-16.24,95.59-16.89,27.31-.72,77.62,21.56,103.85,20.84s75.96-24.08,97.45-24.44"/>
+</svg>

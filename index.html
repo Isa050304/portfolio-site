@@ -4,40 +4,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Portfolio | Isabel Contreras</title>
+  <meta
+    name="description"
+    content="Creative portfolio of Isabel Contreras, featuring graphic design, branding, digital marketing and web projects."
+  >
 
-  <link rel="icon" type="image/png" href="Images/favicon.png">
+  <link rel="icon" type="image/png" href="assets/ui/favicon.png">
 
-  <link rel="stylesheet" href="global.css">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/animations.css">
 </head>
 
 <body>
 
-  <header class="navbar">
-    <a href="/" class="logo">
-      <img src="Images/logo.png" alt="Isabel Contreras Logo">
-    </a>
-<nav aria-label="Main navigation">
-  <ul class="nav-links">
-    <li>
-      <a href="/#work" aria-current="page">Work</a>
-    </li>
+  <header class="navbar" id="site-header">
 
-    <li>
-      <a href="/about">About</a>
-    </li>
+  <a href="/" class="logo" aria-label="Isabel Contreras home">
+    <img
+      src="assets/logos/logo-full.svg"
+      alt="Isabel Contreras"
+    >
+  </a>
 
-    <li>
-      <a href="/resume">Resume</a>
-    </li>
+  <button
+    class="nav-toggle"
+    type="button"
+    aria-label="Open navigation"
+    aria-expanded="false"
+    aria-controls="main-navigation"
+  >
+    <span></span>
+    <span></span>
+  </button>
 
-    <li>
-      <a href="/#contact">Contact</a>
-    </li>
-  </ul>
-</nav>
-  </header>
+  <nav id="main-navigation" class="main-navigation" aria-label="Main navigation">
+    <ul class="nav-links">
+      <li>
+        <a href="/work/">Work</a>
+      </li>
+
+      <li>
+        <a href="/about/">About + Resume</a>
+      </li>
+
+      <li>
+        <a href="/contact/">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+</header>
 
   <main>
 
@@ -71,7 +91,7 @@
 
     <div class="hero-art" aria-hidden="true">
       <img
-        src="Images/artwork/identity-artwork.png"
+     src="assets/artwork/identity-artwork.png"
         alt=""
       >
     </div>
@@ -105,7 +125,7 @@
         <div class="project-visual">
          <div class="project-image">
   <img
-    src="Images/projects/football-poster.png"
+    src="assets/projects/football-poster.png"
     alt="Football Connects What the World Divides poster designed by Isabel Contreras"
   >
 </div>
@@ -140,7 +160,7 @@
         <div class="project-visual">
           <div class="project-image project-image--landscape">
   <img
-    src="Images/projects/nexa-booklet-cover.png"
+    src="assets/projects/nexa-booklet-cover.png"
     alt="Nexa typography booklet showing the cover and selected interior pages"
   >
 </div>
@@ -174,7 +194,7 @@
         <div class="project-visual">
         <div class="project-image">
     <img
-        src="Images/projects/movie-poster.png"
+        src="assets/projects/movie-poster.png"
         alt="Original action movie poster designed by Isabel Contreras">
 </div>
         </div>
@@ -274,7 +294,8 @@
     <p>© 2026 Isabel Contreras • Vancouver, BC</p>
   </footer>
 
-  <script src="script.js"></script>
+ <script src="js/navigation.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 
