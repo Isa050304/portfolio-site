@@ -1,16 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
   const loader = document.querySelector(".site-loader");
-  if (!loader) return;
+  const isFirstLoad = document.documentElement.classList.contains("first-load");
+
+  if (!loader || !isFirstLoad) {
+    document.body.classList.remove("is-loading");
+    return;
+  }
+
+  document.body.classList.add("is-loading");
 
   const hideLoader = () => {
     loader.classList.add("is-hidden");
     document.body.classList.remove("is-loading");
-    window.setTimeout(() => loader.remove(), 550);
+    document.documentElement.classList.remove("first-load");
+    try { sessionStorage.setItem("portfolioLoaderSeen", "true"); } catch (_) {}
+    window.setTimeout(() => loader.remove(), 450);
   };
 
-  if (document.readyState === "complete") {
-    window.setTimeout(hideLoader, 700);
-  } else {
-    window.addEventListener("load", () => window.setTimeout(hideLoader, 700), { once: true });
-  }
+  window.setTimeout(hideLoader, 820);
 });

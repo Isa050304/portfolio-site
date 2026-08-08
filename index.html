@@ -4,36 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Isabel Contreras | Creative Portfolio</title>
-  <meta name="description" content="Creative portfolio of Isabel Contreras featuring graphic design, brand identity, digital marketing and web design.">
+  <meta name="description" content="Creative portfolio of Isabel Contreras, a multidisciplinary designer working across graphic design, editorial design and visual storytelling.">
   <link rel="icon" href="assets/ui/favicon.png">
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/animations.css">
+  <script>
+    try {
+      if (sessionStorage.getItem("portfolioLoaderSeen") !== "true") document.documentElement.classList.add("first-load");
+    } catch (_) {
+      document.documentElement.classList.add("first-load");
+    }
+  </script>
 </head>
-<body class="is-loading">
+<body class="home-page" data-root="">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <div class="site-loader" aria-hidden="true">
     <div class="loader-inner">
-      <img class="loader-ball" src="assets/logos/logo-wordmark.svg" alt="">
-      <svg class="loader-line" viewBox="0 0 180 28" role="presentation">
-        <path d="M2 14 C35 2, 58 26, 91 14 S146 2, 178 14"></path>
-      </svg>
+      <img class="loader-ball" src="assets/logos/logo-icon.svg" alt="">
+      <svg class="loader-line" viewBox="0 0 180 28" role="presentation"><path d="M2 14 C35 2, 58 26, 91 14 S146 2, 178 14"></path></svg>
       <p class="loader-text">Finding the thread</p>
     </div>
   </div>
 
-
   <header class="navbar" id="site-header">
-    <a href="index.html" class="logo" aria-label="Isabel Contreras home">
-      <img src="assets/logos/logo-wordmark.svg" alt="Isabel Contreras">
-    </a>
-
-    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation">
-      <span></span><span></span>
-    </button>
-
+    <a href="index.html" class="logo" aria-label="Isabel Contreras home" aria-current="page"><img src="assets/logos/logo-wordmark.svg" alt="Isabel Contreras"></a>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span></button>
     <nav id="main-navigation" class="main-navigation" aria-label="Main navigation">
       <ul class="nav-links">
         <li><a href="work/index.html">Work</a></li>
@@ -43,157 +41,113 @@
     </nav>
   </header>
 
-
   <main id="main-content">
-    <section class="hero" id="home">
+    <section class="hero">
       <div class="hero-inner">
         <div class="hero-copy reveal">
-          <p class="hero-label">Isabel Contreras · Creative Portfolio</p>
-          <h1>My ideas don’t begin <span>in straight lines.</span></h1>
-          <p class="hero-description">
-            I research, write, explore, sketch, and keep asking questions until an idea begins to make sense. A project is not finished until I find the final twist that makes it feel complete.
-          </p>
+          <p class="section-label">Isabel Contreras · Creative Portfolio</p>
+          <h1>Design follows a <span class="red-word">red thread.</span></h1>
+          <p class="hero-description">I am a multidisciplinary designer who likes finding the idea that makes everything click. I move between research, image-making, typography and a lot of testing until the work feels clear, intentional and still a little unexpected.</p>
           <div class="hero-actions">
-            <a href="#work" class="primary-btn">Explore my work</a>
-            <a href="about/index.html" class="secondary-btn">More about me</a>
+            <a href="work/index.html" class="primary-btn">See my work</a>
+            <a href="about/index.html" class="secondary-btn">About me</a>
           </div>
+          <div class="hero-meta" aria-label="Creative disciplines"><span>Graphic Design</span><span>Editorial</span><span>Visual Storytelling</span></div>
         </div>
-
-        <div class="hero-art reveal" aria-hidden="true">
-          <img class="hero-artwork" src="assets/artwork/identity-artwork.png" alt="">
-          <img class="hero-yarn-origin" src="assets/yarn/yarn-ball.svg" alt="">
+        <div class="hero-art reveal" data-delay="1" aria-hidden="true">
+          <div class="hero-art-frame"><img class="hero-artwork" src="assets/artwork/identity-artwork.png" alt=""></div>
+          <img class="hero-yarn-origin" src="assets/logos/logo-icon.svg" alt="">
         </div>
       </div>
-
-      <a href="#work" class="hero-scroll" aria-label="Scroll to selected work">
-        <span>Follow the thread</span>
-        <span class="hero-scroll-mark">↓</span>
-      </a>
-
-      <svg class="hero-thread" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M-20,60 C160,10 290,112 470,62 C650,12 815,105 1010,55 C1190,10 1310,85 1460,42"></path>
-      </svg>
+      <svg class="hero-thread" viewBox="0 0 1440 150" preserveAspectRatio="none" aria-hidden="true"><path d="M-30 82 C120 22 250 142 420 78 C590 14 720 134 890 74 C1050 18 1200 132 1470 42"></path></svg>
     </section>
 
-    <section id="work" class="section work-section">
+    <section class="home-disciplines">
       <div class="page-shell">
-        <div class="work-heading reveal">
-          <div class="work-heading-copy">
-            <p class="section-label">Selected Work</p>
-            <h2 class="section-title">Ideas that found their final form.</h2>
-            <p class="body-large">A selection of projects across graphic design, brand identity, digital marketing and web design.</p>
-          </div>
-
-          <nav class="work-categories" aria-label="Portfolio categories">
-            <a href="work/graphic-design/index.html"><span>01</span>Graphic Design</a>
-            <a href="work/brand-identity/index.html"><span>02</span>Brand Identity</a>
-            <a href="work/digital-marketing/index.html"><span>03</span>Digital Marketing</a>
-            <a href="work/web-design/index.html"><span>04</span>Web Design</a>
-          </nav>
+        <div class="home-section-heading reveal">
+          <p class="section-label">What I make</p>
+          <h2 class="section-title">I like working across formats without losing the idea.</h2>
+          <p class="body-large">Some projects begin with type, others with an image or a messy sketch. What I enjoy most is figuring out what the project actually needs and building a visual language around that.</p>
         </div>
-
-        <div class="projects-list">
-          <article class="featured-project reveal">
-            <div class="project-visual">
-              <div class="project-image">
-                <img src="assets/projects/football-poster.png" alt="Football Connects What the World Divides poster">
-              </div>
-            </div>
-            <div class="project-info">
-              <p class="project-number">Thread 01</p>
-              <p class="project-category">Poster Design · Visual Storytelling</p>
-              <h3>Football Connects What the World Divides</h3>
-              <p class="project-description">A football reimagined as a world of its own, exploring how sport can create connection beyond borders and differences.</p>
-              <p class="project-note">Selected for an international competition and exhibited in Mexico.</p>
-              <a class="text-link" href="work/graphic-design/index.html">View the process</a>
-            </div>
-          </article>
-
-          <article class="featured-project reveal">
-            <div class="project-visual">
-              <div class="project-image project-image--landscape">
-                <img src="assets/projects/nexa-booklet-cover.png" alt="Nexa typography booklet">
-              </div>
-            </div>
-            <div class="project-info">
-              <p class="project-number">Thread 02</p>
-              <p class="project-category">Editorial Design · Typography</p>
-              <h3>Giving Nexa a Personality</h3>
-              <p class="project-description">A printed booklet created to introduce the Nexa typeface in a way that feels clear, approachable and easy to explore.</p>
-              <p class="project-note">Designed as a complete editorial piece and produced in print.</p>
-              <a class="text-link" href="work/brand-identity/index.html">View the process</a>
-            </div>
-          </article>
-
-          <article class="featured-project reveal">
-            <div class="project-visual">
-              <div class="project-image">
-                <img src="assets/projects/movie-poster.png" alt="Original action movie poster">
-              </div>
-            </div>
-            <div class="project-info">
-              <p class="project-number">Thread 03</p>
-              <p class="project-category">Digital Imaging · Concept Development</p>
-              <h3>Building a Story Before the First Scene</h3>
-              <p class="project-description">An original action film concept developed from the story to the final cinematic poster.</p>
-              <p class="project-note">The story and composition were especially praised by classmates and instructor.</p>
-              <a class="text-link" href="work/graphic-design/index.html">View the process</a>
-            </div>
-          </article>
+        <div class="discipline-grid">
+          <article class="discipline-card reveal"><span>01</span><h3>Graphic design</h3><p>Posters and visual concepts where one strong idea carries the whole composition.</p></article>
+          <article class="discipline-card reveal" data-delay="1"><span>02</span><h3>Editorial + type</h3><p>Layouts where hierarchy, pacing and typography make the content feel like it has a voice.</p></article>
+          <article class="discipline-card reveal" data-delay="2"><span>03</span><h3>Digital experiences</h3><p>Digital work that stays clear and useful while still feeling playful and personal.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section tools-section">
+    <section class="thread-story">
+      <div class="page-shell thread-story-grid">
+        <div class="thread-story-copy reveal">
+          <p class="section-label">Why the thread?</p>
+          <h2 class="section-title">The red thread keeps showing up in my work for a reason.</h2>
+          <p class="thread-story-lead">It started as a visual detail, but it became a way for me to describe how I think.</p>
+          <p>It reminds me of my curly hair, the red thread of fate, knots that take patience, and the way one idea can lead to another. I like that it can feel playful and a little chaotic while still connecting everything together.</p>
+          <p>I do not want my work to feel overly polished just for the sake of looking perfect. I want people to see the thinking, the experiments and the small decisions that made the final piece what it is.</p>
+        </div>
+        <div class="thread-story-art reveal" data-delay="1" aria-hidden="true">
+          <img src="assets/illustrations/yarn-butterfly.svg" alt="">
+          <div class="thread-loop"></div>
+          <p>follow the loose end</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-process" id="approach">
       <div class="page-shell">
-        <div class="tools-heading reveal">
-          <p class="section-label">Creative Toolkit</p>
-          <h2 class="section-title">The tools behind the ideas.</h2>
+        <div class="home-section-heading reveal">
+          <p class="section-label">How I work</p>
+          <h2 class="section-title">I usually find the answer by making, changing and trying again.</h2>
+          <p class="body-large">My process is not very linear, but these three moments show up in almost every project. Sometimes I move through them in order. Most of the time I bounce between all three.</p>
         </div>
-
-        <div class="tools-grid">
-          <article class="tool-card reveal"><h3>Design</h3><p>Illustrator</p><p>Photoshop</p><p>InDesign</p></article>
-          <article class="tool-card reveal"><h3>Web</h3><p>HTML</p><p>CSS</p><p>Responsive Design</p></article>
-          <article class="tool-card reveal"><h3>Marketing</h3><p>Google Ads</p><p>SEO</p><p>Social Media</p></article>
-          <article class="tool-card reveal"><h3>Always Learning</h3><p>Figma</p><p>UX/UI</p><p>AI Tools</p></article>
+        <div class="process-cards" aria-label="Creative process">
+          <article class="process-card reveal"><span class="process-card-number">01</span><h3>Pull</h3><p>I start by understanding what I am trying to say, who it is for and which questions are actually worth following.</p></article>
+          <article class="process-card reveal" data-delay="1"><span class="process-card-number">02</span><h3>Knot</h3><p>This is the messy part. I test ideas, make things that do not work and usually find something interesting in the middle of it.</p></article>
+          <article class="process-card reveal" data-delay="2"><span class="process-card-number">03</span><h3>Resolve</h3><p>Then I edit. I keep what is doing real work and remove what is only making the project louder.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section contact-section">
-      <div class="page-shell reveal">
-        <p class="section-label">Let’s Connect</p>
-        <h2 class="section-title">Every great project starts with a conversation.</h2>
-        <p class="body-large">Whether you have an idea, a question or simply want to say hello, I would love to hear from you.</p>
-        <a href="mailto:gaby050304@gmail.com" class="primary-btn">Say hello</a>
+    <section class="home-notes">
+      <div class="page-shell notes-grid">
+        <div class="notes-heading reveal">
+          <p class="section-label">A few things I care about</p>
+          <h2 class="section-title">I want the work to feel clear, but never generic.</h2>
+        </div>
+        <div class="notes-list reveal" data-delay="1">
+          <div><strong>Concept first</strong><p>I like being able to explain why a visual choice belongs in the project.</p></div>
+          <div><strong>Details matter</strong><p>Type, spacing, rhythm and interaction can change how the whole idea feels, so I treat them as part of the concept from the beginning.</p></div>
+          <div><strong>Room to play</strong><p>A system can be functional and still have humor, surprise and a point of view.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-close">
+      <div class="page-shell home-close-inner reveal">
+        <div><p class="section-label">Selected work</p><h2>See what all of that looks like in the work.</h2></div>
+        <a class="primary-btn" href="work/index.html">Explore my work <span aria-hidden="true">↗</span></a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <p class="section-label">One more thread?</p>
-      <h2 class="footer-title">Let’s make something meaningful.</h2>
+      <p class="section-label">Keep following</p>
+      <h2 class="footer-title">I am always curious about what comes next.</h2>
       <div class="footer-grid">
-        <div class="footer-links">
-          <a href="mailto:gaby050304@gmail.com">Email</a>
-          <a href="#" aria-label="LinkedIn profile">LinkedIn</a>
-          <a href="#" aria-label="Instagram profile">Instagram</a>
-        </div>
+        <div class="footer-links"><a href="work/index.html">Work</a><a href="about/index.html">About</a><a href="contact/index.html">Contact</a><a href="mailto:gaby050304@gmail.com">Email</a></div>
         <p class="footer-meta">© 2026 Isabel Contreras · Vancouver, BC</p>
       </div>
     </div>
   </footer>
 
-  <button class="back-to-top" type="button" aria-label="Back to top">
-    <img src="assets/ui/scroll-arrow.svg" alt="">
-  </button>
-
+  <button aria-label="Back to top" class="back-to-top" type="button">Back to top <span aria-hidden="true">↑</span></button>
+  <div class="route-transition" aria-hidden="true"></div>
   <script src="js/main.js"></script>
   <script src="js/navigation.js"></script>
   <script src="js/loader.js"></script>
   <script src="js/thread.js"></script>
   <script src="js/animations.js"></script>
-
 </body>
 </html>

@@ -1,0 +1,2 @@
+Place your PDF in this folder and name it: isabel-contreras-resume.pdf
+The About page button already points to that filename.

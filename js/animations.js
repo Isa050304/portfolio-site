@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const elements = document.querySelectorAll(".reveal");
 
-  if (!("IntersectionObserver" in window)) {
+  if (reducedMotion || !("IntersectionObserver" in window)) {
     elements.forEach((element) => element.classList.add("is-visible"));
     return;
   }
@@ -12,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       entry.target.classList.add("is-visible");
       observer.unobserve(entry.target);
     });
-  }, { threshold: 0.14 });
+  }, { threshold: 0.12, rootMargin: "0px 0px -4% 0px" });
 
   elements.forEach((element) => observer.observe(element));
 });
