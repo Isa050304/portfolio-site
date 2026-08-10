@@ -1,0 +1,5 @@
+ADD PDF HERE
+
+Place your final PDF in this folder and then update about/index.html.
+Example filename/path to use in the button:
+../assets/resume/add-pdf-here.pdf

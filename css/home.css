@@ -47,11 +47,10 @@
 .hero-art { position: relative; min-height: clamp(390px, 50vw, 535px); }
 .hero-art-frame {
   position: absolute;
-  inset: 3% 3% 4% 8%;
-  border: 1px solid var(--line);
-  border-radius: 42% 58% 48% 52% / 55% 42% 58% 45%;
-  background: rgba(255,253,251,.44);
-  transform: rotate(3deg);
+  inset: 0;
+  border: 0;
+  background: transparent;
+  transform: none;
 }
 .hero-artwork {
   position: absolute;
@@ -151,4 +150,113 @@
   .thread-story-art { min-height: 280px; }
   .thread-loop { width: 290px; }
   .home-close-inner { align-items: stretch; flex-direction: column; }
+}
+
+
+/* --- Phone responsiveness pass --- */
+@media (max-width: 620px) {
+  .hero {
+    padding-top: 94px;
+    padding-bottom: 46px;
+  }
+
+  .hero-inner {
+    gap: 26px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.75rem, 13.2vw, 4rem);
+    line-height: 1.02;
+  }
+
+  .hero-description {
+    line-height: 1.62;
+  }
+
+  .hero-meta {
+    gap: 7px 16px;
+  }
+
+  .hero-art {
+    min-height: 275px;
+  }
+
+  .hero-art-frame {
+    inset: 0;
+  }
+
+  .hero-artwork {
+    width: min(390px, 100%);
+  }
+
+  .hero-thread {
+    height: 96px;
+  }
+
+  .home-section-heading {
+    margin-bottom: 28px;
+  }
+
+  .discipline-card,
+  .process-card {
+    min-height: 205px;
+    padding: 22px;
+  }
+
+  .thread-story-grid,
+  .notes-grid {
+    gap: 34px;
+  }
+
+  .thread-story-art {
+    min-height: 245px;
+  }
+
+  .thread-loop {
+    width: min(260px, 76vw);
+  }
+
+  .thread-story-art p {
+    right: 0;
+    bottom: 3%;
+  }
+
+  .home-close-inner .primary-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-meta span:not(:last-child)::after {
+    right: -10px;
+  }
+
+  .thread-story-art img {
+    width: min(280px, 82%);
+  }
+}
+
+/* Keep the tall hero artwork inside its own grid row on tablet/phone. */
+@media (max-width: 900px) {
+  .hero-art {
+    min-height: clamp(360px, 62vw, 480px);
+  }
+
+  .hero-artwork {
+    width: auto;
+    height: clamp(340px, 60vw, 460px);
+    max-width: 82vw;
+  }
+}
+
+@media (max-width: 620px) {
+  .hero-art {
+    min-height: clamp(330px, 100vw, 400px);
+  }
+
+  .hero-artwork {
+    width: auto;
+    height: clamp(300px, 92vw, 370px);
+    max-width: 92%;
+  }
 }

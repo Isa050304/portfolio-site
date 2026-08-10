@@ -5,6 +5,7 @@
   z-index: 4000;
   display: none;
   place-items: center;
+  overflow: hidden;
   background: var(--paper);
   transition: opacity 420ms var(--ease), visibility 420ms var(--ease);
 }
@@ -20,22 +21,33 @@ html.first-load .site-loader {
 
 .loader-inner {
   position: relative;
-  display: grid;
-  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding-inline: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 15px;
   text-align: center;
 }
 
 .loader-ball {
+  position: relative;
+  z-index: 2;
   width: 82px;
   transform-origin: center;
   animation: loader-roll 1.5s var(--ease) infinite;
 }
 
 .loader-line {
-  width: 190px;
-  height: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100vw;
+  height: 40px;
   overflow: visible;
+  transform: translate(-50%, 8px);
 }
 
 .loader-line path {
@@ -43,12 +55,14 @@ html.first-load .site-loader {
   stroke: var(--red);
   stroke-width: 3;
   stroke-linecap: round;
-  stroke-dasharray: 260;
-  stroke-dashoffset: 260;
+  stroke-dasharray: 1800;
+  stroke-dashoffset: 1800;
   animation: draw-loader-line 1.25s var(--ease-out) forwards;
 }
 
 .loader-text {
+  position: relative;
+  z-index: 2;
   margin: 0;
   color: var(--red);
   font-size: 0.68rem;
@@ -195,14 +209,27 @@ html.first-load .site-loader {
   box-shadow: 0 0 0 5px rgba(196, 52, 82, 0.10);
 }
 
-/* Route transition: one yarn ball rolls the page closed. */
+/* Route transition: the pink sweep keeps a single moving thread, with no rolling icon. */
 .route-transition { position: fixed; inset: 0; z-index: 3600; pointer-events: none; overflow: hidden; background: var(--pink); transform: translate3d(-106%,0,0); will-change: transform; }
-.route-transition::before { content: ""; position: absolute; left: 0; right: 54px; top: 50%; height: 3px; border-radius: 999px; background: var(--red); transform: translateY(-50%); }
-.route-transition::after { content: ""; position: absolute; right: 5px; top: 50%; width: clamp(78px,7vw,104px); aspect-ratio: 1; background: url("../assets/logos/logo-icon.svg") center / contain no-repeat; transform: translate(42%,-50%) rotate(0deg); transform-origin: center; filter: drop-shadow(0 12px 20px rgba(58,28,38,.12)); }
+.route-transition::before {
+  content: "";
+  position: absolute;
+  left: -8%;
+  top: 50%;
+  width: 116%;
+  height: clamp(64px, 9vw, 94px);
+  background: url("../assets/yarn/route-wave.svg") center / 100% 100% no-repeat;
+  transform: translate3d(-3%, -50%, 0);
+  will-change: transform, background-position;
+}
+.route-transition::after { content: none; }
 body.is-transitioning .route-transition { animation: yarn-page-sweep 720ms cubic-bezier(.72,0,.16,1) forwards; }
-body.is-transitioning .route-transition::after { animation: yarn-page-roll 720ms cubic-bezier(.72,0,.16,1) forwards; }
+body.is-transitioning .route-transition::before { animation: yarn-page-wave 720ms cubic-bezier(.72,0,.16,1) forwards; }
 @keyframes yarn-page-sweep { from { transform: translate3d(-106%,0,0); } to { transform: translate3d(0,0,0); } }
-@keyframes yarn-page-roll { from { transform: translate(42%,-50%) rotate(0deg); } to { transform: translate(42%,-50%) rotate(720deg); } }
+@keyframes yarn-page-wave {
+  from { transform: translate3d(-3%,-50%,0); background-position: 0 50%; }
+  to { transform: translate3d(3%,-50%,0); background-position: 160px 50%; }
+}
 
 /* Back to top */
 .back-to-top { position: fixed; right: 24px; bottom: 24px; z-index: 1800; min-width: 126px; height: 48px; padding: 0 16px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,253,251,.94); color: var(--red); box-shadow: 0 10px 30px rgba(58,28,38,.10); opacity: 0; visibility: hidden; transform: translateY(15px); cursor: pointer; font-size: .76rem; font-weight: 800; letter-spacing: .02em; transition: opacity 220ms var(--ease), visibility 220ms var(--ease), transform 220ms var(--ease), background-color 220ms var(--ease); }
@@ -352,3 +379,58 @@ body.is-transitioning .route-transition::after { animation: yarn-page-roll 720ms
 
 
 .footer-title { line-height: 1.07; letter-spacing: -0.028em; }
+
+
+/* --- Phone responsiveness pass --- */
+@media (max-width: 520px) {
+  .loader-line {
+    height: 34px;
+    transform: translate(-50%, 6px);
+  }
+
+
+  .navbar {
+    width: calc(100% - 16px);
+    padding-left: 14px;
+  }
+
+  .logo img {
+    width: 112px;
+  }
+
+  .main-navigation {
+    border-radius: 20px;
+  }
+
+  .route-transition::before {
+    left: -18%;
+    width: 136%;
+    height: 70px;
+    background-size: 100% 100%;
+  }
+
+  .site-footer {
+    padding-bottom: 24px;
+  }
+
+  .footer-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .footer-links {
+    gap: 12px 16px;
+  }
+
+  .footer-meta {
+    margin: 0;
+  }
+
+  .back-to-top {
+    min-width: 0;
+    height: 42px;
+    padding-inline: 13px;
+    font-size: .72rem;
+  }
+}

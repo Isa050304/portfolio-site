@@ -267,3 +267,45 @@ body {
 .display-title { line-height: 1.025; letter-spacing: -0.032em; }
 .section-title { font-size: clamp(2rem, 3.35vw, 3.4rem); line-height: 1.11; letter-spacing: -0.024em; }
 .project-title { line-height: 1.035; letter-spacing: -0.03em; }
+
+
+/* --- Phone responsiveness pass --- */
+@media (max-width: 760px) {
+  :root {
+    --pad: 18px;
+    --section-compact: 48px;
+  }
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .display-title,
+  .section-title,
+  .project-title {
+    overflow-wrap: break-word;
+  }
+
+  .display-title {
+    font-size: clamp(2.45rem, 12vw, 3.65rem);
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 9.8vw, 3rem);
+  }
+
+  .body-large {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --pad: 16px;
+    --section-compact: 44px;
+  }
+}

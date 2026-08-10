@@ -1,3 +1,17 @@
+body.contact-page {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+body.contact-page main {
+  flex: 1 0 auto;
+}
+
+body.contact-page .site-footer {
+  margin-top: auto;
+}
+
 .contact-hero {
   position: relative;
   min-height: 86svh;
@@ -119,5 +133,38 @@
 @media (max-width: 600px) {
   .contact-hero {
     padding: 108px 0 56px;
+  }
+}
+
+
+/* --- Phone responsiveness pass --- */
+@media (max-width: 600px) {
+  .contact-hero {
+    padding-top: 96px;
+    padding-bottom: 48px;
+  }
+
+  .contact-inner .body-large {
+    margin-bottom: 22px;
+  }
+
+  .contact-links {
+    margin-top: 28px;
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+
+  .contact-links a {
+    min-width: 0;
+    padding-block: 15px;
+  }
+
+  .contact-links a span {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-thread {
+    height: 180px;
   }
 }
