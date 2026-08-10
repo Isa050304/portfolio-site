@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const projects = window.PORTFOLIO_PROJECTS || [];
   const params = new URLSearchParams(window.location.search);
-  const requestedId = params.get("id");
+  const requestedId = document.body.dataset.projectId || params.get("id");
   const project = projects.find((item) => item.id === requestedId) || projects[0];
   if (!project) return;
 
   const root = document.body.dataset.root || "";
   const asset = (path) => `${root}${path}`;
-  const projectHref = (id) => `${root}work/project/index.html?id=${encodeURIComponent(id)}`;
+  const projectHref = (id) => `/work/${encodeURIComponent(id)}`;
 
   document.title = `${project.title} | Isabel Contreras`;
   document.querySelector('meta[name="description"]')?.setAttribute("content", project.summary);

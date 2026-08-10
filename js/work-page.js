@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const root = document.body.dataset.root || "";
   const asset = (path) => `${root}${path}`;
-  const projectHref = (id) => `${root}work/project/index.html?id=${encodeURIComponent(id)}`;
+  const projectHref = (id) => `/work/${encodeURIComponent(id)}`;
 
   const categories = [
     { key: "all", label: "All work" },

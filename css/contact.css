@@ -6,10 +6,12 @@ body.contact-page {
 
 body.contact-page main {
   flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 body.contact-page .site-footer {
-  margin-top: auto;
+  margin-top: 0;
 }
 
 .contact-hero {
@@ -96,13 +98,15 @@ body.contact-page .site-footer {
 
 /* --- Contact density / color pass --- */
 .contact-hero {
-  min-height: auto;
-  padding: 108px 0 64px;
+  flex: 1 0 auto;
+  width: 100%;
+  min-height: 82svh;
+  padding: 132px 0 96px;
   background:
     radial-gradient(circle at 16% 28%, rgba(196, 52, 82, 0.10), transparent 20rem),
     radial-gradient(circle at 84% 18%, rgba(239, 218, 228, 0.95), transparent 22rem),
     var(--paper-warm);
-  border-bottom: 1px solid var(--line);
+  border-bottom: 0;
 }
 
 .contact-inner {
@@ -132,7 +136,8 @@ body.contact-page .site-footer {
 
 @media (max-width: 600px) {
   .contact-hero {
-    padding: 108px 0 56px;
+    min-height: auto;
+    padding: 110px 0 72px;
   }
 }
 
@@ -140,8 +145,8 @@ body.contact-page .site-footer {
 /* --- Phone responsiveness pass --- */
 @media (max-width: 600px) {
   .contact-hero {
-    padding-top: 96px;
-    padding-bottom: 48px;
+    padding-top: 104px;
+    padding-bottom: 68px;
   }
 
   .contact-inner .body-large {
