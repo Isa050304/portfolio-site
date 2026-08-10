@@ -11,10 +11,10 @@ window.PORTFOLIO_PROJECTS = [
     format: "Poster",
     summary: "A poster concept about football as a shared language that can connect people beyond borders, differences and distance.",
     note: "Selected for an international competition and displayed at a convention.",
-    cover: "assets/projects/web/football-poster.webp",
+    cover: "assets/projects/web/mock-up-fut-fnal.webp",
     slides: [
-      { src: "assets/projects/web/football-poster.webp", alt: "Football Connects What the World Divides poster", caption: "Final poster", fit: "contain" },
-      { src: "assets/projects/web/football-detail.webp", alt: "Detail crop from the football poster", caption: "Detail from the final poster", fit: "contain" }
+      { src: "assets/projects/web/mock-up-fut-fnal.webp", alt: "Football Connects What the World Divides poster shown in a street display mockup", caption: "Poster mockup", fit: "contain" },
+      { src: "assets/projects/web/football-poster.webp", alt: "Football Connects What the World Divides final poster", caption: "Final poster", fit: "contain" }
     ],
     rationale: "I wanted this poster to talk about football without relying on the usual imagery of a player, a stadium or a trophy. The idea became a visual metaphor about connection. Two sides that feel separated are pulled toward the same light, with football acting as the shared point between them. I kept the composition simple so the message could read quickly from a distance, but I wanted the image to have enough atmosphere that someone would stay with it for a second look.",
     process: [
@@ -38,7 +38,7 @@ window.PORTFOLIO_PROJECTS = [
     cover: "assets/projects/web/nexa-booklet.webp",
     slides: [
       { src: "assets/projects/web/nexa-booklet.webp", alt: "Nexa typography booklet cover", caption: "Booklet cover", fit: "contain" },
-      { src: "assets/projects/web/nexa-detail.webp", alt: "Detail crop from the Nexa typography booklet", caption: "Typography detail", fit: "contain" }
+      { src: "assets/projects/web/nexa-allpages.webp", alt: "Overview of the full Nexa typography booklet pages", caption: "Full booklet overview", fit: "contain" }
     ],
     rationale: "This booklet was my way of giving a typeface a personality instead of presenting it like a specimen sheet. I used scale, repetition, contrast and pacing to let Nexa change moods from spread to spread while still feeling like one system. Because the project was made for print, I also thought about how each page would lead into the next and how the rhythm would feel while someone was physically flipping through it.",
     process: [
@@ -59,10 +59,10 @@ window.PORTFOLIO_PROJECTS = [
     format: "Movie Poster",
     summary: "An original action-film concept developed from story premise to cinematic poster, using composition and image-making to suggest a larger world.",
     note: "The concept and composition were especially praised in critique.",
-    cover: "assets/projects/web/movie-poster.webp",
+    cover: "assets/projects/web/movie-poster-mockup.webp",
     slides: [
-      { src: "assets/projects/web/movie-poster.webp", alt: "Original action movie poster", caption: "Final movie poster", fit: "contain" },
-      { src: "assets/projects/web/movie-detail.webp", alt: "Detail crop from the movie poster", caption: "Image-making detail", fit: "contain" }
+      { src: "assets/projects/web/movie-poster-mockup.webp", alt: "The Last Light movie poster shown in a street display mockup", caption: "Poster mockup", fit: "contain" },
+      { src: "assets/projects/web/movie-poster.webp", alt: "The Last Light final movie poster", caption: "Final movie poster", fit: "contain" }
     ],
     rationale: "For this poster I wanted the audience to understand the mood before knowing the full story. The image needed to feel cinematic, tense and slightly unreal, like a moment taken from a much bigger event. I built the composition around the figure walking toward the destruction so the viewer immediately has a question: why is he going toward it instead of away from it? That question became the hook for the whole poster.",
     process: [
