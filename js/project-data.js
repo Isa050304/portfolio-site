@@ -385,7 +385,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     "id": "class-restaurant-menu",
     "number": "07",
-    "title": "Class Restaurant Menu Concept",
+    "title": "Restaurant Menu Concept",
     "category": "Menu Design",
     "categoryKey": "menus",
     "tags": [
@@ -396,14 +396,14 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Menu Design",
     "format": "Menu System",
-    "summary": "A class menu project for a multi-item restaurant concept, designed to feel organized, inviting and flexible across multiple sections.",
+    "summary": "A menu concept for a multi-item restaurant, designed to feel organized, inviting and flexible across multiple sections.",
     "note": "Includes menu layouts and mockups.",
     "cover": "assets/projects/web/class-menu-cover.webp",
     "coverPlaceholder": true,
     "slides": [
       {
         "src": "assets/projects/web/class-menu-layout.webp",
-        "alt": "Placeholder for the main class restaurant menu layout",
+        "alt": "Placeholder for the main restaurant menu layout",
         "caption": "Menu layout",
         "fit": "contain",
         "placeholder": true,
@@ -411,7 +411,7 @@ window.PORTFOLIO_PROJECTS = [
       },
       {
         "src": "assets/projects/web/class-menu-mockup-01.webp",
-        "alt": "Placeholder for the first class restaurant menu mockup",
+        "alt": "Placeholder for the first restaurant menu mockup",
         "caption": "Mockup 01",
         "fit": "contain",
         "placeholder": true,
@@ -419,7 +419,7 @@ window.PORTFOLIO_PROJECTS = [
       },
       {
         "src": "assets/projects/web/class-menu-mockup-02.webp",
-        "alt": "Placeholder for the second class restaurant menu mockup",
+        "alt": "Placeholder for the second restaurant menu mockup",
         "caption": "Mockup 02",
         "fit": "contain",
         "placeholder": true,
@@ -599,9 +599,9 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "id": "cinemaz-brand-identity",
+    "id": "cinemax-brand-identity",
     "number": "11",
-    "title": "Cinemaz Logo Concept",
+    "title": "Cinemax Logo Concept",
     "category": "Logo Design",
     "categoryKey": "logos",
     "tags": [
@@ -612,37 +612,37 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Brand Identity",
     "format": "Logo System",
-    "summary": "A cinema brand identity concept for Cinemaz, developed with space to compare positioning, color choices and the meaning behind each visual element.",
+    "summary": "A cinema brand identity concept for Cinemax, developed with space to compare positioning, color choices and the meaning behind each visual element.",
     "note": "Includes placeholders for the logo, breakdown elements and supporting visuals.",
-    "cover": "assets/projects/web/cinemaz-cover.webp",
+    "cover": "assets/projects/web/cinemax-cover.webp",
     "coverPlaceholder": true,
     "slides": [
       {
-        "src": "assets/projects/web/cinemaz-logo-main.webp",
-        "alt": "Placeholder for the main Cinemaz logo",
+        "src": "assets/projects/web/cinemax-logo-main.webp",
+        "alt": "Placeholder for the main Cinemax logo",
         "caption": "Main logo",
         "fit": "contain",
         "placeholder": true,
         "label": "MAIN LOGO"
       },
       {
-        "src": "assets/projects/web/cinemaz-logo-elements-01.webp",
-        "alt": "Placeholder for a Cinemaz logo elements breakdown",
+        "src": "assets/projects/web/cinemax-logo-elements-01.webp",
+        "alt": "Placeholder for a Cinemax logo elements breakdown",
         "caption": "Elements + meaning",
         "fit": "contain",
         "placeholder": true,
         "label": "ELEMENTS + MEANING"
       },
       {
-        "src": "assets/projects/web/cinemaz-logo-elements-02.webp",
-        "alt": "Placeholder for Cinemaz brand colors or applications",
+        "src": "assets/projects/web/cinemax-logo-elements-02.webp",
+        "alt": "Placeholder for Cinemax brand colors or applications",
         "caption": "Color palette + application",
         "fit": "contain",
         "placeholder": true,
         "label": "COLORS + APPLICATION"
       }
     ],
-    "rationale": "For Cinemaz, I wanted the identity to feel cinematic without becoming too obvious or overly literal. I looked at how a large cinema brand like Cineplex presents itself, then used that comparison as a way to define what I wanted this concept to do differently. The goal was to build a mark with personality, strong color direction and room for a clear story behind each element.",
+    "rationale": "For Cinemax, I wanted the identity to feel cinematic without becoming too obvious or overly literal. I looked at how a large cinema brand like Cineplex presents itself, then used that comparison as a way to define what I wanted this concept to do differently. The goal was to build a mark with personality, strong color direction and room for a clear story behind each element.",
     "process": [
       {
         "title": "Positioning",

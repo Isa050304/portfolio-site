@@ -18,7 +18,7 @@ Replace these files with the cover or mockup you want to show on the Work page:
 - vase-rose-cover.webp
 - chair-cover.webp
 - neutrogena-cover.webp
-- cinemaz-cover.webp
+- cinemax-cover.webp
 - kronos-cover.webp
 - willow-cover.webp
 
@@ -37,7 +37,7 @@ MENU DESIGN — KOKORO MAZESOBA
 - kokoro-new-menu.webp          = AFTER / new menu
 - kokoro-mockup.webp            = final menu mockup
 
-MENU DESIGN — CLASS RESTAURANT
+MENU DESIGN — RESTAURANT MENU
 - class-menu-layout.webp        = final menu layout
 - class-menu-mockup-01.webp     = mockup 01
 - class-menu-mockup-02.webp     = mockup 02
@@ -50,10 +50,10 @@ ILLUSTRATOR VECTORIZATION
 - neutrogena-raster.webp        = raster reference
 - neutrogena-vector.webp        = vector result
 
-LOGO DESIGN — CINEMAZ
-- cinemaz-logo-main.webp        = main logo
-- cinemaz-logo-elements-01.webp = elements + meaning
-- cinemaz-logo-elements-02.webp = colors / application
+LOGO DESIGN — CINEMAX
+- cinemax-logo-main.webp        = main logo
+- cinemax-logo-elements-01.webp = elements + meaning
+- cinemax-logo-elements-02.webp = colors / application
 
 LOGO DESIGN — KRONOS
 - kronos-logo-main.webp         = main logo
