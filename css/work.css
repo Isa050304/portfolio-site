@@ -100,14 +100,13 @@
 .work-card-media img {
   position: absolute;
   z-index: 1;
-  left: 30px;
-  top: 30px;
-  width: calc(100% - 60px);
-  height: calc(100% - 60px);
+  inset: 0;
+  width: 100%;
+  height: 100%;
   max-width: none;
   max-height: none;
-  object-fit: contain;
-  box-shadow: 0 16px 32px rgba(23,19,21,.16);
+  object-fit: cover;
+  box-shadow: none;
   transition: transform 450ms var(--ease);
 }
 .work-card:hover .work-card-media img { transform: translateY(-4px) rotate(-.5deg) scale(1.012); }
@@ -289,10 +288,9 @@
   }
 
   .work-card-media img {
-    left: 22px;
-    top: 22px;
-    width: calc(100% - 44px);
-    height: calc(100% - 44px);
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
   .work-card h2 { font-size: clamp(1.8rem, 9vw, 2.45rem); }
   .project-gallery-section .page-shell { width: calc(100% - 24px); }
