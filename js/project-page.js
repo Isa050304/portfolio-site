@@ -59,8 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="slide-stage">
             <img src="${src}" alt="${slide.alt}" loading="eager" decoding="async">
           </div>
+          <span class="slide-context-label">${slide.label || slide.caption || `Project image ${index + 1}`}</span>
           ${slide.placeholder ? '<span class="photo-placeholder-note photo-placeholder-note--slide">PONER FOTO AQUI</span>' : ''}
-          <span class="slide-label" aria-hidden="true">Frame 0${index + 1}</span>
+          <span class="slide-label" aria-hidden="true">Image 0${index + 1}</span>
         </figure>
       `;
     }).join("");
@@ -95,6 +96,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateSlider(0);
 
+
+
+  const comparisonSection = document.querySelector("#project-comparison-section");
+  const comparisonRoot = document.querySelector("#before-after-comparison");
+  const comparisonRange = document.querySelector("#comparison-range");
+  const comparisonBeforeImage = document.querySelector("#comparison-before-image");
+  const comparisonAfterImage = document.querySelector("#comparison-after-image");
+  const comparisonBeforeLabel = document.querySelector("#comparison-before-label");
+  const comparisonAfterLabel = document.querySelector("#comparison-after-label");
+  const comparisonNote = document.querySelector("#comparison-note");
+
+  if (comparisonSection && comparisonRoot && project.comparison?.before && project.comparison?.after) {
+    const before = project.comparison.before;
+    const after = project.comparison.after;
+    comparisonBeforeImage.src = asset(before.src);
+    comparisonBeforeImage.alt = before.alt || "Before";
+    comparisonAfterImage.src = asset(after.src);
+    comparisonAfterImage.alt = after.alt || "After";
+    comparisonBeforeLabel.textContent = before.label || "Before";
+    comparisonAfterLabel.textContent = after.label || "After";
+    if (comparisonNote) comparisonNote.textContent = project.comparison.note || "";
+    comparisonSection.hidden = false;
+
+    const updateComparison = () => {
+      const value = Number(comparisonRange?.value || 50);
+      comparisonRoot.style.setProperty("--compare-split", `${value}%`);
+    };
+    comparisonRange?.addEventListener("input", updateComparison);
+    updateComparison();
+  } else if (comparisonSection) {
+    comparisonSection.hidden = true;
+  }
+
   const linksSection = document.querySelector("#project-links-section");
   const linksList = document.querySelector("#project-links-list");
   const linksNote = document.querySelector("#project-links-note");
@@ -128,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const sample = project.codeSamples[key] || "";
         activeCodeKey = key;
         codeContent.textContent = sample;
-        codeLabel.textContent = key.toUpperCase();
+        codeLabel.textContent = project.codeSampleLabels?.[key] || key.toUpperCase();
         codeTabs.querySelectorAll("[data-code-tab]").forEach((button) => {
           button.setAttribute("aria-pressed", String(button.dataset.codeTab === key));
         });
@@ -136,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       codeTabs.innerHTML = entries.map(([key], index) => `
         <button class="code-tab-button" type="button" data-code-tab="${key}" aria-pressed="${index === 0 ? "true" : "false"}">
-          ${key.toUpperCase()}
+          ${project.codeSampleLabels?.[key] || key.toUpperCase()}
         </button>
       `).join("");
 
