@@ -76,3 +76,14 @@ This version reduces oversized vertical spacing across Work, project case studie
 - Every main page has a visible Back to top button once the visitor scrolls down.
 - Public placeholder/developer notes were removed and project rationale/process copy is now written in first person.
 - To activate the resume button, place your PDF at `assets/resume/isabel-contreras-resume.pdf`. There is also an HTML comment beside the button in `about/index.html`.
+
+## Latest polish
+
+- Project numbering is hidden from the Work grid and project galleries.
+- Placeholder reminders such as `PONER FOTO AQUI` are code comments only and are not shown on the live site.
+- Logo case studies separate comparison/rebrand, logo elements, colour palette and mockups.
+- Willow Beauty compares the previous Nail Salon Willowbrook Mall identity with the Willow Beauty rebrand and includes Problems / Solutions.
+- Cinemax compares against Cineplex and includes Problems / Solutions.
+- Process-card headlines are aligned consistently across rows, including Home.
+- The About illustration now uses `assets/illustrations/yarn-butterfly.svg`.
+- Numode Delivery includes a live-site button pointing to `https://numode.ca`.

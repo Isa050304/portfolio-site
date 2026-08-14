@@ -1,7 +1,6 @@
 window.PORTFOLIO_PROJECTS = [
   {
     "id": "football-connects",
-    "number": "01",
     "title": "Football Connects What the World Divides",
     "category": "Poster Design",
     "categoryKey": "poster",
@@ -50,7 +49,6 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "nexa-booklet",
-    "number": "02",
     "title": "Giving Nexa a Personality",
     "category": "Editorial + Typography",
     "categoryKey": "editorial",
@@ -99,7 +97,6 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "movie-poster",
-    "number": "03",
     "title": "Building a Story Before the First Scene",
     "category": "Poster Design",
     "categoryKey": "poster",
@@ -148,7 +145,6 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "numode-delivery",
-    "number": "04",
     "title": "Numode Delivery Website Redesign",
     "category": "Web Design",
     "categoryKey": "web",
@@ -162,10 +158,20 @@ window.PORTFOLIO_PROJECTS = [
     "format": "WordPress Website",
     "summary": "A two-month website rebuild for Numode Delivery, developed on a subdomain before migration and still maintained after launch.",
     "note": "Built in WordPress and Elementor with custom HTML/CSS sections and ongoing maintenance.",
+    "links": [
+      {
+        "label": "Visit Numode Delivery ↗",
+        "url": "https://numode.ca",
+        "style": "primary"
+      }
+    ],
+    "linksNote": "Live Numode Delivery website.",
+    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
     "cover": "assets/projects/web/numode-cover.webp",
     "coverPlaceholder": true,
     "slides": [
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/numode-old-site-01.webp",
         "alt": "Placeholder for the previous Numode Delivery homepage",
         "caption": "Before — old homepage and content structure",
@@ -174,6 +180,7 @@ window.PORTFOLIO_PROJECTS = [
         "placeholder": true
       },
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/numode-old-site-02.webp",
         "alt": "Placeholder showing responsive, contrast and visual consistency issues on the previous Numode Delivery website",
         "caption": "Before — responsive, contrast and consistency issues",
@@ -182,6 +189,7 @@ window.PORTFOLIO_PROJECTS = [
         "placeholder": true
       },
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/numode-new-site-01.webp",
         "alt": "Placeholder for the redesigned Numode Delivery homepage",
         "caption": "After — redesigned homepage",
@@ -190,6 +198,7 @@ window.PORTFOLIO_PROJECTS = [
         "placeholder": true
       },
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/numode-new-site-02.webp",
         "alt": "Placeholder for another view of the redesigned Numode Delivery website",
         "caption": "After — responsive and updated site view",
@@ -215,11 +224,13 @@ window.PORTFOLIO_PROJECTS = [
     ],
     "comparison": {
       "before": {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/numode-old-site-01.webp",
         "label": "BEFORE — OLD WEBSITE",
         "alt": "Previous Numode Delivery website"
       },
       "after": {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/numode-new-site-01.webp",
         "label": "AFTER — REDESIGNED WEBSITE",
         "alt": "Redesigned Numode Delivery website"
@@ -229,7 +240,6 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "transylvanian-traditions",
-    "number": "05",
     "title": "Transylvanian Traditions Bakery Website",
     "category": "Web Design",
     "categoryKey": "web",
@@ -243,10 +253,12 @@ window.PORTFOLIO_PROJECTS = [
     "format": "Website",
     "summary": "A BCIT website project for Transylvanian Traditions, where I reworked the bakery experience to feel warmer, clearer and easier to browse.",
     "note": "Includes before and after slides, plus a code sample switcher for HTML and CSS.",
+    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
     "cover": "assets/projects/web/transylvanian-cover.webp",
     "coverPlaceholder": true,
     "slides": [
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/transylvanian-before.webp",
         "alt": "Placeholder for the previous Transylvanian Traditions website",
         "caption": "Before — original site",
@@ -255,6 +267,7 @@ window.PORTFOLIO_PROJECTS = [
         "label": "BEFORE — ORIGINAL WEBSITE"
       },
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/transylvanian-after.webp",
         "alt": "Placeholder for the redesigned Transylvanian Traditions website",
         "caption": "After — redesigned site",
@@ -297,11 +310,13 @@ window.PORTFOLIO_PROJECTS = [
     ],
     "comparison": {
       "before": {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/transylvanian-before.webp",
         "label": "BEFORE — ORIGINAL WEBSITE",
         "alt": "Original Transylvanian Traditions website"
       },
       "after": {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/transylvanian-after.webp",
         "label": "AFTER — REDESIGNED WEBSITE",
         "alt": "Redesigned Transylvanian Traditions website"
@@ -311,7 +326,6 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "kokoro-mazesoba-menu",
-    "number": "06",
     "title": "Kokoro Mazesoba Menu Refresh",
     "category": "Menu Design",
     "categoryKey": "menus",
@@ -325,10 +339,12 @@ window.PORTFOLIO_PROJECTS = [
     "format": "Printed Menu",
     "summary": "A menu redesign for Kokoro Mazesoba that compares the older layout with a cleaner, more readable new direction created in InDesign.",
     "note": "Includes space for an old menu, a redesigned menu and a mockup.",
+    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
     "cover": "assets/projects/web/kokoro-cover.webp",
     "coverPlaceholder": true,
     "slides": [
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/kokoro-old-menu.webp",
         "alt": "Placeholder for the previous Kokoro Mazesoba menu",
         "caption": "Before — old menu",
@@ -337,6 +353,7 @@ window.PORTFOLIO_PROJECTS = [
         "label": "BEFORE — OLD MENU"
       },
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/kokoro-new-menu.webp",
         "alt": "Placeholder for the redesigned Kokoro Mazesoba menu",
         "caption": "After — redesigned menu",
@@ -345,6 +362,7 @@ window.PORTFOLIO_PROJECTS = [
         "label": "AFTER — NEW MENU"
       },
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/kokoro-mockup.webp",
         "alt": "Placeholder for a Kokoro Mazesoba menu mockup",
         "caption": "Menu mockup",
@@ -370,11 +388,13 @@ window.PORTFOLIO_PROJECTS = [
     ],
     "comparison": {
       "before": {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/kokoro-old-menu.webp",
         "label": "BEFORE — OLD MENU",
         "alt": "Previous Kokoro Mazesoba menu"
       },
       "after": {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/kokoro-new-menu.webp",
         "label": "AFTER — REDESIGNED MENU",
         "alt": "Redesigned Kokoro Mazesoba menu"
@@ -383,8 +403,7 @@ window.PORTFOLIO_PROJECTS = [
     }
   },
   {
-    "id": "class-restaurant-menu",
-    "number": "07",
+    "id": "restaurant-menu-concept",
     "title": "Restaurant Menu Concept",
     "category": "Menu Design",
     "categoryKey": "menus",
@@ -396,12 +415,14 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Menu Design",
     "format": "Menu System",
-    "summary": "A menu concept for a multi-item restaurant, designed to feel organized, inviting and flexible across multiple sections.",
-    "note": "Includes menu layouts and mockups.",
+    "summary": "A menu concept for a varied restaurant, designed in InDesign to keep a wide range of dishes organised, easy to scan and visually consistent.",
+    "note": "Includes the menu layout and separate mockups for presentation.",
+    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
     "cover": "assets/projects/web/class-menu-cover.webp",
     "coverPlaceholder": true,
     "slides": [
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/class-menu-layout.webp",
         "alt": "Placeholder for the main restaurant menu layout",
         "caption": "Menu layout",
@@ -410,6 +431,7 @@ window.PORTFOLIO_PROJECTS = [
         "label": "FINAL MENU LAYOUT"
       },
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/class-menu-mockup-01.webp",
         "alt": "Placeholder for the first restaurant menu mockup",
         "caption": "Mockup 01",
@@ -418,6 +440,7 @@ window.PORTFOLIO_PROJECTS = [
         "label": "MOCKUP 01"
       },
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/class-menu-mockup-02.webp",
         "alt": "Placeholder for the second restaurant menu mockup",
         "caption": "Mockup 02",
@@ -426,7 +449,7 @@ window.PORTFOLIO_PROJECTS = [
         "label": "MOCKUP 02"
       }
     ],
-    "rationale": "This project was more about creating a complete menu system from scratch. Because the restaurant concept covered a wider variety of items, I focused on making the structure feel clear and easy to move through. I wanted the final design to feel clean and approachable without becoming generic.",
+    "rationale": "This project was about creating a complete menu system from scratch. Because the restaurant concept covered a wider variety of dishes, I focused on making the structure feel clear and easy to move through. I wanted the final design to feel clean and approachable without becoming generic.",
     "process": [
       {
         "title": "Structure",
@@ -444,7 +467,6 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "vase-rose-vectorization",
-    "number": "08",
     "title": "Vase with a Rose",
     "category": "Illustrator Vectorization",
     "categoryKey": "illustrator",
@@ -458,10 +480,12 @@ window.PORTFOLIO_PROJECTS = [
     "format": "Vector Artwork",
     "summary": "A vector recreation of a raster still life showing a vase with a rose, focused on shape, line control and clean digital drawing.",
     "note": "Shows the original raster reference and the final vector result.",
+    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
     "cover": "assets/projects/web/vase-rose-cover.webp",
     "coverPlaceholder": true,
     "slides": [
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/vase-rose-raster.webp",
         "alt": "Placeholder for the raster reference of the vase with a rose",
         "caption": "Raster reference",
@@ -470,6 +494,7 @@ window.PORTFOLIO_PROJECTS = [
         "label": "RASTER REFERENCE"
       },
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/vase-rose-vector.webp",
         "alt": "Placeholder for the vectorized vase with a rose",
         "caption": "Vector result",
@@ -496,7 +521,6 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "chair-vectorization",
-    "number": "09",
     "title": "Chair Vectorization Study",
     "category": "Illustrator Vectorization",
     "categoryKey": "illustrator",
@@ -510,10 +534,12 @@ window.PORTFOLIO_PROJECTS = [
     "format": "Vector Artwork",
     "summary": "A vector study of a chair, translating a raster image into a cleaner illustration with attention to proportion, edge quality and form.",
     "note": "Shows the raster source and vector redraw.",
+    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
     "cover": "assets/projects/web/chair-cover.webp",
     "coverPlaceholder": true,
     "slides": [
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/chair-raster.webp",
         "alt": "Placeholder for the raster reference of the chair",
         "caption": "Raster reference",
@@ -522,6 +548,7 @@ window.PORTFOLIO_PROJECTS = [
         "label": "RASTER REFERENCE"
       },
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/chair-vector.webp",
         "alt": "Placeholder for the vectorized chair",
         "caption": "Vector result",
@@ -548,7 +575,6 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "neutrogena-packaging-vectorization",
-    "number": "10",
     "title": "Neutrogena Cream Packaging",
     "category": "Illustrator Vectorization",
     "categoryKey": "illustrator",
@@ -562,10 +588,12 @@ window.PORTFOLIO_PROJECTS = [
     "format": "Vector Artwork",
     "summary": "A packaging vectorization exercise focused on recreating the structure and visual details of a Neutrogena cream package from a raster reference.",
     "note": "Shows the source image and the vector version.",
+    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
     "cover": "assets/projects/web/neutrogena-cover.webp",
     "coverPlaceholder": true,
     "slides": [
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/neutrogena-raster.webp",
         "alt": "Placeholder for the raster reference of the Neutrogena packaging",
         "caption": "Raster reference",
@@ -574,6 +602,7 @@ window.PORTFOLIO_PROJECTS = [
         "label": "RASTER REFERENCE"
       },
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/neutrogena-vector.webp",
         "alt": "Placeholder for the vectorized Neutrogena packaging",
         "caption": "Vector result",
@@ -600,7 +629,6 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "cinemax-brand-identity",
-    "number": "11",
     "title": "Cinemax Logo Concept",
     "category": "Logo Design",
     "categoryKey": "logos",
@@ -612,34 +640,56 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Brand Identity",
     "format": "Logo System",
-    "summary": "A cinema brand identity concept for Cinemax, developed with space to compare positioning, color choices and the meaning behind each visual element.",
-    "note": "Includes placeholders for the logo, breakdown elements and supporting visuals.",
+    "summary": "A cinema identity concept for Cinemax, developed through a direct comparison with Cineplex and a clearer system for the logo, visual elements, colour palette and brand applications.",
+    "note": "The case study separates the competitor comparison, logo meaning, colour palette and mockups so each part of the identity can be read clearly.",
+    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
     "cover": "assets/projects/web/cinemax-cover.webp",
     "coverPlaceholder": true,
     "slides": [
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/cinemax-logo-main.webp",
         "alt": "Placeholder for the main Cinemax logo",
-        "caption": "Main logo",
+        "caption": "Cinemax — main logo",
         "fit": "contain",
         "placeholder": true,
-        "label": "MAIN LOGO"
+        "label": "CINEMAX — MAIN LOGO"
       },
       {
-        "src": "assets/projects/web/cinemax-logo-elements-01.webp",
-        "alt": "Placeholder for a Cinemax logo elements breakdown",
-        "caption": "Elements + meaning",
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+        "src": "assets/projects/web/cinemax-cineplex-comparison.webp",
+        "alt": "Placeholder for a Cinemax and Cineplex brand comparison",
+        "caption": "Brand comparison — Cinemax and Cineplex",
         "fit": "contain",
         "placeholder": true,
-        "label": "ELEMENTS + MEANING"
+        "label": "BRAND COMPARISON — CINEMAX / CINEPLEX"
       },
       {
-        "src": "assets/projects/web/cinemax-logo-elements-02.webp",
-        "alt": "Placeholder for Cinemax brand colors or applications",
-        "caption": "Color palette + application",
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+        "src": "assets/projects/web/cinemax-logo-elements.webp",
+        "alt": "Placeholder explaining the visual elements and meaning of the Cinemax logo",
+        "caption": "Logo elements and meaning",
         "fit": "contain",
         "placeholder": true,
-        "label": "COLORS + APPLICATION"
+        "label": "LOGO ELEMENTS + MEANING"
+      },
+      {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+        "src": "assets/projects/web/cinemax-colour-palette.webp",
+        "alt": "Placeholder for the Cinemax colour palette",
+        "caption": "Cinemax colour palette",
+        "fit": "contain",
+        "placeholder": true,
+        "label": "COLOUR PALETTE"
+      },
+      {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+        "src": "assets/projects/web/cinemax-mockups.webp",
+        "alt": "Placeholder for Cinemax brand mockups",
+        "caption": "Cinemax brand mockups",
+        "fit": "contain",
+        "placeholder": true,
+        "label": "BRAND MOCKUPS"
       }
     ],
     "rationale": "For Cinemax, I wanted the identity to feel cinematic without becoming too obvious or overly literal. I looked at how a large cinema brand like Cineplex presents itself, then used that comparison as a way to define what I wanted this concept to do differently. The goal was to build a mark with personality, strong color direction and room for a clear story behind each element.",
@@ -656,11 +706,23 @@ window.PORTFOLIO_PROJECTS = [
         "title": "Breakdown",
         "body": "I also made room in the case study for the meaning behind the logo elements, supporting colors and how the identity could be shown in context. That way the project reads as a system, not just a single mark."
       }
-    ]
+    ],
+    "problemSolution": {
+      "intro": "I used the comparison with Cineplex as a practical way to define where Cinemax needed to feel different, not as something to imitate.",
+      "problems": [
+        "A cinema logo can become generic very quickly when it relies on familiar film or screen symbols.",
+        "The identity needed enough visual distance from Cineplex to feel like its own brand.",
+        "The mark also had to stay clear across small digital uses and larger environmental applications."
+      ],
+      "solutions": [
+        "I built the identity around a more distinct logo relationship instead of leaning on obvious cinema clichés.",
+        "I separated the colour system and visual rules so the brand has a recognisable tone of its own.",
+        "I planned the identity as a flexible system, then tested it through mockups rather than treating the logo as a standalone piece."
+      ]
+    }
   },
   {
     "id": "kronos-brand-identity",
-    "number": "12",
     "title": "Kronos Natural Energy Drinks",
     "category": "Logo Design",
     "categoryKey": "logos",
@@ -673,33 +735,46 @@ window.PORTFOLIO_PROJECTS = [
     "role": "Brand Identity",
     "format": "Logo System",
     "summary": "A logo concept for Kronos, an energy drink brand built around natural ingredients, with room to show the mark, its visual logic and the color system.",
-    "note": "Includes placeholders for logo breakdowns, colors and presentation pieces.",
+    "note": "The logo breakdown, colour palette and mockups are shown separately so the identity system is easier to follow.",
+    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
     "cover": "assets/projects/web/kronos-cover.webp",
     "coverPlaceholder": true,
     "slides": [
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/kronos-logo-main.webp",
         "alt": "Placeholder for the main Kronos logo",
-        "caption": "Main logo",
+        "caption": "Kronos — main logo",
         "fit": "contain",
         "placeholder": true,
-        "label": "MAIN LOGO"
+        "label": "KRONOS — MAIN LOGO"
       },
       {
-        "src": "assets/projects/web/kronos-logo-elements-01.webp",
-        "alt": "Placeholder for a Kronos logo breakdown",
-        "caption": "Elements + meaning",
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+        "src": "assets/projects/web/kronos-logo-elements.webp",
+        "alt": "Placeholder explaining the Kronos logo elements and meaning",
+        "caption": "Logo elements and meaning",
         "fit": "contain",
         "placeholder": true,
-        "label": "ELEMENTS + MEANING"
+        "label": "LOGO ELEMENTS + MEANING"
       },
       {
-        "src": "assets/projects/web/kronos-logo-elements-02.webp",
-        "alt": "Placeholder for Kronos colors or mockups",
-        "caption": "Colors + mockup",
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+        "src": "assets/projects/web/kronos-colour-palette.webp",
+        "alt": "Placeholder for the Kronos colour palette",
+        "caption": "Kronos colour palette",
         "fit": "contain",
         "placeholder": true,
-        "label": "COLORS + MOCKUP"
+        "label": "COLOUR PALETTE"
+      },
+      {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+        "src": "assets/projects/web/kronos-mockups.webp",
+        "alt": "Placeholder for Kronos energy drink brand mockups",
+        "caption": "Kronos brand mockups",
+        "fit": "contain",
+        "placeholder": true,
+        "label": "BRAND MOCKUPS"
       }
     ],
     "rationale": "Kronos was imagined as an energy drink brand that feels powerful, but not artificial. Because the concept is built around natural ingredients, I wanted the identity to balance strength with something cleaner and more grounded. The visual system needed to feel bold enough for the category while still reflecting that healthier positioning.",
@@ -720,8 +795,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "willow-beauty-brand-identity",
-    "number": "13",
-    "title": "Willow Beauty Brand Direction",
+    "title": "Willow Beauty Rebrand",
     "category": "Logo Design",
     "categoryKey": "logos",
     "tags": [
@@ -732,50 +806,100 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Brand Identity",
     "format": "Logo System",
-    "summary": "A beauty brand identity project for Willow Beauty, with space to compare reference brands, explain the logo system and show mockups.",
-    "note": "Built with room for brand comparison, logo rationale and mockup presentation.",
+    "summary": "A beauty rebrand that moves the existing Nail Salon Willowbrook Mall identity toward Willow Beauty, with a clearer name, visual system and more polished brand direction.",
+    "note": "The case study compares the previous Nail Salon Willowbrook Mall identity with the Willow Beauty rebrand, then separates the logo logic, colour palette and mockups.",
+    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
     "cover": "assets/projects/web/willow-cover.webp",
     "coverPlaceholder": true,
     "slides": [
       {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+        "src": "assets/projects/web/willow-old-brand.webp",
+        "alt": "Placeholder for the previous Nail Salon Willowbrook Mall identity",
+        "caption": "Before — Nail Salon Willowbrook Mall",
+        "fit": "contain",
+        "placeholder": true,
+        "label": "BEFORE — NAIL SALON WILLOWBROOK MALL"
+      },
+      {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/willow-logo-main.webp",
-        "alt": "Placeholder for the main Willow Beauty logo",
-        "caption": "Main logo",
+        "alt": "Placeholder for the Willow Beauty rebrand logo",
+        "caption": "After — Willow Beauty logo",
         "fit": "contain",
         "placeholder": true,
-        "label": "MAIN LOGO"
+        "label": "AFTER — WILLOW BEAUTY"
       },
       {
-        "src": "assets/projects/web/willow-logo-elements-01.webp",
-        "alt": "Placeholder for a Willow Beauty brand comparison or elements breakdown",
-        "caption": "Comparison + elements",
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+        "src": "assets/projects/web/willow-logo-elements.webp",
+        "alt": "Placeholder explaining the visual elements and meaning of the Willow Beauty logo",
+        "caption": "Logo elements and meaning",
         "fit": "contain",
         "placeholder": true,
-        "label": "BRAND COMPARISON + ELEMENTS"
+        "label": "LOGO ELEMENTS + MEANING"
       },
       {
-        "src": "assets/projects/web/willow-logo-elements-02.webp",
-        "alt": "Placeholder for Willow Beauty mockups or color directions",
-        "caption": "Mockup + color direction",
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+        "src": "assets/projects/web/willow-colour-palette.webp",
+        "alt": "Placeholder for the Willow Beauty colour palette",
+        "caption": "Willow Beauty colour palette",
         "fit": "contain",
         "placeholder": true,
-        "label": "MOCKUPS + COLOR DIRECTION"
+        "label": "COLOUR PALETTE"
+      },
+      {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+        "src": "assets/projects/web/willow-mockups.webp",
+        "alt": "Placeholder for Willow Beauty brand mockups",
+        "caption": "Willow Beauty mockups",
+        "fit": "contain",
+        "placeholder": true,
+        "label": "BRAND MOCKUPS"
       }
     ],
-    "rationale": "For Willow Beauty, I wanted the identity to feel soft and polished without becoming generic. I also wanted space in the case study to compare it with an existing beauty reference point, like Nail Studio Willowbrook Mall, so the thinking behind the direction feels more grounded. The goal was to build a brand that feels elegant, contemporary and flexible enough to live across different touchpoints.",
+    "rationale": "For Willow Beauty, I wanted the rebrand to feel softer, more polished and easier to grow beyond a location-based salon identity. I used Nail Salon Willowbrook Mall as the clear before point, then built Willow Beauty as a more cohesive direction with a stronger name, cleaner hierarchy and a visual system that can move across signage, social content and salon touchpoints. The goal was not to make it feel overly luxurious; I wanted it to stay approachable while feeling more intentional and memorable.",
     "process": [
       {
-        "title": "Reference Review",
-        "body": "I began by looking at other beauty and nail brands to understand the visual language of the category and decide what I wanted Willow Beauty to do differently."
+        "title": "Brand Review",
+        "body": "I started with the existing Nail Salon Willowbrook Mall identity and looked at where the brand felt too descriptive, inconsistent or tied to a single location rather than a broader beauty experience."
       },
       {
-        "title": "Identity Development",
-        "body": "I explored logo directions, type pairings and color choices that felt refined and approachable. I wanted the identity to feel soft but still distinctive."
+        "title": "Rebrand Direction",
+        "body": "I developed Willow Beauty as a cleaner and more flexible direction, then explored the logo, typography and visual elements around a softer but still recognisable personality."
       },
       {
-        "title": "Presentation",
-        "body": "I left space in the case study for comparison images, logo breakdowns and mockups so the project can be expanded easily once the final visuals are ready."
+        "title": "System + Applications",
+        "body": "I separated the colour palette from the mockups so the system can be understood first, then shown in context across the kinds of touchpoints a salon brand actually needs."
       }
-    ]
+    ],
+    "comparison": {
+      "before": {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+        "src": "assets/projects/web/willow-old-brand.webp",
+        "label": "BEFORE — NAIL SALON WILLOWBROOK MALL",
+        "alt": "Previous Nail Salon Willowbrook Mall identity"
+      },
+      "after": {
+        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+        "src": "assets/projects/web/willow-logo-main.webp",
+        "label": "AFTER — WILLOW BEAUTY",
+        "alt": "Willow Beauty rebrand identity"
+      },
+      "note": "Drag the divider to compare the previous identity with the Willow Beauty rebrand."
+    },
+    "problemSolution": {
+      "intro": "The rebrand started by identifying what made the existing identity harder to extend into a stronger beauty brand.",
+      "problems": [
+        "The existing name and presentation felt very descriptive and heavily tied to the mall location.",
+        "The visual system did not have enough consistency to feel like one recognisable brand across different touchpoints.",
+        "The identity needed a softer, more current tone without losing the approachable feeling of a neighbourhood salon."
+      ],
+      "solutions": [
+        "I shifted the brand toward Willow Beauty so the name can support a broader and more memorable beauty identity.",
+        "I built a clearer logo, typography and colour system that can stay consistent across print and digital applications.",
+        "I kept the direction refined but approachable, then used mockups to test how the rebrand could live in real salon contexts."
+      ]
+    }
   }
 ];

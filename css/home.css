@@ -260,3 +260,21 @@
     max-width: 92%;
   }
 }
+
+/* Keep card headlines aligned across each row instead of letting paragraph length move them. */
+.discipline-card h3 {
+  margin: 48px 0 10px;
+  min-height: 2.55em;
+}
+
+.process-card h3 {
+  margin: 42px 0 8px;
+  min-height: 1.2em;
+}
+
+@media (max-width: 620px) {
+  .discipline-card h3,
+  .process-card h3 {
+    min-height: 0;
+  }
+}

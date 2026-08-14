@@ -59,9 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="slide-stage">
             <img src="${src}" alt="${slide.alt}" loading="eager" decoding="async">
           </div>
-          <span class="slide-context-label">${slide.label || slide.caption || `Project image ${index + 1}`}</span>
-          ${slide.placeholder ? '<span class="photo-placeholder-note photo-placeholder-note--slide">PONER FOTO AQUI</span>' : ''}
-          <span class="slide-label" aria-hidden="true">Image 0${index + 1}</span>
+          <span class="slide-context-label">${slide.label || slide.caption || "Project image"}</span>
         </figure>
       `;
     }).join("");
@@ -78,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     dots?.querySelectorAll("[data-slide]").forEach((dot, index) => {
       dot.setAttribute("aria-current", String(index === activeIndex));
     });
-    if (caption) caption.textContent = `${activeIndex + 1} / ${count} · ${project.slides[activeIndex].caption}`;
+    if (caption) caption.textContent = project.slides[activeIndex].caption;
   };
 
   document.querySelector("[data-prev]")?.addEventListener("click", () => updateSlider(activeIndex - 1));
@@ -127,6 +125,20 @@ document.addEventListener("DOMContentLoaded", () => {
     updateComparison();
   } else if (comparisonSection) {
     comparisonSection.hidden = true;
+  }
+
+  const problemSolutionSection = document.querySelector("#problem-solution-section");
+  const problemSolutionIntro = document.querySelector("#problem-solution-intro");
+  const problemsList = document.querySelector("#problems-list");
+  const solutionsList = document.querySelector("#solutions-list");
+
+  if (problemSolutionSection && problemsList && solutionsList && project.problemSolution) {
+    if (problemSolutionIntro) problemSolutionIntro.textContent = project.problemSolution.intro || "";
+    problemsList.innerHTML = (project.problemSolution.problems || []).map((item) => `<li>${item}</li>`).join("");
+    solutionsList.innerHTML = (project.problemSolution.solutions || []).map((item) => `<li>${item}</li>`).join("");
+    problemSolutionSection.hidden = false;
+  } else if (problemSolutionSection) {
+    problemSolutionSection.hidden = true;
   }
 
   const linksSection = document.querySelector("#project-links-section");

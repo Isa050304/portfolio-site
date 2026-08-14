@@ -3,8 +3,8 @@ PROJECT IMAGES — WHERE TO REPLACE THEM
 All project images live in:
 assets/projects/web/
 
-IMPORTANT: COVER IMAGES ARE NOW SEPARATE FROM CASE-STUDY IMAGES.
-That means you can make a dedicated mockup/cover for the Work page without changing the images inside the project.
+IMPORTANT: COVER IMAGES ARE SEPARATE FROM CASE-STUDY IMAGES.
+You can make a dedicated mockup/cover for the Work page without changing the images shown inside the project.
 
 COVERS / WORK PAGE
 Replace these files with the cover or mockup you want to show on the Work page:
@@ -27,6 +27,7 @@ WEB DESIGN — NUMODE DELIVERY
 - numode-old-site-02.webp       = BEFORE / old responsive, contrast or consistency problems
 - numode-new-site-01.webp       = AFTER / redesigned homepage
 - numode-new-site-02.webp       = AFTER / another new-site or responsive view
+Live-site button URL is in js/project-data.js under id: "numode-delivery".
 
 WEB DESIGN — TRANSYLVANIAN TRADITIONS
 - transylvanian-before.webp     = BEFORE / original site
@@ -51,19 +52,24 @@ ILLUSTRATOR VECTORIZATION
 - neutrogena-vector.webp        = vector result
 
 LOGO DESIGN — CINEMAX
-- cinemax-logo-main.webp        = main logo
-- cinemax-logo-elements-01.webp = elements + meaning
-- cinemax-logo-elements-02.webp = colors / application
+- cinemax-logo-main.webp                = main Cinemax logo
+- cinemax-cineplex-comparison.webp      = Cinemax / Cineplex comparison
+- cinemax-logo-elements.webp            = logo elements + meaning
+- cinemax-colour-palette.webp           = colour palette
+- cinemax-mockups.webp                  = brand mockups
 
 LOGO DESIGN — KRONOS
-- kronos-logo-main.webp         = main logo
-- kronos-logo-elements-01.webp  = elements + meaning
-- kronos-logo-elements-02.webp  = colors / mockup
+- kronos-logo-main.webp                 = main logo
+- kronos-logo-elements.webp             = logo elements + meaning
+- kronos-colour-palette.webp            = colour palette
+- kronos-mockups.webp                   = brand / packaging mockups
 
 LOGO DESIGN — WILLOW BEAUTY
-- willow-logo-main.webp         = main logo
-- willow-logo-elements-01.webp  = comparison + elements
-- willow-logo-elements-02.webp  = mockups + color direction
+- willow-old-brand.webp                 = BEFORE / Nail Salon Willowbrook Mall
+- willow-logo-main.webp                 = AFTER / Willow Beauty rebrand
+- willow-logo-elements.webp             = logo elements + meaning
+- willow-colour-palette.webp            = colour palette
+- willow-mockups.webp                   = Willow Beauty mockups
 
 TRANSYLVANIAN PROJECT LINK
 Open:
@@ -72,21 +78,13 @@ Search for:
 transylvanian-traditions
 Then replace the temporary GitHub URL inside the links array.
 
-TRANSYLVANIAN HTML / CSS PREVIEW
+TRANSYLVANIAN HOME PAGE HTML / CSS PREVIEW
 Open:
 js/project-data.js
 Search for:
 codeSamples
-Replace the HTML and CSS strings with your real project code.
+The portfolio intentionally shows only a representative Home page HTML and Home page CSS sample. Replace those strings with your real Home page code when ready.
 
-PLACEHOLDER BADGES
-Any image that still shows "PONER FOTO AQUI" is still marked as a placeholder in js/project-data.js.
-Once the real image is in place, change that image object's:
-placeholder: true
-into:
-placeholder: false
-
-For a Work-page cover, change:
-coverPlaceholder: true
-into:
-coverPlaceholder: false
+PLACEHOLDER NOTES
+"PONER FOTO AQUI" is now kept only as a code comment in js/project-data.js. It is not displayed on the website.
+Replace the referenced .webp file while keeping the same filename and you do not need to change the layout code.

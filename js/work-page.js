@@ -24,13 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const cover = asset(project.cover);
     return `
       <article class="work-card reveal" data-category="${project.categoryKey}">
-        <a class="work-card-media" href="${projectHref(project.id)}" aria-label="View ${project.title}" style="--cover-image: url('${cover}')">
+        <a class="work-card-media" href="${projectHref(project.id)}" aria-label="View ${project.title}">
           <img src="${cover}" alt="${project.title}" loading="lazy" decoding="async">
-          ${project.coverPlaceholder ? '<span class="photo-placeholder-note">PONER FOTO AQUI</span>' : ''}
-          <span class="media-number" aria-hidden="true">${project.number}</span>
         </a>
         <div class="work-card-copy">
-          <span class="project-counter">Thread ${project.number}</span>
           <h2>${project.title}</h2>
           <ul class="project-tags" aria-label="Project tags">
             ${project.tags.map((tag) => `<li>${tag}</li>`).join("")}
