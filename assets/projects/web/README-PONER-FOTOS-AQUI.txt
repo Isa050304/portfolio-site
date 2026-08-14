@@ -88,3 +88,16 @@ The portfolio intentionally shows only a representative Home page HTML and Home 
 PLACEHOLDER NOTES
 "PONER FOTO AQUI" is now kept only as a code comment in js/project-data.js. It is not displayed on the website.
 Replace the referenced .webp file while keeping the same filename and you do not need to change the layout code.
+
+NUMODE DELIVERY STAFF PORTAL
+Replace these demo placeholders with screenshots that contain TEST / FAKE data only:
+- numode-portal-cover.webp -> portfolio cover/mockup for the staff portal
+- numode-portal-login.webp -> sign-in + role routing screen
+- numode-portal-dispatcher.webp -> dispatcher dashboard
+- numode-portal-logistics.webp -> logistics dashboard
+- numode-portal-driver.webp -> driver route/hours dashboard
+- numode-portal-quote-email.webp -> automated quote/email workflow
+- numode-portal-payment-link.webp -> sanitized client payment workflow (never show real card data)
+- numode-portal-documents.webp -> BOL + run sheet tools
+
+For public screenshots, remove or replace real names, emails, phone numbers, addresses, order IDs, quote amounts if confidential, BOL numbers, routes, employee hours, passwords, tokens, URLs to private tools, and any payment-card information.

@@ -239,6 +239,114 @@ window.PORTFOLIO_PROJECTS = [
     }
   },
   {
+    "id": "numode-staff-portal",
+    "title": "Numode Delivery Staff Portal",
+    "category": "Web Design",
+    "categoryKey": "web",
+    "tags": [
+      "Internal Tool",
+      "Workflow Automation",
+      "Custom Web Development"
+    ],
+    "year": "2026 · Ongoing",
+    "role": "UX + Development",
+    "format": "Internal Staff Portal",
+    "summary": "A role-based internal portal built for Numode Delivery to move everyday operations out of scattered paper workflows and into one clearer digital system.",
+    "note": "Private internal tool. Portfolio images should use demo/test data only. AI tools were used as development support for programming, debugging and implementation guidance.",
+    // PONER FOTO AQUI: replace this cover mockup in assets/projects/web/ while keeping the same filename.
+    "cover": "assets/projects/web/numode-portal-cover.webp",
+    "slides": [
+      {
+        // PONER FOTO AQUI: show the portal sign-in / role-routing screen using demo accounts only.
+        "src": "assets/projects/web/numode-portal-login.webp",
+        "alt": "Demo view of the Numode Delivery staff portal sign-in screen",
+        "caption": "Login and role routing",
+        "label": "LOGIN + ROLE ROUTING",
+        "fit": "contain"
+      },
+      {
+        // PONER FOTO AQUI: show the dispatcher dashboard with fake orders and customer names.
+        "src": "assets/projects/web/numode-portal-dispatcher.webp",
+        "alt": "Demo dispatcher dashboard for the Numode Delivery staff portal",
+        "caption": "Dispatcher workspace",
+        "label": "DISPATCHER DASHBOARD",
+        "fit": "contain"
+      },
+      {
+        // PONER FOTO AQUI: show the logistics dashboard with test BOL and run sheet records.
+        "src": "assets/projects/web/numode-portal-logistics.webp",
+        "alt": "Demo logistics dashboard for BOL and run sheet management",
+        "caption": "Logistics workspace",
+        "label": "LOGISTICS DASHBOARD",
+        "fit": "contain"
+      },
+      {
+        // PONER FOTO AQUI: show the driver route / hours screen with fictional route data.
+        "src": "assets/projects/web/numode-portal-driver.webp",
+        "alt": "Demo driver dashboard for entering daily routes and hours",
+        "caption": "Driver routes and hours",
+        "label": "DRIVER DASHBOARD",
+        "fit": "contain"
+      },
+      {
+        // PONER FOTO AQUI: show an automated quote/email preview using fake customer information.
+        "src": "assets/projects/web/numode-portal-quote-email.webp",
+        "alt": "Demo automated quote and customer email workflow",
+        "caption": "Quote and email workflow",
+        "label": "QUOTE + EMAIL AUTOMATION",
+        "fit": "contain"
+      },
+      {
+        // PONER FOTO AQUI: show only a sanitized client payment-link screen. Never include real card data.
+        "src": "assets/projects/web/numode-portal-payment-link.webp",
+        "alt": "Sanitized demo view of the customer payment information workflow",
+        "caption": "Customer payment workflow",
+        "label": "CLIENT PAYMENT WORKFLOW",
+        "fit": "contain"
+      },
+      {
+        // PONER FOTO AQUI: show BOL / run sheet tools with fake document numbers and route information.
+        "src": "assets/projects/web/numode-portal-documents.webp",
+        "alt": "Demo view of BOL and run sheet tools in the staff portal",
+        "caption": "BOL and run sheet management",
+        "label": "BOL + RUN SHEET TOOLS",
+        "fit": "contain"
+      }
+    ],
+    "rationale": "I built this portal as a separate internal project for Numode Delivery because several daily workflows were still spread across paper, repetitive emails and manual handoffs. The portal sends each staff member to the tools that match their role after sign-in. Dispatchers can organize orders, prepare quotes, send consistent customer messages and track paid versus unpaid work. Logistics can review, edit and download BOLs and run sheets, while drivers can enter their daily routes and hours so payroll information is easier to process. I also created a customer-facing payment-information step connected to the workflow. The goal was not to make operations more complicated; it was to reduce paper, remove repeated steps and make the experience easier for staff and customers. I used AI tools as a development assistant for programming support, debugging and implementation guidance, while I defined the workflows, tested the system and adapted it to the team's actual needs.",
+    "problemSolution": {
+      "intro": "The portal came from small operational problems that were adding up across dispatch, logistics, drivers and customer communication.",
+      "problems": [
+        "Paper-heavy order, BOL and run sheet workflows.",
+        "Different staff roles needed different information, but the process was fragmented.",
+        "Quotes and customer messages required repetitive manual writing.",
+        "Paid and unpaid orders were harder to track in one place.",
+        "Driver route and hour information needed a clearer path into payroll processing."
+      ],
+      "solutions": [
+        "Role-based sign-in that routes Dispatcher, Logistics and Driver users to the right workspace.",
+        "Digital order organization with paid / unpaid status and reusable customer communication.",
+        "Quote and email templates that reduce repetitive steps while keeping messages consistent.",
+        "Editable and downloadable BOL and run sheet tools for logistics workflows.",
+        "Driver route and hour entry designed to support faster, cleaner payroll preparation."
+      ]
+    },
+    "process": [
+      {
+        "title": "Map the Workflow",
+        "body": "I started by looking at what each role actually needed to do during a normal day. Instead of putting every tool on one screen, I separated the experience by role so Dispatcher, Logistics and Driver users could get to the right information quickly."
+      },
+      {
+        "title": "Build the Tools",
+        "body": "I developed the portal as a custom coded system in cPanel and connected the pieces around the real workflow: order tracking, quote communication, document handling, routes and hours. I used AI tools for programming support, debugging and guidance when I needed another way to work through a technical problem."
+      },
+      {
+        "title": "Reduce Repetition",
+        "body": "The biggest improvement was turning repeated manual steps into clearer digital flows. The portal helps the team reuse consistent messages, organize documents and status information, and move operational data between people with less paper and less back-and-forth."
+      }
+    ]
+  },
+  {
     "id": "transylvanian-traditions",
     "title": "Transylvanian Traditions Bakery Website",
     "category": "Web Design",

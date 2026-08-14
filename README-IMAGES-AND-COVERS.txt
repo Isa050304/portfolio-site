@@ -46,3 +46,13 @@ Update the sample in js/project-data.js under id: transylvanian-traditions -> co
 IMAGE LABELS
 Every project slide now displays a visible label using the slide label/caption so visitors can immediately tell whether they are looking at a mockup, final artwork, before/after view, raster reference, vector result, logo breakdown, etc.
 
+
+NUMODE DELIVERY STAFF PORTAL
+- numode-portal-cover.webp -> project cover/mockup
+- numode-portal-login.webp -> login + role routing
+- numode-portal-dispatcher.webp -> dispatcher dashboard
+- numode-portal-logistics.webp -> logistics dashboard
+- numode-portal-driver.webp -> driver routes + hours
+- numode-portal-quote-email.webp -> quote/email automation
+- numode-portal-payment-link.webp -> sanitized client payment workflow
+- numode-portal-documents.webp -> BOL + run sheet tools
