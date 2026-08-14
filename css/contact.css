@@ -100,8 +100,8 @@ body.contact-page .site-footer {
 .contact-hero {
   flex: 1 0 auto;
   width: 100%;
-  min-height: 82svh;
-  padding: 132px 0 96px;
+  min-height: 88svh;
+  padding: 145px 0 106px;
   background:
     radial-gradient(circle at 16% 28%, rgba(196, 52, 82, 0.10), transparent 20rem),
     radial-gradient(circle at 84% 18%, rgba(239, 218, 228, 0.95), transparent 22rem),
@@ -137,7 +137,7 @@ body.contact-page .site-footer {
 @media (max-width: 600px) {
   .contact-hero {
     min-height: auto;
-    padding: 110px 0 72px;
+    padding: 121px 0 79px;
   }
 }
 
@@ -145,8 +145,8 @@ body.contact-page .site-footer {
 /* --- Phone responsiveness pass --- */
 @media (max-width: 600px) {
   .contact-hero {
-    padding-top: 104px;
-    padding-bottom: 68px;
+    padding-top: 114px;
+    padding-bottom: 75px;
   }
 
   .contact-inner .body-large {

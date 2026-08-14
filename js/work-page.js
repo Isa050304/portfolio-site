@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <article class="work-card reveal" data-category="${project.categoryKey}">
         <a class="work-card-media" href="${projectHref(project.id)}" aria-label="View ${project.title}" style="--cover-image: url('${cover}')">
           <img src="${cover}" alt="${project.title}" loading="lazy" decoding="async">
+          ${project.coverPlaceholder ? '<span class="photo-placeholder-note">PONER FOTO AQUI</span>' : ''}
           <span class="media-number" aria-hidden="true">${project.number}</span>
         </a>
         <div class="work-card-copy">

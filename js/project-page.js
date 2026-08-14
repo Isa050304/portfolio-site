@@ -28,11 +28,17 @@ document.addEventListener("DOMContentLoaded", () => {
   if (rationale) rationale.textContent = project.rationale;
 
   if (meta) {
-    meta.innerHTML = `
-      <li><strong>Year</strong><span>${project.year}</span></li>
-      <li><strong>Role</strong><span>${project.role}</span></li>
-      <li><strong>Format</strong><span>${project.format}</span></li>
-    `;
+    const metaItems = [
+      `<li><strong>Year</strong><span>${project.year}</span></li>`,
+      `<li><strong>Role</strong><span>${project.role}</span></li>`,
+      `<li><strong>Format</strong><span>${project.format}</span></li>`
+    ];
+
+    if (project.note) {
+      metaItems.push(`<li><strong>Note</strong><span>${project.note}</span></li>`);
+    }
+
+    meta.innerHTML = metaItems.join("");
   }
 
   if (processList) {
@@ -53,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="slide-stage">
             <img src="${src}" alt="${slide.alt}" loading="eager" decoding="async">
           </div>
+          ${slide.placeholder ? '<span class="photo-placeholder-note photo-placeholder-note--slide">PONER FOTO AQUI</span>' : ''}
           <span class="slide-label" aria-hidden="true">Frame 0${index + 1}</span>
         </figure>
       `;
@@ -87,6 +94,64 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   updateSlider(0);
+
+  const linksSection = document.querySelector("#project-links-section");
+  const linksList = document.querySelector("#project-links-list");
+  const linksNote = document.querySelector("#project-links-note");
+  if (linksSection && linksList) {
+    if (Array.isArray(project.links) && project.links.length) {
+      linksList.innerHTML = project.links.map((link) => `
+        <a class="project-resource-link ${link.style === "secondary" ? "project-resource-link--secondary" : ""}" href="${link.url}" target="_blank" rel="noopener">
+          ${link.label}
+        </a>
+      `).join("");
+      if (linksNote) linksNote.textContent = project.linksNote || "";
+      linksSection.hidden = false;
+    } else {
+      linksSection.hidden = true;
+    }
+  }
+
+  const codeSection = document.querySelector("#project-code-section");
+  const codeTabs = document.querySelector("#project-code-tabs");
+  const codeContent = document.querySelector("#project-code-content");
+  const codeLabel = document.querySelector("#project-code-label");
+  const codeNote = document.querySelector("#project-code-note");
+
+  if (codeSection && codeTabs && codeContent && codeLabel) {
+    const entries = project.codeSamples ? Object.entries(project.codeSamples) : [];
+    if (entries.length) {
+      codeSection.hidden = false;
+      let activeCodeKey = entries[0][0];
+
+      const renderCode = (key) => {
+        const sample = project.codeSamples[key] || "";
+        activeCodeKey = key;
+        codeContent.textContent = sample;
+        codeLabel.textContent = key.toUpperCase();
+        codeTabs.querySelectorAll("[data-code-tab]").forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.codeTab === key));
+        });
+      };
+
+      codeTabs.innerHTML = entries.map(([key], index) => `
+        <button class="code-tab-button" type="button" data-code-tab="${key}" aria-pressed="${index === 0 ? "true" : "false"}">
+          ${key.toUpperCase()}
+        </button>
+      `).join("");
+
+      codeTabs.addEventListener("click", (event) => {
+        const button = event.target.closest("[data-code-tab]");
+        if (!button) return;
+        renderCode(button.dataset.codeTab);
+      });
+
+      if (codeNote) codeNote.textContent = project.codeNote || "";
+      renderCode(activeCodeKey);
+    } else {
+      codeSection.hidden = true;
+    }
+  }
 
   const currentIndex = projects.findIndex((item) => item.id === project.id);
   const nextProject = projects[(currentIndex + 1) % projects.length];
