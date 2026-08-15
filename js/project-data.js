@@ -1,3 +1,10 @@
+// IMAGE EDITING NOTES
+// All project images used by the site live in assets/projects/web/.
+// PONER FOTO AQUI: replace willow-colour-palette.webp with the final dedicated Willow Beauty colour palette when ready.
+// PONER FOTO AQUI: restaurant-menu-layout.webp currently uses the supplied menu cover; replace it if you add a separate flat menu layout.
+// Website screenshots for Numode Delivery and Transylvanian Traditions are intentionally long; the project page renders them inside a scrollable desktop-style browser frame.
+// Staff Portal screenshots are sanitized. Some text may look slightly altered because sensitive information was edited in Photoshop before publication.
+
 window.PORTFOLIO_PROJECTS = [
   {
     "id": "football-connects",
@@ -12,7 +19,7 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Concept + Design",
     "format": "Poster",
-    "summary": "A poster concept about football as a shared language that can connect people beyond borders, differences and distance.",
+    "summary": "A competition poster exploring football as a shared language that can connect people across borders and differences.",
     "note": "Selected for an international competition and displayed at a convention.",
     "cover": "assets/projects/web/football-cover.webp",
     "slides": [
@@ -20,36 +27,34 @@ window.PORTFOLIO_PROJECTS = [
         "src": "assets/projects/web/mock-up-fut-fnal.webp",
         "alt": "Football Connects What the World Divides poster shown in a street display mockup",
         "caption": "Poster mockup",
-        "fit": "contain",
-        "label": "POSTER MOCKUP"
+        "fit": "contain"
       },
       {
         "src": "assets/projects/web/football-poster.webp",
         "alt": "Football Connects What the World Divides final poster",
         "caption": "Final poster",
-        "fit": "contain",
-        "label": "FINAL POSTER"
+        "fit": "contain"
       }
     ],
-    "rationale": "I wanted this poster to talk about football without relying on the usual imagery of a player, a stadium or a trophy. The idea became a visual metaphor about connection. Two sides that feel separated are pulled toward the same light, with football acting as the shared point between them. I kept the composition simple so the message could read quickly from a distance, but I wanted the image to have enough atmosphere that someone would stay with it for a second look.",
+    "rationale": "I wanted the poster to communicate connection without relying on the usual football imagery of players, stadiums or trophies. The composition uses two separated forms moving toward the same illuminated centre, with football acting as the shared point between them. I kept the hierarchy direct so the idea can read quickly from a distance while still holding enough detail for a closer look.",
     "process": [
       {
         "title": "Research",
-        "body": "I started by looking at the competition theme and collecting examples of how football is used as a symbol of identity, community and belonging. I was more interested in what the sport can connect than in showing the sport literally."
+        "body": "I reviewed the competition theme and looked at how football can represent community, identity and belonging. That research helped me focus on connection rather than illustrating the sport literally."
       },
       {
         "title": "Concept",
-        "body": "I explored several directions before landing on the idea of two forms opening toward the same center. That gave me a way to show division and connection in one image without overexplaining it."
+        "body": "I tested several visual directions before choosing a composition built around two separated sides moving toward one centre. It let the idea of division and connection exist in the same image."
       },
       {
         "title": "Final Form",
-        "body": "I refined the contrast, scale and lighting so the focal point stayed clear, then kept the typography quiet enough to support the image. The final poster was submitted to an international competition and later displayed at a convention."
+        "body": "I refined the scale, lighting and contrast, then kept the typography restrained so it supported the image. The final poster was submitted to an international competition and later displayed at a convention."
       }
     ]
   },
   {
     "id": "nexa-booklet",
-    "title": "Giving Nexa a Personality",
+    "title": "Nexa Type Specimen",
     "category": "Editorial + Typography",
     "categoryKey": "editorial",
     "tags": [
@@ -59,39 +64,43 @@ window.PORTFOLIO_PROJECTS = [
     ],
     "year": "2026",
     "role": "Editorial Design",
-    "format": "Printed Booklet",
-    "summary": "A printed booklet designed to introduce the Nexa typeface through rhythm, hierarchy and a clear editorial personality.",
-    "note": "Designed as a complete editorial piece and produced in print.",
+    "format": "Printed Type Specimen",
+    "summary": "A printed Nexa type specimen built around rhythm, hierarchy and contrast to show the typeface as a flexible visual system.",
+    "note": "A printed type specimen designed and produced as a complete editorial piece.",
     "cover": "assets/projects/web/nexa-cover.webp",
     "slides": [
       {
         "src": "assets/projects/web/nexa-booklet.webp",
-        "alt": "Nexa typography booklet cover",
-        "caption": "Booklet cover",
-        "fit": "contain",
-        "label": "BOOKLET COVER"
+        "alt": "Printed Nexa type specimen cover",
+        "caption": "Type specimen cover",
+        "fit": "contain"
       },
       {
         "src": "assets/projects/web/nexa-allpages.webp",
-        "alt": "Overview of the full Nexa typography booklet pages",
-        "caption": "Full booklet overview",
-        "fit": "contain",
-        "label": "FULL BOOKLET OVERVIEW"
+        "alt": "Overview of all pages in the Nexa type specimen",
+        "caption": "Full type specimen overview",
+        "fit": "contain"
+      },
+      {
+        "src": "assets/projects/web/nexa-allpages-real.webp",
+        "alt": "Printed Nexa type specimen shown as a physical booklet",
+        "caption": "Printed type specimen",
+        "fit": "contain"
       }
     ],
-    "rationale": "This booklet was my way of giving a typeface a personality instead of presenting it like a specimen sheet. I used scale, repetition, contrast and pacing to let Nexa change moods from spread to spread while still feeling like one system. Because the project was made for print, I also thought about how each page would lead into the next and how the rhythm would feel while someone was physically flipping through it.",
+    "rationale": "This project is a type specimen, but I did not want it to read like a technical catalogue. I used scale, repetition, contrast and pacing to show how Nexa can shift between functional and expressive roles while still feeling like one system. Because the final piece was printed, I also considered sequence, page turns and how the hierarchy feels as a physical object.",
     "process": [
       {
         "title": "Typeface Study",
-        "body": "I began by studying Nexa across different weights and sizes. I paid attention to the shapes that felt most distinctive and to how quickly the type could move from clean and functional to bold and expressive."
+        "body": "I studied Nexa across different weights and sizes, paying attention to the forms that give the family its character and how those forms behave at different scales."
       },
       {
         "title": "System",
-        "body": "I built a simple grid, then kept breaking and reusing it in controlled ways. Repetition helped the booklet feel connected while changes in scale and density gave each spread its own energy."
+        "body": "I built a simple grid and reused it with controlled variations. Repetition creates continuity, while changes in scale and density give each spread a distinct pace."
       },
       {
         "title": "Print",
-        "body": "Once I printed test pages, I adjusted spacing, scale and contrast because some decisions felt completely different on paper. The final booklet was designed as an object, not just a set of digital layouts."
+        "body": "Test prints helped me adjust spacing, contrast and scale before final production. The finished piece was designed to work as a physical type specimen, not only as a set of digital layouts."
       }
     ]
   },
@@ -108,7 +117,7 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Concept + Imaging",
     "format": "Movie Poster",
-    "summary": "An original action-film concept developed from story premise to cinematic poster, using composition and image-making to suggest a larger world.",
+    "summary": "An original film-poster concept developed from story premise to final composition, using image-making and hierarchy to establish tension before the first scene.",
     "note": "The concept and composition were especially praised in critique.",
     "cover": "assets/projects/web/movie-cover.webp",
     "slides": [
@@ -116,30 +125,28 @@ window.PORTFOLIO_PROJECTS = [
         "src": "assets/projects/web/movie-poster-mockup.webp",
         "alt": "The Last Light movie poster shown in a street display mockup",
         "caption": "Poster mockup",
-        "fit": "contain",
-        "label": "POSTER MOCKUP"
+        "fit": "contain"
       },
       {
         "src": "assets/projects/web/movie-poster.webp",
         "alt": "The Last Light final movie poster",
         "caption": "Final movie poster",
-        "fit": "contain",
-        "label": "FINAL MOVIE POSTER"
+        "fit": "contain"
       }
     ],
-    "rationale": "For this poster I wanted the audience to understand the mood before knowing the full story. The image needed to feel cinematic, tense and slightly unreal, like a moment taken from a much bigger event. I built the composition around the figure walking toward the destruction so the viewer immediately has a question: why is he going toward it instead of away from it? That question became the hook for the whole poster.",
+    "rationale": "The goal was to establish the mood before the audience knew the full story. I built the composition around a figure moving toward the destruction rather than away from it, creating a simple question that carries the image. The lighting, smoke and scale were developed to make the scene feel cinematic, while the typography stays secondary to the visual narrative.",
     "process": [
       {
         "title": "Story",
-        "body": "I started with the story premise and wrote down the feeling I wanted the first image to create: danger, curiosity and the sense that something important had already happened before we arrived."
+        "body": "I started with the premise and defined the first impression I wanted the poster to create: tension, scale and the sense that a larger event was already in motion."
       },
       {
         "title": "Image Build",
-        "body": "I built the scene through compositing and spent most of the time getting the light, smoke and scale to feel like they belonged in the same world. The warm glow became the visual anchor against the darker foreground."
+        "body": "I developed the scene through compositing, then adjusted lighting, smoke and perspective so the separate image elements felt like one environment."
       },
       {
         "title": "Refinement",
-        "body": "I simplified the typography, adjusted the hierarchy and kept refining the image until the figure and the title could hold their own without fighting each other. The final critique especially responded to the concept and composition."
+        "body": "I simplified the typography and tuned the hierarchy until the title and central figure supported the same focal path. The concept and composition were especially well received in critique."
       }
     ]
   },
@@ -156,86 +163,76 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026 · Ongoing",
     "role": "Web Design + Development",
     "format": "WordPress Website",
-    "summary": "A two-month website rebuild for Numode Delivery, developed on a subdomain before migration and still maintained after launch.",
-    "note": "Built in WordPress and Elementor with custom HTML/CSS sections and ongoing maintenance.",
+    "summary": "A two-month redesign of the Numode Delivery website, rebuilding more than 25 pages in WordPress and Elementor with custom HTML/CSS where additional control was needed.",
+    "note": "More than 25 pages were redesigned. The site was built on a subdomain, tested, migrated to the main domain and continues to receive maintenance.",
     "links": [
       {
-        "label": "Visit Numode Delivery ↗",
+        "label": "Visit Numode Delivery",
         "url": "https://numode.ca",
         "style": "primary"
       }
     ],
     "linksNote": "Live Numode Delivery website.",
-    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
     "cover": "assets/projects/web/numode-cover.webp",
-    "coverPlaceholder": true,
     "slides": [
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/numode-old-site-01.webp",
-        "alt": "Placeholder for the previous Numode Delivery homepage",
-        "caption": "Before — old homepage and content structure",
-        "label": "BEFORE — OLD HOMEPAGE",
+        "alt": "Long desktop screenshot of the previous Numode Delivery website",
+        "caption": "Before — previous website",
         "fit": "contain",
-        "placeholder": true
+        "scrollable": true
       },
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
-        "src": "assets/projects/web/numode-old-site-02.webp",
-        "alt": "Placeholder showing responsive, contrast and visual consistency issues on the previous Numode Delivery website",
-        "caption": "Before — responsive, contrast and consistency issues",
-        "label": "BEFORE — SITE ISSUES",
-        "fit": "contain",
-        "placeholder": true
-      },
-      {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/numode-new-site-01.webp",
-        "alt": "Placeholder for the redesigned Numode Delivery homepage",
-        "caption": "After — redesigned homepage",
-        "label": "AFTER — NEW HOMEPAGE",
+        "alt": "Long desktop screenshot of the redesigned Numode Delivery website",
+        "caption": "After — redesigned website",
         "fit": "contain",
-        "placeholder": true
-      },
-      {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
-        "src": "assets/projects/web/numode-new-site-02.webp",
-        "alt": "Placeholder for another view of the redesigned Numode Delivery website",
-        "caption": "After — responsive and updated site view",
-        "label": "AFTER — RESPONSIVE VIEW",
-        "fit": "contain",
-        "placeholder": true
+        "scrollable": true
       }
     ],
-    "rationale": "The existing Numode Delivery website had several issues that affected the experience across devices, including responsiveness, content organization, low-contrast areas, inconsistent color tones and site speed. I rebuilt the website in WordPress and Elementor, using custom HTML/CSS sections where more control was needed. The new version was first developed under a subdomain so the live site could remain available while the redesign was tested. After the rebuild, the site files and configuration were migrated to the main domain. The redesign keeps the brand recognizable while making the interface more modern, consistent and user-friendly, with clearer contrast and improved performance. The initial rebuild took about two months, and I continue to maintain and improve the site after launch.",
+    "rationale": "The previous Numode Delivery site had grown unevenly over time. Responsiveness, contrast, content structure, colour consistency and page speed all needed attention. I rebuilt more than 25 pages in WordPress and Elementor, adding custom HTML/CSS where the layout needed more control. The redesign was developed on a subdomain so the live site could stay available during testing, then migrated to the main domain. The result keeps the existing brand recognisable while making the site clearer, more consistent and easier to use across screen sizes.",
     "process": [
       {
-        "title": "Audit + Old Site",
-        "body": "I started by reviewing the previous site and identifying the problems that were affecting usability and consistency. The main issues included mobile responsiveness, content structure, contrast, inconsistent shades across the brand colors and slower page performance."
+        "title": "Audit",
+        "body": "I reviewed the existing pages and documented recurring issues in responsive behaviour, content hierarchy, contrast, colour consistency and performance."
       },
       {
-        "title": "Rebuild on a Subdomain",
-        "body": "I built the new site in WordPress and Elementor on a separate subdomain so the existing website could remain live. I reorganized the content, created a more consistent visual system and used custom HTML/CSS sections when Elementor alone did not provide enough control."
+        "title": "Rebuild",
+        "body": "I rebuilt more than 25 pages on a subdomain using WordPress and Elementor, with custom HTML/CSS for sections that needed more precise layout or behaviour."
       },
       {
         "title": "Migration + Maintenance",
-        "body": "After testing the redesigned pages across screen sizes, I migrated the site files and setup to the main domain. I also improved contrast and site speed, and I continue to maintain the website as content and technical needs change."
+        "body": "After cross-device testing, I migrated the rebuilt site to the main domain. I continue to maintain the site as content, performance and operational needs change."
       }
     ],
     "comparison": {
       "before": {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/numode-old-site-01.webp",
-        "label": "BEFORE — OLD WEBSITE",
+        "label": "Before — previous website",
         "alt": "Previous Numode Delivery website"
       },
       "after": {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/numode-new-site-01.webp",
-        "label": "AFTER — REDESIGNED WEBSITE",
+        "label": "After — redesigned website",
         "alt": "Redesigned Numode Delivery website"
       },
-      "note": "Drag the divider to give either version more room. Both images stay fully visible instead of being cropped."
+      "note": "Compare the previous and redesigned desktop versions. On smaller screens, both versions are shown as separate panels for easier viewing."
+    },
+    "galleryMode": "website",
+    "problemSolution": {
+      "intro": "The redesign focused on recurring usability and consistency issues across a site that had expanded to more than 25 pages.",
+      "problems": [
+        "Responsive behaviour was inconsistent across pages and screen sizes.",
+        "Content hierarchy and contrast made some sections harder to scan.",
+        "Brand colours were not always applied consistently.",
+        "The site needed a more current interface and better performance."
+      ],
+      "solutions": [
+        "Rebuilt the page system with responsive layouts and more consistent spacing.",
+        "Improved hierarchy and contrast to make content easier to read and navigate.",
+        "Standardised the colour treatment and reusable visual patterns.",
+        "Reworked more than 25 pages, then tested and migrated the new site from a subdomain to the live domain."
+      ]
     }
   },
   {
@@ -251,98 +248,65 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026 · Ongoing",
     "role": "UX + Development",
     "format": "Internal Staff Portal",
-    "summary": "A role-based internal portal built for Numode Delivery to move everyday operations out of scattered paper workflows and into one clearer digital system.",
-    "note": "Private internal tool. Portfolio images should use demo/test data only. AI tools were used as development support for programming, debugging and implementation guidance.",
-    // PONER FOTO AQUI: replace this cover mockup in assets/projects/web/ while keeping the same filename.
+    "summary": "A role-based internal portal for Numode Delivery that brings dispatch, logistics and driver workflows into one custom coded system.",
+    "note": "Private internal tool. All portfolio screenshots use test data, and some text was intentionally altered in Photoshop to protect company and customer information. AI tools supported programming, debugging and technical guidance during development.",
     "cover": "assets/projects/web/numode-portal-cover.webp",
     "slides": [
       {
-        // PONER FOTO AQUI: show the portal sign-in / role-routing screen using demo accounts only.
-        "src": "assets/projects/web/numode-portal-login.webp",
-        "alt": "Demo view of the Numode Delivery staff portal sign-in screen",
-        "caption": "Login and role routing",
-        "label": "LOGIN + ROLE ROUTING",
-        "fit": "contain"
-      },
-      {
-        // PONER FOTO AQUI: show the dispatcher dashboard with fake orders and customer names.
         "src": "assets/projects/web/numode-portal-dispatcher.webp",
-        "alt": "Demo dispatcher dashboard for the Numode Delivery staff portal",
+        "alt": "Sanitized Numode Delivery dispatcher dashboard with test order data",
         "caption": "Dispatcher workspace",
-        "label": "DISPATCHER DASHBOARD",
         "fit": "contain"
       },
       {
-        // PONER FOTO AQUI: show the logistics dashboard with test BOL and run sheet records.
+        "src": "assets/projects/web/order-details.webp",
+        "alt": "Sanitized open order details screen in the Numode Delivery staff portal",
+        "caption": "Order details and quote workflow",
+        "fit": "contain"
+      },
+      {
         "src": "assets/projects/web/numode-portal-logistics.webp",
-        "alt": "Demo logistics dashboard for BOL and run sheet management",
+        "alt": "Sanitized Numode Delivery logistics dashboard",
         "caption": "Logistics workspace",
-        "label": "LOGISTICS DASHBOARD",
         "fit": "contain"
       },
       {
-        // PONER FOTO AQUI: show the driver route / hours screen with fictional route data.
         "src": "assets/projects/web/numode-portal-driver.webp",
-        "alt": "Demo driver dashboard for entering daily routes and hours",
-        "caption": "Driver routes and hours",
-        "label": "DRIVER DASHBOARD",
-        "fit": "contain"
-      },
-      {
-        // PONER FOTO AQUI: show an automated quote/email preview using fake customer information.
-        "src": "assets/projects/web/numode-portal-quote-email.webp",
-        "alt": "Demo automated quote and customer email workflow",
-        "caption": "Quote and email workflow",
-        "label": "QUOTE + EMAIL AUTOMATION",
-        "fit": "contain"
-      },
-      {
-        // PONER FOTO AQUI: show only a sanitized client payment-link screen. Never include real card data.
-        "src": "assets/projects/web/numode-portal-payment-link.webp",
-        "alt": "Sanitized demo view of the customer payment information workflow",
-        "caption": "Customer payment workflow",
-        "label": "CLIENT PAYMENT WORKFLOW",
-        "fit": "contain"
-      },
-      {
-        // PONER FOTO AQUI: show BOL / run sheet tools with fake document numbers and route information.
-        "src": "assets/projects/web/numode-portal-documents.webp",
-        "alt": "Demo view of BOL and run sheet tools in the staff portal",
-        "caption": "BOL and run sheet management",
-        "label": "BOL + RUN SHEET TOOLS",
+        "alt": "Sanitized Numode Delivery driver dashboard for routes and hours",
+        "caption": "Driver workspace",
         "fit": "contain"
       }
     ],
-    "rationale": "I built this portal as a separate internal project for Numode Delivery because several daily workflows were still spread across paper, repetitive emails and manual handoffs. The portal sends each staff member to the tools that match their role after sign-in. Dispatchers can organize orders, prepare quotes, send consistent customer messages and track paid versus unpaid work. Logistics can review, edit and download BOLs and run sheets, while drivers can enter their daily routes and hours so payroll information is easier to process. I also created a customer-facing payment-information step connected to the workflow. The goal was not to make operations more complicated; it was to reduce paper, remove repeated steps and make the experience easier for staff and customers. I used AI tools as a development assistant for programming support, debugging and implementation guidance, while I defined the workflows, tested the system and adapted it to the team's actual needs.",
+    "rationale": "I built the staff portal as a separate internal project because several daily workflows were spread across paper, repeated emails and manual handoffs. After sign-in, each role is routed to the tools relevant to its work. Dispatchers can review orders, classify paid and unpaid work, enter quote amounts and send consistent customer messages. The Send Quote controls become available once the amount is entered; the email includes confirmation and decline links that update the order status automatically. Logistics can view, edit and download BOLs and run sheets, while drivers can enter routes and daily hours to support payroll processing. I also developed a separate customer payment-information flow. The payment and document screens are intentionally not shown in the portfolio. The portal was coded in cPanel, with AI tools used as support for programming, debugging and implementation guidance while I defined the workflows, tested the system and adapted it to the team’s needs.",
     "problemSolution": {
-      "intro": "The portal came from small operational problems that were adding up across dispatch, logistics, drivers and customer communication.",
+      "intro": "The portal was designed around operational tasks that were taking extra time because information moved between paper, email and separate manual steps.",
       "problems": [
-        "Paper-heavy order, BOL and run sheet workflows.",
-        "Different staff roles needed different information, but the process was fragmented.",
-        "Quotes and customer messages required repetitive manual writing.",
-        "Paid and unpaid orders were harder to track in one place.",
-        "Driver route and hour information needed a clearer path into payroll processing."
+        "Staff roles needed different tools, but the workflow was fragmented.",
+        "Order status, quoting and customer communication involved repeated manual steps.",
+        "Paid and unpaid orders needed a clearer place to be tracked.",
+        "Driver route and hour information needed a cleaner path into payroll processing.",
+        "Paper-based operational records created extra handling and duplication."
       ],
       "solutions": [
-        "Role-based sign-in that routes Dispatcher, Logistics and Driver users to the right workspace.",
-        "Digital order organization with paid / unpaid status and reusable customer communication.",
-        "Quote and email templates that reduce repetitive steps while keeping messages consistent.",
-        "Editable and downloadable BOL and run sheet tools for logistics workflows.",
-        "Driver route and hour entry designed to support faster, cleaner payroll preparation."
+        "Role-based routing sends Dispatcher, Logistics and Driver users to the workspace they need.",
+        "Quote controls activate after an amount is entered, then send a consistent email with confirmation or decline links.",
+        "Customer responses update order status automatically, reducing manual follow-up.",
+        "Drivers enter routes and daily hours directly in the portal to support payroll preparation.",
+        "Digital workflows reduce paper use and make operational information easier to find and process."
       ]
     },
     "process": [
       {
         "title": "Map the Workflow",
-        "body": "I started by looking at what each role actually needed to do during a normal day. Instead of putting every tool on one screen, I separated the experience by role so Dispatcher, Logistics and Driver users could get to the right information quickly."
+        "body": "I documented what each role needed to complete during a normal day and separated the portal into role-specific workspaces rather than placing every tool in one interface."
       },
       {
-        "title": "Build the Tools",
-        "body": "I developed the portal as a custom coded system in cPanel and connected the pieces around the real workflow: order tracking, quote communication, document handling, routes and hours. I used AI tools for programming support, debugging and guidance when I needed another way to work through a technical problem."
+        "title": "Build + Connect",
+        "body": "I developed the portal as a custom coded system in cPanel and connected order status, quoting, customer responses, operational records, routes and hours. AI tools were used for programming support, debugging and technical guidance."
       },
       {
         "title": "Reduce Repetition",
-        "body": "The biggest improvement was turning repeated manual steps into clearer digital flows. The portal helps the team reuse consistent messages, organize documents and status information, and move operational data between people with less paper and less back-and-forth."
+        "body": "I focused on removing repeated manual steps. Automated status changes, reusable communication and direct data entry make the workflow easier to follow without adding unnecessary complexity."
       }
     ]
   },
@@ -359,39 +323,33 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Design + Front-End",
     "format": "Website",
-    "summary": "A BCIT website project for Transylvanian Traditions, where I reworked the bakery experience to feel warmer, clearer and easier to browse.",
-    "note": "Includes before and after slides, plus a code sample switcher for HTML and CSS.",
-    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+    "summary": "A five-page BCIT website project for Transylvanian Traditions, redesigned and coded to make the bakery easier to explore while keeping the visual direction warm and straightforward.",
+    "note": "Five-page BCIT website built in VS Code. The portfolio code preview is limited to the Home page HTML and CSS.",
     "cover": "assets/projects/web/transylvanian-cover.webp",
-    "coverPlaceholder": true,
     "slides": [
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/transylvanian-before.webp",
-        "alt": "Placeholder for the previous Transylvanian Traditions website",
-        "caption": "Before — original site",
+        "alt": "Long desktop screenshot of the original Transylvanian Traditions website",
+        "caption": "Before — original website",
         "fit": "contain",
-        "placeholder": true,
-        "label": "BEFORE — ORIGINAL WEBSITE"
+        "scrollable": true
       },
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/transylvanian-after.webp",
-        "alt": "Placeholder for the redesigned Transylvanian Traditions website",
-        "caption": "After — redesigned site",
+        "alt": "Long desktop screenshot of the redesigned Transylvanian Traditions website",
+        "caption": "After — redesigned website",
         "fit": "contain",
-        "placeholder": true,
-        "label": "AFTER — REDESIGNED WEBSITE"
+        "scrollable": true
       }
     ],
     "links": [
       {
-        "label": "View project link",
-        "url": "https://github.com/your-username/transylvanian-traditions",
+        "label": "View live website",
+        "url": "https://isa050304.github.io/transylvan/",
         "style": "primary"
       }
     ],
-    "linksNote": "CHANGE THIS LINK in js/project-data.js inside the Transylvanian Traditions project object.",
+    "linksNote": "Live BCIT project on GitHub Pages.",
     "codeSampleLabels": {
       "html": "HOME PAGE HTML",
       "css": "HOME PAGE CSS"
@@ -400,37 +358,36 @@ window.PORTFOLIO_PROJECTS = [
       "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Transylvanian Traditions</title>\n  <link rel=\"stylesheet\" href=\"styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <a class=\"brand\" href=\"#\">Transylvanian Traditions</a>\n    <nav class=\"site-nav\">\n      <a href=\"#story\">Our Story</a>\n      <a href=\"#pastries\">Pastries</a>\n      <a href=\"#visit\">Visit</a>\n    </nav>\n  </header>\n\n  <main>\n    <section class=\"hero\">\n      <div class=\"hero-copy\">\n        <p class=\"eyebrow\">BCIT Web Project</p>\n        <h1>Traditional pastries, presented in a warmer and clearer way.</h1>\n        <p>I redesigned the bakery site to make it easier to browse, more inviting visually and more consistent across pages.</p>\n        <a class=\"primary-btn\" href=\"#pastries\">Explore the menu</a>\n      </div>\n    </section>\n\n    <section class=\"feature-grid\" id=\"pastries\">\n      <article class=\"feature-card\">\n        <h2>Fresh pastry highlights</h2>\n        <p>A cleaner content structure helps featured items stand out.</p>\n      </article>\n      <article class=\"feature-card\">\n        <h2>Clearer story section</h2>\n        <p>The rewrite gives the brand a more personal voice.</p>\n      </article>\n      <article class=\"feature-card\">\n        <h2>Simple call to action</h2>\n        <p>Visitors can quickly find where to order or visit.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
       "css": ".site-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1.25rem 2rem;\n}\n\n.site-nav {\n  display: flex;\n  gap: 1rem;\n}\n\n.hero {\n  min-height: 70vh;\n  display: grid;\n  place-items: center;\n  padding: 4rem 2rem;\n  background: linear-gradient(180deg, #fff5f2, #ffffff);\n}\n\n.hero-copy {\n  max-width: 42rem;\n  text-align: center;\n}\n\n.feature-grid {\n  display: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 1.25rem;\n  padding: 2rem;\n}\n\n.feature-card {\n  padding: 1.5rem;\n  border: 1px solid #e6d8d0;\n  border-radius: 1rem;\n  background: #ffffff;\n}\n\n@media (max-width: 768px) {\n  .site-header,\n  .site-nav {\n    flex-direction: column;\n  }\n\n  .feature-grid {\n    grid-template-columns: 1fr;\n  }\n}"
     },
-    "codeNote": "This code sample shows the HOME PAGE only. The full Transylvanian Traditions BCIT site has 5 pages. Replace the HTML and CSS inside this project in js/project-data.js when you are ready to show your final Home page code.",
-    "rationale": "This was a BCIT web project, and I treated it like a redesign exercise with a real audience in mind. The idea was to keep the bakery feeling warm and familiar while making the website easier to understand and much nicer to move through. I focused on simplifying the structure, improving the visual flow and giving the content more room to breathe. I also wanted the final version to feel more polished than the original without losing the charm of the brand.",
+    "codeNote": "This preview represents the Home page only. The full Transylvanian Traditions project contains five pages. The live project link above shows the complete site.",
+    "rationale": "This BCIT project was an opportunity to redesign a small bakery website as a complete multi-page experience. I focused on clearer navigation, more consistent hierarchy and a warmer visual direction that still lets the content do most of the work. The final site was coded in VS Code and includes five pages, so the portfolio shows the full-page before and after views while keeping the code preview focused on the Home page.",
     "process": [
       {
-        "title": "Before",
-        "body": "I looked at the original version first and paid attention to where the experience felt confusing or visually uneven. That gave me a clear starting point for what needed to improve in the redesign."
+        "title": "Review",
+        "body": "I reviewed the original site to identify where navigation, hierarchy and visual consistency could be improved before changing the look of the pages."
       },
       {
         "title": "Redesign",
-        "body": "I rebuilt the layout in a way that felt cleaner and more welcoming, with stronger hierarchy, clearer navigation and better spacing. The goal was to make the content easier to scan while still feeling personal."
+        "body": "I reorganised the content and built a clearer visual system across five pages, with more consistent spacing, hierarchy and responsive behaviour."
       },
       {
-        "title": "Code",
-        "body": "The site was built in VS Code, so I wanted the case study to show that side too. The code preview focuses on the Home page only, which gives a useful sample of the HTML and CSS without turning the portfolio into a full code repository for all five pages."
+        "title": "Front-End",
+        "body": "I coded the site in VS Code and tested the layouts across screen sizes. The portfolio code preview is intentionally limited to the Home page so the case study stays focused."
       }
     ],
     "comparison": {
       "before": {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/transylvanian-before.webp",
-        "label": "BEFORE — ORIGINAL WEBSITE",
+        "label": "Before — original website",
         "alt": "Original Transylvanian Traditions website"
       },
       "after": {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/transylvanian-after.webp",
-        "label": "AFTER — REDESIGNED WEBSITE",
+        "label": "After — redesigned website",
         "alt": "Redesigned Transylvanian Traditions website"
       },
-      "note": "Use the divider to compare the original site with my redesign while keeping both screenshots fully visible."
-    }
+      "note": "Compare the original and redesigned versions. On mobile, the two versions are displayed separately instead of forcing the desktop comparison interaction into a narrow screen."
+    },
+    "galleryMode": "website"
   },
   {
     "id": "kokoro-mazesoba-menu",
@@ -445,69 +402,62 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Menu Design",
     "format": "Printed Menu",
-    "summary": "A menu redesign for Kokoro Mazesoba that compares the older layout with a cleaner, more readable new direction created in InDesign.",
-    "note": "Includes space for an old menu, a redesigned menu and a mockup.",
-    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+    "summary": "A menu redesign for Kokoro Mazesoba focused on fitting the full offering into two pages with clearer hierarchy and far fewer supporting images.",
+    "note": "Designed in InDesign as a two-page menu system, with the previous menu included for comparison.",
     "cover": "assets/projects/web/kokoro-cover.webp",
-    "coverPlaceholder": true,
     "slides": [
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/kokoro-old-menu.webp",
-        "alt": "Placeholder for the previous Kokoro Mazesoba menu",
-        "caption": "Before — old menu",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "BEFORE — OLD MENU"
+        "alt": "Previous Kokoro Mazesoba menu",
+        "caption": "Before — previous menu",
+        "fit": "contain"
       },
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
-        "src": "assets/projects/web/kokoro-new-menu.webp",
-        "alt": "Placeholder for the redesigned Kokoro Mazesoba menu",
-        "caption": "After — redesigned menu",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "AFTER — NEW MENU"
+        "src": "assets/projects/web/kokoro-new-menu-page-01.webp",
+        "alt": "First page of the redesigned Kokoro Mazesoba menu",
+        "caption": "After — redesigned menu, page 1",
+        "fit": "contain"
       },
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+        "src": "assets/projects/web/kokoro-new-menu-page-02.webp",
+        "alt": "Second page of the redesigned Kokoro Mazesoba menu",
+        "caption": "After — redesigned menu, page 2",
+        "fit": "contain"
+      },
+      {
         "src": "assets/projects/web/kokoro-mockup.webp",
-        "alt": "Placeholder for a Kokoro Mazesoba menu mockup",
-        "caption": "Menu mockup",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "FINAL MENU MOCKUP"
+        "alt": "Mockup of the redesigned Kokoro Mazesoba menu",
+        "caption": "Final menu mockup",
+        "fit": "contain"
       }
     ],
-    "rationale": "I approached this as a side-by-side improvement project. I wanted the new menu to feel easier to read, more balanced and more consistent while still fitting the tone of the restaurant. The redesign focused on hierarchy, spacing and making key information feel more intentional instead of crowded.",
+    "rationale": "The main challenge was reducing visual noise without making the menu feel sparse. I set a clear goal: fit the full selection into two pages and remove the large number of images that were competing with the menu information. In InDesign, I rebuilt the hierarchy around categories, dish names, descriptions and pricing so the menu could be scanned quickly while still feeling connected to the restaurant.",
     "process": [
       {
-        "title": "Review",
-        "body": "I first looked at the older menu to understand what made it harder to read. I paid attention to spacing, information grouping and how quickly the eye could find the main items."
+        "title": "Edit the Content",
+        "body": "I reviewed the existing menu and identified where repeated imagery and dense grouping were making the information harder to scan."
       },
       {
-        "title": "Redesign",
-        "body": "I rebuilt the layout in InDesign with clearer sections, stronger type hierarchy and a more even visual rhythm. The goal was to keep the menu practical while giving it a more polished look."
+        "title": "Two-Page System",
+        "body": "I reorganised the full menu into two pages, using hierarchy and spacing to replace many of the images that had been carrying too much of the layout."
       },
       {
-        "title": "Presentation",
-        "body": "I also planned space for mockups so the redesign could be shown as a finished piece rather than only as flat layouts. That helps the project feel more complete in the portfolio."
+        "title": "Refine + Test",
+        "body": "I adjusted type size, grouping and spacing until both pages felt balanced and practical, then presented the final design in a mockup to show how it would work in use."
       }
     ],
     "comparison": {
       "before": {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/kokoro-old-menu.webp",
-        "label": "BEFORE — OLD MENU",
+        "label": "Before — previous menu",
         "alt": "Previous Kokoro Mazesoba menu"
       },
       "after": {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
-        "src": "assets/projects/web/kokoro-new-menu.webp",
-        "label": "AFTER — REDESIGNED MENU",
-        "alt": "Redesigned Kokoro Mazesoba menu"
+        "src": "assets/projects/web/kokoro-new-menu-combined.webp",
+        "label": "After — two-page redesign",
+        "alt": "Combined two-page Kokoro Mazesoba menu redesign"
       },
-      "note": "Drag the divider to compare the old and redesigned menu side by side."
+      "note": "The redesign reduces unnecessary imagery and reorganises the full menu into two pages. On mobile, the before and after are shown as separate panels."
     }
   },
   {
@@ -523,53 +473,36 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Menu Design",
     "format": "Menu System",
-    "summary": "A menu concept for a varied restaurant, designed in InDesign to keep a wide range of dishes organised, easy to scan and visually consistent.",
-    "note": "Includes the menu layout and separate mockups for presentation.",
-    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
-    "cover": "assets/projects/web/class-menu-cover.webp",
-    "coverPlaceholder": true,
+    "summary": "A restaurant menu concept designed in InDesign to organise a varied selection of dishes with a clear hierarchy and consistent visual rhythm.",
+    "note": "A class project focused on menu structure, typography and presentation.",
+    "cover": "assets/projects/web/restaurant-menu-cover.webp",
     "slides": [
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
-        "src": "assets/projects/web/class-menu-layout.webp",
-        "alt": "Placeholder for the main restaurant menu layout",
+        "src": "assets/projects/web/restaurant-menu-layout.webp",
+        "alt": "Restaurant menu concept layout",
         "caption": "Menu layout",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "FINAL MENU LAYOUT"
+        "fit": "contain"
       },
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
-        "src": "assets/projects/web/class-menu-mockup-01.webp",
-        "alt": "Placeholder for the first restaurant menu mockup",
-        "caption": "Mockup 01",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "MOCKUP 01"
-      },
-      {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
-        "src": "assets/projects/web/class-menu-mockup-02.webp",
-        "alt": "Placeholder for the second restaurant menu mockup",
-        "caption": "Mockup 02",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "MOCKUP 02"
+        "src": "assets/projects/web/restaurant-menu-mockup.webp",
+        "alt": "Restaurant menu concept mockup",
+        "caption": "Final menu mockup",
+        "fit": "contain"
       }
     ],
-    "rationale": "This project was about creating a complete menu system from scratch. Because the restaurant concept covered a wider variety of dishes, I focused on making the structure feel clear and easy to move through. I wanted the final design to feel clean and approachable without becoming generic.",
+    "rationale": "This project focused on building a menu system from the ground up. Because the restaurant concept includes a wide range of dishes, the priority was to keep the information organised without making the layout feel rigid. I used hierarchy, spacing and consistent type treatment to make the menu easy to scan while still giving it a distinct visual character.",
     "process": [
       {
         "title": "Structure",
-        "body": "I started by thinking about how the different menu sections should be grouped so the overall experience would feel simple instead of overwhelming."
+        "body": "I grouped the menu content by how a customer would naturally scan it, then established a hierarchy for categories, dishes, descriptions and pricing."
       },
       {
-        "title": "Design",
-        "body": "In InDesign, I built a layout with a clear visual rhythm and enough contrast between headings, descriptions and pricing. The goal was to make the menu feel calm and readable."
+        "title": "Layout",
+        "body": "I built the system in InDesign and refined spacing and type relationships so the pages stayed readable even with a varied amount of content."
       },
       {
-        "title": "Mockups",
-        "body": "I added space for mockups so the concept could be shown in context as a finished design piece. That helps communicate how the menu would feel in use, not just on a blank page."
+        "title": "Presentation",
+        "body": "I tested the layout in a mockup to check scale and visual balance outside the flat document and to present the menu as a finished piece."
       }
     ]
   },
@@ -586,32 +519,24 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Illustration",
     "format": "Vector Artwork",
-    "summary": "A vector recreation of a raster still life showing a vase with a rose, focused on shape, line control and clean digital drawing.",
+    "summary": "A raster-to-vector study in Illustrator, rebuilding a vase and rose with cleaner shapes, controlled curves and simplified detail.",
     "note": "Shows the original raster reference and the final vector result.",
-    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
     "cover": "assets/projects/web/vase-rose-cover.webp",
-    "coverPlaceholder": true,
     "slides": [
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/vase-rose-raster.webp",
-        "alt": "Placeholder for the raster reference of the vase with a rose",
+        "alt": "Raster reference of a vase with a rose",
         "caption": "Raster reference",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "RASTER REFERENCE"
+        "fit": "contain"
       },
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/vase-rose-vector.webp",
-        "alt": "Placeholder for the vectorized vase with a rose",
+        "alt": "Vector recreation of the vase and rose",
         "caption": "Vector result",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "VECTOR RESULT"
+        "fit": "contain"
       }
     ],
-    "rationale": "This project was about slowing down and really paying attention to shape. I used Illustrator to translate a raster image into something cleaner and more intentional, while still keeping the softness of the original subject. It was a good exercise in patience, control and simplifying without flattening the personality of the image.",
+    "rationale": "The exercise was about deciding what information needed to stay when a raster image was rebuilt as vector artwork. I focused on the main shapes, curve quality and proportion, then simplified secondary detail so the result stayed recognisable without feeling mechanically traced.",
     "process": [
       {
         "title": "Reference",
@@ -640,32 +565,24 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Illustration",
     "format": "Vector Artwork",
-    "summary": "A vector study of a chair, translating a raster image into a cleaner illustration with attention to proportion, edge quality and form.",
+    "summary": "A chair vectorization study focused on proportion, structure and clean path construction in Illustrator.",
     "note": "Shows the raster source and vector redraw.",
-    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
     "cover": "assets/projects/web/chair-cover.webp",
-    "coverPlaceholder": true,
     "slides": [
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/chair-raster.webp",
-        "alt": "Placeholder for the raster reference of the chair",
+        "alt": "Raster reference of a chair",
         "caption": "Raster reference",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "RASTER REFERENCE"
+        "fit": "contain"
       },
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/chair-vector.webp",
-        "alt": "Placeholder for the vectorized chair",
+        "alt": "Vector recreation of the chair",
         "caption": "Vector result",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "VECTOR RESULT"
+        "fit": "contain"
       }
     ],
-    "rationale": "This one pushed me to be more precise. A chair sounds simple, but it becomes a really good exercise in structure because every curve, angle and proportion matters. I wanted the final vector to feel solid and polished while still being clearly drawn by hand.",
+    "rationale": "The chair was a useful precision exercise because small changes in angle and proportion affect the whole object. I rebuilt the reference with controlled paths and a simplified anchor structure, then refined the silhouette so the final vector stayed clean and balanced.",
     "process": [
       {
         "title": "Observation",
@@ -694,32 +611,24 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Illustration",
     "format": "Vector Artwork",
-    "summary": "A packaging vectorization exercise focused on recreating the structure and visual details of a Neutrogena cream package from a raster reference.",
+    "summary": "A packaging vectorization exercise recreating a Neutrogena cream container from a raster reference with attention to proportion, surface details and label structure.",
     "note": "Shows the source image and the vector version.",
-    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
     "cover": "assets/projects/web/neutrogena-cover.webp",
-    "coverPlaceholder": true,
     "slides": [
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/neutrogena-raster.webp",
-        "alt": "Placeholder for the raster reference of the Neutrogena packaging",
+        "alt": "Raster reference of a Neutrogena cream package",
         "caption": "Raster reference",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "RASTER REFERENCE"
+        "fit": "contain"
       },
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/neutrogena-vector.webp",
-        "alt": "Placeholder for the vectorized Neutrogena packaging",
-        "caption": "Vector result",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "VECTOR RESULT"
+        "alt": "Vector reconstruction showing the Neutrogena package from multiple views",
+        "caption": "Vector result and package views",
+        "fit": "contain"
       }
     ],
-    "rationale": "With this piece, the challenge was less about expressive drawing and more about precision. Packaging needs to feel accurate, clean and believable, so I treated the vectorization as an exercise in control. I wanted the final result to feel crisp while still keeping the proportions and details faithful to the original product.",
+    "rationale": "This project required a more technical kind of accuracy. I broke the package into its main form, label structure, type and smaller details, then rebuilt those elements as vectors. The goal was a clean result that stayed faithful to the proportions of the reference while showing consistent construction across multiple views.",
     "process": [
       {
         "title": "Reference Review",
@@ -737,7 +646,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "cinemax-brand-identity",
-    "title": "Cinemax Logo Concept",
+    "title": "Cinemax Rebrand Concept",
     "category": "Logo Design",
     "categoryKey": "logos",
     "tags": [
@@ -748,59 +657,36 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Brand Identity",
     "format": "Logo System",
-    "summary": "A cinema identity concept for Cinemax, developed through a direct comparison with Cineplex and a clearer system for the logo, visual elements, colour palette and brand applications.",
-    "note": "The case study separates the competitor comparison, logo meaning, colour palette and mockups so each part of the identity can be read clearly.",
-    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+    "summary": "A cinema rebrand concept for Cinemax, using Cineplex as a market reference while developing a distinct logo, colour system and set of brand applications.",
+    "note": "The case study separates the reference comparison, logo/rebrand direction, colour palette and mockups.",
     "cover": "assets/projects/web/cinemax-cover.webp",
-    "coverPlaceholder": true,
     "slides": [
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+        "src": "assets/projects/web/cineplex-reference.webp",
+        "alt": "Cineplex logo used as a market reference in the Cinemax branding study",
+        "caption": "Reference — Cineplex",
+        "fit": "contain"
+      },
+      {
         "src": "assets/projects/web/cinemax-logo-main.webp",
-        "alt": "Placeholder for the main Cinemax logo",
-        "caption": "Cinemax — main logo",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "CINEMAX — MAIN LOGO"
+        "alt": "Cinemax logo and rebrand direction",
+        "caption": "Cinemax — logo and rebrand",
+        "fit": "contain"
       },
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
-        "src": "assets/projects/web/cinemax-cineplex-comparison.webp",
-        "alt": "Placeholder for a Cinemax and Cineplex brand comparison",
-        "caption": "Brand comparison — Cinemax and Cineplex",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "BRAND COMPARISON — CINEMAX / CINEPLEX"
-      },
-      {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
-        "src": "assets/projects/web/cinemax-logo-elements.webp",
-        "alt": "Placeholder explaining the visual elements and meaning of the Cinemax logo",
-        "caption": "Logo elements and meaning",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "LOGO ELEMENTS + MEANING"
-      },
-      {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/cinemax-colour-palette.webp",
-        "alt": "Placeholder for the Cinemax colour palette",
-        "caption": "Cinemax colour palette",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "COLOUR PALETTE"
+        "alt": "Cinemax brand colour palette",
+        "caption": "Colour palette",
+        "fit": "contain"
       },
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/cinemax-mockups.webp",
-        "alt": "Placeholder for Cinemax brand mockups",
-        "caption": "Cinemax brand mockups",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "BRAND MOCKUPS"
+        "alt": "Cinemax stationery and brand application mockups",
+        "caption": "Brand mockups",
+        "fit": "contain"
       }
     ],
-    "rationale": "For Cinemax, I wanted the identity to feel cinematic without becoming too obvious or overly literal. I looked at how a large cinema brand like Cineplex presents itself, then used that comparison as a way to define what I wanted this concept to do differently. The goal was to build a mark with personality, strong color direction and room for a clear story behind each element.",
+    "rationale": "I used Cineplex as a market reference to understand what a familiar cinema identity communicates, then developed Cinemax in a different visual direction. The mark, colour palette and applications were designed as one system so the rebrand could work beyond the logo itself. The objective was a recognisable cinema identity with enough visual distance to stand on its own.",
     "process": [
       {
         "title": "Positioning",
@@ -827,6 +713,19 @@ window.PORTFOLIO_PROJECTS = [
         "I separated the colour system and visual rules so the brand has a recognisable tone of its own.",
         "I planned the identity as a flexible system, then tested it through mockups rather than treating the logo as a standalone piece."
       ]
+    },
+    "comparison": {
+      "before": {
+        "src": "assets/projects/web/cineplex-reference.webp",
+        "label": "Market reference — Cineplex",
+        "alt": "Cineplex logo market reference"
+      },
+      "after": {
+        "src": "assets/projects/web/cinemax-logo-main.webp",
+        "label": "Rebrand direction — Cinemax",
+        "alt": "Cinemax logo rebrand direction"
+      },
+      "note": "This comparison uses Cineplex as a market reference and Cinemax as the new identity direction; it is not presented as a redesign of Cineplex."
     }
   },
   {
@@ -842,50 +741,36 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Brand Identity",
     "format": "Logo System",
-    "summary": "A logo concept for Kronos, an energy drink brand built around natural ingredients, with room to show the mark, its visual logic and the color system.",
+    "summary": "A brand identity for Kronos, an energy drink concept built around natural ingredients and a balance of strength, clarity and recognisable packaging.",
     "note": "The logo breakdown, colour palette and mockups are shown separately so the identity system is easier to follow.",
-    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
     "cover": "assets/projects/web/kronos-cover.webp",
-    "coverPlaceholder": true,
     "slides": [
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/kronos-logo-main.webp",
-        "alt": "Placeholder for the main Kronos logo",
-        "caption": "Kronos — main logo",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "KRONOS — MAIN LOGO"
+        "alt": "Main Kronos energy drink logo",
+        "caption": "Main logo",
+        "fit": "contain"
       },
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/kronos-logo-elements.webp",
-        "alt": "Placeholder explaining the Kronos logo elements and meaning",
-        "caption": "Logo elements and meaning",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "LOGO ELEMENTS + MEANING"
+        "alt": "Kronos logo elements and visual construction",
+        "caption": "Logo elements",
+        "fit": "contain"
       },
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/kronos-colour-palette.webp",
-        "alt": "Placeholder for the Kronos colour palette",
-        "caption": "Kronos colour palette",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "COLOUR PALETTE"
+        "alt": "Kronos brand colour palette",
+        "caption": "Colour palette",
+        "fit": "contain"
       },
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/kronos-mockups.webp",
-        "alt": "Placeholder for Kronos energy drink brand mockups",
-        "caption": "Kronos brand mockups",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "BRAND MOCKUPS"
+        "alt": "Kronos energy drink brand mockups",
+        "caption": "Brand mockups",
+        "fit": "contain"
       }
     ],
-    "rationale": "Kronos was imagined as an energy drink brand that feels powerful, but not artificial. Because the concept is built around natural ingredients, I wanted the identity to balance strength with something cleaner and more grounded. The visual system needed to feel bold enough for the category while still reflecting that healthier positioning.",
+    "rationale": "Kronos was designed as an energy drink brand that feels strong without relying on an overly synthetic visual language. Because the concept is centred on natural ingredients, I balanced a bold mark with a more controlled colour and packaging system. The identity was developed as a set of repeatable elements rather than a logo in isolation.",
     "process": [
       {
         "title": "Concept",
@@ -914,59 +799,42 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Brand Identity",
     "format": "Logo System",
-    "summary": "A beauty rebrand that moves the existing Nail Salon Willowbrook Mall identity toward Willow Beauty, with a clearer name, visual system and more polished brand direction.",
-    "note": "The case study compares the previous Nail Salon Willowbrook Mall identity with the Willow Beauty rebrand, then separates the logo logic, colour palette and mockups.",
-    // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
+    "summary": "A rebrand concept that moves the existing Nail Salon Willowbrook Mall identity toward Willow Beauty with a clearer name and a more consistent visual system.",
+    "note": "The case study compares the existing salon identity with the Willow Beauty rebrand, followed by the logo system, colour direction and mockup applications.",
     "cover": "assets/projects/web/willow-cover.webp",
-    "coverPlaceholder": true,
     "slides": [
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/willow-old-brand.webp",
-        "alt": "Placeholder for the previous Nail Salon Willowbrook Mall identity",
+        "alt": "Previous Nail Salon Willowbrook Mall logo",
         "caption": "Before — Nail Salon Willowbrook Mall",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "BEFORE — NAIL SALON WILLOWBROOK MALL"
+        "fit": "contain"
       },
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/willow-logo-main.webp",
-        "alt": "Placeholder for the Willow Beauty rebrand logo",
-        "caption": "After — Willow Beauty logo",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "AFTER — WILLOW BEAUTY"
+        "alt": "Willow Beauty logo and visual elements",
+        "caption": "After — Willow Beauty logo system",
+        "fit": "contain"
       },
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
-        "src": "assets/projects/web/willow-logo-elements.webp",
-        "alt": "Placeholder explaining the visual elements and meaning of the Willow Beauty logo",
-        "caption": "Logo elements and meaning",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "LOGO ELEMENTS + MEANING"
-      },
-      {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/willow-colour-palette.webp",
-        "alt": "Placeholder for the Willow Beauty colour palette",
-        "caption": "Willow Beauty colour palette",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "COLOUR PALETTE"
+        "alt": "Willow Beauty colour direction reference",
+        "caption": "Colour palette",
+        "fit": "contain"
       },
       {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
-        "src": "assets/projects/web/willow-mockups.webp",
-        "alt": "Placeholder for Willow Beauty brand mockups",
-        "caption": "Willow Beauty mockups",
-        "fit": "contain",
-        "placeholder": true,
-        "label": "BRAND MOCKUPS"
+        "src": "assets/projects/web/willow-mockup-website.webp",
+        "alt": "Willow Beauty website brand mockup",
+        "caption": "Website mockup",
+        "fit": "contain"
+      },
+      {
+        "src": "assets/projects/web/willow-mockup-tote.webp",
+        "alt": "Willow Beauty tote bag brand mockup",
+        "caption": "Tote bag mockup",
+        "fit": "contain"
       }
     ],
-    "rationale": "For Willow Beauty, I wanted the rebrand to feel softer, more polished and easier to grow beyond a location-based salon identity. I used Nail Salon Willowbrook Mall as the clear before point, then built Willow Beauty as a more cohesive direction with a stronger name, cleaner hierarchy and a visual system that can move across signage, social content and salon touchpoints. The goal was not to make it feel overly luxurious; I wanted it to stay approachable while feeling more intentional and memorable.",
+    "rationale": "The rebrand starts from the existing Nail Salon Willowbrook Mall identity and moves toward a name and visual system that can extend beyond a single location. Willow Beauty uses a more consistent logo relationship and a softer, contemporary direction that can work across digital and physical touchpoints. The goal was to make the identity easier to recognise and easier to apply without pushing it into an overly luxury tone.",
     "process": [
       {
         "title": "Brand Review",
@@ -983,18 +851,16 @@ window.PORTFOLIO_PROJECTS = [
     ],
     "comparison": {
       "before": {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/willow-old-brand.webp",
-        "label": "BEFORE — NAIL SALON WILLOWBROOK MALL",
+        "label": "Before — Nail Salon Willowbrook Mall",
         "alt": "Previous Nail Salon Willowbrook Mall identity"
       },
       "after": {
-        // PONER FOTO AQUI: replace this placeholder file in assets/projects/web/ while keeping the same filename.
         "src": "assets/projects/web/willow-logo-main.webp",
-        "label": "AFTER — WILLOW BEAUTY",
+        "label": "After — Willow Beauty",
         "alt": "Willow Beauty rebrand identity"
       },
-      "note": "Drag the divider to compare the previous identity with the Willow Beauty rebrand."
+      "note": "Compare the existing Nail Salon Willowbrook Mall identity with the Willow Beauty rebrand. On mobile, both are shown as separate panels."
     },
     "problemSolution": {
       "intro": "The rebrand started by identifying what made the existing identity harder to extend into a stronger beauty brand.",

@@ -278,3 +278,35 @@
     min-height: 0;
   }
 }
+
+/* Final card alignment pass: headings share the same row across desktop grids. */
+.discipline-card,
+.process-card {
+  display: grid;
+  grid-template-rows: auto minmax(3.1rem, auto) 1fr;
+  align-content: start;
+}
+
+.discipline-card h3,
+.process-card h3 {
+  margin: 38px 0 10px;
+  min-height: 0;
+  align-self: start;
+}
+
+.discipline-card p,
+.process-card p {
+  align-self: start;
+}
+
+@media (max-width: 620px) {
+  .discipline-card,
+  .process-card {
+    grid-template-rows: auto auto 1fr;
+  }
+
+  .discipline-card h3,
+  .process-card h3 {
+    margin-top: 28px;
+  }
+}

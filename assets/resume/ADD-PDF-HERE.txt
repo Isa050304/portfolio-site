@@ -1,5 +1,4 @@
-ADD PDF HERE
+The portfolio currently links to:
+Isabel_Contreras_Resume_ATS.pdf
 
-Place your final PDF in this folder and then update about/index.html.
-Example filename/path to use in the button:
-../assets/resume/add-pdf-here.pdf
+If you replace the resume later, either keep this filename or update the href in about/index.html.

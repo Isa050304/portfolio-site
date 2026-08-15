@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </ul>
           <p>${project.summary}</p>
           <a class="project-link" href="${projectHref(project.id)}">
-            View project <span class="arrow" aria-hidden="true">↗</span>
+            View project <span class="arrow"><span class="css-arrow css-arrow--up-right" aria-hidden="true"></span></span>
           </a>
         </div>
       </article>

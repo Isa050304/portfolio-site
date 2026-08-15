@@ -327,3 +327,87 @@ body {
     --section-compact: 44px;
   }
 }
+
+/* Final typography and icon pass */
+p,
+li,
+.body-large,
+.project-summary,
+.work-card p {
+  text-wrap: pretty;
+  orphans: 3;
+  widows: 3;
+}
+
+h1,
+h2,
+h3,
+.display-title,
+.section-title,
+.project-title,
+.footer-title {
+  text-wrap: balance;
+}
+
+.body-large {
+  line-height: 1.62;
+}
+
+/* CSS-drawn arrows avoid platform emoji rendering on iOS. */
+.css-arrow {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+}
+
+.css-arrow::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 6px;
+  width: 10px;
+  height: 1.5px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.css-arrow::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+}
+
+.css-arrow--right::after {
+  right: 1px;
+  top: 3.5px;
+  transform: rotate(45deg);
+}
+
+.css-arrow--left::before {
+  left: 2px;
+}
+
+.css-arrow--left::after {
+  left: 1px;
+  top: 3.5px;
+  transform: rotate(-135deg);
+}
+
+.css-arrow--up-right::before {
+  left: 1px;
+  top: 7px;
+  width: 12px;
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+
+.css-arrow--up-right::after {
+  right: 0;
+  top: 0;
+  transform: none;
+}

@@ -1,2 +1,4 @@
-Place your PDF in this folder and name it: isabel-contreras-resume.pdf
-The About page button already points to that filename.
+Current resume file:
+Isabel_Contreras_Resume_ATS.pdf
+
+The About page is already connected to this PDF.

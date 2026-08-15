@@ -16,8 +16,6 @@
 <link href="../../css/animations.css" rel="stylesheet"/>
 </head>
 <body class="project-detail-page" data-root="../../">
-<a class="skip-link" href="#main-content">Skip to content</a>
-
 <header class="navbar" id="site-header">
 <a aria-label="Isabel Contreras home" class="logo" href="/">
 <img alt="Isabel Contreras" src="../../assets/logos/logo-wordmark.svg"/>
@@ -52,8 +50,8 @@
 </div>
 <div class="slider-controls">
 <div class="slider-buttons">
-<button aria-label="Previous slide" class="slider-button" data-prev="" type="button">←</button>
-<button aria-label="Next slide" class="slider-button" data-next="" type="button">→</button>
+<button aria-label="Previous slide" class="slider-button" data-prev="" type="button"><span class="css-arrow css-arrow--left" aria-hidden="true"></span></button>
+<button aria-label="Next slide" class="slider-button" data-next="" type="button"><span class="css-arrow css-arrow--right" aria-hidden="true"></span></button>
 </div>
 <div aria-label="Choose slide" class="slider-dots" id="slider-dots"></div>
 <p aria-live="polite" class="slider-caption" id="slider-caption"></p>
@@ -79,7 +77,7 @@
 <span class="comparison-label" id="comparison-after-label">After</span>
 <img id="comparison-after-image" src="" alt="">
 </div>
-<div class="comparison-divider" aria-hidden="true"><span>↔</span></div>
+<div class="comparison-divider" aria-hidden="true"><span class="comparison-grip"></span></div>
 <input class="comparison-range" id="comparison-range" type="range" min="18" max="82" value="50" aria-label="Adjust before and after comparison">
 </div>
 </div>
@@ -177,7 +175,7 @@
 </div>
 </div>
 </footer>
-<button aria-label="Back to top" class="back-to-top" type="button">Back to top <span aria-hidden="true">↑</span></button>
+<button aria-label="Back to top" class="back-to-top" type="button">Back to top</button>
 <div aria-hidden="true" class="route-transition"></div>
 <script src="../../js/main.js"></script>
 <script src="../../js/navigation.js"></script>
