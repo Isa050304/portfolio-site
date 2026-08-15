@@ -434,3 +434,11 @@ body.is-transitioning .route-transition::before { animation: yarn-page-wave 720m
     font-size: .72rem;
   }
 }
+
+/* Keep the footer colour through the bottom safe area on iPhone. */
+@media (max-width: 760px) {
+  .site-footer {
+    padding-bottom: calc(30px + env(safe-area-inset-bottom, 0px));
+    margin-bottom: 0;
+  }
+}

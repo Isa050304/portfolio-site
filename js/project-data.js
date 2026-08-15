@@ -1,9 +1,8 @@
-// IMAGE EDITING NOTES
-// All project images used by the site live in assets/projects/web/.
-// PONER FOTO AQUI: replace willow-colour-palette.webp with the final dedicated Willow Beauty colour palette when ready.
-// PONER FOTO AQUI: restaurant-menu-layout.webp currently uses the supplied menu cover; replace it if you add a separate flat menu layout.
-// Website screenshots for Numode Delivery and Transylvanian Traditions are intentionally long; the project page renders them inside a scrollable desktop-style browser frame.
-// Staff Portal screenshots are sanitized. Some text may look slightly altered because sensitive information was edited in Photoshop before publication.
+// PROJECT IMAGE NOTES
+// Project images used by the site live in assets/projects/web/.
+// Website captures for Numode Delivery and Transylvanian Traditions are intentionally scrollable in the project viewer.
+// Staff Portal screenshots are sanitized; some text was altered in Photoshop to protect private information.
+// The Willow Beauty comparison uses the old Nail Salon Willowbrook Mall website mockup and the new Willow Beauty website mockup.
 
 window.PORTFOLIO_PROJECTS = [
   {
@@ -216,7 +215,7 @@ window.PORTFOLIO_PROJECTS = [
         "label": "After — redesigned website",
         "alt": "Redesigned Numode Delivery website"
       },
-      "note": "Compare the previous and redesigned desktop versions. On smaller screens, both versions are shown as separate panels for easier viewing."
+      "note": "Drag the divider from edge to edge to compare the previous and redesigned desktop sites. On phones, the divider moves vertically so both versions remain easy to inspect."
     },
     "galleryMode": "website",
     "problemSolution": {
@@ -233,7 +232,8 @@ window.PORTFOLIO_PROJECTS = [
         "Standardised the colour treatment and reusable visual patterns.",
         "Reworked more than 25 pages, then tested and migrated the new site from a subdomain to the live domain."
       ]
-    }
+    },
+    "compactWebsite": true
   },
   {
     "id": "numode-staff-portal",
@@ -249,35 +249,47 @@ window.PORTFOLIO_PROJECTS = [
     "role": "UX + Development",
     "format": "Internal Staff Portal",
     "summary": "A role-based internal portal for Numode Delivery that brings dispatch, logistics and driver workflows into one custom coded system.",
-    "note": "Private internal tool. All portfolio screenshots use test data, and some text was intentionally altered in Photoshop to protect company and customer information. AI tools supported programming, debugging and technical guidance during development.",
+    "note": "Private internal tool. Portfolio screenshots use test data. Some text appears unusual because sensitive company and customer information was altered in Photoshop before publication. AI tools supported programming, debugging and technical guidance during development.",
     "cover": "assets/projects/web/numode-portal-cover.webp",
     "slides": [
       {
         "src": "assets/projects/web/numode-portal-dispatcher.webp",
         "alt": "Sanitized Numode Delivery dispatcher dashboard with test order data",
         "caption": "Dispatcher workspace",
-        "fit": "contain"
+        "fit": "contain",
+        "scrollable": true,
+        "scrollBoth": true,
+        "browserLabel": "Dispatcher workspace"
       },
       {
         "src": "assets/projects/web/order-details.webp",
         "alt": "Sanitized open order details screen in the Numode Delivery staff portal",
         "caption": "Order details and quote workflow",
-        "fit": "contain"
+        "fit": "contain",
+        "scrollable": true,
+        "scrollBoth": true,
+        "browserLabel": "Order details and quote workflow"
       },
       {
         "src": "assets/projects/web/numode-portal-logistics.webp",
         "alt": "Sanitized Numode Delivery logistics dashboard",
         "caption": "Logistics workspace",
-        "fit": "contain"
+        "fit": "contain",
+        "scrollable": true,
+        "scrollBoth": true,
+        "browserLabel": "Logistics workspace"
       },
       {
         "src": "assets/projects/web/numode-portal-driver.webp",
         "alt": "Sanitized Numode Delivery driver dashboard for routes and hours",
         "caption": "Driver workspace",
-        "fit": "contain"
+        "fit": "contain",
+        "scrollable": true,
+        "scrollBoth": true,
+        "browserLabel": "Driver workspace"
       }
     ],
-    "rationale": "I built the staff portal as a separate internal project because several daily workflows were spread across paper, repeated emails and manual handoffs. After sign-in, each role is routed to the tools relevant to its work. Dispatchers can review orders, classify paid and unpaid work, enter quote amounts and send consistent customer messages. The Send Quote controls become available once the amount is entered; the email includes confirmation and decline links that update the order status automatically. Logistics can view, edit and download BOLs and run sheets, while drivers can enter routes and daily hours to support payroll processing. I also developed a separate customer payment-information flow. The payment and document screens are intentionally not shown in the portfolio. The portal was coded in cPanel, with AI tools used as support for programming, debugging and implementation guidance while I defined the workflows, tested the system and adapted it to the team’s needs.",
+    "rationale": "I built the staff portal as a separate internal project because several daily workflows were spread across paper, repeated emails and manual handoffs. After sign-in, each role is routed to the tools relevant to its work. Dispatchers can review orders, classify paid and unpaid work, enter quote amounts and send consistent customer messages.\n\nThe Send Quote controls become available once an amount is entered. The customer email includes confirmation and decline links, and the response updates the order status automatically. Logistics can manage operational records, while drivers enter routes and daily hours to support payroll processing.\n\nI also developed a separate customer payment-information flow, but payment and document screens are intentionally not shown in the portfolio. The portal was coded in cPanel. AI tools supported programming, debugging and technical guidance while I defined the workflows, tested the system and adapted it to the team’s needs.",
     "problemSolution": {
       "intro": "The portal was designed around operational tasks that were taking extra time because information moved between paper, email and separate manual steps.",
       "problems": [
@@ -308,7 +320,8 @@ window.PORTFOLIO_PROJECTS = [
         "title": "Reduce Repetition",
         "body": "I focused on removing repeated manual steps. Automated status changes, reusable communication and direct data entry make the workflow easier to follow without adding unnecessary complexity."
       }
-    ]
+    ],
+    "galleryMode": "portal"
   },
   {
     "id": "transylvanian-traditions",
@@ -355,10 +368,10 @@ window.PORTFOLIO_PROJECTS = [
       "css": "HOME PAGE CSS"
     },
     "codeSamples": {
-      "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Transylvanian Traditions</title>\n  <link rel=\"stylesheet\" href=\"styles.css\">\n</head>\n<body>\n  <header class=\"site-header\">\n    <a class=\"brand\" href=\"#\">Transylvanian Traditions</a>\n    <nav class=\"site-nav\">\n      <a href=\"#story\">Our Story</a>\n      <a href=\"#pastries\">Pastries</a>\n      <a href=\"#visit\">Visit</a>\n    </nav>\n  </header>\n\n  <main>\n    <section class=\"hero\">\n      <div class=\"hero-copy\">\n        <p class=\"eyebrow\">BCIT Web Project</p>\n        <h1>Traditional pastries, presented in a warmer and clearer way.</h1>\n        <p>I redesigned the bakery site to make it easier to browse, more inviting visually and more consistent across pages.</p>\n        <a class=\"primary-btn\" href=\"#pastries\">Explore the menu</a>\n      </div>\n    </section>\n\n    <section class=\"feature-grid\" id=\"pastries\">\n      <article class=\"feature-card\">\n        <h2>Fresh pastry highlights</h2>\n        <p>A cleaner content structure helps featured items stand out.</p>\n      </article>\n      <article class=\"feature-card\">\n        <h2>Clearer story section</h2>\n        <p>The rewrite gives the brand a more personal voice.</p>\n      </article>\n      <article class=\"feature-card\">\n        <h2>Simple call to action</h2>\n        <p>Visitors can quickly find where to order or visit.</p>\n      </article>\n    </section>\n  </main>\n</body>\n</html>",
-      "css": ".site-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1.25rem 2rem;\n}\n\n.site-nav {\n  display: flex;\n  gap: 1rem;\n}\n\n.hero {\n  min-height: 70vh;\n  display: grid;\n  place-items: center;\n  padding: 4rem 2rem;\n  background: linear-gradient(180deg, #fff5f2, #ffffff);\n}\n\n.hero-copy {\n  max-width: 42rem;\n  text-align: center;\n}\n\n.feature-grid {\n  display: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 1.25rem;\n  padding: 2rem;\n}\n\n.feature-card {\n  padding: 1.5rem;\n  border: 1px solid #e6d8d0;\n  border-radius: 1rem;\n  background: #ffffff;\n}\n\n@media (max-width: 768px) {\n  .site-header,\n  .site-nav {\n    flex-direction: column;\n  }\n\n  .feature-grid {\n    grid-template-columns: 1fr;\n  }\n}"
+      "html": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"UTF-8\">\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n        <title>Transylvanian Traditions</title>\n        <link rel=\"stylesheet\" href=\"style.css\">\n        <link rel=\"stylesheet\" href=\"responsive.css?v=5\">\n        <link rel=\"stylesheet\" href=\"navbar-final.css\">\n        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n        <link href=\"https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Gelasio:ital,wght@0,400..700;1,400..700&display=swap\" rel=\"stylesheet\">\n        <link rel=\"icon\" type=\"image/png\" href=\"images/logo.png\">\n    </head>\n    <body id=\"top\" class=\"home-page\">\n        <header id=\"header\">\n            <nav>\n                <div class=\"logo\">\n                    <img src=\"images/logo.png\">\n                </div>\n                <ul>\n                    <li><a href=\"index.html\">Home</a></li>\n                    <li><a href=\"about.html\">About</a></li>\n                    <li><a href=\"pastries.html\">Pastries</a></li>\n                    <li><a href=\"contact.html\">Contact Us</a></li>\n                </ul>\n            </nav>\n        </header>\n\n        <main>\n            <section class=\"home-banner\">\n                <div class=\"banner-text-overlay\">\n                    <h1>The Heaven of Desserts</h1>\n                    <h2>Enjoy the splendor of the natural ingredients</h2>\n                    <button><a href=\"about.html\">Learn More!</a></button>\n                </div>\n            </section>\n\n            <section class=\"about-pastry\">\n                <div class=\"about-flex-container\">\n                    <div class=\"about-image-flex-item\">\n                        <img src=\"images/head-pic.jpeg\">\n                    </div>\n                    <div class=\"about-text-container\">\n                        <h2 id=\"back-to-top\">The World of Art and Culinary Discipline</h2>\n                        <p>\n                            The cook plays an important role in the nourishing ability of food. Meals that are lovingly prepared, with a profound desire for the welfare of the eater, always benefit the body and mind more than meals that are commercially prepared or prepared by someone who is indifferent to, or dislikes, the intended eater. No one should cook when in a state of indifference, agitation, sorrow, or anger.\n                        </p>\n                    </div>\n                </div>\n            </section>\n\n            <section class=\"divider-bg\"></section>\n\n            <section>\n                <h2>The Most Delicious Delights</h2>\n                <div class=\"pastry-flex-container\">\n                    <div class=\"pastry-flex-item\">\n                        <img src=\"images/pastry.jpeg\">\n                        <h3>Pastries</h3>\n                        <p>A world of authenticity. We offer the best pastries in town, from creamy desserts to rich chocolate layers. We also have nut-free options and desserts with a touch of rum.</p>\n                    </div>\n                    <div class=\"pastry-flex-item\">\n                        <img src=\"images/cakes.jpeg\">\n                        <h3>Cakes for Every Occasion</h3>\n                        <p>The best you can imagine. Birthday cakes for your loved ones, from 9 to 45 servings, with the perfect flavor for any occasion.</p>\n                    </div>\n                    <div class=\"pastry-flex-item\">\n                        <img src=\"images/chimney.png\">\n                        <h3>Chimney Cake</h3>\n                        <p>Enjoy a fabulous delicacy. Kürtőskalács is a traditional pastry from Hungarian-speaking regions, made from sweet yeast dough wrapped around a baking spit and baked until golden brown with a caramelized sugar crust. It can be topped with delicious flavors like cinnamon or walnut.</p>\n                    </div>\n                    <div class=\"pastry-flex-item\">\n                        <img src=\"images/bread.jpeg\">\n                        <h3>Other Goodies</h3>\n                        <p>Exceptional traditions. Discover our braided sweet rolls, Easter bread, homemade bread, and many other traditional baked goods, all made with care and authentic recipes.</p>\n                    </div>\n                </div>\n            </section>\n            <a class=\"back-to-top\" href=\"#top\" aria-label=\"Back to top\" title=\"Back to top\"><img src=\"images/arrow.png\" alt=\"\"></a>\n        </main>\n        <footer id=\"footer\">\n            <div class=\"footer-flex-container\">\n                <div class=\"footer-flex-item\">\n                    <ul>\n                        <li><a href=\"index.html\">Home</a></li>\n                        <li><a href=\"pastries.html\">Pastries</a></li>\n                        <li><a href=\"#\">Birthday Cakes</a></li>\n                        <li><a href=\"#\">Chimney Cake</a></li>\n                        <li><a href=\"#\">Other Goodies</a></li>\n                        <li><a href=\"contact.html\">Contact Us</a></li>\n                        <li><a href=\"about.html\">About Us</a></li>\n                    </ul>\n                </div>\n                <div class=\"footer-flex-item\">\n                    <ul>\n                        <li><a href=\"#\">About Transylvania</a></li>\n                        <li><a href=\"#\">About Romania</a></li>\n                        <li><a href=\"#\">Vancouver's forecast</a></li>\n                        <li><a href=\"#\">Terms of use</a></li>\n                    </ul>\n                </div>\n                <div class=\"footer-flex-item\">\n                    <img src=\"images/logo-foot.png\">\n                </div>\n                <div class=\"footer-flex-item\">\n                    <p>Transylvanian Traditions Bakery</p>\n                    <p>Location: 1111 Davie Street, Vancouver BC</p>\n                    <p>Telephone: 604-682-0096</p>\n                    <p>E-mail: transylvaniantraditions@yahoo.com</p>\n                    <p>Copyright © 2014 Transylvanian Traditions Bakery®</p>\n                    <p>Website designed and developed by WebExperts Inc.</p>\n                    <p>Credit and/or Debit Cards are welcome</p>\n                </div>\n            </div>\n            <h5>@Copyright 2026 Transylvanian Traditions Bakery® - All rights reserved</h5>\n        </footer>\n    </body>\n</html>",
+      "css": "body {\n    background-color: rgb(245, 245, 245);\n    margin: 0;\n}\n\nh1, h2, h3, h4, h5, h6 {\n    font-family: \"Funnel Sans\", sans-serif;\n}\n\nh1 { font-size: 75px; }\nh2 { font-size: 40px; color: rgb(71, 59, 50); }\nh3 { font-size: 30px; }\nh4 { font-size: 20px; }\nh5 { font-size: 16px; }\nh6 { font-size: 13px; }\n\np, a, ul, ol, table {\n    font-family: \"Gelasio\", serif;\n}\n\np { font-size: 18px; }\nsection { padding: 6% 5%; }\n\n#header {\n    background-color: rgb(255, 247, 244);\n    position: sticky;\n    top: 0;\n    z-index: 999;\n}\n\n#header nav {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n#header nav ul,\n#header .logo {\n    width: 30%;\n    height: 100%;\n}\n\n#header nav img { width: 20%; }\n\n#header nav ul {\n    list-style-type: none;\n    display: flex;\n}\n\nnav { text-align: center; }\n\nnav a {\n    color: rgb(21, 21, 21);\n    padding: 10px;\n    font-size: 24px;\n    text-decoration: none;\n}\n\nnav a:hover {\n    background-color: rgba(236, 212, 201, 0.608);\n    color: rgb(0, 0, 0);\n}\n\nnav a:active {\n    background-color: rgb(132, 108, 108);\n    color: rgb(225, 225, 225);\n}\n\n.home-banner {\n    background-image: url('images/hero.jpeg');\n    background-size: cover;\n    background-position: 100% 60%;\n    height: calc(100vh - 89px);\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding: 0;\n    position: relative;\n    background-attachment: fixed;\n}\n\n.home-banner .banner-text-overlay {\n    text-align: center;\n    color: rgb(255, 255, 255);\n    padding: 200px 200px 150px 200px;\n    background-color: rgba(0, 0, 0, 0.622);\n    border-radius: 8px;\n}\n\n.home-banner h2 {\n    font-size: 25px;\n    color: rgb(234, 234, 234);\n    margin-bottom: 60px;\n}\n\n.home-banner h1 { font-size: 60px; }\n\n.home-banner button {\n    background-color: rgb(168, 147, 140);\n    border: 0px solid rgb(84, 62, 58);\n    border-radius: 5px;\n    padding: 15px 0;\n}\n\n.home-banner button a {\n    color: rgb(255, 255, 255);\n    text-decoration: none;\n    font-size: 20px;\n    font-weight: 900;\n    padding: 20px 40px;\n}\n\n.home-banner button:hover {\n    background-color: rgb(108, 82, 74);\n    transform: translateY(9px);\n    transition: transform .5s ease-in-out;\n}\n\n.home-banner img {\n    position: absolute;\n    top: 82px;\n    width: 95px;\n    transform: translate(-550px, 10px);\n}\n\n.home-banner button a:hover { color: rgb(66, 48, 48); }\n\n.pastry-flex-container {\n    display: flex;\n    flex-direction: row-reverse;\n    gap: 40px;\n    padding: 15px;\n    margin-bottom: 50px;\n    align-items: stretch;\n}\n\n.pastry-flex-container img {\n    width: 100%;\n    object-fit: cover;\n    height: 250px;\n}\n\n.pastry-flex-item {\n    display: flex;\n    flex-direction: column;\n    width: 25%;\n    justify-content: flex-start;\n    align-items: center;\n    text-align: center;\n    background-color: rgb(255, 247, 244);\n    padding-bottom: 10px;\n    border-radius: 5px;\n    padding: 15px;\n    box-shadow: 5px 6px 10px rgba(0,0,0,0.2);\n}\n\n.pastry-flex-item h2 { margin: 5px 0; }\n\n.divider-bg {\n    background-image: url(images/bread-hold.jpeg);\n    background-size: cover;\n    background-attachment: fixed;\n    height: 20vh;\n}\n\n.about-pastry {\n    background-color: white;\n    padding: 100px;\n}\n\n.about-flex-container {\n    display: flex;\n    gap: 50px;\n}\n\n.about-image-flex-item { width: 40%; }\n\n.about-image-flex-item img {\n    width: 100%;\n    box-shadow: 10px 10px 10px rgba(0,0,0,0.2);\n}\n\n.about-text-container {\n    width: 60%;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n\n#footer {\n    background-color: rgb(255, 247, 244);\n    padding: 5% 10% 2% 10%;\n}\n\n.footer-flex-container {\n    display: flex;\n    gap: 3%;\n}\n\n.footer-flex-item { width: 25%; }\n\n.footer-flex-item h4,\n.footer-flex-item a,\n.footer-flex-item p {\n    color: rgb(43, 31, 31);\n}\n\n.footer-flex-item a { display: block; }\n\n.footer-flex-item ul {\n    list-style-type: none;\n    padding-left: 0;\n}\n\n.footer-flex-item img { width: 50%; }\n\n.back-to-top img {\n    width: 7%;\n    position: fixed;\n    bottom: 20px;\n    left: 5%;\n}\n\nfooter h5 {\n    color: rgb(43, 31, 31);\n    text-align: center;\n}"
     },
-    "codeNote": "This preview represents the Home page only. The full Transylvanian Traditions project contains five pages. The live project link above shows the complete site.",
+    "codeNote": "This code preview shows the Home page only. The complete Transylvanian Traditions project contains five pages; the live project link above opens the full site.",
     "rationale": "This BCIT project was an opportunity to redesign a small bakery website as a complete multi-page experience. I focused on clearer navigation, more consistent hierarchy and a warmer visual direction that still lets the content do most of the work. The final site was coded in VS Code and includes five pages, so the portfolio shows the full-page before and after views while keeping the code preview focused on the Home page.",
     "process": [
       {
@@ -385,7 +398,7 @@ window.PORTFOLIO_PROJECTS = [
         "label": "After — redesigned website",
         "alt": "Redesigned Transylvanian Traditions website"
       },
-      "note": "Compare the original and redesigned versions. On mobile, the two versions are displayed separately instead of forcing the desktop comparison interaction into a narrow screen."
+      "note": "Drag the divider from edge to edge to compare the original and redesigned Home page. On phones, the comparison changes to a vertical split with the same draggable divider."
     },
     "galleryMode": "website"
   },
@@ -431,7 +444,7 @@ window.PORTFOLIO_PROJECTS = [
         "fit": "contain"
       }
     ],
-    "rationale": "The main challenge was reducing visual noise without making the menu feel sparse. I set a clear goal: fit the full selection into two pages and remove the large number of images that were competing with the menu information. In InDesign, I rebuilt the hierarchy around categories, dish names, descriptions and pricing so the menu could be scanned quickly while still feeling connected to the restaurant.",
+    "rationale": "The main challenge was reducing visual noise without making the menu feel sparse. I set one practical goal: fit the full selection into two pages instead of spreading information across a larger menu.\n\nThat meant removing many of the food images and giving categories, dish names, descriptions and prices a clearer hierarchy. I rebuilt the layout in InDesign so the menu could be scanned quickly while still feeling connected to the restaurant.",
     "process": [
       {
         "title": "Edit the Content",
@@ -457,7 +470,7 @@ window.PORTFOLIO_PROJECTS = [
         "label": "After — two-page redesign",
         "alt": "Combined two-page Kokoro Mazesoba menu redesign"
       },
-      "note": "The redesign reduces unnecessary imagery and reorganises the full menu into two pages. On mobile, the before and after are shown as separate panels."
+      "note": "Drag the divider to compare the previous menu with the two-page redesign. On phones, the divider moves vertically rather than squeezing both layouts side by side."
     }
   },
   {
@@ -799,80 +812,88 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "role": "Brand Identity",
     "format": "Logo System",
-    "summary": "A rebrand concept that moves the existing Nail Salon Willowbrook Mall identity toward Willow Beauty with a clearer name and a more consistent visual system.",
-    "note": "The case study compares the existing salon identity with the Willow Beauty rebrand, followed by the logo system, colour direction and mockup applications.",
+    "summary": "A rebrand concept that moves Nail Salon Willowbrook Mall toward Willow Beauty, creating a clearer identity for a business that offers more than nail services and needs to remain recognisable beyond one location.",
+    "note": "The case study compares the previous salon website direction with the Willow Beauty website mockup, then shows the updated identity, colour direction and applications.",
     "cover": "assets/projects/web/willow-cover.webp",
     "slides": [
       {
         "src": "assets/projects/web/willow-old-brand.webp",
         "alt": "Previous Nail Salon Willowbrook Mall logo",
-        "caption": "Before — Nail Salon Willowbrook Mall",
+        "caption": "Previous identity — Nail Salon Willowbrook Mall",
         "fit": "contain"
       },
       {
         "src": "assets/projects/web/willow-logo-main.webp",
         "alt": "Willow Beauty logo and visual elements",
-        "caption": "After — Willow Beauty logo system",
+        "caption": "Willow Beauty — logo and rebrand direction",
         "fit": "contain"
       },
       {
         "src": "assets/projects/web/willow-colour-palette.webp",
-        "alt": "Willow Beauty colour direction reference",
+        "alt": "Willow Beauty colour palette",
         "caption": "Colour palette",
         "fit": "contain"
       },
       {
+        "src": "assets/projects/web/willow-old-website-mockup.webp",
+        "alt": "Previous Nail Salon Willowbrook Mall website mockup",
+        "caption": "Before — salon website direction",
+        "fit": "contain"
+      },
+      {
         "src": "assets/projects/web/willow-mockup-website.webp",
-        "alt": "Willow Beauty website brand mockup",
-        "caption": "Website mockup",
+        "alt": "Willow Beauty redesigned website mockup",
+        "caption": "After — Willow Beauty website mockup",
         "fit": "contain"
       },
       {
         "src": "assets/projects/web/willow-mockup-tote.webp",
         "alt": "Willow Beauty tote bag brand mockup",
-        "caption": "Tote bag mockup",
+        "caption": "Brand application — tote bag",
         "fit": "contain"
       }
     ],
-    "rationale": "The rebrand starts from the existing Nail Salon Willowbrook Mall identity and moves toward a name and visual system that can extend beyond a single location. Willow Beauty uses a more consistent logo relationship and a softer, contemporary direction that can work across digital and physical touchpoints. The goal was to make the identity easier to recognise and easier to apply without pushing it into an overly luxury tone.",
+    "rationale": "The existing Nail Salon Willowbrook Mall presentation is strongly tied to a location and to nail services, even though the business offers a broader range of beauty services. That makes the brand harder to recognise as a complete beauty destination and gives it less flexibility if the business ever moves or if another nail salon opens nearby.\n\nWillow Beauty creates a more ownable name and visual system that can travel with the business. The rebrand is designed to make the service range easier to communicate, improve recognition across digital and physical touchpoints, and reduce dependence on the mall location as the main identifier.",
     "process": [
       {
         "title": "Brand Review",
-        "body": "I started with the existing Nail Salon Willowbrook Mall identity and looked at where the brand felt too descriptive, inconsistent or tied to a single location rather than a broader beauty experience."
+        "body": "I reviewed the existing salon name, website direction and visual presentation to identify where the business felt tied to one location or one service category."
       },
       {
         "title": "Rebrand Direction",
-        "body": "I developed Willow Beauty as a cleaner and more flexible direction, then explored the logo, typography and visual elements around a softer but still recognisable personality."
+        "body": "I developed Willow Beauty as a more flexible identity that can represent the wider service offering and remain recognisable if the location or competitive context changes."
       },
       {
         "title": "System + Applications",
-        "body": "I separated the colour palette from the mockups so the system can be understood first, then shown in context across the kinds of touchpoints a salon brand actually needs."
+        "body": "I separated the logo, colour palette and applications so the identity can be evaluated as a repeatable system, then tested it through website and physical mockups."
       }
     ],
     "comparison": {
       "before": {
-        "src": "assets/projects/web/willow-old-brand.webp",
+        "src": "assets/projects/web/willow-old-website-mockup.webp",
         "label": "Before — Nail Salon Willowbrook Mall",
-        "alt": "Previous Nail Salon Willowbrook Mall identity"
+        "alt": "Previous Nail Salon Willowbrook Mall website mockup"
       },
       "after": {
-        "src": "assets/projects/web/willow-logo-main.webp",
+        "src": "assets/projects/web/willow-mockup-website.webp",
         "label": "After — Willow Beauty",
-        "alt": "Willow Beauty rebrand identity"
+        "alt": "Willow Beauty redesigned website mockup"
       },
-      "note": "Compare the existing Nail Salon Willowbrook Mall identity with the Willow Beauty rebrand. On mobile, both are shown as separate panels."
+      "note": "Drag the divider to compare the previous salon website direction with the Willow Beauty rebrand mockup. On phones, the same comparison uses a vertical draggable split."
     },
     "problemSolution": {
-      "intro": "The rebrand started by identifying what made the existing identity harder to extend into a stronger beauty brand.",
+      "intro": "The rebrand addresses both visual consistency and a practical naming problem: the existing identity does not clearly communicate the full service offering or give the business much flexibility beyond its current location.",
       "problems": [
-        "The existing name and presentation felt very descriptive and heavily tied to the mall location.",
-        "The visual system did not have enough consistency to feel like one recognisable brand across different touchpoints.",
-        "The identity needed a softer, more current tone without losing the approachable feeling of a neighbourhood salon."
+        "The existing name is strongly tied to Willowbrook Mall and to nail services, even though the business offers several beauty services.",
+        "Customers may not understand the broader service offering from the existing identity alone.",
+        "A location-based name is less resilient if the salon relocates or if another nail-focused competitor opens nearby.",
+        "The existing presentation lacks a strong, consistent identity across website and brand touchpoints."
       ],
       "solutions": [
-        "I shifted the brand toward Willow Beauty so the name can support a broader and more memorable beauty identity.",
-        "I built a clearer logo, typography and colour system that can stay consistent across print and digital applications.",
-        "I kept the direction refined but approachable, then used mockups to test how the rebrand could live in real salon contexts."
+        "Willow Beauty creates a name that can move with the business and represent a wider beauty offering.",
+        "The rebrand gives the business a clearer visual system that is easier to recognise across digital and physical applications.",
+        "The updated website direction can communicate services more clearly instead of relying on the location or category in the name.",
+        "A consistent logo, colour palette and application system makes future expansion easier to manage."
       ]
     }
   }

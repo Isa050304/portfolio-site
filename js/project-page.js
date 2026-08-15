@@ -14,6 +14,24 @@ document.addEventListener("DOMContentLoaded", () => {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;");
 
+  const splitRationale = (value = "") => {
+    const explicit = String(value).split(/\n\s*\n/).map((part) => part.trim()).filter(Boolean);
+    if (explicit.length > 1) return explicit;
+
+    const sentences = String(value)
+      .match(/[^.!?]+[.!?]+(?:\s+|$)|[^.!?]+$/g)
+      ?.map((sentence) => sentence.trim())
+      .filter(Boolean) || [];
+
+    if (sentences.length <= 2) return [String(value).trim()].filter(Boolean);
+
+    const paragraphs = [];
+    for (let index = 0; index < sentences.length; index += 2) {
+      paragraphs.push(sentences.slice(index, index + 2).join(" "));
+    }
+    return paragraphs;
+  };
+
   document.title = `${project.title} | Isabel Contreras`;
   document.querySelector('meta[name="description"]')?.setAttribute("content", project.summary);
 
@@ -32,10 +50,20 @@ document.addEventListener("DOMContentLoaded", () => {
   if (category) category.textContent = project.category;
   if (title) title.textContent = project.title;
   if (summary) summary.textContent = project.summary;
-  if (rationale) rationale.textContent = project.rationale;
+  if (rationale) {
+    rationale.innerHTML = splitRationale(project.rationale)
+      .map((paragraph) => `<p>${esc(paragraph)}</p>`)
+      .join("");
+  }
 
   if (project.galleryMode === "website") {
     gallerySection?.classList.add("project-gallery-section--website");
+  }
+  if (project.galleryMode === "portal") {
+    gallerySection?.classList.add("project-gallery-section--website", "project-gallery-section--portal");
+  }
+  if (project.compactWebsite) {
+    gallerySection?.classList.add("project-gallery-section--numode");
   }
 
   if (meta) {
@@ -64,15 +92,18 @@ document.addEventListener("DOMContentLoaded", () => {
     track.innerHTML = slides.map((slide) => {
       const src = asset(slide.src);
       if (slide.scrollable) {
+        const scrollClass = slide.scrollBoth ? " website-screenshot-scroll--both" : "";
+        const frameClass = project.galleryMode === "portal" ? " website-browser-frame--portal" : "";
+        const browserLabel = slide.browserLabel || slide.caption || "Desktop website capture";
         return `
           <figure class="project-slide project-slide--website">
-            <div class="website-browser-frame">
+            <div class="website-browser-frame${frameClass}">
               <div class="website-browser-bar" aria-hidden="true">
                 <span></span><span></span><span></span>
-                <strong>Desktop website capture</strong>
+                <strong>${esc(browserLabel)}</strong>
               </div>
-              <div class="website-screenshot-scroll" tabindex="0" aria-label="Scrollable desktop screenshot: ${esc(slide.caption)}">
-                <img src="${src}" alt="${esc(slide.alt)}" loading="eager" decoding="async">
+              <div class="website-screenshot-scroll${scrollClass}" tabindex="0" aria-label="Scrollable screen: ${esc(slide.caption)}">
+                <img src="${src}" alt="${esc(slide.alt)}" loading="eager" decoding="async" draggable="false">
               </div>
             </div>
           </figure>
@@ -82,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
         <figure class="project-slide" data-fit="${slide.fit || "contain"}">
           <div class="slide-stage">
-            <img src="${src}" alt="${esc(slide.alt)}" loading="eager" decoding="async">
+            <img src="${src}" alt="${esc(slide.alt)}" loading="eager" decoding="async" draggable="false">
           </div>
         </figure>
       `;
@@ -111,16 +142,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   slider?.addEventListener("keydown", (event) => {
+    if (event.target.closest(".website-screenshot-scroll")) return;
     if (event.key === "ArrowLeft") updateSlider(activeIndex - 1);
     if (event.key === "ArrowRight") updateSlider(activeIndex + 1);
   });
 
-  // Touch swipe for phones and tablets. Vertical gestures keep normal page/screenshot scrolling.
+  // Swipe between slides on touch devices. Gestures that begin inside a scrollable
+  // website/portal viewport are reserved for panning that viewport in both axes.
   let touchStartX = 0;
   let touchStartY = 0;
   let touchStarted = false;
   slider?.addEventListener("touchstart", (event) => {
     if (event.touches.length !== 1) return;
+    if (event.target.closest(".website-screenshot-scroll")) {
+      touchStarted = false;
+      return;
+    }
     touchStartX = event.touches[0].clientX;
     touchStartY = event.touches[0].clientY;
     touchStarted = true;
@@ -157,13 +194,47 @@ document.addEventListener("DOMContentLoaded", () => {
     comparisonAfterLabel.textContent = after.label || "After";
     if (comparisonNote) comparisonNote.textContent = project.comparison.note || "";
     comparisonRoot.classList.toggle("before-after-comparison--website", project.galleryMode === "website");
+    comparisonRoot.classList.toggle("before-after-comparison--compact", Boolean(project.compactWebsite));
     comparisonSection.hidden = false;
 
-    const updateComparison = () => {
-      comparisonRoot.style.setProperty("--compare-split", `${Number(comparisonRange?.value || 50)}%`);
+    const applySplit = (value) => {
+      const split = Math.max(0, Math.min(100, Number(value)));
+      comparisonRoot.style.setProperty("--compare-split", `${split}%`);
+      if (comparisonRange) comparisonRange.value = String(split);
     };
-    comparisonRange?.addEventListener("input", updateComparison);
-    updateComparison();
+
+    comparisonRange?.addEventListener("input", () => applySplit(comparisonRange.value));
+
+    let comparisonDragging = false;
+    const updateFromPointer = (event) => {
+      const rect = comparisonRoot.getBoundingClientRect();
+      const isVertical = window.matchMedia("(max-width: 620px)").matches;
+      const raw = isVertical
+        ? ((event.clientY - rect.top) / rect.height) * 100
+        : ((event.clientX - rect.left) / rect.width) * 100;
+      applySplit(raw);
+    };
+
+    comparisonRoot.addEventListener("pointerdown", (event) => {
+      if (event.target.closest(".comparison-label")) return;
+      comparisonDragging = true;
+      comparisonRoot.setPointerCapture?.(event.pointerId);
+      updateFromPointer(event);
+    });
+    comparisonRoot.addEventListener("pointermove", (event) => {
+      if (!comparisonDragging) return;
+      updateFromPointer(event);
+    });
+    const stopComparisonDrag = (event) => {
+      comparisonDragging = false;
+      if (comparisonRoot.hasPointerCapture?.(event.pointerId)) {
+        comparisonRoot.releasePointerCapture(event.pointerId);
+      }
+    };
+    comparisonRoot.addEventListener("pointerup", stopComparisonDrag);
+    comparisonRoot.addEventListener("pointercancel", stopComparisonDrag);
+
+    applySplit(comparisonRange?.value || 50);
   } else if (comparisonSection) {
     comparisonSection.hidden = true;
   }
@@ -214,15 +285,18 @@ document.addEventListener("DOMContentLoaded", () => {
           button.setAttribute("aria-pressed", String(button.dataset.codeTab === key));
         });
       };
+
       codeTabs.innerHTML = entries.map(([key], index) => `
-        <button class="code-tab-button" type="button" data-code-tab="${key}" aria-pressed="${index === 0 ? "true" : "false"}">
+        <button class="code-tab-button" type="button" data-code-tab="${esc(key)}" aria-pressed="${index === 0 ? "true" : "false"}">
           ${esc(project.codeSampleLabels?.[key] || key.toUpperCase())}
         </button>
       `).join("");
+
       codeTabs.addEventListener("click", (event) => {
         const button = event.target.closest("[data-code-tab]");
         if (button) renderCode(button.dataset.codeTab);
       });
+
       if (codeNote) codeNote.textContent = project.codeNote || "";
       renderCode(entries[0][0]);
     } else {
@@ -234,6 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextProject = projects[(currentIndex + 1) % projects.length];
   const nextLink = document.querySelector("#next-project-link");
   const nextTitle = document.querySelector("#next-project-title");
+
   if (nextProject && nextLink && nextTitle) {
     nextLink.href = projectHref(nextProject.id);
     nextTitle.textContent = nextProject.title;

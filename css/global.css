@@ -411,3 +411,27 @@ h3,
   top: 0;
   transform: none;
 }
+
+/* Up arrow is drawn in CSS so iOS never substitutes an emoji glyph. */
+.css-arrow--up::before {
+  left: 6px;
+  top: 3px;
+  width: 1.5px;
+  height: 10px;
+}
+
+.css-arrow--up::after {
+  left: 3.5px;
+  top: 1px;
+  transform: rotate(-45deg);
+}
+
+/* Keep text comfortable without exaggerated leading. */
+.body-large,
+.project-summary {
+  line-height: 1.56;
+}
+
+body {
+  min-height: 100svh;
+}

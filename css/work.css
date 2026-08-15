@@ -1140,3 +1140,258 @@
     height: min(64vh, 540px);
   }
 }
+
+/* ===== v9 interaction and readability refinements ===== */
+
+/* Break long rationale copy into readable paragraphs without oversized leading. */
+.project-rationale {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 640px;
+  color: var(--muted);
+  font-size: clamp(.98rem, 1.15vw, 1.08rem);
+  line-height: 1.56;
+}
+
+.project-rationale p {
+  margin: 0;
+  text-wrap: pretty;
+  orphans: 3;
+  widows: 3;
+}
+
+/* Website captures: full-page sites scroll vertically inside a desktop browser frame. */
+.project-gallery-section--website .website-screenshot-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable both-edges;
+}
+
+/* Staff portal screens behave like application pages: pan in both directions with
+   a Mac trackpad/mouse or touch, without changing the global slide swipe behavior. */
+.project-gallery-section--portal .page-shell {
+  width: min(1080px, calc(100% - (var(--pad) * 2)));
+}
+
+.project-gallery-section--portal .website-browser-frame {
+  width: min(100%, 980px);
+}
+
+.website-screenshot-scroll--both {
+  overflow: auto !important;
+  overscroll-behavior: contain;
+  touch-action: pan-x pan-y;
+  cursor: grab;
+}
+
+.website-screenshot-scroll--both:active {
+  cursor: grabbing;
+}
+
+.website-screenshot-scroll--both img {
+  width: max(100%, 1180px);
+  height: auto;
+  max-width: none;
+}
+
+/* Numode website frames only: make the desktop presentation about 10% smaller. */
+.project-gallery-section--numode .page-shell {
+  width: min(972px, calc(100% - (var(--pad) * 2)));
+}
+
+.project-gallery-section--numode .website-browser-frame {
+  width: min(100%, 882px);
+}
+
+.before-after-comparison--compact {
+  width: 90%;
+  margin-inline: auto;
+}
+
+/* Before / after: true 0–100% reveal with no internal padding. */
+.before-after-comparison {
+  --compare-split: 50%;
+  position: relative;
+  display: block !important;
+  height: clamp(520px, 58vw, 720px) !important;
+  overflow: hidden !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 24px !important;
+  background: #ededed !important;
+  box-shadow: 0 16px 45px rgba(58,28,38,.08) !important;
+  touch-action: none;
+  user-select: none;
+}
+
+.before-after-comparison .comparison-panel,
+.before-after-comparison .comparison-panel--before,
+.before-after-comparison .comparison-panel--after {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #ededed !important;
+}
+
+.before-after-comparison .comparison-panel--after {
+  z-index: 1 !important;
+}
+
+.before-after-comparison .comparison-panel--before {
+  z-index: 2 !important;
+  clip-path: inset(0 calc(100% - var(--compare-split)) 0 0) !important;
+}
+
+.before-after-comparison .comparison-panel img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  pointer-events: none;
+}
+
+.before-after-comparison--website .comparison-panel img {
+  object-fit: cover !important;
+  object-position: top center !important;
+}
+
+.before-after-comparison .comparison-divider {
+  position: absolute !important;
+  z-index: 4 !important;
+  left: var(--compare-split) !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 2px !important;
+  height: auto !important;
+  background: var(--red) !important;
+  transform: translateX(-1px) !important;
+  pointer-events: none;
+}
+
+.before-after-comparison .comparison-divider .comparison-grip {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--red);
+  border-radius: 50%;
+  background: var(--paper);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 8px 26px rgba(58,28,38,.12);
+}
+
+.before-after-comparison .comparison-label {
+  z-index: 6;
+  pointer-events: none;
+}
+
+.before-after-comparison .comparison-panel--after .comparison-label {
+  left: auto;
+  right: 14px;
+}
+
+.before-after-comparison .comparison-range {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 620px) {
+  .project-rationale {
+    gap: .8rem;
+    font-size: .97rem;
+    line-height: 1.52;
+  }
+
+  .project-gallery-section--portal .page-shell,
+  .project-gallery-section--numode .page-shell {
+    width: calc(100% - 20px);
+  }
+
+  .project-gallery-section--numode .website-browser-frame {
+    width: 90%;
+  }
+
+  .website-screenshot-scroll--both img {
+    width: max(100%, 960px);
+  }
+
+  .before-after-comparison--compact {
+    width: 90%;
+  }
+
+  /* On phones the same draggable comparison rotates: before is above, after is below,
+     and the divider moves vertically from 0 to 100%. */
+  .before-after-comparison,
+  .before-after-comparison--website {
+    height: min(72vh, 640px) !important;
+    min-height: 470px;
+    display: block !important;
+    gap: 0 !important;
+    overflow: hidden !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 20px !important;
+    background: #ededed !important;
+    box-shadow: 0 14px 38px rgba(58,28,38,.08) !important;
+  }
+
+  .before-after-comparison .comparison-panel,
+  .before-after-comparison .comparison-panel--before,
+  .before-after-comparison .comparison-panel--after,
+  .before-after-comparison--website .comparison-panel {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    align-items: center !important;
+  }
+
+  .before-after-comparison .comparison-panel--before {
+    clip-path: inset(0 0 calc(100% - var(--compare-split)) 0) !important;
+  }
+
+  .before-after-comparison--website .comparison-panel img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important;
+  }
+
+  .before-after-comparison .comparison-divider {
+    left: 0 !important;
+    right: 0 !important;
+    top: var(--compare-split) !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: 2px !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .before-after-comparison .comparison-divider .comparison-grip {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .before-after-comparison .comparison-panel--after .comparison-label {
+    left: 10px;
+    right: auto;
+    top: auto;
+    bottom: 10px;
+  }
+}
