@@ -1691,3 +1691,62 @@
     margin-inline: 0 !important;
   }
 }
+
+/* Final carousel arrow geometry.
+   Draw each left/right arrow as one centered shape so Safari/iOS cannot shift
+   the shaft and arrowhead independently. */
+.slider-button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 0 !important;
+}
+
+.slider-button .css-arrow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  color: var(--red);
+}
+
+.slider-button .css-arrow--left::before,
+.slider-button .css-arrow--right::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+  border: 0;
+  border-radius: 0;
+  clip-path: polygon(
+    4% 44%,
+    62% 44%,
+    62% 22%,
+    96% 50%,
+    62% 78%,
+    62% 56%,
+    4% 56%
+  );
+}
+
+.slider-button .css-arrow--left::before {
+  transform: scaleX(-1);
+}
+
+.slider-button .css-arrow--right::after,
+.slider-button .css-arrow--left::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (max-width: 620px) {
+  .slider-button .css-arrow {
+    width: 19px;
+    height: 19px;
+  }
+}
