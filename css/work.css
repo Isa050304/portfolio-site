@@ -1572,3 +1572,122 @@
     padding-inline: 8px;
   }
 }
+
+/* ===== v13 stable nested scrolling + mobile portal readability ===== */
+/* Let nested website/app viewers own both axes on touch devices. The carousel
+   still supports swipe outside these viewers, but it no longer blocks panning
+   inside a screenshot. */
+.project-slider {
+  touch-action: pan-x pan-y pinch-zoom;
+}
+
+.website-screenshot-scroll,
+.website-screenshot-scroll--both {
+  position: relative;
+  z-index: 2;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pan-y;
+  overscroll-behavior: contain;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+/* Long public website captures primarily scroll vertically on desktop. */
+.project-gallery-section--website:not(.project-gallery-section--portal) .website-screenshot-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Portal screenshots fit the desktop browser window with a small, even margin.
+   Their own aspect ratio is preserved and they are never enlarged beyond the frame. */
+.project-gallery-section--portal .website-screenshot-scroll--both {
+  box-sizing: border-box;
+  padding-inline: 14px;
+  overflow-x: auto !important;
+  overflow-y: auto !important;
+  scrollbar-gutter: auto;
+}
+
+.project-gallery-section--portal .website-screenshot-scroll--both img {
+  display: block;
+  width: auto !important;
+  height: auto !important;
+  max-width: calc(100% - 2px) !important;
+  min-width: 0 !important;
+  margin-inline: auto !important;
+}
+
+/* Remove native button padding from the carousel controls and position the CSS
+   arrows around the true geometric center of the circle. */
+.slider-button {
+  position: relative;
+  padding: 0 !important;
+  line-height: 0;
+}
+
+.slider-button .css-arrow {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.slider-button .css-arrow--right::before,
+.slider-button .css-arrow--left::before {
+  top: 7px;
+  width: 10px;
+  height: 2px;
+}
+
+.slider-button .css-arrow--right::before {
+  left: 2px;
+}
+
+.slider-button .css-arrow--left::before {
+  left: 4px;
+}
+
+.slider-button .css-arrow--right::after,
+.slider-button .css-arrow--left::after {
+  top: 4px;
+  width: 6px;
+  height: 6px;
+  border-width: 2px 2px 0 0;
+}
+
+.slider-button .css-arrow--right::after {
+  right: 2px;
+}
+
+.slider-button .css-arrow--left::after {
+  left: 2px;
+}
+
+@media (max-width: 620px) {
+  /* Every website/app viewport keeps native finger scrolling on iPhone. */
+  .website-screenshot-scroll,
+  .website-screenshot-scroll--both {
+    height: min(66svh, 540px);
+    min-height: 390px;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+  }
+
+  /* Give Staff Portal screens a small mobile zoom so interface text remains
+     readable. The extra width creates a modest horizontal pan area rather than
+     shrinking a desktop dashboard until its labels are illegible. */
+  .project-gallery-section--portal .website-screenshot-scroll--both {
+    padding-inline: 10px;
+    overflow-x: auto !important;
+    overflow-y: auto !important;
+  }
+
+  .project-gallery-section--portal .website-screenshot-scroll--both img {
+    width: 118% !important;
+    max-width: none !important;
+    min-width: 118% !important;
+    height: auto !important;
+    margin-inline: 0 !important;
+  }
+}

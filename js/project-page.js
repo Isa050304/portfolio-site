@@ -172,30 +172,26 @@ document.addEventListener("DOMContentLoaded", () => {
     updateSlider(activeIndex + (dx < 0 ? 1 : -1));
   }, { passive: true });
 
-  // Mac trackpads emit horizontal wheel deltas for a two-finger swipe. Treat a
-  // deliberate horizontal gesture as carousel navigation, but leave portal
-  // viewports alone so their own horizontal/vertical scrolling still works.
+  // Two-finger trackpad gestures must never fight with a scrollable website or
+  // Staff Portal viewport. When the active slide contains a scrollable screen,
+  // the browser owns both horizontal and vertical wheel movement completely.
+  // Non-scrollable artwork can still use a deliberate horizontal trackpad swipe
+  // to move between slides, with a high threshold to avoid accidental changes
+  // while the visitor is scrolling the portfolio page diagonally.
   let wheelLocked = false;
   slider?.addEventListener("wheel", (event) => {
+    if (event.target.closest(".website-screenshot-scroll")) return;
+    if (slides[activeIndex]?.scrollable) return;
+    if (event.ctrlKey || wheelLocked) return;
+
     const horizontal = Math.abs(event.deltaX);
     const vertical = Math.abs(event.deltaY);
-    if (horizontal < 24 || horizontal <= vertical * 1.15 || wheelLocked) return;
-
-    const portalScroller = event.target.closest(".website-screenshot-scroll--both");
-    if (portalScroller) {
-      const overflowX = portalScroller.scrollWidth - portalScroller.clientWidth;
-      const canPanRight = event.deltaX > 0 && portalScroller.scrollLeft < overflowX - 2;
-      const canPanLeft = event.deltaX < 0 && portalScroller.scrollLeft > 2;
-      // When the portal capture actually has horizontal overflow, the two-finger
-      // gesture pans the screenshot first. If it already fits (or reaches an edge),
-      // the same gesture can move to the neighbouring portfolio slide.
-      if (overflowX > 4 && (canPanRight || canPanLeft)) return;
-    }
+    if (horizontal < 56 || horizontal <= vertical * 2.2) return;
 
     event.preventDefault();
     wheelLocked = true;
     updateSlider(activeIndex + (event.deltaX > 0 ? 1 : -1));
-    window.setTimeout(() => { wheelLocked = false; }, 420);
+    window.setTimeout(() => { wheelLocked = false; }, 460);
   }, { passive: false });
 
   // Staff portal screenshots are intentionally wider than their browser frame.
