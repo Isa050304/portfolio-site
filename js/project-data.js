@@ -215,7 +215,7 @@ window.PORTFOLIO_PROJECTS = [
         "label": "After — redesigned website",
         "alt": "Redesigned Numode Delivery website"
       },
-      "note": "Drag the divider from edge to edge to compare the previous and redesigned desktop sites. On phones, the divider moves vertically so both versions remain easy to inspect."
+      "note": "Pull the thread to see how the original Numode site evolved into the redesigned experience."
     },
     "galleryMode": "website",
     "problemSolution": {
@@ -398,7 +398,7 @@ window.PORTFOLIO_PROJECTS = [
         "label": "After — redesigned website",
         "alt": "Redesigned Transylvanian Traditions website"
       },
-      "note": "Drag the divider from edge to edge to compare the original and redesigned Home page. On phones, the comparison changes to a vertical split with the same draggable divider."
+      "note": "Pull the thread to see the Transylvanian Traditions Home page move from the original site to the redesign."
     },
     "galleryMode": "website"
   },
@@ -470,7 +470,7 @@ window.PORTFOLIO_PROJECTS = [
         "label": "After — two-page redesign",
         "alt": "Combined two-page Kokoro Mazesoba menu redesign"
       },
-      "note": "Drag the divider to compare the previous menu with the two-page redesign. On phones, the divider moves vertically rather than squeezing both layouts side by side."
+      "note": "Pull the thread to see how the previous menu became a clearer two-page system."
     }
   },
   {
@@ -879,7 +879,7 @@ window.PORTFOLIO_PROJECTS = [
         "label": "After — Willow Beauty",
         "alt": "Willow Beauty redesigned website mockup"
       },
-      "note": "Drag the divider to compare the previous salon website direction with the Willow Beauty rebrand mockup. On phones, the same comparison uses a vertical draggable split."
+      "note": "Pull the thread to see the shift from the previous salon presentation to the Willow Beauty rebrand."
     },
     "problemSolution": {
       "intro": "The rebrand addresses both visual consistency and a practical naming problem: the existing identity does not clearly communicate the full service offering or give the business much flexibility beyond its current location.",

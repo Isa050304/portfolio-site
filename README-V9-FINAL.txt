@@ -5,7 +5,6 @@ This version is based on the latest portfolio-site ZIP supplied on August 14.
 Key changes:
 - Long project rationales render as shorter paragraphs.
 - Before/after comparisons drag from 0% to 100%.
-- On phones, before/after comparisons use a vertical split with the same draggable bar.
 - Numode Delivery website presentation is approximately 10% smaller than the other website viewers.
 - Numode Staff Portal screenshots render inside scrollable application/browser frames with horizontal and vertical panning.
 - Touch slide navigation remains enabled outside the scrollable website/application viewport.

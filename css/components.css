@@ -442,3 +442,12 @@ body.is-transitioning .route-transition::before { animation: yarn-page-wave 720m
     margin-bottom: 0;
   }
 }
+
+
+/* v14: keep the mobile footer visually continuous behind Safari's bottom UI. */
+@media (max-width: 760px) {
+  .site-footer {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+    background-color: var(--blush-strong);
+  }
+}

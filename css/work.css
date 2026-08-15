@@ -1750,3 +1750,14 @@
     height: 19px;
   }
 }
+
+
+/* v14: Kronos artwork has transparent edges; avoid drop-shadow artifacts on its slides. */
+body[data-project-id="kronos-brand-identity"] .slide-stage img {
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+body[data-project-id="kronos-brand-identity"] .project-slide {
+  background: #f2f2f2 !important;
+}
