@@ -1395,3 +1395,67 @@
     bottom: 10px;
   }
 }
+
+/* ===== v10 interaction polish ===== */
+
+/* Keep the Staff Portal browser frame and its wider screenshot visually centred. */
+.project-gallery-section--portal .project-slide--website {
+  display: grid;
+  place-items: center;
+}
+
+.project-gallery-section--portal .website-browser-frame {
+  margin-inline: auto;
+}
+
+.website-screenshot-scroll--both {
+  scrollbar-gutter: stable both-edges;
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: contain;
+}
+
+.website-screenshot-scroll--both img {
+  display: block;
+  margin-inline: auto;
+}
+
+/* The portfolio only needs a representative code sample. Keep the code window
+   compact and let visitors scroll inside it instead of making the page too long. */
+.project-code-pre {
+  max-height: clamp(220px, 28vw, 310px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+/* Browser text wrapping: reduce awkward single-word final lines where supported. */
+.project-rationale p,
+.process-step p,
+.work-card p,
+.body-large,
+.project-summary,
+.footer-meta,
+.footer-links,
+.notes-list p,
+.discipline-card p,
+.process-card p {
+  text-wrap: pretty;
+  orphans: 3;
+  widows: 3;
+}
+
+.project-title,
+.section-title,
+.footer-title,
+.process-step h2,
+.work-card h2,
+.discipline-card h3,
+.process-card h3 {
+  text-wrap: balance;
+}
+
+@media (max-width: 620px) {
+  .project-code-pre {
+    max-height: 220px;
+  }
+}

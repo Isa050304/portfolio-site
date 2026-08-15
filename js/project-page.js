@@ -172,6 +172,36 @@ document.addEventListener("DOMContentLoaded", () => {
     updateSlider(activeIndex + (dx < 0 ? 1 : -1));
   }, { passive: true });
 
+  // Mac trackpads emit horizontal wheel deltas for a two-finger swipe. Treat a
+  // deliberate horizontal gesture as carousel navigation, but leave portal
+  // viewports alone so their own horizontal/vertical scrolling still works.
+  let wheelLocked = false;
+  slider?.addEventListener("wheel", (event) => {
+    if (event.target.closest(".website-screenshot-scroll--both")) return;
+    const horizontal = Math.abs(event.deltaX);
+    const vertical = Math.abs(event.deltaY);
+    if (horizontal < 24 || horizontal <= vertical * 1.15 || wheelLocked) return;
+    event.preventDefault();
+    wheelLocked = true;
+    updateSlider(activeIndex + (event.deltaX > 0 ? 1 : -1));
+    window.setTimeout(() => { wheelLocked = false; }, 420);
+  }, { passive: false });
+
+  // Staff portal screenshots are intentionally wider than their browser frame.
+  // Start each one centred so the page does not look shifted to one side, while
+  // keeping full two-axis scrolling with a trackpad, mouse wheel or touch.
+  const centrePortalViewport = (scroller) => {
+    if (!scroller) return;
+    const centre = () => {
+      scroller.scrollLeft = Math.max(0, (scroller.scrollWidth - scroller.clientWidth) / 2);
+      scroller.scrollTop = 0;
+    };
+    const image = scroller.querySelector("img");
+    if (image?.complete) centre();
+    else image?.addEventListener("load", centre, { once: true });
+  };
+  track?.querySelectorAll(".website-screenshot-scroll--both").forEach(centrePortalViewport);
+
   updateSlider(0);
 
   const comparisonSection = document.querySelector("#project-comparison-section");
