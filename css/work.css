@@ -1541,3 +1541,34 @@
     scroll-snap-align: start;
   }
 }
+
+/* ===== v12 staff portal scale + performance polish ===== */
+/* Portal screenshots keep their intrinsic proportions but are never enlarged past the
+   available browser viewport. Larger source captures shrink to fit with a small,
+   even side margin; smaller captures remain at their natural width. */
+.project-gallery-section--portal .website-screenshot-scroll--both {
+  box-sizing: border-box;
+  padding-inline: 12px;
+  text-align: initial;
+}
+
+.project-gallery-section--portal .website-screenshot-scroll--both img {
+  display: block;
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin-inline: auto;
+}
+
+/* Avoid doing full layout/paint work for cards far below the viewport. */
+.work-card {
+  content-visibility: auto;
+  contain-intrinsic-size: 780px;
+}
+
+@media (max-width: 620px) {
+  .project-gallery-section--portal .website-screenshot-scroll--both {
+    padding-inline: 8px;
+  }
+}

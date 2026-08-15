@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const slides = project.slides || [];
 
   if (track && dots) {
-    track.innerHTML = slides.map((slide) => {
+    track.innerHTML = slides.map((slide, slideIndex) => {
       const src = asset(slide.src);
       if (slide.scrollable) {
         const scrollClass = slide.scrollBoth ? " website-screenshot-scroll--both" : "";
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <strong>${esc(browserLabel)}</strong>
               </div>
               <div class="website-screenshot-scroll${scrollClass}" tabindex="0" aria-label="Scrollable screen: ${esc(slide.caption)}">
-                <img src="${src}" alt="${esc(slide.alt)}" loading="eager" decoding="async" draggable="false">
+                <img src="${src}" alt="${esc(slide.alt)}" loading="${slideIndex === 0 ? "eager" : "lazy"}" fetchpriority="${slideIndex === 0 ? "high" : "low"}" decoding="async" draggable="false">
               </div>
             </div>
           </figure>
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
         <figure class="project-slide" data-fit="${slide.fit || "contain"}">
           <div class="slide-stage">
-            <img src="${src}" alt="${esc(slide.alt)}" loading="eager" decoding="async" draggable="false">
+            <img src="${src}" alt="${esc(slide.alt)}" loading="${slideIndex === 0 ? "eager" : "lazy"}" fetchpriority="${slideIndex === 0 ? "high" : "low"}" decoding="async" draggable="false">
           </div>
         </figure>
       `;
@@ -177,10 +177,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // viewports alone so their own horizontal/vertical scrolling still works.
   let wheelLocked = false;
   slider?.addEventListener("wheel", (event) => {
-    if (event.target.closest(".website-screenshot-scroll--both")) return;
     const horizontal = Math.abs(event.deltaX);
     const vertical = Math.abs(event.deltaY);
     if (horizontal < 24 || horizontal <= vertical * 1.15 || wheelLocked) return;
+
+    const portalScroller = event.target.closest(".website-screenshot-scroll--both");
+    if (portalScroller) {
+      const overflowX = portalScroller.scrollWidth - portalScroller.clientWidth;
+      const canPanRight = event.deltaX > 0 && portalScroller.scrollLeft < overflowX - 2;
+      const canPanLeft = event.deltaX < 0 && portalScroller.scrollLeft > 2;
+      // When the portal capture actually has horizontal overflow, the two-finger
+      // gesture pans the screenshot first. If it already fits (or reaches an edge),
+      // the same gesture can move to the neighbouring portfolio slide.
+      if (overflowX > 4 && (canPanRight || canPanLeft)) return;
+    }
+
     event.preventDefault();
     wheelLocked = true;
     updateSlider(activeIndex + (event.deltaX > 0 ? 1 : -1));
