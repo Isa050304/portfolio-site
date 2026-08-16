@@ -233,90 +233,108 @@ document.addEventListener("DOMContentLoaded", () => {
       if (comparisonRange) comparisonRange.value = String(split);
     };
 
-    const splitFromPoint = (clientX, clientY) => {
+    // Both desktop and phone use a left/right reveal. On phones this is
+    // intentional: horizontal comparison movement does not compete with the
+    // page's natural vertical scroll gesture.
+    const splitFromX = (clientX) => {
       const rect = comparisonRoot.getBoundingClientRect();
-      if (!rect.width || !rect.height) return;
-      const raw = isPhoneLayout()
-        ? ((clientY - rect.top) / rect.height) * 100
-        : ((clientX - rect.left) / rect.width) * 100;
-      applySplit(raw);
+      if (!rect.width) return;
+      applySplit(((clientX - rect.left) / rect.width) * 100);
     };
 
     comparisonRange?.addEventListener("input", () => applySplit(comparisonRange.value));
 
-    // Mobile and desktop deliberately use different drag surfaces.
-    // On phones ONLY the visible yarn divider/handle owns the gesture. This keeps
-    // normal vertical page scrolling available everywhere else inside the image.
-    // On larger screens the whole comparison can be clicked/dragged for convenience.
     let activePointerId = null;
-    let dragSurface = null;
+    let pointerSurface = null;
 
-    const beginDrag = (event, surface) => {
+    const beginPointerDrag = (event, surface) => {
+      // Touch is handled by explicit Touch Events on phones because Mobile
+      // Safari is more reliable here than mixing touch scrolling with capture.
+      if (isPhoneLayout() && event.pointerType === "touch") return;
       if (event.pointerType === "mouse" && event.button !== 0) return;
       activePointerId = event.pointerId;
-      dragSurface = surface;
+      pointerSurface = surface;
       surface.classList.add("is-dragging");
       surface.setPointerCapture?.(event.pointerId);
       event.preventDefault();
-      splitFromPoint(event.clientX, event.clientY);
+      splitFromX(event.clientX);
     };
 
-    const moveDrag = (event) => {
+    const movePointerDrag = (event) => {
       if (activePointerId === null || event.pointerId !== activePointerId) return;
       event.preventDefault();
-      splitFromPoint(event.clientX, event.clientY);
+      splitFromX(event.clientX);
     };
 
-    const endDrag = (event) => {
+    const endPointerDrag = (event) => {
       if (activePointerId === null) return;
       if (event?.pointerId != null && event.pointerId !== activePointerId) return;
-      try { dragSurface?.releasePointerCapture?.(activePointerId); } catch (_) {}
-      dragSurface?.classList.remove("is-dragging");
+      try { pointerSurface?.releasePointerCapture?.(activePointerId); } catch (_) {}
+      pointerSurface?.classList.remove("is-dragging");
       activePointerId = null;
-      dragSurface = null;
+      pointerSurface = null;
     };
 
-    // The divider itself is the reliable iOS touch target. Pointer capture keeps
-    // the comparison moving even after the finger leaves the 64px handle zone.
-    divider?.addEventListener("pointerdown", (event) => beginDrag(event, divider), { passive: false });
-    divider?.addEventListener("pointermove", moveDrag, { passive: false });
-    divider?.addEventListener("pointerup", endDrag);
-    divider?.addEventListener("pointercancel", endDrag);
-    divider?.addEventListener("lostpointercapture", endDrag);
+    // Mouse, pen and desktop pointer interaction.
+    divider?.addEventListener("pointerdown", (event) => beginPointerDrag(event, divider), { passive: false });
+    divider?.addEventListener("pointermove", movePointerDrag, { passive: false });
+    divider?.addEventListener("pointerup", endPointerDrag);
+    divider?.addEventListener("pointercancel", endPointerDrag);
+    divider?.addEventListener("lostpointercapture", endPointerDrag);
 
     comparisonRoot.addEventListener("pointerdown", (event) => {
       if (isPhoneLayout()) return;
       if (event.target.closest(".comparison-label, .comparison-divider")) return;
-      beginDrag(event, comparisonRoot);
+      beginPointerDrag(event, comparisonRoot);
     }, { passive: false });
-    comparisonRoot.addEventListener("pointermove", moveDrag, { passive: false });
-    comparisonRoot.addEventListener("pointerup", endDrag);
-    comparisonRoot.addEventListener("pointercancel", endDrag);
-    comparisonRoot.addEventListener("lostpointercapture", endDrag);
+    comparisonRoot.addEventListener("pointermove", movePointerDrag, { passive: false });
+    comparisonRoot.addEventListener("pointerup", endPointerDrag);
+    comparisonRoot.addEventListener("pointercancel", endPointerDrag);
+    comparisonRoot.addEventListener("lostpointercapture", endPointerDrag);
 
-    // Fallback only for very old touch browsers without Pointer Events. Modern
-    // iPhone Safari uses the pointer path above; keeping the fallback conditional
-    // avoids duplicate touch + pointer sequences fighting each other.
-    if (!("PointerEvent" in window) && divider) {
-      let touching = false;
-      const touchPoint = (event) => event.touches?.[0] || event.changedTouches?.[0];
+    // iPhone/iPad: the visible thread has its own dedicated touch drag.
+    // Vertical page scrolling remains untouched everywhere outside this lane.
+    if (divider) {
+      let touchIdentifier = null;
+
+      const findTouch = (list) => {
+        if (!list?.length) return null;
+        if (touchIdentifier === null) return list[0];
+        for (const touch of list) {
+          if (touch.identifier === touchIdentifier) return touch;
+        }
+        return null;
+      };
+
       divider.addEventListener("touchstart", (event) => {
-        const point = touchPoint(event);
-        if (!point) return;
-        touching = true;
+        if (!isPhoneLayout() || !event.changedTouches.length) return;
+        const touch = event.changedTouches[0];
+        touchIdentifier = touch.identifier;
+        divider.classList.add("is-dragging");
         event.preventDefault();
-        splitFromPoint(point.clientX, point.clientY);
+        event.stopPropagation();
+        splitFromX(touch.clientX);
       }, { passive: false });
+
       divider.addEventListener("touchmove", (event) => {
-        if (!touching) return;
-        const point = touchPoint(event);
-        if (!point) return;
+        if (touchIdentifier === null) return;
+        const touch = findTouch(event.touches) || findTouch(event.changedTouches);
+        if (!touch) return;
         event.preventDefault();
-        splitFromPoint(point.clientX, point.clientY);
+        event.stopPropagation();
+        splitFromX(touch.clientX);
       }, { passive: false });
-      const stopTouch = () => { touching = false; };
-      divider.addEventListener("touchend", stopTouch, { passive: true });
-      divider.addEventListener("touchcancel", stopTouch, { passive: true });
+
+      const finishTouch = (event) => {
+        if (touchIdentifier === null) return;
+        const ended = findTouch(event.changedTouches);
+        if (!ended && event.type !== "touchcancel") return;
+        divider.classList.remove("is-dragging");
+        touchIdentifier = null;
+      };
+
+      divider.addEventListener("touchend", finishTouch, { passive: true });
+      divider.addEventListener("touchcancel", finishTouch, { passive: true });
     }
 
     applySplit(comparisonRange?.value || 50);
