@@ -466,3 +466,22 @@ body.is-transitioning .route-transition::before { animation: yarn-page-wave 720m
 .back-to-top.is-visible {
   box-shadow: var(--surface-shadow);
 }
+
+/* ===== v16.1 navigation shadow blend fix ===== */
+.navbar {
+  box-shadow: 0 6px 20px rgba(196, 52, 82, 0.035) !important;
+}
+
+.navbar.is-scrolled {
+  box-shadow: 0 8px 24px rgba(196, 52, 82, 0.045) !important;
+}
+
+@media (max-width: 760px) {
+  .main-navigation,
+  .main-navigation.is-open {
+    background: rgba(255, 253, 251, 0.985) !important;
+    box-shadow: 0 8px 24px rgba(196, 52, 82, 0.035) !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+}
