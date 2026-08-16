@@ -2260,3 +2260,79 @@ body[data-project-id="kronos-brand-identity"] .project-slide {
     transform: translateX(-50%) rotate(90deg) !important;
   }
 }
+
+
+/* ===== v22 mobile comparison handle =====
+   The comparison itself keeps native vertical page scrolling. Only the visible
+   yarn thread + grip owns the drag gesture, so the Before/After remains usable
+   on touch devices without trapping the page. */
+@media (max-width: 620px) {
+  .before-after-comparison,
+  .before-after-comparison--website {
+    touch-action: pan-y !important;
+    overscroll-behavior: auto !important;
+  }
+
+  .before-after-comparison .comparison-panel,
+  .before-after-comparison .comparison-panel img {
+    pointer-events: none !important;
+  }
+
+  .before-after-comparison .comparison-divider {
+    z-index: 12 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: var(--compare-split) !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: 48px !important;
+    transform: translateY(-24px) !important;
+    background: transparent !important;
+    pointer-events: auto !important;
+    touch-action: none !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+  }
+
+  .before-after-comparison .comparison-divider::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 50% !important;
+    height: 3px !important;
+    border-radius: 999px !important;
+    background: var(--red) !important;
+    transform: translateY(-50%) !important;
+    box-shadow: none !important;
+  }
+
+  .before-after-comparison .comparison-divider .comparison-grip {
+    width: 54px !important;
+    height: 54px !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    pointer-events: auto !important;
+    touch-action: none !important;
+  }
+
+  .before-after-comparison .comparison-divider .comparison-grip::before {
+    left: 50% !important;
+    top: 9px !important;
+    right: auto !important;
+    width: 14px !important;
+    height: 10px !important;
+    transform: translateX(-50%) rotate(-90deg) !important;
+  }
+
+  .before-after-comparison .comparison-divider .comparison-grip::after {
+    left: 50% !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: 9px !important;
+    width: 14px !important;
+    height: 10px !important;
+    transform: translateX(-50%) rotate(90deg) !important;
+  }
+}

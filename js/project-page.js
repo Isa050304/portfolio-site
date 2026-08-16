@@ -223,61 +223,88 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const setUpComparison = (comparisonRoot, comparisonRange) => {
     if (!comparisonRoot) return;
+
+    const divider = comparisonRoot.querySelector(".comparison-divider");
+    const isPhoneLayout = () => window.matchMedia("(max-width: 620px)").matches;
+
     const applySplit = (value) => {
       const split = Math.max(0, Math.min(100, Number(value)));
       comparisonRoot.style.setProperty("--compare-split", `${split}%`);
       if (comparisonRange) comparisonRange.value = String(split);
     };
 
-    comparisonRange?.addEventListener("input", () => applySplit(comparisonRange.value));
-
-    let dragging = false;
-    const updateFromPointer = (event) => {
+    const splitFromPoint = (clientX, clientY) => {
       const rect = comparisonRoot.getBoundingClientRect();
-      const isVertical = window.matchMedia("(max-width: 620px)").matches;
-      const raw = isVertical
-        ? ((event.clientY - rect.top) / rect.height) * 100
-        : ((event.clientX - rect.left) / rect.width) * 100;
+      const raw = isPhoneLayout()
+        ? ((clientY - rect.top) / rect.height) * 100
+        : ((clientX - rect.left) / rect.width) * 100;
       applySplit(raw);
     };
 
-    const divider = comparisonRoot.querySelector(".comparison-divider");
+    comparisonRange?.addEventListener("input", () => applySplit(comparisonRange.value));
 
-    const beginDrag = (event) => {
+    let dragging = false;
+    let activePointerId = null;
+
+    const startPointerDrag = (event) => {
+      if (isPhoneLayout() && !event.target.closest(".comparison-divider")) return;
       if (event.target.closest(".comparison-label")) return;
-      const isPhone = window.matchMedia("(max-width: 620px)").matches;
-
-      // On phones, only the visible comparison thread/handle starts a drag.
-      // This leaves the rest of the image free for normal vertical page scrolling.
-      if (isPhone && !event.target.closest(".comparison-divider")) return;
 
       dragging = true;
-      const captureTarget = isPhone && divider ? divider : comparisonRoot;
-      captureTarget.setPointerCapture?.(event.pointerId);
-      updateFromPointer(event);
+      activePointerId = event.pointerId;
+      if (isPhoneLayout()) event.preventDefault();
+      (divider || comparisonRoot).setPointerCapture?.(event.pointerId);
+      splitFromPoint(event.clientX, event.clientY);
     };
 
-    comparisonRoot.addEventListener("pointerdown", beginDrag);
-    comparisonRoot.addEventListener("pointermove", (event) => {
-      if (dragging) updateFromPointer(event);
-    });
-    divider?.addEventListener("pointermove", (event) => {
-      if (dragging) updateFromPointer(event);
-    });
+    const movePointerDrag = (event) => {
+      if (!dragging || (activePointerId !== null && event.pointerId !== activePointerId)) return;
+      if (isPhoneLayout()) event.preventDefault();
+      splitFromPoint(event.clientX, event.clientY);
+    };
 
-    const stop = (event) => {
+    const stopPointerDrag = (event) => {
+      if (!dragging) return;
       dragging = false;
-      if (comparisonRoot.hasPointerCapture?.(event.pointerId)) {
-        comparisonRoot.releasePointerCapture(event.pointerId);
-      }
-      if (divider?.hasPointerCapture?.(event.pointerId)) {
-        divider.releasePointerCapture(event.pointerId);
-      }
+      activePointerId = null;
+      divider?.releasePointerCapture?.(event.pointerId);
+      comparisonRoot.releasePointerCapture?.(event.pointerId);
     };
-    comparisonRoot.addEventListener("pointerup", stop);
-    comparisonRoot.addEventListener("pointercancel", stop);
-    divider?.addEventListener("pointerup", stop);
-    divider?.addEventListener("pointercancel", stop);
+
+    // Desktop: dragging anywhere on the comparison is convenient.
+    // Phone: only the thread/handle captures the gesture, so swiping elsewhere
+    // continues to scroll the page normally.
+    comparisonRoot.addEventListener("pointerdown", startPointerDrag);
+    window.addEventListener("pointermove", movePointerDrag, { passive: false });
+    window.addEventListener("pointerup", stopPointerDrag);
+    window.addEventListener("pointercancel", stopPointerDrag);
+
+    // iOS touch fallback. Safari occasionally hands a vertical gesture to page
+    // scrolling before pointer capture settles, so the handle also owns a direct
+    // touch sequence. The rest of the comparison remains normal page-scroll area.
+    let touchingHandle = false;
+    const touchPoint = (event) => event.touches?.[0] || event.changedTouches?.[0];
+
+    divider?.addEventListener("touchstart", (event) => {
+      const point = touchPoint(event);
+      if (!point) return;
+      touchingHandle = true;
+      event.preventDefault();
+      splitFromPoint(point.clientX, point.clientY);
+    }, { passive: false });
+
+    window.addEventListener("touchmove", (event) => {
+      if (!touchingHandle) return;
+      const point = touchPoint(event);
+      if (!point) return;
+      event.preventDefault();
+      splitFromPoint(point.clientX, point.clientY);
+    }, { passive: false });
+
+    const stopTouchDrag = () => { touchingHandle = false; };
+    window.addEventListener("touchend", stopTouchDrag, { passive: true });
+    window.addEventListener("touchcancel", stopTouchDrag, { passive: true });
+
     applySplit(comparisonRange?.value || 50);
   };
 
