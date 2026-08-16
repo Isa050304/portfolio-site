@@ -2199,3 +2199,64 @@ body[data-project-id="kronos-brand-identity"] .project-slide {
     flex-basis: 21px !important;
   }
 }
+
+/* ===== v21 comparison mobile interaction =====
+   Phone visitors can scroll the page normally over comparison images.
+   Only the visible thread/handle captures a drag to change the split. */
+@media (max-width: 620px) {
+  .before-after-comparison,
+  .before-after-comparison--website {
+    touch-action: pan-y !important;
+  }
+
+  .before-after-comparison .comparison-divider {
+    /* Give the thread a comfortable touch target while keeping the visible line thin. */
+    left: 0 !important;
+    right: 0 !important;
+    top: var(--compare-split) !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: 28px !important;
+    background: transparent !important;
+    transform: translateY(-14px) !important;
+    pointer-events: auto !important;
+    touch-action: none !important;
+    cursor: ns-resize;
+  }
+
+  .before-after-comparison .comparison-divider::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 2px;
+    background: var(--red);
+    transform: translateY(-50%);
+  }
+
+  .before-after-comparison .comparison-divider .comparison-grip {
+    pointer-events: auto !important;
+    touch-action: none !important;
+  }
+
+  /* On a vertical phone comparison, the shared arrow asset points up/down. */
+  .before-after-comparison .comparison-divider .comparison-grip::before {
+    left: 50% !important;
+    top: 7px !important;
+    right: auto !important;
+    width: 12px !important;
+    height: 8px !important;
+    transform: translateX(-50%) rotate(-90deg) !important;
+  }
+
+  .before-after-comparison .comparison-divider .comparison-grip::after {
+    left: 50% !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: 7px !important;
+    width: 12px !important;
+    height: 8px !important;
+    transform: translateX(-50%) rotate(90deg) !important;
+  }
+}

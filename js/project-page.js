@@ -241,23 +241,43 @@ document.addEventListener("DOMContentLoaded", () => {
       applySplit(raw);
     };
 
-    comparisonRoot.addEventListener("pointerdown", (event) => {
+    const divider = comparisonRoot.querySelector(".comparison-divider");
+
+    const beginDrag = (event) => {
       if (event.target.closest(".comparison-label")) return;
+      const isPhone = window.matchMedia("(max-width: 620px)").matches;
+
+      // On phones, only the visible comparison thread/handle starts a drag.
+      // This leaves the rest of the image free for normal vertical page scrolling.
+      if (isPhone && !event.target.closest(".comparison-divider")) return;
+
       dragging = true;
-      comparisonRoot.setPointerCapture?.(event.pointerId);
+      const captureTarget = isPhone && divider ? divider : comparisonRoot;
+      captureTarget.setPointerCapture?.(event.pointerId);
       updateFromPointer(event);
-    });
+    };
+
+    comparisonRoot.addEventListener("pointerdown", beginDrag);
     comparisonRoot.addEventListener("pointermove", (event) => {
       if (dragging) updateFromPointer(event);
     });
+    divider?.addEventListener("pointermove", (event) => {
+      if (dragging) updateFromPointer(event);
+    });
+
     const stop = (event) => {
       dragging = false;
       if (comparisonRoot.hasPointerCapture?.(event.pointerId)) {
         comparisonRoot.releasePointerCapture(event.pointerId);
       }
+      if (divider?.hasPointerCapture?.(event.pointerId)) {
+        divider.releasePointerCapture(event.pointerId);
+      }
     };
     comparisonRoot.addEventListener("pointerup", stop);
     comparisonRoot.addEventListener("pointercancel", stop);
+    divider?.addEventListener("pointerup", stop);
+    divider?.addEventListener("pointercancel", stop);
     applySplit(comparisonRange?.value || 50);
   };
 
@@ -271,10 +291,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const after = item.after || {};
       const websiteClass = project.galleryMode === "website" ? " before-after-comparison--website" : "";
       const compactClass = project.compactWebsite ? " before-after-comparison--compact" : "";
+      const showStudyNote = comparisons.length > 1 && item.note;
       return `
         <article class="comparison-study reveal" data-delay="${Math.min(index, 3)}">
           ${item.title ? `<h3 class="comparison-study-title">${esc(item.title)}</h3>` : ""}
-          ${item.note ? `<p class="comparison-study-note">${esc(item.note)}</p>` : ""}
+          ${showStudyNote ? `<p class="comparison-study-note">${esc(item.note)}</p>` : ""}
           <div class="before-after-comparison${websiteClass}${compactClass}" style="--compare-split: 50%;">
             <div class="comparison-panel comparison-panel--before">
               <span class="comparison-label">${esc(before.label || "Before")}</span>
