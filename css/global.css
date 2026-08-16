@@ -511,3 +511,41 @@ body {
 .back-to-top {
   column-gap: 12px !important;
 }
+
+/* ===== v19 responsive hardening ===== */
+img,
+picture,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+main,
+section,
+article,
+header,
+footer,
+nav,
+div {
+  min-width: 0;
+}
+
+p,
+li,
+a,
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 620px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}

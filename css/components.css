@@ -525,3 +525,21 @@ body.is-transitioning .route-transition::before { animation: yarn-page-wave 720m
     box-shadow: none !important;
   }
 }
+
+/* ===== v19 mobile navigation hardening ===== */
+@media (max-width: 760px) {
+  .main-navigation,
+  .main-navigation.is-open {
+    max-height: calc(100svh - 90px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-links,
+  .nav-links li,
+  .nav-links a {
+    min-width: 0;
+    max-width: 100%;
+  }
+}

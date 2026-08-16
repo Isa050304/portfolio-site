@@ -1995,3 +1995,106 @@ body[data-project-id="kronos-brand-identity"] .project-slide {
     gap: 40px;
   }
 }
+
+/* ===== v19 slider controls + responsive hardening ===== */
+/* Keep carousel arrows self-contained so the global directional transforms
+   cannot displace them inside the circular controls. */
+.slider-button {
+  display: grid !important;
+  place-items: center !important;
+  padding: 0 !important;
+  overflow: visible;
+  line-height: 0;
+}
+
+.slider-button .css-arrow,
+.slider-button .css-arrow--right,
+.slider-button .css-arrow--left {
+  position: static !important;
+  inset: auto !important;
+  display: block !important;
+  width: 22px !important;
+  height: 14px !important;
+  flex: 0 0 22px !important;
+  margin: 0 !important;
+  background: currentColor !important;
+  clip-path: polygon(0 42%, 62% 42%, 62% 18%, 100% 50%, 62% 82%, 62% 58%, 0 58%) !important;
+  transform: none !important;
+  transform-origin: 50% 50% !important;
+}
+
+.slider-button .css-arrow--left {
+  transform: scaleX(-1) !important;
+}
+
+.slider-button .css-arrow::before,
+.slider-button .css-arrow::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Prevent control rows and slide content from forcing horizontal page overflow. */
+.project-slider,
+.slider-viewport,
+.slider-track,
+.slider-controls,
+.slider-dots,
+.project-slide,
+.slide-stage {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.slider-buttons {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 620px) {
+  .slider-controls {
+    grid-template-columns: auto minmax(0, 1fr) !important;
+    gap: 12px;
+  }
+
+  .slider-buttons {
+    gap: 9px;
+  }
+
+  .slider-button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .slider-button .css-arrow,
+  .slider-button .css-arrow--right,
+  .slider-button .css-arrow--left {
+    width: 20px !important;
+    height: 13px !important;
+    flex-basis: 20px !important;
+  }
+
+  .slider-dots {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .slider-caption {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 380px) {
+  .project-gallery-section .page-shell {
+    width: calc(100% - 16px);
+  }
+
+  .slider-controls {
+    gap: 9px;
+  }
+
+  .slider-button {
+    width: 42px;
+    height: 42px;
+  }
+}
