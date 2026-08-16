@@ -2336,3 +2336,68 @@ body[data-project-id="kronos-brand-identity"] .project-slide {
     transform: translateX(-50%) rotate(90deg) !important;
   }
 }
+
+/* ===== v23 reliable mobile Before / After drag =====
+   The page may scroll normally over the comparison. Only the horizontal yarn
+   divider and its grip own a touch drag on phones. */
+@media (max-width: 620px) {
+  .before-after-comparison,
+  .before-after-comparison--website {
+    touch-action: pan-y !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+  }
+
+  .before-after-comparison .comparison-panel,
+  .before-after-comparison .comparison-panel img {
+    pointer-events: none !important;
+    -webkit-user-drag: none !important;
+    user-drag: none !important;
+  }
+
+  .before-after-comparison .comparison-divider {
+    z-index: 30 !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: var(--compare-split) !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: 68px !important;
+    transform: translateY(-34px) !important;
+    background: transparent !important;
+    pointer-events: auto !important;
+    touch-action: none !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    cursor: ns-resize !important;
+  }
+
+  .before-after-comparison .comparison-divider::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 50% !important;
+    width: 100% !important;
+    height: 3px !important;
+    border-radius: 999px !important;
+    background: var(--red) !important;
+    transform: translateY(-50%) !important;
+    pointer-events: none !important;
+  }
+
+  .before-after-comparison .comparison-divider .comparison-grip {
+    z-index: 31 !important;
+    width: 58px !important;
+    height: 58px !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    pointer-events: none !important;
+    touch-action: none !important;
+  }
+
+  .before-after-comparison .comparison-divider.is-dragging .comparison-grip {
+    transform: translate(-50%, -50%) scale(1.04) !important;
+  }
+}
