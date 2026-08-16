@@ -274,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return `
         <article class="comparison-study reveal" data-delay="${Math.min(index, 3)}">
           ${item.title ? `<h3 class="comparison-study-title">${esc(item.title)}</h3>` : ""}
-          ${item.note ? `<p class="comparison-study-note">${esc(item.note)}</p>` : ""}
+          ${comparisons.length > 1 && item.note ? `<p class="comparison-study-note">${esc(item.note)}</p>` : ""}
           <div class="before-after-comparison${websiteClass}${compactClass}" style="--compare-split: 50%;">
             <div class="comparison-panel comparison-panel--before">
               <span class="comparison-label">${esc(before.label || "Before")}</span>
