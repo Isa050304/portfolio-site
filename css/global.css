@@ -549,3 +549,60 @@ h4 {
     overflow-x: hidden;
   }
 }
+
+
+/* ===== v20 single SVG arrow system =====
+   The exact artwork lives at /assets/icons/arrow.svg.
+   It is used as a mask so the rendered arrow always matches the portfolio pink,
+   even if the source SVG is black. Replace arrow.svg with the user's file and
+   keep the filename/path unchanged. */
+.css-arrow {
+  --arrow-rotation: 0deg;
+  position: relative !important;
+  display: inline-block !important;
+  width: 24px !important;
+  height: 16px !important;
+  flex: 0 0 24px !important;
+  margin: 0 !important;
+  background: var(--red) !important;
+  -webkit-mask: url('/assets/icons/arrow.svg') center / contain no-repeat !important;
+  mask: url('/assets/icons/arrow.svg') center / contain no-repeat !important;
+  clip-path: none !important;
+  border: 0 !important;
+  transform: rotate(var(--arrow-rotation)) !important;
+  transform-origin: 50% 50% !important;
+}
+
+.css-arrow::before,
+.css-arrow::after {
+  content: none !important;
+  display: none !important;
+}
+
+.css-arrow--right { --arrow-rotation: 0deg; }
+.css-arrow--left { --arrow-rotation: 180deg; }
+.css-arrow--up { --arrow-rotation: -90deg; }
+.css-arrow--up-right { --arrow-rotation: -45deg; }
+
+/* Keep the same shape everywhere while preserving contrast on filled red CTAs. */
+.primary-btn .css-arrow,
+.project-resource-link:not(.project-resource-link--secondary) .css-arrow {
+  background: #fff !important;
+}
+
+.primary-btn,
+.secondary-btn,
+.text-link,
+.project-resource-link,
+.project-link,
+.back-to-top {
+  column-gap: 14px !important;
+}
+
+@media (max-width: 620px) {
+  .css-arrow {
+    width: 21px !important;
+    height: 14px !important;
+    flex-basis: 21px !important;
+  }
+}
