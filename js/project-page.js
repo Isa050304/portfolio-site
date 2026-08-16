@@ -225,13 +225,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!comparisonRoot) return;
 
     const divider = comparisonRoot.querySelector(".comparison-divider");
+    const beforeImage = comparisonRoot.querySelector(".comparison-panel--before img");
     const isPhoneLayout = () => window.matchMedia("(max-width: 620px)").matches;
 
     const applySplit = (value) => {
       const numericValue = Number(value);
       const split = Math.max(0, Math.min(100, Number.isFinite(numericValue) ? numericValue : 50));
       comparisonRoot.style.setProperty("--compare-split", `${split}%`);
-      if (comparisonRange && String(comparisonRange.value) !== String(split)) {
+      comparisonRoot.dataset.compareSplit = String(split);
+      if (comparisonRange && Math.abs(Number(comparisonRange.value) - split) > 0.01) {
         comparisonRange.value = String(split);
       }
     };
@@ -242,11 +244,20 @@ document.addEventListener("DOMContentLoaded", () => {
       applySplit(((clientX - rect.left) / rect.width) * 100);
     };
 
-    // The native range is intentionally kept as a mobile-safe control. Safari
-    // reliably sends input events from a range even when custom touch dragging
-    // is interrupted by page scrolling. The range is transparent and sits only
-    // across the centre handle area, so the rest of the comparison still allows
-    // normal vertical page scrolling.
+    // Non-website artwork should follow the real image ratio instead of living
+    // inside a tall fixed viewport. This removes the large empty bands above and
+    // below landscape work while preserving every pixel of the image.
+    const syncNaturalAspect = () => {
+      if (comparisonRoot.classList.contains("before-after-comparison--website")) return;
+      if (!beforeImage?.naturalWidth || !beforeImage?.naturalHeight) return;
+      comparisonRoot.style.setProperty("--comparison-aspect", `${beforeImage.naturalWidth} / ${beforeImage.naturalHeight}`);
+      comparisonRoot.classList.add("comparison-natural-aspect");
+    };
+    if (beforeImage?.complete) syncNaturalAspect();
+    else beforeImage?.addEventListener("load", syncNaturalAspect, { once: true });
+
+    // The native range is a genuine iOS form control and therefore acts as a
+    // reliable fallback if Safari cancels a custom pointer sequence.
     if (comparisonRange) {
       const syncFromRange = () => applySplit(comparisonRange.value);
       comparisonRange.addEventListener("input", syncFromRange);
@@ -255,6 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let activePointerId = null;
     let pointerSurface = null;
+    let activeTouchId = null;
 
     const beginPointerDrag = (event, surface) => {
       if (event.pointerType === "mouse" && event.button !== 0) return;
@@ -281,42 +293,39 @@ document.addEventListener("DOMContentLoaded", () => {
       pointerSurface = null;
     };
 
-    // Pointer Events work on current iOS Safari, Android, pen and desktop.
-    // Unlike the previous implementation, touch pointers are NOT ignored.
-    if (divider && window.PointerEvent) {
-      divider.addEventListener("pointerdown", (event) => beginPointerDrag(event, divider), { passive: false });
-      divider.addEventListener("pointermove", movePointerDrag, { passive: false });
-      divider.addEventListener("pointerup", endPointerDrag);
-      divider.addEventListener("pointercancel", endPointerDrag);
-      divider.addEventListener("lostpointercapture", endPointerDrag);
-    }
+    const findTouch = (list, id) => {
+      if (!list?.length) return null;
+      for (let index = 0; index < list.length; index += 1) {
+        if (id == null || list[index].identifier === id) return list[index];
+      }
+      return null;
+    };
 
-    // Older touch engines get a small fallback. Indexed TouchList access avoids
-    // Safari versions where TouchList is not iterable with for...of.
-    if (divider && !window.PointerEvent) {
-      let touchIdentifier = null;
-
-      const findTouch = (list) => {
-        if (!list || !list.length) return null;
-        if (touchIdentifier === null) return list[0];
-        for (let index = 0; index < list.length; index += 1) {
-          if (list[index].identifier === touchIdentifier) return list[index];
-        }
-        return null;
-      };
+    // Register BOTH pointer and touch handlers on the divider. iOS can expose
+    // Pointer Events yet still cancel a pointer sequence during gesture
+    // arbitration; the explicit non-passive Touch Events path keeps the thread
+    // draggable in that case.
+    if (divider) {
+      if (window.PointerEvent) {
+        divider.addEventListener("pointerdown", (event) => beginPointerDrag(event, divider), { passive: false });
+        divider.addEventListener("pointermove", movePointerDrag, { passive: false });
+        divider.addEventListener("pointerup", endPointerDrag);
+        divider.addEventListener("pointercancel", endPointerDrag);
+        divider.addEventListener("lostpointercapture", endPointerDrag);
+      }
 
       divider.addEventListener("touchstart", (event) => {
-        if (!event.changedTouches.length) return;
-        const touch = event.changedTouches[0];
-        touchIdentifier = touch.identifier;
+        const touch = event.changedTouches?.[0];
+        if (!touch) return;
+        activeTouchId = touch.identifier;
         divider.classList.add("is-dragging");
         event.preventDefault();
         splitFromX(touch.clientX);
       }, { passive: false });
 
       divider.addEventListener("touchmove", (event) => {
-        if (touchIdentifier === null) return;
-        const touch = findTouch(event.touches) || findTouch(event.changedTouches);
+        if (activeTouchId === null) return;
+        const touch = findTouch(event.touches, activeTouchId) || findTouch(event.changedTouches, activeTouchId);
         if (!touch) return;
         event.preventDefault();
         splitFromX(touch.clientX);
@@ -324,15 +333,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const finishTouch = () => {
         divider.classList.remove("is-dragging");
-        touchIdentifier = null;
+        activeTouchId = null;
       };
       divider.addEventListener("touchend", finishTouch, { passive: true });
       divider.addEventListener("touchcancel", finishTouch, { passive: true });
     }
 
-    // Desktop keeps the convenient ability to click/drag anywhere on the image.
-    // On phones only the visible thread/handle (plus its native range hit area)
-    // is interactive, leaving the rest of the image free for vertical scrolling.
+    // Desktop keeps click/drag anywhere. Phones intentionally reserve the image
+    // itself for normal page scrolling; only the red thread / handle is drag UI.
     comparisonRoot.addEventListener("pointerdown", (event) => {
       if (isPhoneLayout()) return;
       if (event.target.closest(".comparison-label, .comparison-divider, .comparison-range")) return;
@@ -371,7 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <img src="${asset(after.src || "")}" alt="${esc(after.alt || "After")}" loading="lazy" decoding="async">
             </div>
             <div class="comparison-divider" aria-hidden="true"><span class="comparison-grip"></span></div>
-            <input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="Adjust before and after comparison">
+            <input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="Adjust before and after comparison" oninput="this.parentElement.style.setProperty('--compare-split', this.value + '%')" onchange="this.parentElement.style.setProperty('--compare-split', this.value + '%')">
           </div>
         </article>`;
     }).join("");

@@ -2351,3 +2351,226 @@ body[data-project-id="kronos-brand-identity"] .project-slide {
     background: transparent;
   }
 }
+
+
+/* ===== v26 comparison interaction + natural artwork ratio =====
+   This is the authoritative final comparison block. Earlier historical mobile
+   rules are intentionally superseded here. */
+.before-after-comparison.comparison-natural-aspect:not(.before-after-comparison--website) {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  aspect-ratio: var(--comparison-aspect, 4 / 3) !important;
+}
+
+.before-after-comparison.comparison-natural-aspect:not(.before-after-comparison--website) .comparison-panel img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+@media (max-width: 620px) {
+  .before-after-comparison,
+  .before-after-comparison--website {
+    position: relative !important;
+    display: block !important;
+    overflow: hidden !important;
+    touch-action: pan-y !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+  }
+
+  /* Ordinary artwork follows its own ratio: no tall 72vh box and no big empty
+     bands above/below horizontal images. */
+  .before-after-comparison:not(.before-after-comparison--website) {
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: var(--comparison-aspect, 4 / 3) !important;
+  }
+
+  /* Long website screenshots keep a controlled viewport. */
+  .before-after-comparison--website {
+    height: min(66vh, 560px) !important;
+    min-height: 390px !important;
+  }
+
+  .before-after-comparison .comparison-panel,
+  .before-after-comparison .comparison-panel--before,
+  .before-after-comparison .comparison-panel--after,
+  .before-after-comparison--website .comparison-panel {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
+
+  .before-after-comparison .comparison-panel--before {
+    clip-path: inset(0 calc(100% - var(--compare-split)) 0 0) !important;
+  }
+
+  .before-after-comparison .comparison-panel img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    pointer-events: none !important;
+  }
+
+  .before-after-comparison--website .comparison-panel img {
+    object-fit: cover !important;
+    object-position: top center !important;
+  }
+
+  .before-after-comparison .comparison-divider {
+    position: absolute !important;
+    z-index: 80 !important;
+    left: var(--compare-split) !important;
+    right: auto !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 54px !important;
+    height: 100% !important;
+    margin: 0 !important;
+    transform: translateX(-27px) !important;
+    background: transparent !important;
+    pointer-events: auto !important;
+    touch-action: none !important;
+    cursor: ew-resize !important;
+  }
+
+  .before-after-comparison .comparison-divider::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 3px !important;
+    border-radius: 999px !important;
+    background: var(--red) !important;
+    transform: translateX(-50%) !important;
+    pointer-events: none !important;
+  }
+
+  .before-after-comparison .comparison-divider .comparison-grip {
+    position: absolute !important;
+    z-index: 2 !important;
+    left: 50% !important;
+    top: 50% !important;
+    width: 58px !important;
+    height: 58px !important;
+    transform: translate(-50%, -50%) !important;
+    pointer-events: none !important;
+  }
+
+  /* Native horizontal range across the handle band. This is a second iOS-safe
+     input path and its direct inline input handler updates --compare-split. */
+  .before-after-comparison .comparison-range {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    position: absolute !important;
+    z-index: 90 !important;
+    left: 0 !important;
+    top: 50% !important;
+    width: 100% !important;
+    height: 66px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateY(-50%) !important;
+    opacity: 0.01 !important;
+    pointer-events: auto !important;
+    touch-action: none !important;
+    background: transparent !important;
+  }
+
+  .before-after-comparison .comparison-range::-webkit-slider-runnable-track {
+    height: 66px !important;
+    background: transparent !important;
+    border: 0 !important;
+  }
+  .before-after-comparison .comparison-range::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 60px !important;
+    height: 60px !important;
+    margin-top: 3px !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+}
+
+
+/* ===== v26.1 mobile: native range is the actual drag control =====
+   The visible red thread is decorative and follows --compare-split.
+   iPhone drags the real range thumb, avoiding custom gesture cancellation. */
+@media (max-width: 620px) {
+  .before-after-comparison .comparison-divider {
+    z-index: 90 !important;
+    pointer-events: none !important;
+    touch-action: auto !important;
+  }
+
+  .before-after-comparison .comparison-divider .comparison-grip {
+    pointer-events: none !important;
+  }
+
+  .before-after-comparison .comparison-range {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    position: absolute !important;
+    z-index: 80 !important;
+    left: -30px !important;
+    top: 50% !important;
+    width: calc(100% + 60px) !important;
+    height: 82px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateY(-50%) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    touch-action: none !important;
+    cursor: ew-resize !important;
+    background: transparent !important;
+    border: 0 !important;
+    outline: 0 !important;
+  }
+
+  .before-after-comparison .comparison-range::-webkit-slider-runnable-track {
+    width: 100% !important;
+    height: 82px !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .before-after-comparison .comparison-range::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    width: 60px !important;
+    height: 60px !important;
+    margin-top: 11px !important;
+    border: 0 !important;
+    border-radius: 50% !important;
+    background: var(--paper) !important;
+    box-shadow: 0 8px 24px rgba(58, 28, 38, 0.12) !important;
+  }
+
+  .before-after-comparison .comparison-range::-moz-range-track {
+    width: 100% !important;
+    height: 82px !important;
+    background: transparent !important;
+    border: 0 !important;
+  }
+
+  .before-after-comparison .comparison-range::-moz-range-thumb {
+    width: 60px !important;
+    height: 60px !important;
+    border: 0 !important;
+    border-radius: 50% !important;
+    background: var(--paper) !important;
+    box-shadow: 0 8px 24px rgba(58, 28, 38, 0.12) !important;
+  }
+}
