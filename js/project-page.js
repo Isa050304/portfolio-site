@@ -223,134 +223,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const setUpComparison = (comparisonRoot, comparisonRange) => {
     if (!comparisonRoot) return;
-
-    const divider = comparisonRoot.querySelector(".comparison-divider");
-    const beforeImage = comparisonRoot.querySelector(".comparison-panel--before img");
-    const isPhoneLayout = () => window.matchMedia("(max-width: 620px)").matches;
-
     const applySplit = (value) => {
-      const numericValue = Number(value);
-      const split = Math.max(0, Math.min(100, Number.isFinite(numericValue) ? numericValue : 50));
+      const split = Math.max(0, Math.min(100, Number(value)));
       comparisonRoot.style.setProperty("--compare-split", `${split}%`);
-      comparisonRoot.dataset.compareSplit = String(split);
-      if (comparisonRange && Math.abs(Number(comparisonRange.value) - split) > 0.01) {
-        comparisonRange.value = String(split);
-      }
+      if (comparisonRange) comparisonRange.value = String(split);
     };
 
-    const splitFromX = (clientX) => {
+    comparisonRange?.addEventListener("input", () => applySplit(comparisonRange.value));
+
+    let dragging = false;
+    const updateFromPointer = (event) => {
       const rect = comparisonRoot.getBoundingClientRect();
-      if (!rect.width) return;
-      applySplit(((clientX - rect.left) / rect.width) * 100);
+      const isVertical = window.matchMedia("(max-width: 620px)").matches;
+      const raw = isVertical
+        ? ((event.clientY - rect.top) / rect.height) * 100
+        : ((event.clientX - rect.left) / rect.width) * 100;
+      applySplit(raw);
     };
 
-    // Non-website artwork should follow the real image ratio instead of living
-    // inside a tall fixed viewport. This removes the large empty bands above and
-    // below landscape work while preserving every pixel of the image.
-    const syncNaturalAspect = () => {
-      if (comparisonRoot.classList.contains("before-after-comparison--website")) return;
-      if (!beforeImage?.naturalWidth || !beforeImage?.naturalHeight) return;
-      comparisonRoot.style.setProperty("--comparison-aspect", `${beforeImage.naturalWidth} / ${beforeImage.naturalHeight}`);
-      comparisonRoot.classList.add("comparison-natural-aspect");
-    };
-    if (beforeImage?.complete) syncNaturalAspect();
-    else beforeImage?.addEventListener("load", syncNaturalAspect, { once: true });
-
-    // The native range is a genuine iOS form control and therefore acts as a
-    // reliable fallback if Safari cancels a custom pointer sequence.
-    if (comparisonRange) {
-      const syncFromRange = () => applySplit(comparisonRange.value);
-      comparisonRange.addEventListener("input", syncFromRange);
-      comparisonRange.addEventListener("change", syncFromRange);
-    }
-
-    let activePointerId = null;
-    let pointerSurface = null;
-    let activeTouchId = null;
-
-    const beginPointerDrag = (event, surface) => {
-      if (event.pointerType === "mouse" && event.button !== 0) return;
-      activePointerId = event.pointerId;
-      pointerSurface = surface;
-      surface.classList.add("is-dragging");
-      try { surface.setPointerCapture?.(event.pointerId); } catch (_) {}
-      event.preventDefault();
-      splitFromX(event.clientX);
-    };
-
-    const movePointerDrag = (event) => {
-      if (activePointerId === null || event.pointerId !== activePointerId) return;
-      event.preventDefault();
-      splitFromX(event.clientX);
-    };
-
-    const endPointerDrag = (event) => {
-      if (activePointerId === null) return;
-      if (event?.pointerId != null && event.pointerId !== activePointerId) return;
-      try { pointerSurface?.releasePointerCapture?.(activePointerId); } catch (_) {}
-      pointerSurface?.classList.remove("is-dragging");
-      activePointerId = null;
-      pointerSurface = null;
-    };
-
-    const findTouch = (list, id) => {
-      if (!list?.length) return null;
-      for (let index = 0; index < list.length; index += 1) {
-        if (id == null || list[index].identifier === id) return list[index];
-      }
-      return null;
-    };
-
-    // Register BOTH pointer and touch handlers on the divider. iOS can expose
-    // Pointer Events yet still cancel a pointer sequence during gesture
-    // arbitration; the explicit non-passive Touch Events path keeps the thread
-    // draggable in that case.
-    if (divider) {
-      if (window.PointerEvent) {
-        divider.addEventListener("pointerdown", (event) => beginPointerDrag(event, divider), { passive: false });
-        divider.addEventListener("pointermove", movePointerDrag, { passive: false });
-        divider.addEventListener("pointerup", endPointerDrag);
-        divider.addEventListener("pointercancel", endPointerDrag);
-        divider.addEventListener("lostpointercapture", endPointerDrag);
-      }
-
-      divider.addEventListener("touchstart", (event) => {
-        const touch = event.changedTouches?.[0];
-        if (!touch) return;
-        activeTouchId = touch.identifier;
-        divider.classList.add("is-dragging");
-        event.preventDefault();
-        splitFromX(touch.clientX);
-      }, { passive: false });
-
-      divider.addEventListener("touchmove", (event) => {
-        if (activeTouchId === null) return;
-        const touch = findTouch(event.touches, activeTouchId) || findTouch(event.changedTouches, activeTouchId);
-        if (!touch) return;
-        event.preventDefault();
-        splitFromX(touch.clientX);
-      }, { passive: false });
-
-      const finishTouch = () => {
-        divider.classList.remove("is-dragging");
-        activeTouchId = null;
-      };
-      divider.addEventListener("touchend", finishTouch, { passive: true });
-      divider.addEventListener("touchcancel", finishTouch, { passive: true });
-    }
-
-    // Desktop keeps click/drag anywhere. Phones intentionally reserve the image
-    // itself for normal page scrolling; only the red thread / handle is drag UI.
     comparisonRoot.addEventListener("pointerdown", (event) => {
-      if (isPhoneLayout()) return;
-      if (event.target.closest(".comparison-label, .comparison-divider, .comparison-range")) return;
-      beginPointerDrag(event, comparisonRoot);
-    }, { passive: false });
-    comparisonRoot.addEventListener("pointermove", movePointerDrag, { passive: false });
-    comparisonRoot.addEventListener("pointerup", endPointerDrag);
-    comparisonRoot.addEventListener("pointercancel", endPointerDrag);
-    comparisonRoot.addEventListener("lostpointercapture", endPointerDrag);
-
+      if (event.target.closest(".comparison-label")) return;
+      dragging = true;
+      comparisonRoot.setPointerCapture?.(event.pointerId);
+      updateFromPointer(event);
+    });
+    comparisonRoot.addEventListener("pointermove", (event) => {
+      if (dragging) updateFromPointer(event);
+    });
+    const stop = (event) => {
+      dragging = false;
+      if (comparisonRoot.hasPointerCapture?.(event.pointerId)) {
+        comparisonRoot.releasePointerCapture(event.pointerId);
+      }
+    };
+    comparisonRoot.addEventListener("pointerup", stop);
+    comparisonRoot.addEventListener("pointercancel", stop);
     applySplit(comparisonRange?.value || 50);
   };
 
@@ -364,11 +271,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const after = item.after || {};
       const websiteClass = project.galleryMode === "website" ? " before-after-comparison--website" : "";
       const compactClass = project.compactWebsite ? " before-after-comparison--compact" : "";
-      const showStudyNote = comparisons.length > 1 && item.note;
       return `
         <article class="comparison-study reveal" data-delay="${Math.min(index, 3)}">
           ${item.title ? `<h3 class="comparison-study-title">${esc(item.title)}</h3>` : ""}
-          ${showStudyNote ? `<p class="comparison-study-note">${esc(item.note)}</p>` : ""}
+          ${item.note ? `<p class="comparison-study-note">${esc(item.note)}</p>` : ""}
           <div class="before-after-comparison${websiteClass}${compactClass}" style="--compare-split: 50%;">
             <div class="comparison-panel comparison-panel--before">
               <span class="comparison-label">${esc(before.label || "Before")}</span>
@@ -379,7 +285,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <img src="${asset(after.src || "")}" alt="${esc(after.alt || "After")}" loading="lazy" decoding="async">
             </div>
             <div class="comparison-divider" aria-hidden="true"><span class="comparison-grip"></span></div>
-            <input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="Adjust before and after comparison" oninput="this.parentElement.style.setProperty('--compare-split', this.value + '%')" onchange="this.parentElement.style.setProperty('--compare-split', this.value + '%')">
+            <input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="Adjust before and after comparison">
           </div>
         </article>`;
     }).join("");
