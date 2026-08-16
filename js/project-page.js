@@ -228,34 +228,40 @@ document.addEventListener("DOMContentLoaded", () => {
     const isPhoneLayout = () => window.matchMedia("(max-width: 620px)").matches;
 
     const applySplit = (value) => {
-      const split = Math.max(0, Math.min(100, Number(value)));
+      const numericValue = Number(value);
+      const split = Math.max(0, Math.min(100, Number.isFinite(numericValue) ? numericValue : 50));
       comparisonRoot.style.setProperty("--compare-split", `${split}%`);
-      if (comparisonRange) comparisonRange.value = String(split);
+      if (comparisonRange && String(comparisonRange.value) !== String(split)) {
+        comparisonRange.value = String(split);
+      }
     };
 
-    // Both desktop and phone use a left/right reveal. On phones this is
-    // intentional: horizontal comparison movement does not compete with the
-    // page's natural vertical scroll gesture.
     const splitFromX = (clientX) => {
       const rect = comparisonRoot.getBoundingClientRect();
       if (!rect.width) return;
       applySplit(((clientX - rect.left) / rect.width) * 100);
     };
 
-    comparisonRange?.addEventListener("input", () => applySplit(comparisonRange.value));
+    // The native range is intentionally kept as a mobile-safe control. Safari
+    // reliably sends input events from a range even when custom touch dragging
+    // is interrupted by page scrolling. The range is transparent and sits only
+    // across the centre handle area, so the rest of the comparison still allows
+    // normal vertical page scrolling.
+    if (comparisonRange) {
+      const syncFromRange = () => applySplit(comparisonRange.value);
+      comparisonRange.addEventListener("input", syncFromRange);
+      comparisonRange.addEventListener("change", syncFromRange);
+    }
 
     let activePointerId = null;
     let pointerSurface = null;
 
     const beginPointerDrag = (event, surface) => {
-      // Touch is handled by explicit Touch Events on phones because Mobile
-      // Safari is more reliable here than mixing touch scrolling with capture.
-      if (isPhoneLayout() && event.pointerType === "touch") return;
       if (event.pointerType === "mouse" && event.button !== 0) return;
       activePointerId = event.pointerId;
       pointerSurface = surface;
       surface.classList.add("is-dragging");
-      surface.setPointerCapture?.(event.pointerId);
+      try { surface.setPointerCapture?.(event.pointerId); } catch (_) {}
       event.preventDefault();
       splitFromX(event.clientX);
     };
@@ -275,44 +281,36 @@ document.addEventListener("DOMContentLoaded", () => {
       pointerSurface = null;
     };
 
-    // Mouse, pen and desktop pointer interaction.
-    divider?.addEventListener("pointerdown", (event) => beginPointerDrag(event, divider), { passive: false });
-    divider?.addEventListener("pointermove", movePointerDrag, { passive: false });
-    divider?.addEventListener("pointerup", endPointerDrag);
-    divider?.addEventListener("pointercancel", endPointerDrag);
-    divider?.addEventListener("lostpointercapture", endPointerDrag);
+    // Pointer Events work on current iOS Safari, Android, pen and desktop.
+    // Unlike the previous implementation, touch pointers are NOT ignored.
+    if (divider && window.PointerEvent) {
+      divider.addEventListener("pointerdown", (event) => beginPointerDrag(event, divider), { passive: false });
+      divider.addEventListener("pointermove", movePointerDrag, { passive: false });
+      divider.addEventListener("pointerup", endPointerDrag);
+      divider.addEventListener("pointercancel", endPointerDrag);
+      divider.addEventListener("lostpointercapture", endPointerDrag);
+    }
 
-    comparisonRoot.addEventListener("pointerdown", (event) => {
-      if (isPhoneLayout()) return;
-      if (event.target.closest(".comparison-label, .comparison-divider")) return;
-      beginPointerDrag(event, comparisonRoot);
-    }, { passive: false });
-    comparisonRoot.addEventListener("pointermove", movePointerDrag, { passive: false });
-    comparisonRoot.addEventListener("pointerup", endPointerDrag);
-    comparisonRoot.addEventListener("pointercancel", endPointerDrag);
-    comparisonRoot.addEventListener("lostpointercapture", endPointerDrag);
-
-    // iPhone/iPad: the visible thread has its own dedicated touch drag.
-    // Vertical page scrolling remains untouched everywhere outside this lane.
-    if (divider) {
+    // Older touch engines get a small fallback. Indexed TouchList access avoids
+    // Safari versions where TouchList is not iterable with for...of.
+    if (divider && !window.PointerEvent) {
       let touchIdentifier = null;
 
       const findTouch = (list) => {
-        if (!list?.length) return null;
+        if (!list || !list.length) return null;
         if (touchIdentifier === null) return list[0];
-        for (const touch of list) {
-          if (touch.identifier === touchIdentifier) return touch;
+        for (let index = 0; index < list.length; index += 1) {
+          if (list[index].identifier === touchIdentifier) return list[index];
         }
         return null;
       };
 
       divider.addEventListener("touchstart", (event) => {
-        if (!isPhoneLayout() || !event.changedTouches.length) return;
+        if (!event.changedTouches.length) return;
         const touch = event.changedTouches[0];
         touchIdentifier = touch.identifier;
         divider.classList.add("is-dragging");
         event.preventDefault();
-        event.stopPropagation();
         splitFromX(touch.clientX);
       }, { passive: false });
 
@@ -321,21 +319,29 @@ document.addEventListener("DOMContentLoaded", () => {
         const touch = findTouch(event.touches) || findTouch(event.changedTouches);
         if (!touch) return;
         event.preventDefault();
-        event.stopPropagation();
         splitFromX(touch.clientX);
       }, { passive: false });
 
-      const finishTouch = (event) => {
-        if (touchIdentifier === null) return;
-        const ended = findTouch(event.changedTouches);
-        if (!ended && event.type !== "touchcancel") return;
+      const finishTouch = () => {
         divider.classList.remove("is-dragging");
         touchIdentifier = null;
       };
-
       divider.addEventListener("touchend", finishTouch, { passive: true });
       divider.addEventListener("touchcancel", finishTouch, { passive: true });
     }
+
+    // Desktop keeps the convenient ability to click/drag anywhere on the image.
+    // On phones only the visible thread/handle (plus its native range hit area)
+    // is interactive, leaving the rest of the image free for vertical scrolling.
+    comparisonRoot.addEventListener("pointerdown", (event) => {
+      if (isPhoneLayout()) return;
+      if (event.target.closest(".comparison-label, .comparison-divider, .comparison-range")) return;
+      beginPointerDrag(event, comparisonRoot);
+    }, { passive: false });
+    comparisonRoot.addEventListener("pointermove", movePointerDrag, { passive: false });
+    comparisonRoot.addEventListener("pointerup", endPointerDrag);
+    comparisonRoot.addEventListener("pointercancel", endPointerDrag);
+    comparisonRoot.addEventListener("lostpointercapture", endPointerDrag);
 
     applySplit(comparisonRange?.value || 50);
   };

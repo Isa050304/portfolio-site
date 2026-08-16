@@ -2200,10 +2200,11 @@ body[data-project-id="kronos-brand-identity"] .project-slide {
   }
 }
 
-/* ===== v24 single mobile comparison implementation =====
-   One rule set only. On phones the comparison keeps the familiar vertical
-   thread: drag left/right on the thread, while vertical swipes anywhere else
-   continue to scroll the page normally. */
+
+/* ===== v25 reliable mobile comparison control =====
+   Mobile keeps a left/right reveal. The visible thread can be dragged with
+   Pointer Events, and an invisible native range over the centre handle provides
+   a Safari-safe fallback. Everywhere else, vertical page scrolling remains native. */
 @media (max-width: 620px) {
   .before-after-comparison,
   .before-after-comparison--website {
@@ -2214,7 +2215,8 @@ body[data-project-id="kronos-brand-identity"] .project-slide {
     min-height: 470px !important;
     overflow: hidden !important;
     touch-action: pan-y !important;
-    overscroll-behavior: auto !important;
+    overscroll-behavior-y: auto !important;
+    overscroll-behavior-x: contain !important;
     -webkit-user-select: none !important;
     user-select: none !important;
   }
@@ -2232,7 +2234,6 @@ body[data-project-id="kronos-brand-identity"] .project-slide {
     pointer-events: none !important;
   }
 
-  /* Same left/right reveal as desktop. This avoids fighting vertical page scroll. */
   .before-after-comparison .comparison-panel--before {
     clip-path: inset(0 calc(100% - var(--compare-split)) 0 0) !important;
   }
@@ -2251,18 +2252,18 @@ body[data-project-id="kronos-brand-identity"] .project-slide {
     bottom: auto !important;
   }
 
-  /* 46px touch lane, but only a 3px thread is visible. */
+  /* Full-height touch lane. Only the 3px centre thread is visible. */
   .before-after-comparison .comparison-divider {
     position: absolute !important;
-    z-index: 40 !important;
+    z-index: 50 !important;
     left: var(--compare-split) !important;
     right: auto !important;
     top: 0 !important;
     bottom: 0 !important;
-    width: 46px !important;
+    width: 48px !important;
     height: 100% !important;
     margin: 0 !important;
-    transform: translateX(-23px) !important;
+    transform: translateX(-24px) !important;
     background: transparent !important;
     pointer-events: auto !important;
     touch-action: none !important;
@@ -2274,13 +2275,10 @@ body[data-project-id="kronos-brand-identity"] .project-slide {
   .before-after-comparison .comparison-divider::before {
     content: "" !important;
     position: absolute !important;
-    z-index: 0 !important;
     left: 50% !important;
-    right: auto !important;
     top: 0 !important;
     bottom: 0 !important;
     width: 3px !important;
-    height: 100% !important;
     border-radius: 999px !important;
     background: var(--red) !important;
     transform: translateX(-50%) !important;
@@ -2303,24 +2301,53 @@ body[data-project-id="kronos-brand-identity"] .project-slide {
     transform: translate(-50%, -50%) scale(1.035) !important;
   }
 
-  /* Mobile grip keeps the same left/right arrow language as desktop. */
-  .before-after-comparison .comparison-divider .comparison-grip::before {
-    left: 7px !important;
-    right: auto !important;
+  /* Native iOS-safe drag surface. It only covers the horizontal band around
+     the visible handle, so swiping above or below still scrolls the page. */
+  .before-after-comparison .comparison-range {
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    position: absolute !important;
+    z-index: 60 !important;
+    left: 0 !important;
     top: 50% !important;
-    bottom: auto !important;
-    width: 13px !important;
-    height: 9px !important;
-    transform: translateY(-50%) rotate(180deg) !important;
+    width: 100% !important;
+    height: 72px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateY(-50%) !important;
+    opacity: 0.001 !important;
+    pointer-events: auto !important;
+    touch-action: none !important;
+    cursor: ew-resize !important;
+    background: transparent !important;
   }
 
-  .before-after-comparison .comparison-divider .comparison-grip::after {
-    right: 7px !important;
-    left: auto !important;
-    top: 50% !important;
-    bottom: auto !important;
-    width: 13px !important;
-    height: 9px !important;
-    transform: translateY(-50%) !important;
+  .before-after-comparison .comparison-range::-webkit-slider-runnable-track {
+    height: 72px;
+    background: transparent;
+    border: 0;
+  }
+
+  .before-after-comparison .comparison-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 58px;
+    height: 58px;
+    margin-top: 7px;
+    border: 0;
+    background: transparent;
+  }
+
+  .before-after-comparison .comparison-range::-moz-range-track {
+    height: 72px;
+    background: transparent;
+    border: 0;
+  }
+
+  .before-after-comparison .comparison-range::-moz-range-thumb {
+    width: 58px;
+    height: 58px;
+    border: 0;
+    background: transparent;
   }
 }
