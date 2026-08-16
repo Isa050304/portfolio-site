@@ -251,3 +251,16 @@
     top: auto;
   }
 }
+
+
+/* ===== v16 borderless about surfaces ===== */
+.about-portrait,
+.about-art-label,
+.skills-list span {
+  border: 0 !important;
+  box-shadow: var(--surface-shadow-small);
+}
+
+.about-portrait {
+  box-shadow: var(--surface-shadow);
+}

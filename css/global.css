@@ -435,3 +435,26 @@ h3,
 body {
   min-height: 100svh;
 }
+
+
+/* ===== v16 softer surfaces: colour + shadow instead of outlined boxes ===== */
+:root {
+  --surface-shadow: 0 12px 32px rgba(58, 28, 38, 0.07);
+  --surface-shadow-small: 0 6px 18px rgba(58, 28, 38, 0.065);
+  --surface-shadow-hover: 0 14px 34px rgba(58, 28, 38, 0.10);
+}
+
+.primary-btn,
+.secondary-btn {
+  border: 0 !important;
+  box-shadow: var(--surface-shadow-small);
+}
+
+.secondary-btn {
+  background: rgba(247, 230, 236, 0.72);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  box-shadow: var(--surface-shadow-hover);
+}

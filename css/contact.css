@@ -173,3 +173,10 @@ body.contact-page .site-footer {
     height: 180px;
   }
 }
+
+
+/* ===== v16 borderless contact surface ===== */
+.contact-links {
+  border: 0 !important;
+  box-shadow: var(--surface-shadow);
+}

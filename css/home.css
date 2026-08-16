@@ -310,3 +310,18 @@
     margin-top: 28px;
   }
 }
+
+
+/* ===== v16 borderless home cards ===== */
+.discipline-card,
+.process-card {
+  border: 0 !important;
+  box-shadow: var(--surface-shadow);
+}
+
+.process-card-number,
+.thread-story-art p {
+  border: 0 !important;
+  background: rgba(255, 253, 251, 0.90);
+  box-shadow: var(--surface-shadow-small);
+}

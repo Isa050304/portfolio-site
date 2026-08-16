@@ -451,3 +451,18 @@ body.is-transitioning .route-transition::before { animation: yarn-page-wave 720m
     background-color: var(--blush-strong);
   }
 }
+
+
+/* ===== v16 borderless navigation surfaces ===== */
+.navbar,
+.main-navigation,
+.back-to-top {
+  border: 0 !important;
+  box-shadow: var(--surface-shadow-small);
+}
+
+.navbar.is-scrolled,
+.main-navigation.is-open,
+.back-to-top.is-visible {
+  box-shadow: var(--surface-shadow);
+}

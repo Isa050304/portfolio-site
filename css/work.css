@@ -1761,3 +1761,124 @@ body[data-project-id="kronos-brand-identity"] .slide-stage img {
 body[data-project-id="kronos-brand-identity"] .project-slide {
   background: #f2f2f2 !important;
 }
+
+
+/* ===== v16 soft surface system: no outlined content boxes ===== */
+.filter-bar,
+.work-card,
+.work-card-media,
+.project-meta,
+.slider-viewport,
+.process-step,
+.next-project-card,
+.project-resource-card,
+.project-code-window,
+.problem-solution-card,
+.before-after-comparison,
+.website-browser-frame {
+  border: 0 !important;
+  box-shadow: var(--surface-shadow) !important;
+}
+
+/* Pills and small controls use fill + a very light shadow instead of a stroke. */
+.filter-button,
+.project-tags li,
+.slide-context-label,
+.comparison-label,
+.code-tab-button,
+.project-resource-link,
+.slider-button,
+.process-step::before,
+.comparison-divider .comparison-grip,
+.before-after-comparison .comparison-divider .comparison-grip {
+  border: 0 !important;
+  box-shadow: var(--surface-shadow-small) !important;
+}
+
+.filter-bar {
+  background: rgba(255, 253, 251, 0.72) !important;
+}
+
+.filter-button {
+  background: rgba(255, 250, 247, 0.92) !important;
+}
+
+.filter-button[aria-pressed="true"] {
+  background: var(--red) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(196, 52, 82, 0.18) !important;
+}
+
+.project-tags li,
+.code-tab-button,
+.process-step::before {
+  background: rgba(255, 253, 251, 0.88);
+}
+
+.code-tab-button[aria-pressed="true"] {
+  background: var(--red) !important;
+  color: #fff !important;
+}
+
+.project-resource-link--secondary {
+  background: var(--pink-soft) !important;
+}
+
+/* Keep real divider lines: metadata rows, section separators, browser chrome and the comparison thread. */
+.project-meta li,
+.footer-grid,
+.project-code-window-bar,
+.website-browser-bar,
+.timeline-item,
+.notes-list,
+.notes-list > div,
+.contact-links a,
+.process-section,
+.problem-solution-section,
+.page-hero,
+.project-hero {
+  /* existing divider borders intentionally remain */
+}
+
+/* Image artwork itself should never cast a second rectangular/drop-shadow.
+   The frame carries the depth, which prevents the odd grey shadow/glitch seen
+   around transparent Kronos artwork and some other slides. */
+.slide-stage img,
+.project-slide[data-fit="cover"] .slide-stage img,
+.comparison-panel img,
+.before-after-comparison .comparison-panel img,
+.website-screenshot-scroll img,
+.website-screenshot-scroll--both img,
+.work-card-media img {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.slider-viewport,
+.before-after-comparison,
+.website-browser-frame {
+  box-shadow: 0 14px 36px rgba(58, 28, 38, 0.075) !important;
+}
+
+.project-slide,
+.comparison-panel,
+.before-after-comparison .comparison-panel {
+  background-image: none !important;
+  background: #f1f1f1 !important;
+}
+
+/* Preserve the project's soft neutral gallery background without layered
+   radial gradients, which were producing visible seams on some artwork. */
+.project-slide--website,
+.project-gallery-section--portal .project-slide--website {
+  background: #f2f2f2 !important;
+}
+
+@media (hover: hover) {
+  .work-card:hover,
+  .next-project-card:hover,
+  .slider-button:hover,
+  .filter-button:hover {
+    box-shadow: var(--surface-shadow-hover) !important;
+  }
+}
