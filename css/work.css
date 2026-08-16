@@ -1882,3 +1882,116 @@ body[data-project-id="kronos-brand-identity"] .project-slide {
     box-shadow: var(--surface-shadow-hover) !important;
   }
 }
+
+/* ===== v18 multi-comparison studies + arrow cleanup ===== */
+.comparison-stack {
+  display: grid;
+  gap: clamp(34px, 5vw, 64px);
+}
+
+.comparison-study {
+  display: grid;
+  gap: 14px;
+}
+
+.comparison-study-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.comparison-study-note {
+  margin: -4px 0 2px;
+  max-width: 720px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* Comparison-only projects start directly with the before/after studies. */
+.project-gallery-section[hidden] {
+  display: none !important;
+}
+
+/* The gallery frame owns the depth; slide artwork itself stays perfectly flat
+   to prevent grey seams/shadow glitches on transparent or light artwork. */
+.project-slide,
+.slide-stage,
+.slide-stage img,
+.slider-track {
+  filter: none !important;
+  box-shadow: none !important;
+}
+
+/* Straight arrows everywhere. */
+.slider-button .css-arrow {
+  width: 22px !important;
+  height: 14px !important;
+  margin: 0 !important;
+}
+
+.slider-button .css-arrow::before,
+.slider-button .css-arrow::after {
+  /* inherit the unified geometry from global.css */
+}
+
+.project-link {
+  gap: 12px !important;
+}
+
+.project-link .arrow {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+}
+
+.project-link .arrow .css-arrow {
+  width: 18px !important;
+  flex-basis: 18px !important;
+}
+
+.project-link .arrow .css-arrow::before {
+  width: 14px !important;
+}
+
+.next-project-card::after {
+  display: none !important;
+}
+
+.next-project-arrow {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(255, 253, 251, 0.82);
+  color: var(--red);
+  box-shadow: var(--surface-shadow-small);
+}
+
+/* Category filters remain visually selectable, but do not form a second
+   outlined box inside the page. */
+.filter-bar {
+  box-shadow: none !important;
+  background: transparent !important;
+  padding-inline: 0 !important;
+}
+
+.filter-button {
+  border: 0 !important;
+  background: rgba(255, 253, 251, 0.92) !important;
+  box-shadow: var(--surface-shadow-small) !important;
+}
+
+.filter-button[aria-pressed="true"] {
+  background: var(--red) !important;
+  color: #fff !important;
+  box-shadow: 0 9px 22px rgba(196, 52, 82, 0.16) !important;
+}
+
+@media (max-width: 620px) {
+  .comparison-stack {
+    gap: 40px;
+  }
+}

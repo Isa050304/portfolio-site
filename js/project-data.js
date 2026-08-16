@@ -3,54 +3,9 @@
 // Website captures for Numode Delivery and Transylvanian Traditions are intentionally scrollable in the project viewer.
 // Staff Portal screenshots are sanitized; some text was altered in Photoshop to protect private information.
 // The Willow Beauty comparison uses the old Nail Salon Willowbrook Mall website mockup and the new Willow Beauty website mockup.
+// Advertising-composition and colour-correction source PNGs were converted to optimized WebP files for the live site.
 
 window.PORTFOLIO_PROJECTS = [
-  {
-    "id": "football-connects",
-    "title": "Football Connects What the World Divides",
-    "category": "Poster Design",
-    "categoryKey": "poster",
-    "tags": [
-      "Poster Design",
-      "Visual Storytelling",
-      "Competition"
-    ],
-    "year": "2026",
-    "role": "Concept + Design",
-    "format": "Poster",
-    "summary": "A competition poster exploring football as a shared language that can connect people across borders and differences.",
-    "note": "Selected for an international competition and displayed at a convention.",
-    "cover": "assets/projects/web/football-cover.webp",
-    "slides": [
-      {
-        "src": "assets/projects/web/mock-up-fut-fnal.webp",
-        "alt": "Football Connects What the World Divides poster shown in a street display mockup",
-        "caption": "Poster mockup",
-        "fit": "contain"
-      },
-      {
-        "src": "assets/projects/web/football-poster.webp",
-        "alt": "Football Connects What the World Divides final poster",
-        "caption": "Final poster",
-        "fit": "contain"
-      }
-    ],
-    "rationale": "I wanted the poster to communicate connection without relying on the usual football imagery of players, stadiums or trophies. The composition uses two separated forms moving toward the same illuminated centre, with football acting as the shared point between them. I kept the hierarchy direct so the idea can read quickly from a distance while still holding enough detail for a closer look.",
-    "process": [
-      {
-        "title": "Research",
-        "body": "I reviewed the competition theme and looked at how football can represent community, identity and belonging. That research helped me focus on connection rather than illustrating the sport literally."
-      },
-      {
-        "title": "Concept",
-        "body": "I tested several visual directions before choosing a composition built around two separated sides moving toward one centre. It let the idea of division and connection exist in the same image."
-      },
-      {
-        "title": "Final Form",
-        "body": "I refined the scale, lighting and contrast, then kept the typography restrained so it supported the image. The final poster was submitted to an international competition and later displayed at a convention."
-      }
-    ]
-  },
   {
     "id": "nexa-booklet",
     "title": "Nexa Type Specimen",
@@ -146,6 +101,204 @@ window.PORTFOLIO_PROJECTS = [
       {
         "title": "Refinement",
         "body": "I simplified the typography and tuned the hierarchy until the title and central figure supported the same focal path. The concept and composition were especially well received in critique."
+      }
+    ]
+  },
+  {
+    "id": "red-label-advertising-composition",
+    "title": "Red Label Advertising Composition",
+    "category": "Advertising Composition",
+    "categoryKey": "composition",
+    "tags": [
+      "Digital Imaging",
+      "Photo Compositing",
+      "Advertising"
+    ],
+    "year": "2026",
+    "role": "Composition + Retouching",
+    "format": "Commercial-Style Beverage Ad",
+    "summary": "A commercial-style beverage composition built from separate product and supporting images, with lighting, reflections and atmosphere brought together into one finished scene.",
+    "note": "A digital imaging study focused on compositing, product lighting and a polished advertising finish.",
+    "cover": "assets/projects/web/red-label-composition-cover.webp",
+    "slides": [
+      {
+        "src": "assets/projects/web/red-label-glass.webp",
+        "alt": "Whisky glass element used in the Red Label advertising composition",
+        "caption": "Supporting glass element",
+        "fit": "contain"
+      },
+      {
+        "src": "assets/projects/web/red-label-bottle-base.webp",
+        "alt": "Red Label bottle before the final lighting treatment",
+        "caption": "Bottle base",
+        "fit": "contain"
+      },
+      {
+        "src": "assets/projects/web/red-label-bottle-light.webp",
+        "alt": "Red Label bottle with the lighting treatment developed for the composition",
+        "caption": "Lighting pass",
+        "fit": "contain"
+      },
+      {
+        "src": "assets/projects/web/red-label-composition-final.webp",
+        "alt": "Finished Red Label beverage advertising composition",
+        "caption": "Final composition",
+        "fit": "contain"
+      }
+    ],
+    "rationale": "The project was built around making separate images feel like they were photographed in the same environment. I focused on matching direction and intensity of light, controlling reflections and keeping the product readable against a dark background. The final composition uses the glass, bottle and atmosphere as one visual hierarchy rather than a collection of separate cutouts.",
+    "process": [
+      {
+        "title": "Build the Assets",
+        "body": "I prepared the bottle and glass as separate elements and cleaned their edges so they could be placed without carrying unwanted background information into the final scene."
+      },
+      {
+        "title": "Match the Light",
+        "body": "I adjusted highlights, reflections and contrast so the product elements shared the same lighting logic. This was the main step in making the composite feel believable."
+      },
+      {
+        "title": "Finish the Scene",
+        "body": "I added the supporting atmosphere and refined the colour and tonal balance so the bottle remained the focal point while the surrounding elements added depth."
+      }
+    ]
+  },
+  {
+    "id": "iced-vodka-advertising-composition",
+    "title": "Iced Vodka Advertising Composition",
+    "category": "Advertising Composition",
+    "categoryKey": "composition",
+    "tags": [
+      "Digital Imaging",
+      "Product Retouching",
+      "Advertising"
+    ],
+    "year": "2026",
+    "role": "Composition + Retouching",
+    "format": "Commercial-Style Beverage Ad",
+    "summary": "An icy beverage-ad composition developed around a clean bottle presentation, label refinement and a cold environment that supports the product without overpowering it.",
+    "note": "A digital imaging study focused on product cleanup, compositing and environmental colour matching.",
+    "cover": "assets/projects/web/iced-vodka-composition-cover.webp",
+    "slides": [
+      {
+        "src": "assets/projects/web/iced-vodka-bottle-base.webp",
+        "alt": "Vodka bottle base used for the icy advertising composition",
+        "caption": "Bottle base",
+        "fit": "contain"
+      },
+      {
+        "src": "assets/projects/web/iced-vodka-label-refinement.webp",
+        "alt": "Vodka bottle with centered and refined label treatment",
+        "caption": "Label refinement",
+        "fit": "contain"
+      },
+      {
+        "src": "assets/projects/web/iced-vodka-composition-final.webp",
+        "alt": "Finished icy vodka advertising composition",
+        "caption": "Final composition",
+        "fit": "contain"
+      }
+    ],
+    "rationale": "I wanted the product to feel cold before adding any copy or extra campaign graphics. The bottle was cleaned and aligned first, then placed into an environment built around cool colour, snow texture and a darker sky. The final adjustments were about keeping the bottle neutral enough to stay readable while letting the setting create the mood.",
+    "process": [
+      {
+        "title": "Clean the Product",
+        "body": "I started with the bottle itself, correcting placement and label alignment before introducing the surrounding environment."
+      },
+      {
+        "title": "Build the Setting",
+        "body": "I composed the snow and sky around the product, then matched the overall colour temperature so the bottle felt connected to the scene."
+      },
+      {
+        "title": "Final Balance",
+        "body": "I refined contrast, local colour and edge transitions so the environment felt atmospheric while the product stayed clear and central."
+      }
+    ]
+  },
+  {
+    "id": "colour-correction-studies",
+    "title": "Colour Correction Studies",
+    "category": "Colour Correction",
+    "categoryKey": "colour",
+    "tags": [
+      "Colour Correction",
+      "Retouching",
+      "Before + After"
+    ],
+    "year": "2026",
+    "role": "Colour Correction + Retouching",
+    "format": "Before / After Studies",
+    "summary": "A set of colour-correction studies focused on exposure, colour balance and tonal separation while keeping each image natural to its subject and environment.",
+    "note": "This project is presented through interactive before-and-after comparisons.",
+    "cover": "assets/projects/web/colour-correction-cover.webp",
+    "slides": [],
+    "comparisonOnly": true,
+    "comparisons": [
+      {
+        "title": "Landscape Study 01",
+        "before": {
+          "src": "assets/projects/web/colour-correction-before-01.webp",
+          "label": "Before",
+          "alt": "Landscape image before colour correction"
+        },
+        "after": {
+          "src": "assets/projects/web/colour-correction-after-01.webp",
+          "label": "After",
+          "alt": "Landscape image after colour correction"
+        }
+      },
+      {
+        "title": "Landscape Study 02",
+        "before": {
+          "src": "assets/projects/web/colour-correction-before-02.webp",
+          "label": "Before",
+          "alt": "Aerial landscape image before colour correction"
+        },
+        "after": {
+          "src": "assets/projects/web/colour-correction-after-02.webp",
+          "label": "After",
+          "alt": "Aerial landscape image after colour correction"
+        }
+      },
+      {
+        "title": "Portrait Study",
+        "before": {
+          "src": "assets/projects/web/colour-correction-before-03.webp",
+          "label": "Before",
+          "alt": "Portrait image before colour correction"
+        },
+        "after": {
+          "src": "assets/projects/web/colour-correction-after-03.webp",
+          "label": "After",
+          "alt": "Portrait image after colour correction"
+        }
+      },
+      {
+        "title": "Landscape Study 04",
+        "before": {
+          "src": "assets/projects/web/colour-correction-before-04.webp",
+          "label": "Before",
+          "alt": "Landscape image before colour correction"
+        },
+        "after": {
+          "src": "assets/projects/web/colour-correction-after-04.webp",
+          "label": "After",
+          "alt": "Landscape image after colour correction"
+        }
+      }
+    ],
+    "rationale": "The corrections were approached image by image rather than using one look across the whole set. I worked on exposure, colour casts and tonal separation first, then refined saturation and local contrast only where they helped the subject. The goal was to make each image feel more intentional without pushing it so far that the correction became the first thing you notice.",
+    "process": [
+      {
+        "title": "Read the Image",
+        "body": "I first identified the main exposure and colour issues in each image and decided what needed correction before making any stylistic changes."
+      },
+      {
+        "title": "Correct the Balance",
+        "body": "I adjusted brightness, contrast and colour relationships to restore clearer separation between highlights, midtones and shadows."
+      },
+      {
+        "title": "Refine the Result",
+        "body": "I made smaller local adjustments to keep skin, landscape colour and atmosphere believable while giving the image a cleaner final balance."
       }
     ]
   },

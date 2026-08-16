@@ -88,7 +88,11 @@ document.addEventListener("DOMContentLoaded", () => {
   let activeIndex = 0;
   const slides = project.slides || [];
 
-  if (track && dots) {
+  if (!slides.length) {
+    gallerySection?.setAttribute("hidden", "");
+  }
+
+  if (track && dots && slides.length) {
     track.innerHTML = slides.map((slide, slideIndex) => {
       const src = asset(slide.src);
       if (slide.scrollable) {
@@ -212,28 +216,13 @@ document.addEventListener("DOMContentLoaded", () => {
   updateSlider(0);
 
   const comparisonSection = document.querySelector("#project-comparison-section");
-  const comparisonRoot = document.querySelector("#before-after-comparison");
-  const comparisonRange = document.querySelector("#comparison-range");
-  const comparisonBeforeImage = document.querySelector("#comparison-before-image");
-  const comparisonAfterImage = document.querySelector("#comparison-after-image");
-  const comparisonBeforeLabel = document.querySelector("#comparison-before-label");
-  const comparisonAfterLabel = document.querySelector("#comparison-after-label");
-  const comparisonNote = document.querySelector("#comparison-note");
+  const comparisonPageShell = comparisonSection?.querySelector(".page-shell");
+  const comparisons = Array.isArray(project.comparisons) && project.comparisons.length
+    ? project.comparisons
+    : (project.comparison?.before && project.comparison?.after ? [project.comparison] : []);
 
-  if (comparisonSection && comparisonRoot && project.comparison?.before && project.comparison?.after) {
-    const before = project.comparison.before;
-    const after = project.comparison.after;
-    comparisonBeforeImage.src = asset(before.src);
-    comparisonBeforeImage.alt = before.alt || "Before";
-    comparisonAfterImage.src = asset(after.src);
-    comparisonAfterImage.alt = after.alt || "After";
-    comparisonBeforeLabel.textContent = before.label || "Before";
-    comparisonAfterLabel.textContent = after.label || "After";
-    if (comparisonNote) comparisonNote.textContent = project.comparison.note || "";
-    comparisonRoot.classList.toggle("before-after-comparison--website", project.galleryMode === "website");
-    comparisonRoot.classList.toggle("before-after-comparison--compact", Boolean(project.compactWebsite));
-    comparisonSection.hidden = false;
-
+  const setUpComparison = (comparisonRoot, comparisonRange) => {
+    if (!comparisonRoot) return;
     const applySplit = (value) => {
       const split = Math.max(0, Math.min(100, Number(value)));
       comparisonRoot.style.setProperty("--compare-split", `${split}%`);
@@ -242,7 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     comparisonRange?.addEventListener("input", () => applySplit(comparisonRange.value));
 
-    let comparisonDragging = false;
+    let dragging = false;
     const updateFromPointer = (event) => {
       const rect = comparisonRoot.getBoundingClientRect();
       const isVertical = window.matchMedia("(max-width: 620px)").matches;
@@ -254,24 +243,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
     comparisonRoot.addEventListener("pointerdown", (event) => {
       if (event.target.closest(".comparison-label")) return;
-      comparisonDragging = true;
+      dragging = true;
       comparisonRoot.setPointerCapture?.(event.pointerId);
       updateFromPointer(event);
     });
     comparisonRoot.addEventListener("pointermove", (event) => {
-      if (!comparisonDragging) return;
-      updateFromPointer(event);
+      if (dragging) updateFromPointer(event);
     });
-    const stopComparisonDrag = (event) => {
-      comparisonDragging = false;
+    const stop = (event) => {
+      dragging = false;
       if (comparisonRoot.hasPointerCapture?.(event.pointerId)) {
         comparisonRoot.releasePointerCapture(event.pointerId);
       }
     };
-    comparisonRoot.addEventListener("pointerup", stopComparisonDrag);
-    comparisonRoot.addEventListener("pointercancel", stopComparisonDrag);
-
+    comparisonRoot.addEventListener("pointerup", stop);
+    comparisonRoot.addEventListener("pointercancel", stop);
     applySplit(comparisonRange?.value || 50);
+  };
+
+  if (comparisonSection && comparisonPageShell && comparisons.length) {
+    const comparisonHeading = comparisons.length > 1
+      ? `<div class="project-comparison-heading"><div><p class="section-label">Before / After</p><h2 class="section-title">Pull the thread through each correction.</h2></div></div>`
+      : `<div class="project-comparison-heading"><div><p class="section-label">Before / After</p><h2 class="section-title">Pull the thread to reveal the change.</h2></div>${comparisons[0].note ? `<p class="body-large">${esc(comparisons[0].note)}</p>` : ""}</div>`;
+
+    const comparisonMarkup = comparisons.map((item, index) => {
+      const before = item.before || {};
+      const after = item.after || {};
+      const websiteClass = project.galleryMode === "website" ? " before-after-comparison--website" : "";
+      const compactClass = project.compactWebsite ? " before-after-comparison--compact" : "";
+      return `
+        <article class="comparison-study reveal" data-delay="${Math.min(index, 3)}">
+          ${item.title ? `<h3 class="comparison-study-title">${esc(item.title)}</h3>` : ""}
+          ${item.note ? `<p class="comparison-study-note">${esc(item.note)}</p>` : ""}
+          <div class="before-after-comparison${websiteClass}${compactClass}" style="--compare-split: 50%;">
+            <div class="comparison-panel comparison-panel--before">
+              <span class="comparison-label">${esc(before.label || "Before")}</span>
+              <img src="${asset(before.src || "")}" alt="${esc(before.alt || "Before")}" loading="lazy" decoding="async">
+            </div>
+            <div class="comparison-panel comparison-panel--after">
+              <span class="comparison-label">${esc(after.label || "After")}</span>
+              <img src="${asset(after.src || "")}" alt="${esc(after.alt || "After")}" loading="lazy" decoding="async">
+            </div>
+            <div class="comparison-divider" aria-hidden="true"><span class="comparison-grip"></span></div>
+            <input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="Adjust before and after comparison">
+          </div>
+        </article>`;
+    }).join("");
+
+    comparisonPageShell.innerHTML = `${comparisonHeading}<div class="comparison-stack">${comparisonMarkup}</div>`;
+    comparisonPageShell.querySelectorAll(".before-after-comparison").forEach((root) => {
+      setUpComparison(root, root.querySelector(".comparison-range"));
+    });
+    comparisonSection.hidden = false;
   } else if (comparisonSection) {
     comparisonSection.hidden = true;
   }
@@ -296,7 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (linksSection && linksList && Array.isArray(project.links) && project.links.length) {
     linksList.innerHTML = project.links.map((link) => `
       <a class="project-resource-link ${link.style === "secondary" ? "project-resource-link--secondary" : ""}" href="${esc(link.url)}" target="_blank" rel="noopener">
-        ${esc(link.label)} <span class="css-arrow css-arrow--up-right" aria-hidden="true"></span>
+        ${esc(link.label)} <span class="css-arrow css-arrow--right" aria-hidden="true"></span>
       </a>
     `).join("");
     if (linksNote) linksNote.textContent = project.linksNote || "";
@@ -349,5 +372,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (nextProject && nextLink && nextTitle) {
     nextLink.href = projectHref(nextProject.id);
     nextTitle.textContent = nextProject.title;
+    if (!nextLink.querySelector(".next-project-arrow")) {
+      nextLink.insertAdjacentHTML("beforeend", '<span class="next-project-arrow" aria-hidden="true"><span class="css-arrow css-arrow--right"></span></span>');
+    }
   }
 });

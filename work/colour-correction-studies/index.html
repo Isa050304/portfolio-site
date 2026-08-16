@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta name="theme-color" content="#fffdfb">
+<title>Project | Isabel Contreras</title>
+<link rel="icon" href="/favicon.ico?v=18" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/ui/favicon-butterfly-32.png?v=18">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/ui/favicon-butterfly-16.png?v=18">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/ui/apple-touch-icon.png?v=18">
+<link rel="canonical" href="https://www.isabelca.com/work/colour-correction-studies">
+<meta content="Project case study by Isabel Contreras." name="description"/>
+<link href="../../css/global.css?v=18" rel="stylesheet"/>
+<link href="../../css/components.css?v=18" rel="stylesheet"/>
+<link href="../../css/work.css?v=18" rel="stylesheet"/>
+<link href="../../css/animations.css?v=18" rel="stylesheet"/>
+</head>
+<body class="project-detail-page" data-root="../../" data-project-id="colour-correction-studies">
+<header class="navbar" id="site-header">
+<a aria-label="Isabel Contreras home" class="logo" href="/">
+<img alt="Isabel Contreras" src="../../assets/logos/logo-wordmark.svg"/>
+</a>
+<button aria-controls="main-navigation" aria-expanded="false" aria-label="Open navigation" class="nav-toggle" type="button">
+<span></span><span></span>
+</button>
+<nav aria-label="Main navigation" class="main-navigation" id="main-navigation">
+<ul class="nav-links">
+<li><a aria-current="page" href="/work">Work</a></li>
+<li><a href="/about">About + Resume</a></li>
+<li><a href="/contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+<main class="project-main" id="main-content">
+<section class="project-hero">
+<div class="page-shell project-hero-grid">
+<div class="reveal">
+<p class="section-label" id="project-category">Project</p>
+<h1 class="project-title" id="project-title">Loading project…</h1>
+<p class="project-summary" id="project-summary">A closer look at the idea, process and final piece.</p>
+</div>
+<ul class="project-meta reveal" data-delay="1" id="project-meta"></ul>
+</div>
+</section>
+<section class="project-gallery-section">
+<div class="page-shell reveal">
+<div aria-label="Project image slideshow" class="project-slider" data-slider="" tabindex="0">
+<div class="slider-viewport">
+<div class="slider-track" id="slider-track"></div>
+</div>
+<div class="slider-controls">
+<div class="slider-buttons">
+<button aria-label="Previous slide" class="slider-button" data-prev="" type="button"><span class="css-arrow css-arrow--left" aria-hidden="true"></span></button>
+<button aria-label="Next slide" class="slider-button" data-next="" type="button"><span class="css-arrow css-arrow--right" aria-hidden="true"></span></button>
+</div>
+<div aria-label="Choose slide" class="slider-dots" id="slider-dots"></div>
+<p aria-live="polite" class="slider-caption" id="slider-caption"></p>
+</div>
+</div>
+</div>
+</section>
+<section class="project-comparison-section" hidden id="project-comparison-section">
+<div class="page-shell reveal">
+<div class="project-comparison-heading">
+<div>
+<p class="section-label">Before / After</p>
+<h2 class="section-title">Pull the thread to reveal the change.</h2>
+</div>
+<p class="body-large" id="comparison-note"></p>
+</div>
+<div class="before-after-comparison" id="before-after-comparison" style="--compare-split: 50%;">
+<div class="comparison-panel comparison-panel--before">
+<span class="comparison-label" id="comparison-before-label">Before</span>
+<img id="comparison-before-image" src="" alt="" loading="lazy" decoding="async">
+</div>
+<div class="comparison-panel comparison-panel--after">
+<span class="comparison-label" id="comparison-after-label">After</span>
+<img id="comparison-after-image" src="" alt="" loading="lazy" decoding="async">
+</div>
+<div class="comparison-divider" aria-hidden="true"><span class="comparison-grip"></span></div>
+<input class="comparison-range" id="comparison-range" type="range" min="0" max="100" value="50" aria-label="Adjust before and after comparison">
+</div>
+</div>
+</section>
+<section class="problem-solution-section" hidden id="problem-solution-section">
+<div class="page-shell reveal">
+<div class="problem-solution-heading">
+<div>
+<p class="section-label">Problems + Solutions</p>
+<h2 class="section-title">What needed to change, and how I responded.</h2>
+</div>
+<p class="body-large" id="problem-solution-intro"></p>
+</div>
+<div class="problem-solution-grid">
+<article class="problem-solution-card">
+<p class="section-label">Problems</p>
+<ul id="problems-list"></ul>
+</article>
+<article class="problem-solution-card">
+<p class="section-label">Solutions</p>
+<ul id="solutions-list"></ul>
+</article>
+</div>
+</div>
+</section>
+<section class="project-links-section" hidden id="project-links-section">
+<div class="page-shell reveal">
+<div class="project-resource-card">
+<div>
+<p class="section-label">Project Link</p>
+<h2 class="section-title">A quick way to open the project.</h2>
+</div>
+<div class="project-resource-links" id="project-links-list"></div>
+<p class="project-resource-note" id="project-links-note"></p>
+</div>
+</div>
+</section>
+<section class="project-code-section" hidden id="project-code-section">
+<div class="page-shell reveal">
+<div class="project-resource-card project-resource-card--code">
+<div class="project-code-heading">
+<div>
+<p class="section-label">Code Preview</p>
+<h2 class="section-title">A simple look at the build.</h2>
+</div>
+<div class="code-tabs" id="project-code-tabs"></div>
+</div>
+<div class="project-code-window">
+<div class="project-code-window-bar">
+<span class="project-code-dot"></span>
+<span class="project-code-dot"></span>
+<span class="project-code-dot"></span>
+<strong id="project-code-label">HTML</strong>
+</div>
+<pre class="project-code-pre"><code id="project-code-content"></code></pre>
+</div>
+<p class="project-resource-note" id="project-code-note"></p>
+</div>
+</div>
+</section>
+<section class="process-section">
+<div class="page-shell">
+<div class="process-heading reveal">
+<div>
+<p class="section-label">Rationale + Process</p>
+<h2 class="section-title">How I got from the first idea to the final piece.</h2>
+</div>
+<div class="body-large project-rationale" id="project-rationale"><p>The thinking behind this project will appear here.</p></div>
+</div>
+<div class="process-list" id="process-list"></div>
+</div>
+</section>
+<section class="project-next">
+<div class="page-shell reveal">
+<a class="next-project-card" href="/work" id="next-project-link">
+<div>
+<p class="section-label">Next thread</p>
+<h2 id="next-project-title">Back to all work</h2>
+</div>
+</a>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="footer-inner">
+<p class="section-label">Keep following</p>
+<h2 class="footer-title">There is always more behind the final image.</h2>
+<div class="footer-grid">
+<div class="footer-links">
+<a href="/work">All Work</a>
+<a href="/about">About</a>
+<a href="/contact">Contact</a>
+</div>
+<p class="footer-meta">© 2026 Isabel Contreras · Vancouver, BC</p>
+</div>
+</div>
+</footer>
+<button aria-label="Back to top" class="back-to-top" type="button">Back to top <span class="css-arrow css-arrow--up" aria-hidden="true"></span></button>
+<div aria-hidden="true" class="route-transition"></div>
+<script src="../../js/main.js?v=18"></script>
+<script src="../../js/navigation.js?v=18"></script>
+
+<script src="../../js/thread.js?v=18"></script>
+<script src="../../js/project-data.js?v=18"></script>
+<script src="../../js/project-page.js?v=18"></script>
+<script src="../../js/animations.js?v=18"></script>
+</body>
+</html>
