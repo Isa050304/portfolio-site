@@ -62,6 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (project.galleryMode === "portal") {
     gallerySection?.classList.add("project-gallery-section--website", "project-gallery-section--portal");
   }
+
+  const processLabel = document.querySelector(".process-heading .section-label");
+  const processTitle = document.querySelector(".process-heading .section-title");
+  if (processLabel) processLabel.textContent = "Approach";
+  if (processTitle) processTitle.textContent = "What I worked on and how I approached it.";
   if (project.compactWebsite) {
     gallerySection?.classList.add("project-gallery-section--numode");
   }
@@ -263,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (comparisonSection && comparisonPageShell && comparisons.length) {
     const comparisonHeading = comparisons.length > 1
-      ? `<div class="project-comparison-heading"><div><p class="section-label">Before / After</p><h2 class="section-title">Pull the thread through each correction.</h2></div></div>`
+      ? `<div class="project-comparison-heading"><div><p class="section-label">Before / After</p><h2 class="section-title">${esc(project.comparisonHeading || "Pull the thread through each correction.")}</h2></div></div>`
       : `<div class="project-comparison-heading"><div><p class="section-label">Before / After</p><h2 class="section-title">Pull the thread to reveal the change.</h2></div>${comparisons[0].note ? `<p class="body-large">${esc(comparisons[0].note)}</p>` : ""}</div>`;
 
     const comparisonMarkup = comparisons.map((item, index) => {
@@ -297,6 +302,29 @@ document.addEventListener("DOMContentLoaded", () => {
     comparisonSection.hidden = false;
   } else if (comparisonSection) {
     comparisonSection.hidden = true;
+  }
+
+  if (Array.isArray(project.metrics) && project.metrics.length) {
+    const metricsSection = document.createElement("section");
+    metricsSection.className = "project-results-section";
+    metricsSection.innerHTML = `
+      <div class="page-shell">
+        <div class="project-results-heading reveal">
+          <p class="section-label">Results</p>
+          <h2 class="section-title">A few outcomes from the work.</h2>
+        </div>
+        <div class="project-results-grid">
+          ${project.metrics.map((metric, index) => `
+            <article class="project-result-card reveal" data-delay="${Math.min(index, 3)}">
+              <strong>${esc(metric.value)}</strong>
+              <h3>${esc(metric.label)}</h3>
+              <p>${esc(metric.detail || "")}</p>
+            </article>
+          `).join("")}
+        </div>
+      </div>`;
+    const insertionPoint = document.querySelector("#problem-solution-section") || document.querySelector(".process-section");
+    insertionPoint?.before(metricsSection);
   }
 
   const problemSolutionSection = document.querySelector("#problem-solution-section");

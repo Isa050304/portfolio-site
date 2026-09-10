@@ -1,0 +1,4 @@
+The portfolio currently links to:
+Isabel_Contreras_Resume_ATS.pdf
+
+If you replace the resume later, either keep this filename or update the href in about/index.html.

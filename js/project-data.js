@@ -7,6 +7,108 @@
 
 window.PORTFOLIO_PROJECTS = [
   {
+    "id": "numode-social-media",
+    "title": "Digital Marketing + Social Media for Numode Delivery",
+    "category": "Social Media",
+    "categoryKey": "social",
+    "tags": [
+      "Social Media",
+      "Content + SEO",
+      "Photoshop"
+    ],
+    "year": "2026 · Ongoing",
+    "role": "Digital Marketing + Communications",
+    "format": "Organic Social, Content + Campaign Support",
+    "summary": "Ongoing in-house marketing for a small courier company, from Instagram posts and Photoshop image preparation to SEO blogs, landing pages and Google Ads support.",
+    "note": "I managed this work independently as the company's in-house marketing contact. Social content was developed organically without paid Meta campaigns.",
+    "cover": "assets/projects/social-media/social-media-cover.webp",
+    "slides": [
+      {
+        "src": "assets/projects/social-media/social-media-mockup.webp",
+        "alt": "Numode Delivery social media posts shown in a presentation mockup",
+        "caption": "Social media post mockups",
+        "fit": "contain"
+      }
+    ],
+    "comparisonHeading": "Drag each bar to see what changed.",
+    "comparisons": [
+      {
+        "title": "Preparing Delivery Photography 01",
+        "before": {
+          "src": "assets/projects/social-media/social-photo-01-before.webp",
+          "label": "Original",
+          "alt": "Original delivery photograph before editing"
+        },
+        "after": {
+          "src": "assets/projects/social-media/social-photo-01-after.webp",
+          "label": "Ready for social",
+          "alt": "Delivery photograph prepared for social media"
+        },
+        "note": "The image was cleaned, colour corrected and prepared for a consistent social feed."
+      },
+      {
+        "title": "Preparing Delivery Photography 02",
+        "before": {
+          "src": "assets/projects/social-media/social-photo-02-before.webp",
+          "label": "Original",
+          "alt": "Second original delivery photograph before editing"
+        },
+        "after": {
+          "src": "assets/projects/social-media/social-photo-02-after.webp",
+          "label": "Ready for social",
+          "alt": "Second delivery photograph prepared for social media"
+        },
+        "note": "Photoshop adjustments helped the final image feel cleaner while keeping the delivery moment natural."
+      },
+      {
+        "title": "Instagram Feed Update",
+        "before": {
+          "src": "assets/projects/social-media/instagram-feed-before.webp",
+          "label": "Previous feed",
+          "alt": "Previous Numode Delivery Instagram feed"
+        },
+        "after": {
+          "src": "assets/projects/social-media/instagram-feed-after.webp",
+          "label": "Current feed",
+          "alt": "Updated Numode Delivery Instagram feed"
+        },
+        "note": "The updated feed uses stronger photography, more consistent editing and a clearer visual rhythm."
+      }
+    ],
+    "metrics": [
+      {
+        "value": "$21 to $17",
+        "label": "Google Ads cost per conversion",
+        "detail": "Reduced by about 19% after campaign adjustments."
+      },
+      {
+        "value": "8 to 10",
+        "label": "Authority Score",
+        "detail": "Improved over several months through ongoing SEO and content work."
+      },
+      {
+        "value": "Organic",
+        "label": "Social media approach",
+        "detail": "Posts, captions and images created without paid Meta promotion."
+      }
+    ],
+    "rationale": "Numode is a small company, so the marketing work did not arrive as one perfectly defined campaign. I often identified what needed attention, researched the best approach and carried the work through myself.\n\nFor social media, I worked with the photos available from day-to-day operations. I selected the strongest images, used Photoshop to clean and colour correct them, prepared the layouts, wrote captions and alt text, and kept the visual direction consistent.\n\nThe role also connected social content with the rest of the company's digital presence. I wrote SEO blog posts, created seasonal and campaign landing pages, reviewed website performance and adjusted Google Ads using the results we were seeing.",
+    "process": [
+      {
+        "title": "Work With What We Had",
+        "body": "I reviewed photos from daily operations, chose the ones with a useful story and planned content around real deliveries, people and seasonal moments."
+      },
+      {
+        "title": "Prepare + Publish",
+        "body": "I edited images in Photoshop, created post layouts when needed, wrote natural captions and alt text, and prepared content for Instagram and the company blog."
+      },
+      {
+        "title": "Review + Improve",
+        "body": "I used information from Google Ads, Analytics, Search Console and SEO tools to decide what to adjust next across campaigns, landing pages and content."
+      }
+    ]
+  },
+  {
     "id": "nexa-booklet",
     "title": "Nexa Type Specimen",
     "category": "Editorial + Typography",
@@ -330,19 +432,36 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/projects/web/numode-old-site-01.webp",
         "alt": "Long desktop screenshot of the previous Numode Delivery website",
-        "caption": "Before — previous website",
+        "caption": "Before: previous website",
         "fit": "contain",
         "scrollable": true
       },
       {
         "src": "assets/projects/web/numode-new-site-01.webp",
         "alt": "Long desktop screenshot of the redesigned Numode Delivery website",
-        "caption": "After — redesigned website",
+        "caption": "After: redesigned website",
         "fit": "contain",
         "scrollable": true
       }
     ],
     "rationale": "The previous Numode Delivery site had grown unevenly over time. Responsiveness, contrast, content structure, colour consistency and page speed all needed attention. I rebuilt more than 25 pages in WordPress and Elementor, adding custom HTML/CSS where the layout needed more control. The redesign was developed on a subdomain so the live site could stay available during testing, then migrated to the main domain. The result keeps the existing brand recognisable while making the site clearer, more consistent and easier to use across screen sizes.",
+    "metrics": [
+      {
+        "value": "25+",
+        "label": "Pages redesigned",
+        "detail": "Built, tested and migrated while the live site stayed available."
+      },
+      {
+        "value": "97",
+        "label": "Desktop performance",
+        "detail": "Reached in PageSpeed testing after image and loading improvements."
+      },
+      {
+        "value": "Ongoing",
+        "label": "Website ownership",
+        "detail": "Content, maintenance, responsive fixes and performance work."
+      }
+    ],
     "process": [
       {
         "title": "Audit",
@@ -360,12 +479,12 @@ window.PORTFOLIO_PROJECTS = [
     "comparison": {
       "before": {
         "src": "assets/projects/web/numode-old-site-01.webp",
-        "label": "Before — previous website",
+        "label": "Before: previous website",
         "alt": "Previous Numode Delivery website"
       },
       "after": {
         "src": "assets/projects/web/numode-new-site-01.webp",
-        "label": "After — redesigned website",
+        "label": "After: redesigned website",
         "alt": "Redesigned Numode Delivery website"
       },
       "note": "Pull the thread to see how the original Numode site evolved into the redesigned experience."
@@ -496,14 +615,14 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/projects/web/transylvanian-before.webp",
         "alt": "Long desktop screenshot of the original Transylvanian Traditions website",
-        "caption": "Before — original website",
+        "caption": "Before: original website",
         "fit": "contain",
         "scrollable": true
       },
       {
         "src": "assets/projects/web/transylvanian-after.webp",
         "alt": "Long desktop screenshot of the redesigned Transylvanian Traditions website",
-        "caption": "After — redesigned website",
+        "caption": "After: redesigned website",
         "fit": "contain",
         "scrollable": true
       }
@@ -543,12 +662,12 @@ window.PORTFOLIO_PROJECTS = [
     "comparison": {
       "before": {
         "src": "assets/projects/web/transylvanian-before.webp",
-        "label": "Before — original website",
+        "label": "Before: original website",
         "alt": "Original Transylvanian Traditions website"
       },
       "after": {
         "src": "assets/projects/web/transylvanian-after.webp",
-        "label": "After — redesigned website",
+        "label": "After: redesigned website",
         "alt": "Redesigned Transylvanian Traditions website"
       },
       "note": "Pull the thread to see the Transylvanian Traditions Home page move from the original site to the redesign."
@@ -575,19 +694,19 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/projects/web/kokoro-old-menu.webp",
         "alt": "Previous Kokoro Mazesoba menu",
-        "caption": "Before — previous menu",
+        "caption": "Before: previous menu",
         "fit": "contain"
       },
       {
         "src": "assets/projects/web/kokoro-new-menu-page-01.webp",
         "alt": "First page of the redesigned Kokoro Mazesoba menu",
-        "caption": "After — redesigned menu, page 1",
+        "caption": "After: redesigned menu, page 1",
         "fit": "contain"
       },
       {
         "src": "assets/projects/web/kokoro-new-menu-page-02.webp",
         "alt": "Second page of the redesigned Kokoro Mazesoba menu",
-        "caption": "After — redesigned menu, page 2",
+        "caption": "After: redesigned menu, page 2",
         "fit": "contain"
       },
       {
@@ -615,12 +734,12 @@ window.PORTFOLIO_PROJECTS = [
     "comparison": {
       "before": {
         "src": "assets/projects/web/kokoro-old-menu.webp",
-        "label": "Before — previous menu",
+        "label": "Before: previous menu",
         "alt": "Previous Kokoro Mazesoba menu"
       },
       "after": {
         "src": "assets/projects/web/kokoro-new-menu-combined.webp",
-        "label": "After — two-page redesign",
+        "label": "After: two-page redesign",
         "alt": "Combined two-page Kokoro Mazesoba menu redesign"
       },
       "note": "Pull the thread to see how the previous menu became a clearer two-page system."
@@ -830,13 +949,13 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/projects/web/cineplex-reference.webp",
         "alt": "Cineplex logo used as a market reference in the Cinemax branding study",
-        "caption": "Reference — Cineplex",
+        "caption": "Reference: Cineplex",
         "fit": "contain"
       },
       {
         "src": "assets/projects/web/cinemax-logo-main.webp",
         "alt": "Cinemax logo and rebrand direction",
-        "caption": "Cinemax — logo and rebrand",
+        "caption": "Cinemax logo and rebrand",
         "fit": "contain"
       },
       {
@@ -883,12 +1002,12 @@ window.PORTFOLIO_PROJECTS = [
     "comparison": {
       "before": {
         "src": "assets/projects/web/cineplex-reference.webp",
-        "label": "Market reference — Cineplex",
+        "label": "Market reference: Cineplex",
         "alt": "Cineplex logo market reference"
       },
       "after": {
         "src": "assets/projects/web/cinemax-logo-main.webp",
-        "label": "Rebrand direction — Cinemax",
+        "label": "Rebrand direction: Cinemax",
         "alt": "Cinemax logo rebrand direction"
       },
       "note": "This comparison uses Cineplex as a market reference and Cinemax as the new identity direction; it is not presented as a redesign of Cineplex."
@@ -972,13 +1091,13 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/projects/web/willow-old-brand.webp",
         "alt": "Previous Nail Salon Willowbrook Mall logo",
-        "caption": "Previous identity — Nail Salon Willowbrook Mall",
+        "caption": "Previous identity: Nail Salon Willowbrook Mall",
         "fit": "contain"
       },
       {
         "src": "assets/projects/web/willow-logo-main.webp",
         "alt": "Willow Beauty logo and visual elements",
-        "caption": "Willow Beauty — logo and rebrand direction",
+        "caption": "Willow Beauty logo and rebrand direction",
         "fit": "contain"
       },
       {
@@ -990,19 +1109,19 @@ window.PORTFOLIO_PROJECTS = [
       {
         "src": "assets/projects/web/willow-old-website-mockup.webp",
         "alt": "Previous Nail Salon Willowbrook Mall website mockup",
-        "caption": "Before — salon website direction",
+        "caption": "Before: salon website direction",
         "fit": "contain"
       },
       {
         "src": "assets/projects/web/willow-mockup-website.webp",
         "alt": "Willow Beauty redesigned website mockup",
-        "caption": "After — Willow Beauty website mockup",
+        "caption": "After: Willow Beauty website mockup",
         "fit": "contain"
       },
       {
         "src": "assets/projects/web/willow-mockup-tote.webp",
         "alt": "Willow Beauty tote bag brand mockup",
-        "caption": "Brand application — tote bag",
+        "caption": "Brand application: tote bag",
         "fit": "contain"
       }
     ],
@@ -1024,12 +1143,12 @@ window.PORTFOLIO_PROJECTS = [
     "comparison": {
       "before": {
         "src": "assets/projects/web/willow-old-website-mockup.webp",
-        "label": "Before — Nail Salon Willowbrook Mall",
+        "label": "Before: Nail Salon Willowbrook Mall",
         "alt": "Previous Nail Salon Willowbrook Mall website mockup"
       },
       "after": {
         "src": "assets/projects/web/willow-mockup-website.webp",
-        "label": "After — Willow Beauty",
+        "label": "After: Willow Beauty",
         "alt": "Willow Beauty redesigned website mockup"
       },
       "note": "Pull the thread to see the shift from the previous salon presentation to the Willow Beauty rebrand."

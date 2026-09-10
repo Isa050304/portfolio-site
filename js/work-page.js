@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const projects = window.PORTFOLIO_PROJECTS || [];
+  const priority = ["numode-social-media", "numode-delivery", "numode-staff-portal"];
+  const projects = [...(window.PORTFOLIO_PROJECTS || [])].sort((a, b) => {
+    const aRank = priority.includes(a.id) ? priority.indexOf(a.id) : priority.length;
+    const bRank = priority.includes(b.id) ? priority.indexOf(b.id) : priority.length;
+    return aRank - bRank;
+  });
   const filterRoot = document.querySelector("#project-filters");
   const listRoot = document.querySelector("#project-list");
   if (!filterRoot || !listRoot) return;

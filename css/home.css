@@ -8,7 +8,7 @@
   align-items: center;
   overflow: hidden;
   background:
-    radial-gradient(circle at 78% 38%, rgba(239, 218, 228, .88), transparent 25rem),
+    radial-gradient(circle at 78% 38%, rgba(226, 211, 200, .84), transparent 25rem),
     linear-gradient(135deg, var(--paper) 0 58%, var(--paper-warm) 58% 100%);
 }
 
@@ -89,7 +89,7 @@
   border-radius: 28px;
   background: var(--paper-warm);
 }
-.discipline-card:nth-child(2) { background: var(--pink-soft); }
+.discipline-card:nth-child(2) { background: #efe7df; }
 .discipline-card span { color: var(--red); font-size: .7rem; font-weight: 800; letter-spacing: .12em; }
 .discipline-card h3 { margin: auto 0 10px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.7rem, 2.3vw, 2.35rem); line-height: 1.08; letter-spacing: -.02em; }
 .discipline-card p { margin: 0; color: var(--muted); font-size: .92rem; line-height: 1.62; }
