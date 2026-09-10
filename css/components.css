@@ -352,9 +352,7 @@ body.is-transitioning .route-transition::before { animation: yarn-page-wave 720m
 /* --- Compact footer + stronger visual rhythm --- */
 .site-footer {
   padding: 54px var(--pad) 28px;
-  background:
-    radial-gradient(circle at 88% 22%, rgba(255,255,255,.34), transparent 18rem),
-    var(--blush-strong);
+  background: var(--blush-strong);
 }
 
 .footer-title {

@@ -11,9 +11,7 @@
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
-  background:
-    radial-gradient(circle at 88% 34%, rgba(196,52,82,.1), transparent 18rem),
-    linear-gradient(135deg, var(--pink-soft), var(--paper-warm) 66%);
+  background: var(--paper-warm);
 }
 .page-hero::after,
 .project-hero::after {
@@ -35,7 +33,7 @@
 .page-hero .body-large { max-width: 660px; margin: 16px 0 0; }
 
 /* Work index */
-.work-index { padding: 29px 0 79px; background: linear-gradient(180deg, rgba(255,248,245,.8), var(--paper) 22%); }
+.work-index { padding: 29px 0 79px; background: var(--paper); }
 .filter-bar {
   position: relative;
   z-index: 2;
@@ -77,7 +75,7 @@
   background: rgba(255,250,247,.92);
   box-shadow: 0 14px 40px rgba(58,28,38,.045);
 }
-.work-card:nth-child(2n) { background: rgba(234,224,215,.72); }
+.work-card:nth-child(2n) { background: rgba(255,250,247,.92); }
 .work-card[hidden] { display: none; }
 .work-card-media {
   position: relative;
@@ -95,7 +93,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 42%, rgba(255,255,255,.96), rgba(242,242,242,.92) 58%, rgba(220,220,220,.62));
+  background: #f1f1f1;
 }
 .work-card-media img {
   position: absolute;
@@ -168,7 +166,7 @@
 .project-meta strong { color: var(--red); font-size: .64rem; letter-spacing: .1em; text-transform: uppercase; }
 
 /* Portrait-first slideshow: the frame follows the work instead of forcing it into 16:9. */
-.project-gallery-section { padding: 31px 0 59px; background: linear-gradient(180deg, rgba(255,248,245,.82), rgba(255,253,251,.98)); }
+.project-gallery-section { padding: 31px 0 59px; background: var(--paper); }
 .project-gallery-section .page-shell { width: min(620px, calc(100% - (var(--pad) * 2))); }
 .project-slider { position: relative; }
 .slider-viewport { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 26px; background: #ededed; box-shadow: 0 16px 45px rgba(58,28,38,.08); }
@@ -182,8 +180,7 @@
   place-items: center;
   margin: 0;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 50% 46%, rgba(255,255,255,.98), rgba(245,245,245,.94) 58%, rgba(224,224,224,.72));
+  background: #f1f1f1;
 }
 /* Every case-study image gets a real safe area on all four sides.
    The image element fills only that inner box and object-fit: contain keeps
@@ -248,7 +245,7 @@
 .slider-dot[aria-current="true"] { width: 27px; background: var(--red); }
 .slider-caption { margin: 0; color: var(--muted); font-size: .74rem; text-align: right; }
 
-.process-section { position: relative; padding: 64px 0 70px; border-block: 1px solid var(--line); background: radial-gradient(circle at 12% 28%, rgba(196,52,82,.08), transparent 20rem), var(--blush); }
+.process-section { position: relative; padding: 64px 0 70px; border-block: 1px solid var(--line); background: var(--pink-soft); }
 .process-heading { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(28px, 5vw, 64px); margin-bottom: 30px; }
 .process-heading .body-large { margin: 0; max-width: 600px; }
 .process-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; }
@@ -257,8 +254,8 @@
 .process-step h2 { margin: auto 0 10px; font-family: Georgia, "Times New Roman", serif; font-size: 1.62rem; line-height: 1.12; }
 .process-step p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.62; }
 
-.project-next { padding: 48px 0 62px; background: var(--paper-warm); }
-.next-project-card { position: relative; display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 28px; padding: clamp(24px, 4vw, 38px); border: 1px solid var(--line); border-radius: 26px; background: radial-gradient(circle at 92% 20%, rgba(196,52,82,.11), transparent 14rem), var(--pink-soft); text-decoration: none; overflow: hidden; }
+.project-next { padding: 48px 0 62px; background: var(--paper); }
+.next-project-card { position: relative; display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 28px; padding: clamp(24px, 4vw, 38px); border: 1px solid var(--line); border-radius: 26px; background: var(--pink-soft); text-decoration: none; overflow: hidden; }
 .next-project-card::after { content: ""; color: var(--red); transition: transform 220ms var(--ease); }
 .next-project-card:hover::after { transform: translate(5px,-5px) rotate(-8deg); }
 .next-project-card h2 { margin: 7px 0 0; max-width: 700px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 3.3vw, 3.2rem); line-height: 1.08; }
@@ -388,7 +385,7 @@
 .project-links-section,
 .project-code-section {
   padding: 0 0 48px;
-  background: linear-gradient(180deg, rgba(255,248,245,.82), rgba(255,253,251,.98));
+  background: var(--paper);
 }
 
 .project-code-section {
@@ -538,7 +535,7 @@
 /* Before / after comparison. Both images always use contain so nothing is cropped. */
 .project-comparison-section {
   padding: 20px 0 62px;
-  background: linear-gradient(180deg, rgba(255,253,251,.98), rgba(247,247,247,.96));
+  background: var(--paper);
 }
 
 .project-comparison-heading {
@@ -575,7 +572,7 @@
   padding: 56px;
   overflow: hidden;
   box-sizing: border-box;
-  background: radial-gradient(circle at 50% 46%, rgba(255,255,255,.98), rgba(245,245,245,.95) 60%, rgba(226,226,226,.76));
+  background: #f1f1f1;
 }
 
 .comparison-panel--before {
@@ -886,7 +883,7 @@
   height: auto;
   min-height: 0;
   padding: clamp(18px, 3vw, 34px);
-  background: radial-gradient(circle at 50% 35%, rgba(255,255,255,.98), rgba(239,239,239,.96) 72%);
+  background: #f1f1f1;
 }
 
 .website-browser-frame {
@@ -1009,7 +1006,7 @@
   padding: clamp(42px, 5vw, 60px);
   display: grid;
   place-items: center;
-  background: radial-gradient(circle at 50% 46%, rgba(255,255,255,.98), rgba(245,245,245,.95) 60%, rgba(226,226,226,.76));
+  background: #f1f1f1;
 }
 
 .comparison-panel--after {

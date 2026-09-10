@@ -26,8 +26,8 @@ document.addEventListener("keydown", (event) => {
   const footer = document.querySelector('.site-footer');
   if (!themeMeta || !footer || !('IntersectionObserver' in window)) return;
 
-  const pageColor = '#f8f5f0';
-  const footerColor = '#e4d8ce';
+  const pageColor = '#fbf8f4';
+  const footerColor = '#efdae4';
   const footerThemeObserver = new IntersectionObserver((entries) => {
     const visible = entries.some((entry) => entry.isIntersecting);
     themeMeta.setAttribute('content', visible ? footerColor : pageColor);

@@ -8,7 +8,7 @@
 window.PORTFOLIO_PROJECTS = [
   {
     "id": "numode-social-media",
-    "title": "Digital Marketing + Social Media for Numode Delivery",
+    "title": "Social Media + Digital Marketing",
     "category": "Social Media",
     "categoryKey": "social",
     "tags": [
@@ -25,7 +25,7 @@ window.PORTFOLIO_PROJECTS = [
     "slides": [
       {
         "src": "assets/projects/social-media/social-media-mockup.webp",
-        "alt": "Numode Delivery social media posts shown in a presentation mockup",
+        "alt": "Courier company social media posts shown in a presentation mockup",
         "caption": "Social media post mockups",
         "fit": "contain"
       }
@@ -65,12 +65,12 @@ window.PORTFOLIO_PROJECTS = [
         "before": {
           "src": "assets/projects/social-media/instagram-feed-before.webp",
           "label": "Previous feed",
-          "alt": "Previous Numode Delivery Instagram feed"
+          "alt": "Previous courier company Instagram feed"
         },
         "after": {
           "src": "assets/projects/social-media/instagram-feed-after.webp",
           "label": "Current feed",
-          "alt": "Updated Numode Delivery Instagram feed"
+          "alt": "Updated courier company Instagram feed"
         },
         "note": "The updated feed uses stronger photography, more consistent editing and a clearer visual rhythm."
       }
@@ -92,7 +92,7 @@ window.PORTFOLIO_PROJECTS = [
         "detail": "Posts, captions and images created without paid Meta promotion."
       }
     ],
-    "rationale": "Numode is a small company, so the marketing work did not arrive as one perfectly defined campaign. I often identified what needed attention, researched the best approach and carried the work through myself.\n\nFor social media, I worked with the photos available from day-to-day operations. I selected the strongest images, used Photoshop to clean and colour correct them, prepared the layouts, wrote captions and alt text, and kept the visual direction consistent.\n\nThe role also connected social content with the rest of the company's digital presence. I wrote SEO blog posts, created seasonal and campaign landing pages, reviewed website performance and adjusted Google Ads using the results we were seeing.",
+    "rationale": "The company is small, so the marketing work did not arrive as one perfectly defined campaign. I often identified what needed attention, researched the best approach and carried the work through myself.\n\nFor social media, I worked with the photos available from day-to-day operations. I selected the strongest images, used Photoshop to clean and colour correct them, prepared the layouts, wrote captions and alt text, and kept the visual direction consistent.\n\nThe role also connected social content with the rest of the company's digital presence. I wrote SEO blog posts, created seasonal and campaign landing pages, reviewed website performance and adjusted Google Ads using the results we were seeing.",
     "process": [
       {
         "title": "Work With What We Had",

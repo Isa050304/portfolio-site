@@ -102,10 +102,7 @@ body.contact-page .site-footer {
   width: 100%;
   min-height: 88svh;
   padding: 145px 0 106px;
-  background:
-    radial-gradient(circle at 16% 28%, rgba(196, 52, 82, 0.10), transparent 20rem),
-    radial-gradient(circle at 84% 18%, rgba(239, 218, 228, 0.95), transparent 22rem),
-    var(--paper-warm);
+  background: var(--paper-warm);
   border-bottom: 0;
 }
 

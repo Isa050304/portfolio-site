@@ -1,13 +1,13 @@
 :root {
-  --red: #9f3d52;
-  --red-dark: #7d2d40;
-  --pink: #eadcdf;
-  --pink-soft: #f4eceb;
-  --paper: #f8f5f0;
+  --red: #c43452;
+  --red-dark: #9e2740;
+  --pink: #efdae4;
+  --pink-soft: #f8edf2;
+  --paper: #fbf8f4;
   --ink: #211c1d;
   --muted: #6d6462;
-  --line: rgba(91, 65, 59, 0.20);
-  --line-strong: rgba(159, 61, 82, 0.40);
+  --line: rgba(97, 73, 68, 0.18);
+  --line-strong: rgba(196, 52, 82, 0.40);
   --shadow: 0 24px 70px rgba(65, 47, 42, 0.10);
   --page: 1180px;
   --pad: clamp(20px, 5vw, 64px);
@@ -245,18 +245,13 @@ html.keyboard-navigation .skip-link:focus-visible {
 
 /* --- Compact, layered layout pass (Aug 2026) --- */
 :root {
-  --paper-warm: #f3ede6;
-  --blush: #eee6de;
-  --blush-strong: #e4d8ce;
+  --paper-warm: #f2ece6;
+  --blush: #f8edf2;
+  --blush-strong: #efdae4;
   --section-compact: clamp(52px, 6vw, 82px);
 }
 
-body {
-  background:
-    radial-gradient(circle at 8% 14%, rgba(213, 196, 184, 0.34), transparent 24rem),
-    radial-gradient(circle at 92% 34%, rgba(159, 61, 82, 0.05), transparent 28rem),
-    var(--paper);
-}
+body { background: var(--paper); }
 
 .section {
   padding-block: var(--section-compact);

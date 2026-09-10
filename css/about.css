@@ -127,9 +127,7 @@
   position: relative;
   padding: 114px 0 59px;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 8% 35%, rgba(196, 52, 82, 0.08), transparent 20rem),
-    linear-gradient(135deg, var(--paper-warm), var(--pink-soft));
+  background: var(--paper);
   border-bottom: 1px solid var(--line);
 }
 
@@ -160,9 +158,7 @@
 
 .resume-section {
   padding-block: 70px;
-  background:
-    radial-gradient(circle at 86% 68%, rgba(196, 52, 82, 0.08), transparent 22rem),
-    var(--blush);
+  background: var(--pink-soft);
 }
 
 .resume-grid {
