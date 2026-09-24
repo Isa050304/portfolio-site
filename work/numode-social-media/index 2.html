@@ -24,54 +24,6 @@
 <link href="../../css/components.css?v=22" rel="stylesheet"/>
 <link href="../../css/work.css?v=22" rel="stylesheet"/>
 <link href="../../css/animations.css?v=20" rel="stylesheet"/>
-<style>
-/* Page-only video showcase. Kept local so no other portfolio page is affected. */
-.social-video-showcase {
-  padding: 8px 0 42px;
-  background: var(--paper);
-}
-.social-video-showcase .page-shell {
-  width: min(1160px, calc(100% - (var(--pad) * 2)));
-}
-.social-video-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(18px, 3vw, 32px);
-  align-items: center;
-}
-.social-video-frame {
-  margin: 0;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 26px;
-  background: #ded1c5;
-  box-shadow: 0 16px 45px rgba(58, 28, 38, .08);
-  line-height: 0;
-}
-.social-video-frame video {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
-  background: #ded1c5;
-}
-@media (max-width: 760px) {
-  .social-video-showcase {
-    padding: 4px 0 32px;
-  }
-  .social-video-showcase .page-shell {
-    width: calc(100% - 24px);
-  }
-  .social-video-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .social-video-frame {
-    border-radius: 18px;
-  }
-}
-</style>
 </head>
 <body class="project-detail-page" data-root="../../" data-project-id="numode-social-media">
 <header class="navbar" id="site-header">
@@ -98,22 +50,6 @@
 <p class="project-summary" id="project-summary">A closer look at the idea, process and final piece.</p>
 </div>
 <ul class="project-meta reveal" data-delay="1" id="project-meta"></ul>
-</div>
-</section>
-<section class="social-video-showcase" aria-label="Featured social media videos">
-<div class="page-shell">
-<div class="social-video-grid">
-<figure class="social-video-frame">
-<video controls playsinline preload="none" poster="../../assets/projects/social-media/video/churi-reel-poster.webp" width="1920" height="1080" aria-label="Social media reel video">
-<source src="../../assets/projects/social-media/video/churi-reel.mp4" type="video/mp4">
-</video>
-</figure>
-<figure class="social-video-frame">
-<video controls playsinline preload="none" poster="../../assets/projects/social-media/video/churi-intro-poster.webp" width="1920" height="1080" aria-label="Social media video">
-<source src="../../assets/projects/social-media/video/churi-intro.mp4" type="video/mp4">
-</video>
-</figure>
-</div>
 </div>
 </section>
 <section class="project-gallery-section">
