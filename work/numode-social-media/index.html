@@ -24,53 +24,6 @@
 <link href="../../css/components.css?v=22" rel="stylesheet"/>
 <link href="../../css/work.css?v=22" rel="stylesheet"/>
 <link href="../../css/animations.css?v=20" rel="stylesheet"/>
-
-<style>
-/* Social-media project only: motion pieces directly below the mockup gallery. */
-body[data-project-id="numode-social-media"] .social-video-section {
-  padding: 0 0 clamp(58px, 7vw, 86px);
-  background: var(--paper);
-}
-body[data-project-id="numode-social-media"] .social-video-shell {
-  width: min(1080px, calc(100% - (var(--pad) * 2)));
-  display: grid;
-  gap: clamp(34px, 5vw, 58px);
-}
-body[data-project-id="numode-social-media"] .social-video-card {
-  margin: 0;
-  padding: clamp(20px, 4vw, 48px);
-  overflow: hidden;
-  border-radius: 28px;
-  background: #f1f1f1;
-  box-shadow: 0 14px 36px rgba(58, 28, 38, 0.075);
-}
-body[data-project-id="numode-social-media"] .social-video-card video {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 16px;
-  background: #ded1c4;
-}
-@media (max-width: 620px) {
-  body[data-project-id="numode-social-media"] .social-video-section {
-    padding-bottom: 54px;
-  }
-  body[data-project-id="numode-social-media"] .social-video-shell {
-    width: calc(100% - 24px);
-    gap: 24px;
-  }
-  body[data-project-id="numode-social-media"] .social-video-card {
-    padding: 10px;
-    border-radius: 20px;
-  }
-  body[data-project-id="numode-social-media"] .social-video-card video {
-    border-radius: 13px;
-  }
-}
-</style>
 </head>
 <body class="project-detail-page" data-root="../../" data-project-id="numode-social-media">
 <header class="navbar" id="site-header">
@@ -114,20 +67,6 @@ body[data-project-id="numode-social-media"] .social-video-card video {
 <p aria-live="polite" class="slider-caption" id="slider-caption"></p>
 </div>
 </div>
-</div>
-</section>
-<section class="social-video-section" aria-label="Social media motion work">
-<div class="page-shell social-video-shell">
-<figure class="social-video-card reveal">
-<video controls playsinline preload="none" poster="../../assets/projects/social-media/video/churi-reel-poster.webp" aria-label="Social media reel shown in a phone presentation">
-<source src="../../assets/projects/social-media/video/churi-reel.mp4" type="video/mp4">
-</video>
-</figure>
-<figure class="social-video-card reveal">
-<video controls playsinline preload="none" poster="../../assets/projects/social-media/video/churi-intro-poster.webp" aria-label="Social media video shown in a post presentation">
-<source src="../../assets/projects/social-media/video/churi-intro.mp4" type="video/mp4">
-</video>
-</figure>
 </div>
 </section>
 <section class="project-comparison-section" hidden id="project-comparison-section">
