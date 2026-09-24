@@ -27,17 +27,25 @@
 <style>
 /* Page-only video showcase. Kept local so no other portfolio page is affected. */
 .social-video-showcase {
-  padding: 8px 0 42px;
+  padding: 10px 0 68px;
   background: var(--paper);
 }
 .social-video-showcase .page-shell {
   width: min(1160px, calc(100% - (var(--pad) * 2)));
 }
-.social-video-grid {
+.social-video-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(18px, 3vw, 32px);
-  align-items: center;
+  gap: clamp(42px, 7vw, 72px);
+}
+.social-video-item {
+  min-width: 0;
+}
+.social-video-heading {
+  margin-bottom: 20px;
+}
+.social-video-heading .section-title {
+  margin-top: 8px;
+  max-width: 760px;
 }
 .social-video-frame {
   margin: 0;
@@ -58,14 +66,16 @@
 }
 @media (max-width: 760px) {
   .social-video-showcase {
-    padding: 4px 0 32px;
+    padding: 0 0 50px;
   }
   .social-video-showcase .page-shell {
     width: calc(100% - 24px);
   }
-  .social-video-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+  .social-video-list {
+    gap: 38px;
+  }
+  .social-video-heading {
+    margin-bottom: 14px;
   }
   .social-video-frame {
     border-radius: 18px;
@@ -100,22 +110,6 @@
 <ul class="project-meta reveal" data-delay="1" id="project-meta"></ul>
 </div>
 </section>
-<section class="social-video-showcase" aria-label="Featured social media videos">
-<div class="page-shell">
-<div class="social-video-grid">
-<figure class="social-video-frame">
-<video controls playsinline preload="none" poster="../../assets/projects/social-media/video/churi-reel-poster.webp" width="1920" height="1080" aria-label="Social media reel video">
-<source src="../../assets/projects/social-media/video/churi-reel.mp4" type="video/mp4">
-</video>
-</figure>
-<figure class="social-video-frame">
-<video controls playsinline preload="none" poster="../../assets/projects/social-media/video/churi-intro-poster.webp" width="1920" height="1080" aria-label="Social media video">
-<source src="../../assets/projects/social-media/video/churi-intro.mp4" type="video/mp4">
-</video>
-</figure>
-</div>
-</div>
-</section>
 <section class="project-gallery-section">
 <div class="page-shell reveal">
 <div aria-label="Project image slideshow" class="project-slider" data-slider="" tabindex="0">
@@ -130,6 +124,34 @@
 <div aria-label="Choose slide" class="slider-dots" id="slider-dots"></div>
 <p aria-live="polite" class="slider-caption" id="slider-caption"></p>
 </div>
+</div>
+</div>
+</section>
+<section class="social-video-showcase" aria-label="Featured social media videos">
+<div class="page-shell">
+<div class="social-video-list">
+<article class="social-video-item reveal">
+<div class="social-video-heading">
+<p class="section-label">Video Content</p>
+<h2 class="section-title">Short-form reel</h2>
+</div>
+<figure class="social-video-frame">
+<video controls playsinline preload="none" poster="../../assets/projects/social-media/video/churi-reel-poster.webp" width="1920" height="1080" aria-label="Short-form social media reel">
+<source src="../../assets/projects/social-media/video/churi-reel.mp4" type="video/mp4">
+</video>
+</figure>
+</article>
+<article class="social-video-item reveal">
+<div class="social-video-heading">
+<p class="section-label">Video Content</p>
+<h2 class="section-title">Social feed video</h2>
+</div>
+<figure class="social-video-frame">
+<video controls playsinline preload="none" poster="../../assets/projects/social-media/video/churi-intro-poster.webp" width="1920" height="1080" aria-label="Social feed video">
+<source src="../../assets/projects/social-media/video/churi-intro.mp4" type="video/mp4">
+</video>
+</figure>
+</article>
 </div>
 </div>
 </section>
