@@ -24,6 +24,85 @@
 <link href="../../css/components.css?v=22" rel="stylesheet"/>
 <link href="../../css/work.css?v=22" rel="stylesheet"/>
 <link href="../../css/animations.css?v=20" rel="stylesheet"/>
+
+<style>
+/* Social-media project only: motion work directly below the opening mockup gallery. */
+body[data-project-id="numode-social-media"] .social-video-section {
+  padding: 18px 0 clamp(60px, 7vw, 82px);
+  background: var(--paper);
+}
+body[data-project-id="numode-social-media"] .social-video-shell {
+  width: min(var(--page), calc(100% - (var(--pad) * 2)));
+}
+body[data-project-id="numode-social-media"] .social-video-heading {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(280px, .7fr);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: end;
+  margin-bottom: 26px;
+}
+body[data-project-id="numode-social-media"] .social-video-heading .body-large {
+  margin: 0;
+  max-width: 580px;
+}
+body[data-project-id="numode-social-media"] .social-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 20px);
+  align-items: start;
+}
+body[data-project-id="numode-social-media"] .social-video-card {
+  margin: 0;
+  padding: 12px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: #efefef;
+  box-shadow: 0 14px 36px rgba(58, 28, 38, 0.065);
+}
+body[data-project-id="numode-social-media"] .social-video-card video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 16px;
+  background: #ded1c4;
+}
+@media (max-width: 760px) {
+  body[data-project-id="numode-social-media"] .social-video-heading,
+  body[data-project-id="numode-social-media"] .social-video-grid {
+    grid-template-columns: 1fr;
+  }
+  body[data-project-id="numode-social-media"] .social-video-heading {
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+  body[data-project-id="numode-social-media"] .social-video-grid {
+    gap: 16px;
+  }
+  body[data-project-id="numode-social-media"] .social-video-card {
+    width: min(100%, 390px);
+    margin-inline: auto;
+  }
+}
+@media (max-width: 620px) {
+  body[data-project-id="numode-social-media"] .social-video-section {
+    padding: 10px 0 52px;
+  }
+  body[data-project-id="numode-social-media"] .social-video-shell {
+    width: calc(100% - 24px);
+  }
+  body[data-project-id="numode-social-media"] .social-video-card {
+    padding: 9px;
+    border-radius: 20px;
+  }
+  body[data-project-id="numode-social-media"] .social-video-card video {
+    border-radius: 13px;
+  }
+}
+</style>
 </head>
 <body class="project-detail-page" data-root="../../" data-project-id="numode-social-media">
 <header class="navbar" id="site-header">
@@ -66,6 +145,29 @@
 <div aria-label="Choose slide" class="slider-dots" id="slider-dots"></div>
 <p aria-live="polite" class="slider-caption" id="slider-caption"></p>
 </div>
+</div>
+</div>
+</section>
+<section class="social-video-section" aria-label="Social media motion work">
+<div class="page-shell social-video-shell">
+<div class="social-video-heading reveal">
+<div>
+<p class="section-label">Motion Content</p>
+<h2 class="section-title">Social content in motion.</h2>
+</div>
+<p class="body-large">Two short-form pieces created in CapCut for Churi, designed to bring movement into the social feed while keeping the same clean, consistent visual style.</p>
+</div>
+<div class="social-video-grid">
+<figure class="social-video-card reveal">
+<video controls playsinline preload="none" poster="../../assets/projects/social-media/video/churi-reel-poster.webp" aria-label="Churi short-form social media reel">
+<source src="../../assets/projects/social-media/video/churi-reel.mp4" type="video/mp4">
+</video>
+</figure>
+<figure class="social-video-card reveal">
+<video controls playsinline preload="none" poster="../../assets/projects/social-media/video/churi-intro-poster.webp" aria-label="Churi social media motion piece">
+<source src="../../assets/projects/social-media/video/churi-intro.mp4" type="video/mp4">
+</video>
+</figure>
 </div>
 </div>
 </section>
