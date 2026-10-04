@@ -375,13 +375,13 @@ window.PORTFOLIO_PROJECTS = [
     "format": "Printed Portfolio Booklet",
     "summary": "A portfolio prepared for print as a booklet, with the pages arranged into printer spreads and crop marks added for production.",
     "note": "The booklet was imposed in the correct print order before the final print run.",
-    "cover": "assets/projects/print/portfolio-booklet-imposition.webp",
+    "cover": "assets/projects/print/portfolio-booklet-spreads.png",
     "coverFit": "contain",
     "slides": [
       {
-        "src": "assets/projects/print/portfolio-booklet-imposition.webp",
-        "alt": "Portfolio pages arranged into printer spreads with crop marks for booklet production",
-        "caption": "Booklet imposition and crop-mark setup",
+        "src": "assets/projects/print/portfolio-booklet-spreads.png",
+        "alt": "Portfolio booklet shown as 10 printer spreads laid out for booklet production",
+        "caption": "Portfolio booklet printer spreads",
         "fit": "contain"
       }
     ],
