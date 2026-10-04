@@ -62,6 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (project.galleryMode === "portal") {
     gallerySection?.classList.add("project-gallery-section--website", "project-gallery-section--portal");
   }
+  if (project.galleryMode === "print") {
+    gallerySection?.classList.add("project-gallery-section--print");
+  }
 
   const processLabel = document.querySelector(".process-heading .section-label");
   const processTitle = document.querySelector(".process-heading .section-title");

@@ -14,23 +14,35 @@ window.PORTFOLIO_PROJECTS = [
     "tags": [
       "Social Media",
       "Content + SEO",
-      "Photoshop"
+      "Graphic Design"
     ],
     "year": "2026 · Ongoing",
-    "role": "Digital Marketing + Communications",
-    "format": "Organic Social, Content + Campaign Support",
-    "summary": "Ongoing in-house marketing for a small courier company, from Instagram posts and Photoshop image preparation to SEO blogs, landing pages and Google Ads support.",
-    "note": "I managed this work independently as the company's in-house marketing contact. Social content was developed organically without paid Meta campaigns.",
+    "role": "Digital Marketing + Graphic Design",
+    "format": "Organic Social, Content + Short-Form Video",
+    "summary": "A mix of in-house and client social work: planning posts, cleaning up photography, redesigning older graphics, writing copy and building a more consistent feed across Numode Delivery and GPS Tracker CPS, plus short-form motion for Churi.",
+    "note": "Most of this work started with existing brand assets, older graphics or day-to-day photos. My job was to make the content clearer, more consistent and ready to publish.",
     "cover": "assets/projects/social-media/social-media-cover.webp",
     "slides": [
       {
         "src": "assets/projects/social-media/social-media-mockup.webp",
-        "alt": "Courier company social media posts shown in a presentation mockup",
-        "caption": "Social media post mockups",
+        "alt": "Numode Delivery social media posts shown in a presentation mockup",
+        "caption": "Numode Delivery social media post mockups",
+        "fit": "contain"
+      },
+      {
+        "src": "assets/projects/social-media/gps-tracker-cps-mockup.webp",
+        "alt": "GPS Tracker CPS social media designs shown across a phone and printed-style post mockups",
+        "caption": "GPS Tracker CPS social media work",
+        "fit": "contain"
+      },
+      {
+        "src": "assets/projects/social-media/gps-tracker-cps-original-02.webp",
+        "alt": "Earlier GPS Tracker CPS promotional post kept as an original example without a matching redesign",
+        "caption": "GPS Tracker CPS — earlier post, kept as an original example",
         "fit": "contain"
       }
     ],
-    "comparisonHeading": "Drag each bar to see what changed.",
+    "comparisonHeading": "Drag each bar to see the edit or redesign.",
     "comparisons": [
       {
         "title": "Preparing Delivery Photography 01",
@@ -73,38 +85,52 @@ window.PORTFOLIO_PROJECTS = [
           "alt": "Updated courier company Instagram feed"
         },
         "note": "The updated feed uses stronger photography, more consistent editing and a clearer visual rhythm."
+      },
+      {
+        "title": "GPS Tracker CPS Post Redesign",
+        "before": {
+          "src": "assets/projects/social-media/gps-tracker-cps-before-01.webp",
+          "label": "Before",
+          "alt": "Earlier GPS Tracker CPS promotional design before redesign"
+        },
+        "after": {
+          "src": "assets/projects/social-media/gps-tracker-cps-after-01.webp",
+          "label": "After",
+          "alt": "Updated GPS Tracker CPS promotional design after redesign"
+        },
+        "note": "I simplified the layout, gave the message more breathing room and made the product/app visual easier to understand at a glance."
       }
     ],
     "metrics": [
       {
         "value": "$21 to $17",
-        "label": "Google Ads cost per conversion",
+        "label": "Numode Google Ads cost per conversion",
         "detail": "Reduced by about 19% after campaign adjustments."
       },
       {
         "value": "8 to 10",
-        "label": "Authority Score",
+        "label": "Numode Authority Score",
         "detail": "Improved over several months through ongoing SEO and content work."
       },
       {
         "value": "Organic",
         "label": "Social media approach",
-        "detail": "Posts, captions and images created without paid Meta promotion."
+        "detail": "Posts, captions and images were created without paid Meta promotion."
       }
     ],
-    "rationale": "The company is small, so the marketing work did not arrive as one perfectly defined campaign. I often identified what needed attention, researched the best approach and carried the work through myself.\n\nFor social media, I worked with the photos available from day-to-day operations. I selected the strongest images, used Photoshop to clean and colour correct them, prepared the layouts, wrote captions and alt text, and kept the visual direction consistent.\n\nThe role also connected social content with the rest of the company's digital presence. I wrote SEO blog posts, created seasonal and campaign landing pages, reviewed website performance and adjusted Google Ads using the results we were seeing.",
+    "rationale": "This page brings together social work from a few different settings rather than treating every post like a separate campaign. At Numode Delivery, I work with real photos from day-to-day operations, clean and colour correct them in Photoshop, build post layouts when needed, and write captions and alt text.\n\nFor GPS Tracker CPS, I worked from an existing visual direction and older promotional graphics. I redesigned selected posts to make the hierarchy clearer, reduce clutter and give the product visuals more room to do their job. I also kept an earlier post in the gallery so the range of the original material is visible, even where there is no matching redesign.\n\nThe page also includes short-form work for Churi. Those pieces were edited in CapCut and gave me a chance to carry the same attention to pacing and consistency into motion content.",
     "process": [
       {
-        "title": "Work With What We Had",
-        "body": "I reviewed photos from daily operations, chose the ones with a useful story and planned content around real deliveries, people and seasonal moments."
+        "title": "Start With the Material",
+        "body": "I work from the photos, brand assets or older graphics that already exist, then decide what is worth keeping and what is getting in the way."
       },
       {
-        "title": "Prepare + Publish",
-        "body": "I edited images in Photoshop, created post layouts when needed, wrote natural captions and alt text, and prepared content for Instagram and the company blog."
+        "title": "Clean + Build",
+        "body": "Depending on the project, I edit photography, rebuild the layout, tighten hierarchy, prepare copy and make sure the final post still feels like the same brand."
       },
       {
-        "title": "Review + Improve",
-        "body": "I used information from Google Ads, Analytics, Search Console and SEO tools to decide what to adjust next across campaigns, landing pages and content."
+        "title": "Publish + Review",
+        "body": "For ongoing work, I look at the feed as a whole instead of judging one post by itself. I use performance and consistency to decide what should change next."
       }
     ]
   },
@@ -119,10 +145,10 @@ window.PORTFOLIO_PROJECTS = [
       "Print"
     ],
     "year": "2026",
-    "role": "Editorial Design",
+    "role": "Editorial Design + Print Production",
     "format": "Printed Type Specimen",
     "summary": "A printed Nexa type specimen built around rhythm, hierarchy and contrast to show the typeface as a flexible visual system.",
-    "note": "A printed type specimen designed and produced as a complete editorial piece.",
+    "note": "Designed, prepared for press and printed as a complete type specimen booklet.",
     "cover": "assets/projects/web/nexa-cover.webp",
     "slides": [
       {
@@ -142,6 +168,12 @@ window.PORTFOLIO_PROJECTS = [
         "alt": "Printed Nexa type specimen shown as a physical booklet",
         "caption": "Printed type specimen",
         "fit": "contain"
+      },
+      {
+        "src": "assets/projects/print/nexa-printed-overview.webp",
+        "alt": "Printed Nexa type specimen shown through several physical booklet views",
+        "caption": "Printed booklet overview",
+        "fit": "contain"
       }
     ],
     "rationale": "This project is a type specimen, but I did not want it to read like a technical catalogue. I used scale, repetition, contrast and pacing to show how Nexa can shift between functional and expressive roles while still feeling like one system. Because the final piece was printed, I also considered sequence, page turns and how the hierarchy feels as a physical object.",
@@ -158,7 +190,299 @@ window.PORTFOLIO_PROJECTS = [
         "title": "Print",
         "body": "Test prints helped me adjust spacing, contrast and scale before final production. The finished piece was designed to work as a physical type specimen, not only as a set of digital layouts."
       }
+    ],
+    "categoryKeys": [
+      "editorial",
+      "print"
     ]
+  },
+  {
+    "id": "flora-perfume-box",
+    "title": "Flora Perfume Box",
+    "category": "Print",
+    "categoryKey": "print",
+    "tags": [
+      "Packaging",
+      "Prepress",
+      "Production"
+    ],
+    "year": "2026",
+    "role": "Packaging Design + Production",
+    "format": "Perfume Box",
+    "summary": "A small perfume box taken from layout to finished object: I designed the packaging, prepared the dieline for press, printed it and assembled the final box.",
+    "note": "The production artwork includes cut, fold and glue guides so the flat file could move cleanly into print and assembly.",
+    "cover": "assets/projects/print/flora-perfume-box-finished.webp",
+    "coverFit": "contain",
+    "slides": [
+      {
+        "src": "assets/projects/print/flora-perfume-box-finished.webp",
+        "alt": "Finished Flora Blooming Bouquet perfume box beside a record player",
+        "caption": "Finished printed and assembled perfume box",
+        "fit": "contain"
+      },
+      {
+        "src": "assets/projects/print/flora-perfume-box-press-ready.webp",
+        "alt": "Flora Blooming Bouquet perfume box dieline with cut fold and glue marks",
+        "caption": "Press-ready dieline with production marks",
+        "fit": "contain"
+      }
+    ],
+    "rationale": "I wanted the finished box to feel soft and delicate without losing the structure needed for a real package. The artwork was built directly on the dieline, then checked as a flat production file before printing. Because I also printed and assembled the box myself, I could see how the design behaved once the folds, seams and panels became a physical object.",
+    "process": [
+      {
+        "title": "Design on the Dieline",
+        "body": "I built the front, side and back panels as one continuous package so the typography, colour and lavender artwork stayed consistent around the box."
+      },
+      {
+        "title": "Prepare for Press",
+        "body": "I separated the production information clearly, including cut, fold and glue areas, and checked that important artwork stayed inside the safe area."
+      },
+      {
+        "title": "Print + Assemble",
+        "body": "I printed the final piece, trimmed and folded it, then assembled the box by hand to check the finished scale and panel alignment."
+      }
+    ],
+    "galleryMode": "print"
+  },
+  {
+    "id": "variable-data-mailer",
+    "title": "Duotone Variable Data Mailer",
+    "category": "Print",
+    "categoryKey": "print",
+    "tags": [
+      "Duotone",
+      "Variable Data",
+      "Prepress"
+    ],
+    "year": "2026",
+    "role": "Print Design + Prepress",
+    "format": "Personalized Direct Mail",
+    "summary": "A press-ready two-sided mailer built with variable data, so names and addresses could be pulled from a list instead of setting every piece by hand.",
+    "note": "The recipient information was set up to update automatically from a list, keeping the design consistent across the full run.",
+    "cover": "assets/projects/print/variable-mailer-data-merge.webp",
+    "coverFit": "contain",
+    "slides": [
+      {
+        "src": "assets/projects/print/variable-mailer-data-merge.webp",
+        "alt": "Multiple personalized direct mail pieces showing different recipient names and addresses",
+        "caption": "Variable-data output across multiple recipients",
+        "fit": "contain"
+      },
+      {
+        "src": "assets/projects/print/variable-mailer-front.webp",
+        "alt": "Press-ready front of the yoga direct mail piece with trim and production marks",
+        "caption": "Front — press ready",
+        "fit": "contain"
+      },
+      {
+        "src": "assets/projects/print/variable-mailer-back.webp",
+        "alt": "Press-ready back of the yoga direct mail piece with recipient address and production marks",
+        "caption": "Back — press ready",
+        "fit": "contain"
+      }
+    ],
+    "rationale": "The main challenge was not just designing one mailer. It was building a file that could stay visually consistent while the recipient name and address changed from one piece to the next. I kept the promotional side fixed, created a clear area for variable information and prepared both sides as press-ready artwork.",
+    "process": [
+      {
+        "title": "Build the Base",
+        "body": "I designed the front and back as one repeatable system, keeping the promotional message and mailing information easy to scan."
+      },
+      {
+        "title": "Connect the Data",
+        "body": "The name and address fields were linked to a recipient list, which meant the personalized versions could be generated automatically instead of edited one at a time."
+      },
+      {
+        "title": "Prepare the Run",
+        "body": "I checked the variable output across several records and prepared the final files with the production marks needed for print."
+      }
+    ],
+    "galleryMode": "print"
+  },
+  {
+    "id": "business-card-print",
+    "title": "Business Card — Press Ready",
+    "category": "Print",
+    "categoryKey": "print",
+    "tags": [
+      "Business Card",
+      "Prepress",
+      "Identity"
+    ],
+    "year": "2026",
+    "role": "Graphic Design + Prepress",
+    "format": "Two-Sided Business Card",
+    "summary": "A two-sided business card designed as a compact identity piece and prepared for print with production margins and crop marks.",
+    "note": "Front and back are shown as the final press-ready artwork rather than cropped mockups.",
+    "cover": "assets/projects/print/business-card-front-press-ready.webp",
+    "coverFit": "contain",
+    "slides": [
+      {
+        "src": "assets/projects/print/business-card-front-press-ready.webp",
+        "alt": "Press-ready front of a purple business card with logo and trim marks",
+        "caption": "Front — press ready",
+        "fit": "contain"
+      },
+      {
+        "src": "assets/projects/print/business-card-back-press-ready.webp",
+        "alt": "Press-ready back of a purple business card with contact details QR code and trim marks",
+        "caption": "Back — press ready",
+        "fit": "contain"
+      }
+    ],
+    "rationale": "The goal was to keep the card simple enough to read quickly while still feeling personal. I treated the front and back as one system, then prepared the final artwork with the spacing and production marks needed to send it to print without rebuilding the file.",
+    "process": [
+      {
+        "title": "Front + Back",
+        "body": "I kept the front focused on the identity and used the reverse for contact details and the QR code, with the same colour and type system across both sides."
+      },
+      {
+        "title": "Check the Edges",
+        "body": "I reviewed the trim and safe areas so text and key elements stayed clear of the cut while the background could extend correctly."
+      },
+      {
+        "title": "Press Ready",
+        "body": "The final files were exported with the production marks visible and the complete card artwork intact."
+      }
+    ],
+    "galleryMode": "print"
+  },
+  {
+    "id": "portfolio-booklet-print",
+    "title": "Portfolio Booklet — Press Preparation",
+    "category": "Print",
+    "categoryKey": "print",
+    "tags": [
+      "Booklet",
+      "Imposition",
+      "Prepress"
+    ],
+    "year": "2026",
+    "role": "Editorial Design + Prepress",
+    "format": "Printed Portfolio Booklet",
+    "summary": "A portfolio prepared for print as a booklet, with the pages arranged into printer spreads and crop marks added for production.",
+    "note": "The booklet was imposed in the correct print order before the final print run.",
+    "cover": "assets/projects/print/portfolio-booklet-imposition.webp",
+    "coverFit": "contain",
+    "slides": [
+      {
+        "src": "assets/projects/print/portfolio-booklet-imposition.webp",
+        "alt": "Portfolio pages arranged into printer spreads with crop marks for booklet production",
+        "caption": "Booklet imposition and crop-mark setup",
+        "fit": "contain"
+      }
+    ],
+    "rationale": "A screen sequence and a printed booklet do not use the same page order. I reorganized the portfolio into printer spreads so the pages would land in the right sequence once folded and bound, then added the crop marks needed for production. The point of the project was as much about preparing the file correctly as it was about the layout itself.",
+    "process": [
+      {
+        "title": "Sequence the Pages",
+        "body": "I checked the reading order first so the portfolio still made sense as a physical booklet rather than a stack of separate pages."
+      },
+      {
+        "title": "Impose the Booklet",
+        "body": "I arranged the pages into printer spreads, pairing the correct pages together for folding and assembly."
+      },
+      {
+        "title": "Prepare to Print",
+        "body": "I added crop marks, checked the spread order and used the imposed file for the printed booklet."
+      }
+    ],
+    "galleryMode": "print"
+  },
+  {
+    "id": "from-within-book-jacket",
+    "title": "From Within Book Jacket",
+    "category": "Print",
+    "categoryKey": "print",
+    "tags": [
+      "Book Jacket",
+      "Concept Design",
+      "Print"
+    ],
+    "year": "2026",
+    "role": "Concept + Print Design",
+    "format": "Full Book Jacket",
+    "summary": "A full book-jacket concept designed around reflection and perspective, then printed to test how the front, spine, back and flaps worked as one physical wrap.",
+    "note": "Concept project designed and printed as a complete jacket rather than a front-cover-only exercise.",
+    "cover": "assets/projects/print/from-within-book-jacket-printed.webp",
+    "coverFit": "contain",
+    "slides": [
+      {
+        "src": "assets/projects/print/from-within-book-jacket-printed.webp",
+        "alt": "Printed From Within book jacket shown as a physical wrap",
+        "caption": "Printed book jacket",
+        "fit": "contain"
+      },
+      {
+        "src": "assets/projects/print/from-within-book-jacket-flat.webp",
+        "alt": "Flat From Within book jacket layout with back cover spine front cover and flaps",
+        "caption": "Full flat jacket layout",
+        "fit": "contain"
+      }
+    ],
+    "rationale": "I developed the jacket from a concept rather than treating the front cover as a standalone image. The mirror-and-butterfly idea continues across the full wrap, while the flaps and back cover carry the supporting copy. Printing the piece helped me judge the spine, fold positions and how the illustration moved from a flat file into a physical jacket.",
+    "process": [
+      {
+        "title": "Build the Concept",
+        "body": "I started with the idea of perspective and self-reflection, then built the main illustration and visual language around that theme."
+      },
+      {
+        "title": "Design the Full Wrap",
+        "body": "I laid out the front, spine, back and flaps together so the jacket worked as one continuous piece rather than separate panels."
+      },
+      {
+        "title": "Print the Jacket",
+        "body": "I printed the final wrap and checked the folds and spine placement to see how the concept translated off screen."
+      }
+    ],
+    "galleryMode": "print"
+  },
+  {
+    "id": "eras-soap-packaging",
+    "title": "ERAS Soap Packaging",
+    "category": "Print",
+    "categoryKey": "print",
+    "tags": [
+      "Packaging",
+      "Dielines",
+      "Production"
+    ],
+    "year": "2026",
+    "role": "Packaging Design + Production",
+    "format": "Three-Box Soap Set",
+    "summary": "A three-piece soap packaging set designed, printed and assembled by hand, with separate boxes for face, hand and body soap.",
+    "note": "Each box uses its own artwork while keeping one recognizable packaging system across the set.",
+    "cover": "assets/projects/print/eras-soap-packaging-finished.webp",
+    "coverFit": "contain",
+    "slides": [
+      {
+        "src": "assets/projects/print/eras-soap-packaging-finished.webp",
+        "alt": "Three finished ERAS soap boxes for face hand and body soap",
+        "caption": "Printed and assembled soap boxes",
+        "fit": "contain"
+      },
+      {
+        "src": "assets/projects/print/eras-soap-packaging-dielines.webp",
+        "alt": "Three ERAS soap packaging dielines for face hand and body soap",
+        "caption": "Packaging dielines and production layouts",
+        "fit": "contain"
+      }
+    ],
+    "rationale": "I designed the three boxes as a family, but not as copies of one another. Each soap has its own palette and surface treatment while the silhouette, naming and front-panel structure keep the set connected. I prepared the dielines, printed the artwork and assembled the boxes myself, so the final result could be checked as real packaging instead of only a flat design.",
+    "process": [
+      {
+        "title": "Create the System",
+        "body": "I set a shared structure for the brand name, product name and main graphic so all three products clearly belonged to the same line."
+      },
+      {
+        "title": "Adapt the Dielines",
+        "body": "I applied each visual direction to its full box layout, checking how the artwork wrapped across panels and folds."
+      },
+      {
+        "title": "Print + Build",
+        "body": "I printed, cut, folded and assembled each package by hand to finish the set and check the physical result."
+      }
+    ],
+    "galleryMode": "print"
   },
   {
     "id": "movie-poster",

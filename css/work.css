@@ -2271,3 +2271,44 @@ body[data-project-id="kronos-brand-identity"] .project-slide {
     min-height: 423px !important;
   }
 }
+
+/* ===== v23 print / production cover handling ===== */
+.work-card-media[data-fit="contain"] img {
+  inset: 18px;
+  width: calc(100% - 36px);
+  height: calc(100% - 36px);
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (max-width: 620px) {
+  .work-card-media[data-fit="contain"] img {
+    inset: 14px;
+    width: calc(100% - 28px);
+    height: calc(100% - 28px);
+  }
+}
+
+/* Print pieces often use wide press sheets. Give them a wider neutral stage while
+   keeping the complete artwork visible with the same four-sided safe area. */
+.project-gallery-section--print .page-shell {
+  width: min(980px, calc(100% - (var(--pad) * 2)));
+}
+
+.project-gallery-section--print .project-slide {
+  height: clamp(500px, 58vw, 680px);
+}
+
+@media (max-width: 620px) {
+  .project-gallery-section--print .page-shell {
+    width: calc(100% - 20px);
+  }
+
+  .project-gallery-section--print .project-slide {
+    height: clamp(350px, 92vw, 500px);
+  }
+
+  .project-gallery-section--print .slide-stage {
+    --project-image-safe: 26px;
+  }
+}

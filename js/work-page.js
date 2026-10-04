@@ -27,9 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   listRoot.innerHTML = projects.map((project) => {
     const cover = asset(project.cover);
+    const categoryKeys = project.categoryKeys || [project.categoryKey];
     return `
-      <article class="work-card reveal" data-category="${project.categoryKey}">
-        <a class="work-card-media" href="${projectHref(project.id)}" aria-label="View ${project.title}">
+      <article class="work-card reveal" data-category="${categoryKeys.join(" ")}">
+        <a class="work-card-media" data-fit="${project.coverFit || "cover"}" href="${projectHref(project.id)}" aria-label="View ${project.title}">
           <img src="${cover}" alt="${project.title}" loading="lazy" decoding="async">
         </a>
         <div class="work-card-copy">
@@ -53,7 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const valid = categories.some((category) => category.key === selected) ? selected : "all";
     buttons.forEach((item) => item.setAttribute("aria-pressed", String(item.dataset.filter === valid)));
     cards.forEach((card) => {
-      card.hidden = !(valid === "all" || card.dataset.category === valid);
+      const cardCategories = (card.dataset.category || "").split(/\s+/).filter(Boolean);
+      card.hidden = !(valid === "all" || cardCategories.includes(valid));
     });
   };
 
