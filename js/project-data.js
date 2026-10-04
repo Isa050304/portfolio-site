@@ -34,12 +34,6 @@ window.PORTFOLIO_PROJECTS = [
         "alt": "GPS Tracker CPS social media designs shown across a phone and printed-style post mockups",
         "caption": "GPS Tracker CPS social media work",
         "fit": "contain"
-      },
-      {
-        "src": "assets/projects/social-media/gps-tracker-cps-original-02.webp",
-        "alt": "Earlier GPS Tracker CPS promotional post kept as an original example without a matching redesign",
-        "caption": "GPS Tracker CPS — earlier post, kept as an original example",
-        "fit": "contain"
       }
     ],
     "comparisonHeading": "Drag each bar to see the edit or redesign.",
@@ -118,7 +112,7 @@ window.PORTFOLIO_PROJECTS = [
         "detail": "Posts, captions and images were created without paid Meta promotion."
       }
     ],
-    "rationale": "This page brings together social work from a few different settings rather than treating every post like a separate campaign. At Numode Delivery, I work with real photos from day-to-day operations, clean and colour correct them in Photoshop, build post layouts when needed, and write captions and alt text.\n\nFor GPS Tracker CPS, I worked from an existing visual direction and older promotional graphics. I redesigned selected posts to make the hierarchy clearer, reduce clutter and give the product visuals more room to do their job. I also kept an earlier post in the gallery so the range of the original material is visible, even where there is no matching redesign.\n\nThe page also includes short-form work for Churi. Those pieces were edited in CapCut and gave me a chance to carry the same attention to pacing and consistency into motion content.",
+    "rationale": "This page brings together social work from a few different settings rather than treating every post like a separate campaign. At Numode Delivery, I work with real photos from day-to-day operations, clean and colour correct them in Photoshop, build post layouts when needed, and write captions and alt text.\n\nFor GPS Tracker CPS, I worked from an existing visual direction and older promotional graphics. I redesigned selected posts to make the hierarchy clearer, reduce clutter and give the product visuals more room to do their job.\n\nThe page also includes short-form work for Churi. Those pieces were edited in CapCut and gave me a chance to carry the same attention to pacing and consistency into motion content.",
     "process": [
       {
         "title": "Start With the Material",
@@ -192,12 +186,29 @@ window.PORTFOLIO_PROJECTS = [
       }
     ],
     "categoryKeys": [
-      "editorial",
-      "print"
+      "editorial"
     ]
   },
   {
+    "id": "print-production",
+    "title": "Print + Production",
+    "category": "Print",
+    "categoryKey": "print",
+    "tags": [
+      "Print Design",
+      "Prepress",
+      "Production"
+    ],
+    "year": "2026",
+    "role": "Graphic Design + Print Production",
+    "format": "Press-Ready + Finished Pieces",
+    "summary": "A collection of print work including variable-data mailers, packaging, business cards, editorial pieces and press-ready production files.",
+    "cover": "assets/projects/print/variable-mailer-data-merge.webp",
+    "coverFit": "contain"
+  },
+  {
     "id": "flora-perfume-box",
+    "showOnWork": false,
     "title": "Flora Perfume Box",
     "category": "Print",
     "categoryKey": "print",
@@ -246,6 +257,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "variable-data-mailer",
+    "showOnWork": false,
     "title": "Duotone Variable Data Mailer",
     "category": "Print",
     "categoryKey": "print",
@@ -300,6 +312,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "business-card-print",
+    "showOnWork": false,
     "title": "Business Card — Press Ready",
     "category": "Print",
     "categoryKey": "print",
@@ -348,6 +361,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "portfolio-booklet-print",
+    "showOnWork": false,
     "title": "Portfolio Booklet — Press Preparation",
     "category": "Print",
     "categoryKey": "print",
@@ -390,6 +404,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "from-within-book-jacket",
+    "showOnWork": false,
     "title": "From Within Book Jacket",
     "category": "Print",
     "categoryKey": "print",
@@ -438,6 +453,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     "id": "eras-soap-packaging",
+    "showOnWork": false,
     "title": "ERAS Soap Packaging",
     "category": "Print",
     "categoryKey": "print",

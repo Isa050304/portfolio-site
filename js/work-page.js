@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const priority = ["numode-social-media", "numode-delivery", "numode-staff-portal"];
-  const projects = [...(window.PORTFOLIO_PROJECTS || [])].sort((a, b) => {
+  const projects = [...(window.PORTFOLIO_PROJECTS || [])].filter((project) => project.showOnWork !== false).sort((a, b) => {
     const aRank = priority.includes(a.id) ? priority.indexOf(a.id) : priority.length;
     const bRank = priority.includes(b.id) ? priority.indexOf(b.id) : priority.length;
     return aRank - bRank;
